@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>网盘站导航</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #f4f4f4;
+			/* Light background */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+		
+		.container {
+			background-color: white;
+			padding: 40px;
+			border-radius: 12px;
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+			width: 90%;
+			max-width: 600px;
+			text-align: center;
+		}
+		
+		h1 {
+			color: #333;
+			margin-bottom: 30px;
+			font-size: 28px;
+		}
+		
+		.links {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+			gap: 20px;
+		}
+		
+		.link-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding: 10px;
+			border: 1px solid #007bff;
+			border-radius: 8px;
+			background-color: #fff;
+			height: 150px;
+			cursor: pointer;
+			outline: none;
+			transition: transform 0.3s, box-shadow 0.3s;
+			text-decoration: none;
+			/* Remove underline from links */
+		}
+		
+		.link-item:focus,
+		.link-item:hover {
+			outline: 2px solid #007bff;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+			transform: translateY(-5px);
+		}
+		
+		.icon {
+			width: 100%;
+			height: 100px;
+			object-fit: contain;
+			margin-bottom: 10px;
+		}
+		
+		.link-item span {
+			color: #007bff;
+			/* Text color */
+			text-decoration: none;
+			/* Ensure no underline */
+		}
+		
+		.custom-link {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			width: 100%;
+			margin-top: 20px;
+		}
+		
+		input[type='text'],
+		button {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #007bff;
+			border-radius: 8px;
+			font-size: 18px;
+			box-sizing: border-box;
+			transition: border-color 0.3s;
+		}
+		
+		input[type='text']:focus {
+			border-color: #0056b3;
+			outline: none;
+		}
+		
+		button {
+			background-color: #007bff;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: #0056b3;
+		}
+		/* Media queries for responsiveness */
+		
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 24px;
+			}
+			a,
+			button {
+				font-size: 16px;
+			}
+		}
+		
+		@media (max-width: 480px) {
+			h1 {
+				font-size: 20px;
+			}
+			a,
+			button {
+				font-size: 14px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>网盘导航</h1>
+		<div class="links" tabindex="0">
+			<a href="https://drive.uc.cn/" class="link-item" tabindex="0">
+				<img src="./data/icon/UC.png" alt="UC网盘图标" class="icon">
+				<span>UC 网盘</span>
+			</a>
+			<a href="https://pan.quark.cn" class="link-item" tabindex="0">
+				<img src="./data/icon/Quark.png" alt="夸克网盘图标" class="icon">
+				<span>夸克 网盘</span>
+			</a>
+			<a href="https://al.omii.top" class="link-item" tabindex="0">
+				<img src="./data/icon/ali.png" alt="阿里图标" class="icon">
+				<span>阿里 32 位 token</span>
+			</a>
+			<a href="https://messense-aliyundrive-webdav-backendrefresh-token-ucs0wn.streamlit.app" class="link-item" tabindex="0">
+				<img src="./data/icon/ali.png" alt="阿里280图标" class="icon">
+				<span>阿里 280 位 token</span>
+			</a>
+			<a href="https://login.123pan.com/centerlogin" class="link-item" tabindex="0">
+				<img src="./data/icon/123.png" alt="123图标" class="icon">
+				<span>123 云盘</span>
+			</a>
+
+			<a href="https://cloud.189.cn/api/portal/loginUrl.action?redirectURL=https%3A%2F%2Fcloud.189.cn%2Fweb%2Fredirect.html" class="link-item"
+				tabindex="0">
+				<img src="./data/icon/189.png" alt="天翼网盘图标" class="icon">
+				<span>天翼 网盘</span>
+				</a>
+
+		</div>
+		<div class="custom-link">
+			<input type="text" id="customUrl" placeholder="输入自定义网址" />
+			<button onclick="goToCustomUrl()">跳转</button>
+		</div>
+	</div>
+
+	<script>
+		function goToCustomUrl() {
+                const customUrl = document.getElementById('customUrl').value.trim();
+                if (customUrl) {
+                    window.location.href = customUrl.startsWith('http') ? customUrl : 'https://' + customUrl;
+                }
+            }
+	</script>
+</body>
+
+</html>
