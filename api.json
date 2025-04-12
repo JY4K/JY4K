@@ -267,6 +267,14 @@
             "timeout": 30
         },
         {
+            "key": "荐片s",
+            "name": "🎬┃荐片┃影视",
+            "api": "csp_Jianpian",
+            "type": 3,
+            "playerType": "2",
+            "ext": "http://api2.rinhome.com"
+        },
+        {
             "key": "csp_Jpys",
             "name": "🧸 金牌┃App",
             "jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1744092366140/0408.jar;md5;a088e2c45008c883c90894ad94f01356",
