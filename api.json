@@ -2,7 +2,7 @@
     JY尘声明：
         以下网络资源如有冒犯请联系（qq邮箱：2661136929@qq.com）删除，[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买];   
         ⛔资源来源：【小白白】：http://222.186.57.24:7600/api.json  ⛔
-        ⛔【澳洲老张】：https://json.doube.eu.org/t4.php ⛔
+        ⛔【沐辰】：https://json.doube.eu.org/t4.php ⛔
         ⛔【钓鱼】：http://8.129.30.117:8117/钓鱼4K.json  ⛔
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
@@ -40,12 +40,14 @@
             "searchable": 0
         },
         {
-            "key": "config",
-            "name": "🪪 配置┃中心",
+            "key": "影探",
+            "name": "🇨🇳 影探┃4K",
             "type": 3,
-            "api": "csp_Config",
-            "jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1743661382424/feimao0403.txt;md5;5a0f3bef8b15b9bd2be978359fd5f4cd",
-            "playerType": 2
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://cmsyt114.lyyytv.cn/api.php/app/"
         },
         {
             "key": "奇珍艺兽",
@@ -162,32 +164,6 @@
             "changeable": 0
         },
         {
-            "key": "影探",
-            "name": "🇨🇳 影探┃4K",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "http://cmsyt114.lyyytv.cn/api.php/app/"
-        },
-        {
-            "key": "虎斑弹幕",
-            "name": "📁 虎斑┃4K",
-            "type": 3,
-            "api": "csp_Wobg",
-            "quickSearch": 1,
-            "changeable": 1,
-            "filterable": 1,
-            "ext": {
-                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
-                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
-                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
-                "site": "https://huban.banye.tech:7086",
-                "danmu": true
-            }
-        },
-        {
             "key": "玩偶弹幕",
             "name": "📁 玩偶┃4K",
             "type": 3,
@@ -204,8 +180,8 @@
             }
         },
         {
-            "key": "多多弹幕",
-            "name": "📁 多多┃4K",
+            "key": "木偶弹幕",
+            "name": "📁 木偶┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -215,7 +191,7 @@
                 "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
                 "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
-                "site": "https://duoduo.banye.tech:7086",
+                "site": "https://mogg.banye.tech:7086",
                 "danmu": true
             }
         },
@@ -236,8 +212,8 @@
             }
         },
         {
-            "key": "木偶弹幕",
-            "name": "📁 木偶┃4K",
+            "key": "虎斑弹幕",
+            "name": "📁 虎斑┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -247,7 +223,23 @@
                 "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
                 "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
-                "site": "https://mogg.banye.tech:7086",
+                "site": "https://huban.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "多多弹幕",
+            "name": "📁 多多┃4K",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://duoduo.banye.tech:7086",
                 "danmu": true
             }
         },
