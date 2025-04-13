@@ -161,6 +161,16 @@
             "changeable": 0
         },
         {
+            "key": "影探",
+            "name": "🇨🇳 影探┃4K",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://cmsyt114.lyyytv.cn/api.php/app/"
+        },
+        {
             "key": "csp_FeiMaoUC",
             "name": "📁 闪电┃4K",
             "type": 3,
