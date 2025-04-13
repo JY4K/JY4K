@@ -40,6 +40,14 @@
             "searchable": 0
         },
         {
+            "key": "config",
+            "name": "🪪 配置┃中心",
+            "type": 3,
+            "api": "csp_Config",
+            "jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1743661382424/feimao0403.txt;md5;5a0f3bef8b15b9bd2be978359fd5f4cd",
+            "playerType": 2
+        },
+        {
             "key": "影探",
             "name": "🇨🇳 影探┃4K",
             "type": 3,
