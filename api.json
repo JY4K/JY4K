@@ -1,13 +1,12 @@
 /*  
     JY尘声明：
         以下网络资源如有冒犯请联系（qq邮箱：2661136929@qq.com）删除，[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买];   
-        ⛔资源来源：【肥猫】：http://肥猫.com  ⛔
-        ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
+        ⛔资源来源：【小白白】：http://222.186.57.24:7600/spider.jar  ⛔
         ⛔【澳洲老张】：https://json.doube.eu.org/t4.php ⛔
-        ⛔【小米】：http://www.mpanso.com/%E5%B0%8F%E7%B1%B3/DEMO.json  ⛔
+        ⛔【钓鱼】：http://8.129.30.117:8117/钓鱼4K.json  ⛔
 */
 {
-    "spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1743661382424/feimao0403.txt;md5;5a0f3bef8b15b9bd2be978359fd5f4cd",
+    "spider": "http://222.186.57.24:7600/spider.jar",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -171,55 +170,180 @@
             "ext": "http://cmsyt114.lyyytv.cn/api.php/app/"
         },
         {
-            "key": "csp_FeiMaoUC",
-            "name": "📁 闪电┃4K",
+            "key": "夸克百家弹幕",
+            "name": "百家｜4K弹幕",
             "type": 3,
-            "api": "csp_Duopan",
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
             "filterable": 1,
             "ext": {
-                "site_urls": [
-                    "http://1.95.79.193/"
-                ],
-                "url_key": "FeiMaoUC"
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "http://cj.jiexi.news",
+                "danmu": true
             }
         },
         {
-            "key": "csp_Duopan",
-            "name": "📁 蜡笔┃4K",
+            "key": "夸克大玩弹幕",
+            "name": "大玩｜4K弹幕",
             "type": 3,
-            "api": "csp_Duopan",
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
             "filterable": 1,
             "ext": {
-                "site_urls": [
-                    "https://feimao666.fun",
-                    "http://feimao888.fun",
-                    "http://feimaoai.site",
-                    "http://www.labi88.sbs"
-                ],
-                "url_key": "Duopan2"
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://dawo.banye.tech:7086",
+                "danmu": true
             }
         },
         {
-            "key": "csp_Netfixtv",
-            "name": "📁 至臻┃4K",
+            "key": "夸克虎斑弹幕",
+            "name": "虎斑｜4K弹幕",
             "type": 3,
-            "api": "csp_Duopan",
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
             "filterable": 1,
             "ext": {
-                "site_urls": [
-                    "http://xiaomi666.fun",
-                    "https://xiaomiai.site",
-                    "http://www.miqk.cc",
-                    "https://mihdr.top"
-                ],
-                "url_key": "Netfixtv2",
-                "token": "",
-                "ucCookie": "",
-                "quarkCookie": "",
-                "threadinfo": {
-                    "chunksize": 450,
-                    "threads": 10
-                }
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://huban.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "玩偶弹幕",
+            "name": "玩偶｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wogg",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "wogg": true,
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克欧歌弹幕",
+            "name": "欧哥｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://ouge.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克多多弹幕",
+            "name": "多多｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://duoduo.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克蜡笔弹幕",
+            "name": "蜡笔｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://labi.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克至臻弹幕",
+            "name": "至臻｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://zhizhen.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克木偶弹幕",
+            "name": "木偶｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://mogg.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克下饭弹幕",
+            "name": "下饭｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://xiafan.banye.tech:7086",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸克二小弹幕",
+            "name": "二小｜4K弹幕",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://erxiao.banye.tech:7086",
+                "danmu": true
             }
         },
         {
@@ -227,7 +351,6 @@
             "name": "🧸 剧评┃App",
             "type": 3,
             "api": "csp_Jpys",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "playerType": 1,
             "ext": "caHR0cHM6Ly93d3cuaHNrampnbG8uY29t"
         },
@@ -236,7 +359,6 @@
             "name": "🧸 柠檬┃App",
             "type": 3,
             "api": "csp_Nmvod",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "playerType": 2,
             "ext": "eaHR0cHM6Ly9ubXZvZC5jbjozMTY2L3dlYmNsb3VkL3JlbGF5LnBocD91cmw9"
         },
@@ -244,7 +366,6 @@
             "key": "ZXZJ",
             "name": "🧸 在线┃App",
             "api": "csp_Zxzj",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "filterable": 1,
             "quickSearch": 1,
@@ -257,7 +378,6 @@
             "name": "🧸 布布┃App",
             "type": 3,
             "api": "csp_Czsapp",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "searchable": 1,
             "playerType": 1,
             "quickSearch": 1,
@@ -275,7 +395,6 @@
         {
             "key": "csp_LiteApple",
             "name": "🧸 苹果┃App",
-            "jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1744092366140/0408.jar;md5;a088e2c45008c883c90894ad94f01356",
             "type": 3,
             "api": "csp_LiteAppleGuard"
         },
