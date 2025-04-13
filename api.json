@@ -4,6 +4,7 @@
         ⛔资源来源：【小白白】：http://222.186.57.24:7600/spider.jar  ⛔
         ⛔【澳洲老张】：https://json.doube.eu.org/t4.php ⛔
         ⛔【钓鱼】：http://8.129.30.117:8117/钓鱼4K.json  ⛔
+        ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
     "spider": "http://222.186.57.24:7600/spider.jar",
@@ -43,6 +44,7 @@
             "name": "🪪 配置┃中心",
             "type": 3,
             "api": "csp_Config",
+            "jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1743661382424/feimao0403.txt;md5;5a0f3bef8b15b9bd2be978359fd5f4cd",
             "playerType": 2
         },
         {
@@ -170,40 +172,8 @@
             "ext": "http://cmsyt114.lyyytv.cn/api.php/app/"
         },
         {
-            "key": "夸克百家弹幕",
-            "name": "百家｜4K弹幕",
-            "type": 3,
-            "api": "csp_Wobg",
-            "quickSearch": 1,
-            "changeable": 1,
-            "filterable": 1,
-            "ext": {
-                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
-                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
-                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
-                "site": "http://cj.jiexi.news",
-                "danmu": true
-            }
-        },
-        {
-            "key": "夸克大玩弹幕",
-            "name": "大玩｜4K弹幕",
-            "type": 3,
-            "api": "csp_Wobg",
-            "quickSearch": 1,
-            "changeable": 1,
-            "filterable": 1,
-            "ext": {
-                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
-                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
-                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
-                "site": "https://dawo.banye.tech:7086",
-                "danmu": true
-            }
-        },
-        {
-            "key": "夸克虎斑弹幕",
-            "name": "虎斑｜4K弹幕",
+            "key": "虎斑弹幕",
+            "name": "📁 虎斑┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -219,7 +189,7 @@
         },
         {
             "key": "玩偶弹幕",
-            "name": "玩偶｜4K弹幕",
+            "name": "📁 玩偶┃4K",
             "type": 3,
             "api": "csp_Wogg",
             "searchable": 1,
@@ -234,25 +204,8 @@
             }
         },
         {
-            "key": "夸克欧歌弹幕",
-            "name": "欧哥｜4K弹幕",
-            "type": 3,
-            "api": "csp_Wobg",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "changeable": 1,
-            "ext": {
-                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
-                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
-                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
-                "site": "https://ouge.banye.tech:7086",
-                "danmu": true
-            }
-        },
-        {
-            "key": "夸克多多弹幕",
-            "name": "多多｜4K弹幕",
+            "key": "多多弹幕",
+            "name": "📁 多多┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -267,8 +220,8 @@
             }
         },
         {
-            "key": "夸克蜡笔弹幕",
-            "name": "蜡笔｜4K弹幕",
+            "key": "蜡笔弹幕",
+            "name": "📁 蜡笔┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -283,8 +236,8 @@
             }
         },
         {
-            "key": "夸克至臻弹幕",
-            "name": "至臻｜4K弹幕",
+            "key": "至臻弹幕",
+            "name": "📁 至臻┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -299,8 +252,8 @@
             }
         },
         {
-            "key": "夸克木偶弹幕",
-            "name": "木偶｜4K弹幕",
+            "key": "木偶弹幕",
+            "name": "📁 木偶┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -315,8 +268,8 @@
             }
         },
         {
-            "key": "夸克下饭弹幕",
-            "name": "下饭｜4K弹幕",
+            "key": "下饭弹幕",
+            "name": "📁 下饭┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -331,8 +284,8 @@
             }
         },
         {
-            "key": "夸克二小弹幕",
-            "name": "二小｜4K弹幕",
+            "key": "二小弹幕",
+            "name": "📁 二小┃4K",
             "type": 3,
             "api": "csp_Wobg",
             "quickSearch": 1,
@@ -349,6 +302,7 @@
         {
             "key": "剧评",
             "name": "🧸 剧评┃App",
+            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "api": "csp_Jpys",
             "playerType": 1,
@@ -357,6 +311,7 @@
         {
             "key": "柠檬",
             "name": "🧸 柠檬┃App",
+            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "api": "csp_Nmvod",
             "playerType": 2,
@@ -366,6 +321,7 @@
             "key": "ZXZJ",
             "name": "🧸 在线┃App",
             "api": "csp_Zxzj",
+            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "filterable": 1,
             "quickSearch": 1,
@@ -378,6 +334,7 @@
             "name": "🧸 布布┃App",
             "type": 3,
             "api": "csp_Czsapp",
+            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "searchable": 1,
             "playerType": 1,
             "quickSearch": 1,
