@@ -1,11 +1,11 @@
-<p align="center">🕊️JY尘</p>
+<p align="center">JY尘</p>
 <h1 align="center"> ✯ 一个影视接口 ✯ </h1>
 <h3 align="center">🔕 永久免费 完整开源 不断完善 支持IPv4/IPv6双栈访问 🔕</h3>
 
 ---
 
 ## 🛠️配置（必看）：
-  - Gitee: [https://gitee.com/soundy-dust/cat/raw/master/api.json](https://gitee.com/soundy-dust/cat/raw/master/api.json)
+  - Gitee: [https://raw.githubusercontent.com/JY4K/Jack/refs/heads/main/api.json](https://raw.githubusercontent.com/JY4K/Jack/refs/heads/main/api.json)
   -- 注：接口需配合软件食用 ！！！
 
 ## 📱联系
