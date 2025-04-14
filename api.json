@@ -142,6 +142,18 @@
             "ext": "./data/js/低端影视.js"
         },
         {
+            "key": "金牌影视",
+            "name": "🇨🇳 金牌┃1080",
+            "type": 3,
+            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/金牌.js"
+        },
+        {
             "key": "py_BaHaoTV",
             "name": "🇨🇳 八号┃1080",
             "type": 4,
@@ -454,6 +466,27 @@
             "name": "扑克720",
             "type": "2",
             "url": "https://json.puketv.com/api/?key=zuHdEdpapXWzWIdSp4&url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
+            "name": "乌贼1080",
+            "type": 1,
+            "url": "http://jx.dedyn.io/jx.php?url=",
             "ext": {
                 "flag": [
                     "qq",
