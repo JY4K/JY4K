@@ -155,7 +155,7 @@
         },
         {
             "key":"巧技",
-            "name":"🇨🇳 巧技┃4K",
+            "name":"🇨🇳 巧技┃App",
             "type":3,
             "api":"csp_AppYsV2",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
@@ -236,9 +236,14 @@
     ],
     "parses": [
         {
-            "name":"Seq",
-            "type":2,
-            "url":"Sequence"
+            "name": "Web",
+            "type": 3,
+            "url": "Web"
+        },
+        {
+            "name": "Demo",
+            "type": 3,
+            "url": "Demo"
         },
         {
             "name":"巧技4K",
