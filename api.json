@@ -154,6 +154,14 @@
             "changeable": 0
         },
         {
+            "key":"巧技",
+            "name":"🇨🇳 巧技┃4K",
+            "type":3,
+            "api":"csp_AppYsV2",
+            "playerType":2,
+            "ext":"7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
+        },
+        {
             "key": "剧评",
             "name": "🧸 剧评┃App",
             "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
@@ -226,6 +234,34 @@
         }
     ],
     "parses": [
+        {
+            "name":"巧技4K",
+            "type":1,"url":"https://zy.qiaoji8.com/xiafan.php?url=",
+            "ext":{
+                "flag":[
+                    "QD4K",
+                    "iyf",
+                    "duanju",
+                    "gzcj",
+                    "GTV",
+                    "GZYS",
+                    "weggz",
+                    "Ace",
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                    ],
+                    "header":{
+                        "User-Agent":"okhttp/4.9.1"
+                }
+            }
+        },
         {
             "name": "岁岁4K",
             "type": "1",
