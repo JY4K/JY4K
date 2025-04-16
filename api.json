@@ -7,7 +7,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "http://222.186.57.24:7600/spider.jar",
+    "spider": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -164,7 +164,6 @@
         {
             "key": "剧评",
             "name": "🧸 剧评┃App",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "api": "csp_Jpys",
             "playerType": 1,
@@ -173,7 +172,6 @@
         {
             "key": "柠檬",
             "name": "🧸 柠檬┃App",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "api": "csp_Nmvod",
             "playerType": 2,
@@ -183,7 +181,6 @@
             "key": "ZXZJ",
             "name": "🧸 在线┃App",
             "api": "csp_Zxzj",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "type": 3,
             "filterable": 1,
             "quickSearch": 1,
@@ -196,7 +193,6 @@
             "name": "🧸 布布┃App",
             "type": 3,
             "api": "csp_Czsapp",
-            "jar": "http://cdn.qiaoji8.com/fix250304.jar;md5;9d8407a76b2abeeaabdd147b1b93799f",
             "searchable": 1,
             "playerType": 1,
             "quickSearch": 1,
