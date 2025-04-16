@@ -696,22 +696,6 @@ var rule = {
                 danmaku: "http://222.186.57.24:7600/dm/dm.php?url=" + input.split("?")[0]
             };
         }
-        catch {
-            input = {
-                parse: 0,
-                url: input.split("?")[0],
-                jx: 1,
-                danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
-            };
-        }
-        finally {
-            input = {
-                parse: 0,
-                url: input.split("?")[0],
-                jx: 1,
-                danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
-            };
-        }
     }),
     推荐: '.list_item;img&&alt;img&&src;a&&Text;a&&data-float',
     一级: '.list_item;img&&alt;img&&src;a&&Text;a&&data-float',
