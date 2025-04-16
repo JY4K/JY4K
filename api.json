@@ -227,16 +227,6 @@
     ],
     "parses": [
         {
-            "name": "Web",
-            "type": 3,
-            "url": "Web"
-        },
-        {
-            "name": "Demo",
-            "type": 3,
-            "url": "Demo"
-        },
-        {
             "name": "岁岁4K",
             "type": "1",
             "url": "http://8.129.30.117:8117/suisui.php?key=suisui&url=",
