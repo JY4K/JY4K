@@ -670,14 +670,14 @@ var rule = {
                     parse: 0,
                     url: bata.url,
                     jx: 0,
-                    danmaku: "http://222.186.57.24:7600/dm/dm.php?url=" + input.split("?")[0]
+                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
                 };
             } else if (bata.url.includes("qq")){
                 input = {
                     parse: 0,
                     url: bata.url,
                     jx: 1,
-                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "http://222.186.57.24:7600/dm/dm.php?url=" + input.split("?")[0]
                 };
             }else {
                 input = {
