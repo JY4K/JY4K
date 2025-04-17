@@ -40,8 +40,21 @@
             "searchable": 0
         },
         {
+            "key": "配置中心",
+            "name": "⚙ 配置┃中心",
+            "type": 3,
+            "api": "csp_Config",
+            "searchable": 0,
+            "changeable": 0,
+            "indexs": 0,
+            "style": {
+                "type": "rect",
+                "ratio": 1.597
+            }
+        },
+        {
             "key": "奇珍艺兽",
-            "name": "🇨🇳 爱奇艺┃解析",
+            "name": "🔥 爱奇艺┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -53,7 +66,7 @@
         },
         {
             "key": "腾云驾雾",
-            "name": "🇨🇳 腾讯┃解析",
+            "name": "🔥 腾讯┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -65,7 +78,7 @@
         },
         {
             "key": "百芒无果",
-            "name": "🇨🇳 芒果┃解析",
+            "name": "🔥 芒果┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -77,7 +90,7 @@
         },
         {
             "key": "优哉游哉",
-            "name": "🇨🇳 优酷┃解析",
+            "name": "🔥 优酷┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -89,7 +102,7 @@
         },
         {
             "key": "BiliBili",
-            "name": "🇨🇳 B站┃解析",
+            "name": "🔥 B站┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -100,8 +113,62 @@
             "ext": "./data/js/BiliBili.js"
         },
         {
+            "key": "玩偶哥哥",
+            "name": "🇨🇳 玩偶┃4K",
+            "type": 3,
+            "api": "csp_PanWebShare",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "ext": "http://222.186.57.24:7600/json/wogg.json?"
+        },
+        {
+            "key": "闪电",
+            "name": "🇨🇳 闪电┃4K",
+            "type": 3,
+            "api": "csp_PanWebShare",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "ext": "http://222.186.57.24:7600/json/sd.json?"
+        },
+        {
+            "key": "至臻",
+            "name": "🇨🇳 至臻┃4K",
+            "type": 3,
+            "api": "csp_PanWebShare",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "ext": "http://222.186.57.24:7600/json/zz.json?"
+        },
+        {
+            "key": "大玩",
+            "name": "🇨🇳 大玩┃4K",
+            "type": 3,
+            "api": "csp_PanWebShare",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "ext": "http://222.186.57.24:7600/json/dawo.json?"
+        },
+        {
+            "key": "麻花",
+            "name": "⛄️ 麻花┃1080",
+            "type": 4,
+            "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
+            "searchable": 1,
+            "filterable": 1,
+            "quickSearch": 0,
+            "ext": ""
+        },
+        {
             "key": "追剧",
-            "name": "🇨🇳 追剧┃1080",
+            "name": "⛄️ 追剧┃1080",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -113,7 +180,7 @@
         },
         {
             "key": "低端影视",
-            "name": "🇨🇳 低端┃1080",
+            "name": "⛄️ 低端┃1080",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
             "searchable": 1,
@@ -125,7 +192,7 @@
         },
         {
             "key": "py_BaHaoTV",
-            "name": "🇨🇳 八号┃1080",
+            "name": "⛄️ 八号┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=BaHaoTV",
             "searchable": 1,
@@ -135,7 +202,7 @@
         },
         {
             "key": "py_UpFuHn",
-            "name": "🇨🇳 HI剧┃1080",
+            "name": "⛄️ HI剧┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=UpFuHn",
             "searchable": 1,
@@ -145,7 +212,7 @@
         },
         {
             "key": "py_OleVod",
-            "name": "🇨🇳 欧乐┃1080",
+            "name": "⛄️ 欧乐┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=OleVod",
             "searchable": 1,
@@ -155,7 +222,7 @@
         },
         {
             "key":"巧技",
-            "name":"🇨🇳 巧技┃App",
+            "name":"🧸 巧技┃App",
             "type":3,
             "api":"csp_AppYsV2",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
@@ -163,13 +230,21 @@
             "ext":"7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
         },
         {
+            "key":"时常",
+            "name":"🧸 时常┃App",
+            "type":3,
+            "api":"csp_Xdai",
+            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
+            "playerType":2,
+            "ext":"7lj763gg0939795i007hi482k80ii2i3ghl084099ij36j70031107l2kg105816139i56g38h03i1j06k4gkk9ll7kl1lk4k8687k55l0g19ggk72j06gg073li1j11"},
+        {
             "key": "剧评",
             "name": "🧸 剧评┃App",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "type": 3,
             "api": "csp_Jpys",
             "playerType": 1,
-            "ext": "caHR0cHM6Ly93d3cuaHNrampnbG8uY29t"
+            "ext": "7lj763gg402i7942463j9j9jh84l8798l8gli652828g332i"
         },
         {
             "key": "柠檬",
@@ -178,7 +253,7 @@
             "type": 3,
             "api": "csp_Nmvod",
             "playerType": 2,
-            "ext": "eaHR0cHM6Ly9ubXZvZC5jbjozMTY2L3dlYmNsb3VkL3JlbGF5LnBocD91cmw9"
+            "ext": "7lj763gg402i79425l279ijih4128l9ig8lh9h0h9gi62h24504217liki13141i1k9g5igkj6429h946408gl8lgh"
         },
         {
             "key": "ZXZJ",
@@ -190,7 +265,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "caHR0cHM6Ly93d3cuenh6anlzLmNvbS8="
+            "ext": "7lj763gg402i7942463j9j9jgg449698khhh845ki38473"
         },
         {
             "key": "csp_sbb",
@@ -202,7 +277,7 @@
             "playerType": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "maHR0cHM6Ly93d3cuc3ViYWliYWkuY29tLw=="
+            "ext": "7lj763gg402i7942463j9j9jg3498k93lhggih54828g332i1j"
         },
         {
             "key": "荐片",
@@ -261,7 +336,7 @@
                     ],
                     "header":{
                         "User-Agent":"okhttp/4.9.1"
-                }
+                    }
             }
         },
         {
