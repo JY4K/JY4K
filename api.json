@@ -288,16 +288,13 @@
             "ext": "http://api2.rinhome.com"
         },
         {
-            "key": "小苹果",
+            "key": "苹果",
             "name": "🧸 苹果┃App",
             "type": 3,
-            "api": "csp_Xpg",
+            "api": "csp_LiteApple",
             "searchable": 1,
             "quickSearch": 1,
-            "filterable": 1,
-            "ext": {
-                "danmu": true
-            }
+            "filterable": 1
         },
         {
             "key": "瓜子影视",
@@ -307,7 +304,17 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
-        }
+        },
+        {
+            "key": "耐看",
+             "name": "🧸 耐看┃App",
+            "type": 3,
+             "api": "csp_WebNK",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "w7TClcONw6LDrsKYwoXCosKcwpvCrcKcw6HDrsKnwqDCo2rCqMKiw7HDsMOxYcKewpvClMOvw5fCqMOmw59VXFLCpMOiw6PCnMKzwpzCjuWGtemEmOaPleWRnMKf5Yem5L6Q5ZGxbeW+oeintui1tOa8ieetjMOXwpvDtw=="
+    },
     ],
     "parses": [
         {
