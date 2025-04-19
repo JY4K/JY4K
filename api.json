@@ -1,6 +1,6 @@
-/*  
+/*
     JY尘声明：
-        以下网络资源如有冒犯请联系（qq邮箱：2661136929@qq.com）删除，[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买];   
+        以下网络资源如有冒犯请联系（qq邮箱：2661136929@qq.com）删除，[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买];
         ⛔资源来源：【小白白】：http://222.186.57.24:7600/api.json  ⛔
         ⛔【沐辰】：https://json.doube.eu.org/t4.php ⛔
         ⛔【钓鱼】：http://8.129.30.117:8117/钓鱼4K.json  ⛔
@@ -53,13 +53,18 @@
             }
         },
         {
-            "key": "奇珍艺兽",
-            "name": "🔥 爱奇艺┃解析",
-            "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
+            "key": "奇珍艺兽", //  站点唯一标识
+            "name": "🔥 爱奇艺┃解析", //  站点名称
+            "type": 3, //  站点类型，0：xml 1：json 3：Spider
+            "api": "http://222.186.57.24:7600/JS/drpy2.min.js", //站点 API 地址
+            //  以下四项设置仅在 ShellTV 中使用有效
+            "hasPoster": 1, //  是否提供海报
+            "hasMeaningfulTitle": 1, //  是否提供准确标题
+            "hasTags": 1, //  是否提供影片原数据 (包括影片类型，国家等)
+            "checkAlipan": 1, //  检查站点阿里资源是否有效
+            "searchable": 1, //  是否支持搜索
+            "quickSearch": 1, //  是否支持快速搜索
+            "filterable": 1, //是否支持筛选
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/js/奇珍艺兽.js"
@@ -69,6 +74,10 @@
             "name": "🔥 腾讯┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -81,6 +90,10 @@
             "name": "🔥 芒果┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -93,6 +106,10 @@
             "name": "🔥 优酷┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -105,6 +122,10 @@
             "name": "🔥 B站┃解析",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -117,6 +138,10 @@
             "name": "🇨🇳 玩偶┃4K",
             "type": 3,
             "api": "csp_PanWebShare",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -128,6 +153,10 @@
             "name": "🇨🇳 闪电┃4K",
             "type": 3,
             "api": "csp_PanWebShare",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -139,6 +168,10 @@
             "name": "🇨🇳 至臻┃4K",
             "type": 3,
             "api": "csp_PanWebShare",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -150,6 +183,10 @@
             "name": "🇨🇳 大玩┃4K",
             "type": 3,
             "api": "csp_PanWebShare",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -157,30 +194,14 @@
             "ext": "http://222.186.57.24:7600/json/dawo.json?"
         },
         {
-		    "key": "影探",
-		    "name": "⛄️ 影探┃4K(测试)",
-		    "type": 3,
-		    "api": "csp_AppYsV2",
-		    "searchable": 1,
-		    "quickSearch": 1,
-		    "filterable": 1,
-		    "ext": "http://csyt.lyyytv.cn/api.php/app/"
-	    },
-        {
-            "key": "麻花",
-            "name": "⛄️ 麻花┃1080",
-            "type": 4,
-            "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
-            "searchable": 1,
-            "filterable": 1,
-            "quickSearch": 0,
-            "ext": ""
-        },
-        {
             "key": "追剧",
             "name": "⛄️ 追剧┃1080",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -193,6 +214,10 @@
             "name": "⛄️ 低端┃1080",
             "type": 3,
             "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -201,10 +226,42 @@
             "ext": "./data/js/低端影视.js"
         },
         {
+            "key": "影探",
+            "name": "⛄️ 影探┃(测试)",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://csyt.lyyytv.cn/api.php/app/"
+        },
+        {
+            "key": "麻花",
+            "name": "⛄️ 麻花┃1080",
+            "type": 4,
+            "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
+            "searchable": 1,
+            "filterable": 1,
+            "quickSearch": 0,
+            "ext": ""
+        },
+        {
             "key": "py_BaHaoTV",
             "name": "⛄️ 八号┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=BaHaoTV",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
@@ -215,6 +272,10 @@
             "name": "⛄️ HI剧┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=UpFuHn",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
@@ -225,52 +286,77 @@
             "name": "⛄️ 欧乐┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=OleVod",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
             "changeable": 0
         },
         {
-            "key":"巧技",
-            "name":"🧸 巧技┃App",
-            "type":3,
-            "api":"csp_AppYsV2",
+            "key": "巧技",
+            "name": "🧸 巧技┃App",
+            "type": 3,
+            "api": "csp_AppYsV2",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
-            "playerType":2,
-            "ext":"7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
+            "playerType": 2,
+            "ext": "7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
         },
         {
-            "key":"时常",
-            "name":"🧸 时常┃App",
-            "type":3,
-            "api":"csp_Xdai",
+            "key": "时常",
+            "name": "🧸 时常┃App",
+            "type": 3,
+            "api": "csp_Xdai",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
-            "playerType":2,
-            "ext":"7lj763gg0939795i007hi482k80ii2i3ghl084099ij36j70031107l2kg105816139i56g38h03i1j06k4gkk9ll7kl1lk4k8687k55l0g19ggk72j06gg073li1j11"},
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
+            "playerType": 2,
+            "ext": "7lj763gg0939795i007hi482k80ii2i3ghl084099ij36j70031107l2kg105816139i56g38h03i1j06k4gkk9ll7kl1lk4k8687k55l0g19ggk72j06gg073li1j11"
+        },
         {
             "key": "剧评",
             "name": "🧸 剧评┃App",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "type": 3,
             "api": "csp_Jpys",
+            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "playerType": 1,
             "ext": "7lj763gg402i7942463j9j9jh84l8798l8gli652828g332i"
         },
         {
             "key": "柠檬",
             "name": "🧸 柠檬┃App",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "type": 3,
             "api": "csp_Nmvod",
+            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "playerType": 2,
             "ext": "7lj763gg402i79425l279ijih4128l9ig8lh9h0h9gi62h24504217liki13141i1k9g5igkj6429h946408gl8lgh"
         },
         {
             "key": "ZXZJ",
             "name": "🧸 在线┃App",
+            "type": 3,
             "api": "csp_Zxzj",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
-            "type": 3,
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "filterable": 1,
             "quickSearch": 1,
             "searchable": 1,
@@ -283,6 +369,10 @@
             "type": 3,
             "api": "csp_Czsapp",
             "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "playerType": 1,
             "quickSearch": 1,
@@ -292,8 +382,12 @@
         {
             "key": "荐片",
             "name": "🧸 荐片┃App",
-            "api": "csp_Jianpian",
             "type": 3,
+            "api": "csp_Jianpian",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "playerType": "2",
             "ext": "http://api2.rinhome.com"
         },
@@ -302,6 +396,10 @@
             "name": "🧸 苹果┃App",
             "type": 3,
             "api": "csp_LiteApple",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
@@ -311,15 +409,23 @@
             "name": "🧸 瓜子┃App",
             "type": 3,
             "api": "csp_Gz360",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
         },
         {
             "key": "耐看",
-             "name": "🧸 耐看┃App",
+            "name": "🧸 耐看┃App",
             "type": 3,
-             "api": "csp_WebNK",
+            "api": "csp_WebNK",
+            "hasPoster": 1,
+            "hasMeaningfulTitle": 1,
+            "hasTags": 1,
+            "checkAlipan": 1,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -338,10 +444,11 @@
             "url": "Demo"
         },
         {
-            "name":"巧技4K",
-            "type":1,"url":"https://zy.qiaoji8.com/xiafan.php?url=",
-            "ext":{
-                "flag":[
+            "name": "巧技4K",
+            "type": 1,
+            "url": "https://zy.qiaoji8.com/xiafan.php?url=",
+            "ext": {
+                "flag": [
                     "QD4K",
                     "iyf",
                     "duanju",
@@ -350,15 +457,15 @@
                     "GZYS",
                     "weggz",
                     "Ace"
-                    ],
-                    "header":{
-                        "User-Agent":"okhttp/4.9.1"
-                    }
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
             }
         },
         {
             "name": "岁岁4K",
-            "type": "1",
+            "type": 1,
             "url": "http://8.129.30.117:8117/suisui.php?key=suisui&url=",
             "ext": {
                 "flag": [
@@ -379,7 +486,7 @@
         },
         {
             "name": "金蝉4K",
-            "type": "1",
+            "type": 1,
             "url": "http://jx.jinchan.pro:1990/api/?key=PgWyPqL3mForGeRgnY&url=",
             "ext": {
                 "flag": [
@@ -400,7 +507,7 @@
         },
         {
             "name": "小白白4K",
-            "type": "1",
+            "type": 1,
             "url": "http://222.186.57.24:7600/jx.php?url=",
             "ext": {
                 "flag": [
@@ -526,7 +633,7 @@
         },
         {
             "name": "扑克720",
-            "type": "2",
+            "type": 2,
             "url": "https://json.puketv.com/api/?key=zuHdEdpapXWzWIdSp4&url=",
             "ext": {
                 "flag": [
