@@ -237,7 +237,14 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "http://csyt.lyyytv.cn/api.php/app/"
+            "ext": "http://csyt.lyyytv.cn/api.php/app/",
+            "flags": [
+                "新电影4K",
+                "新剧4K",
+                "国漫4K",
+                "综艺4K",
+                "微短剧4K"
+            ]
         },
         {
             "key": "麻花",
@@ -433,6 +440,11 @@
         }
     ],
     "parses": [
+        {
+            "name": "Json",
+            "type": 2,
+            "url": "Sequence"
+        },
         {
             "name": "Demo",
             "type": 3,
