@@ -434,11 +434,6 @@
     ],
     "parses": [
         {
-            "name": "Web",
-            "type": 3,
-            "url": "Web"
-        },
-        {
             "name": "Demo",
             "type": 3,
             "url": "Demo"
