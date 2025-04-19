@@ -238,7 +238,7 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "http://csyt.lyyytv.cn/api.php/app/",
-            "flags": [
+            "flag": [
                 "新电影4K",
                 "新剧4K",
                 "国漫4K",
