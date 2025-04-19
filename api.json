@@ -237,14 +237,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "http://csyt.lyyytv.cn/api.php/app/",
-            "flag": [
-                "新电影4K",
-                "新剧4K",
-                "国漫4K",
-                "综艺4K",
-                "微短剧4K"
-            ]
+            "ext": "http://csyt.lyyytv.cn/api.php/app/"
         },
         {
             "key": "麻花",
