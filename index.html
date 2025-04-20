@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三列窗口系统</title>
+    <style>
+        :root {
+            --gap-size: 1.5rem;
+            --radius: 10px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --color-primary: #f8f9fa;
+            --color-accent: #4a90e2;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            margin: 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: grid;
+            grid-template-columns: repeat(3, minmax(300px, 1fr));
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            gap: var(--gap-size);
+            min-height: 100vh;
+        }
+
+        /* 原始窗口样式 */
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 0.05rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0.5em 0;
+            background-image: linear-gradient(20deg, #4a90e2 0%, #2d3748 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .responsive-window {
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 72vh;
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--radius);
+            background: white;
+            overflow: hidden;
+        }
+
+        .window-title {
+            padding: 12px 20px;
+            background: var(--color-primary);
+            font-weight: 600;
+            border-bottom: 1px solid #e2e8f0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .window-title:hover {
+            background: #f1f5f9;
+        }
+
+        .adaptive-iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+
+        /* 优化后的卡片样式 */
+        .platforms-grid {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            background: var(--color-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .feature-list p {
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+            cursor: pointer;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list p::before {
+            content: "•";
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .play-btn {
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+            padding: 12px;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .play-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* 复制提示 */
+        #copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        #copy-notification.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        /* 辅助组件 */
+        .global-notice {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: rgba(0, 0, 0, 10);
+            margin: 20rem 0;
+            font-size: 20rem;
+            line-height: 1;
+        }
+
+        .global-notice {
+            font-size: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        /* 添加在CSS的辅助组件部分 */
+        .qq-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            padding: 2px 4px;
+            border-radius: 4px;
+            background-color: rgba(74, 144, 226, 0.1);
+        }
+
+        .qq-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .qq-link:active {
+            transform: translateY(1px);
+        }
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>支持站点</h1>
+    <p>多源解析平台 | 智能聚合站点 | 其他请自行测试!</p>
+</header>
+
+<!-- 原始窗口结构 -->
+<div class="responsive-window">
+    <div class="window-title" title="点击复制链接">
+        📊 夏夜解析：http://8.155.50.80/xiaye.php?url=
+    </div>
+    <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
+</div>
+
+<div class="responsive-window">
+    <div class="window-title" title="点击复制链接">
+        📊 牛马解析：暂无
+    </div>
+    <iframe class="adaptive-iframe" src="https://niiuma.qi-simple.top//algorithm_sign.php"></iframe>
+</div>
+
+
+<div class="responsive-window">
+    <div class="window-title" title="点击复制链接">
+        🔍 钓鱼解析：http://8.129.30.117:8117/diaoyu.php?url=
+    </div>
+    <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php"></iframe>
+</div>
+
+<!-- 优化后的卡片结构 -->
+<main class="platforms-grid">
+    </div>
+    <article class="platform-card">
+        <div class="card-header">小绵羊</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 官方采集</p>
+                <p data-copy="https://vs.okcdn100.top">网站: https://vs.okcdn100.top</p>
+                <p data-copy="https://vs.okcdn100.top/api.php/provide/vod/?ac=list">采集:
+                    https://vs.okcdn100.top/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="https://vs.okcdn100.top/">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">金蝉</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 官方采集</p>
+                <p data-copy="http://jczy.jinchan.pro">网站: http://jczy.jinchan.pro</p>
+                <p data-copy="http://jczy.jinchan.pro/api.php/provide/vod/?ac=list">采集:
+                    http://jczy.jinchan.pro/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">舒度</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 官方采集</p>
+                <p data-copy="https://www.69mu.cn/">网站: https://www.69mu.cn/</p>
+                <p data-copy="https://www.69mu.cn/api.php/provide/vod/?ac=list">采集:
+                    https://www.69mu.cn/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">小猫咪</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 官方采集</p>
+                <p data-copy="https://zy.xiaomaomi.cc/">网站: https://zy.xiaomaomi.cc/</p>
+                <p data-copy="https://zy.xiaomaomi.cc/api.php/provide/vod/?ac=list">采集:
+                    https://zy.xiaomaomi.cc/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">听风</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 官方采集</p>
+                <p data-copy="https://gctf.tfdh.top/">网站: https://gctf.tfdh.top/</p>
+                <p data-copy="https://gctf.tfdh.top/api.php/provide/vod/?ac=list">采集:
+                    https://gctf.tfdh.top/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">爱奇艺</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 切片采集</p>
+                <p data-copy="https://iqiyizy.com/">网站: https://iqiyizy.com/</p>
+                <p data-copy="https://iqiyizy.com/api.php/provide/vod/?ac=list">采集:
+                    https://iqiyizy.com/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">豆瓣</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 切片采集</p>
+                <p data-copy="https://dbzy.com/">网站: https://dbzy.com/</p>
+                <p data-copy="https://dbzy.com/api.php/provide/vod/?ac=list">采集:
+                    https://dbzy.com/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">木耳</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 切片采集</p>
+                <p data-copy="https://heimuer.tv/">网站: https://heimuer.tv/</p>
+                <p data-copy="https://heimuer.tv/api.php/provide/vod/?ac=list">采集:
+                    https://heimuer.tv/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">华为吧</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 切片采集</p>
+                <p data-copy="https://mycjhw8.live/">网站: https://mycjhw8.live/</p>
+                <p data-copy="https://mycjhw8.live/api.php/provide/vod/?ac=list">采集:
+                    https://mycjhw8.live/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">如意</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 切片采集</p>
+                <p data-copy="https://www.ryzy.tv/">网站: https://www.ryzy.tv/</p>
+                <p data-copy="https://www.ryzy.tv/api.php/provide/vod/?ac=list">采集:
+                    https://www.ryzy.tv/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-header">红牛</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <p data-copy="官方采集">类型: 切片采集</p>
+                <p data-copy="https://hongniuzy.tv/">网站: https://hongniuzy.tv/</p>
+                <p data-copy="https://hongniuzy.tv/api.php/provide/vod/?ac=list">采集:
+                    https://hongniuzy.tv/api.php/provide/vod/?ac=list</p>
+            </div>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+        </div>
+    </article>
+
+</main>
+
+<!-- 全局提示 -->
+<div class="global-notice">
+    <p>⛔ 温馨提示：如果有新采集站，及解析站，请联系
+        <a href="tencent://message/?uin=2661136929" class="qq-link">QQ：2661136929</a>
+        进行反馈添加
+    </p>
+    <p>🛑 免责声明：本平台资源均来自网络公开数据，仅供技术研究使用，请于24小时内删除！</p>
+</div>
+
+<div id="copy-notification">✓ 已复制到剪贴板</div>
+
+<script>
+    // 复制功能
+    const copyNotification = document.getElementById('copy-notification');
+
+    // 卡片信息复制
+    document.querySelectorAll('.feature-list p').forEach(item => {
+        item.addEventListener('click', () => {
+            const text = item.dataset.copy;
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    copyNotification.classList.add('show');
+                    setTimeout(() => copyNotification.classList.remove('show'), 2000);
+                })
+                .catch(err => console.error('复制失败:', err));
+        });
+    });
+
+    // 窗口标题复制（原始功能保留）
+    document.querySelectorAll('.window-title').forEach(title => {
+        title.addEventListener('click', function () {
+            const text = this.textContent.replace(/^[^\u4e00-\u9fa5]+\s*/, '').trim();
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    copyNotification.classList.add('show');
+                    setTimeout(() => copyNotification.classList.remove('show'), 2000);
+                })
+                .catch(err => console.error('复制失败:', err));
+        });
+    });
+
+    // 播放按钮
+    document.querySelectorAll('.play-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const link = this.dataset.link;
+            window.open(link, '_blank');
+        });
+    });
+</script>
+</body>
+</html>
