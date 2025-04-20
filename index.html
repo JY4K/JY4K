@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>解析签到系统</title>
     <style>
+        /* 全局CSS变量定义 */
         :root {
             --gap-size: 1.5rem;
-            --radius: 10px;
+            --radius: 20px;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --color-primary: #f8f9fa;
             --color-accent: #4a90e2;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --window-height: 72vh;
+            --text-dark: #2d3748;
+            --text-light: #718096;
         }
 
+        /* 基础样式 */
         body {
             margin: 0;
             padding: 3rem;
@@ -23,9 +28,10 @@
             font-family: 'Segoe UI', system-ui, sans-serif;
             gap: var(--gap-size);
             min-height: 100vh;
+            color: var(--text-dark);
         }
 
-        /* 原始窗口样式 */
+        /* 头部样式 */
         .header {
             grid-column: 1 / -1;
             text-align: center;
@@ -33,7 +39,7 @@
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin: 0.5em 0;
             background-image: linear-gradient(20deg, #4a90e2 0%, #2d3748 100%);
             -webkit-background-clip: text;
@@ -41,17 +47,20 @@
             color: transparent;
         }
 
+        /* 响应式窗口样式 */
         .responsive-window {
             box-shadow: var(--shadow);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 72vh;
+            transition: var(--transition);
+            height: var(--window-height);
             display: flex;
             flex-direction: column;
             border-radius: var(--radius);
             background: white;
             overflow: hidden;
+            position: relative;
         }
 
+        /* 窗口标题样式 */
         .window-title {
             padding: 12px 20px;
             background: var(--color-primary);
@@ -67,13 +76,56 @@
             background: #f1f5f9;
         }
 
+        /* 签到口令提示 */
+        .signin-hint {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.7);
+            color: var(--text-dark);
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.2s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .responsive-window:hover .signin-hint {
+            opacity: 1;
+        }
+
+        /* 自适应iframe样式 */
         .adaptive-iframe {
             flex: 1;
             width: 100%;
             border: none;
         }
 
-        /* 优化后的卡片样式 */
+        /* 窗口跳转按钮样式 */
+        .window-jump-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 6px 12px;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .responsive-window:hover .window-jump-btn {
+            opacity: 1;
+        }
+
+        /* 平台卡片网格布局 */
         .platforms-grid {
             grid-column: 1 / -1;
             display: grid;
@@ -82,6 +134,7 @@
             padding: 1rem;
         }
 
+        /* 平台卡片样式 */
         .platform-card {
             background: white;
             border-radius: var(--radius);
@@ -92,6 +145,7 @@
 
         .platform-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .card-header {
@@ -100,27 +154,39 @@
             font-size: 1.1rem;
             font-weight: 600;
             border-bottom: 1px solid #e2e8f0;
+            text-align: center;
         }
 
         .card-body {
             padding: 1.5rem;
         }
 
-        .feature-list p {
-            margin: 0.8rem 0;
-            font-size: 0.95rem;
-            cursor: pointer;
-            position: relative;
-            padding-left: 1.5rem;
+        /* 特性列表样式 */
+        .feature-list {
+            margin-bottom: 1rem;
         }
 
-        .feature-list p::before {
-            content: "•";
-            color: var(--color-accent);
-            position: absolute;
-            left: 0;
+
+        .feature-item {
+            display: flex;
+            align-items: baseline; /* 确保标签和值基线对齐 */
+            margin: 0.3rem 0;
         }
 
+        .feature-label {
+            flex: 0 0 4em; /* 固定标签宽度 */
+            text-align: right;
+            padding-right: 0.5em;
+        }
+
+        .feature-value {
+            flex: 1;
+            word-break: break-all;
+            text-align: left;
+        }
+
+
+        /* 播放按钮样式 */
         .play-btn {
             display: block;
             width: 100%;
@@ -131,14 +197,17 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: all 0.2s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .play-btn:hover {
             opacity: 0.9;
+            transform: translateY(-1px);
         }
 
-        /* 复制提示 */
+        /* 复制提示样式 */
         #copy-notification {
             position: fixed;
             bottom: 20px;
@@ -153,6 +222,7 @@
             visibility: hidden;
             transition: var(--transition);
             z-index: 1000;
+            backdrop-filter: blur(5px);
         }
 
         #copy-notification.show {
@@ -160,91 +230,118 @@
             visibility: visible;
         }
 
-        @media (max-width: 768px) {
-            body {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-        }
-
-        /* 辅助组件 */
+        /* 全局通知样式 */
         .global-notice {
             grid-column: 1 / -1;
             text-align: center;
-            color: rgba(0, 0, 0, 10);
-            margin: 20rem 0;
-            font-size: 20rem;
-            line-height: 1;
-        }
-
-        .global-notice {
-            font-size: 1rem;
+            color: var(--text-dark);
             margin: 1.5rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        /* 添加在CSS的辅助组件部分 */
+        /* QQ链接样式 */
         .qq-link {
             font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.2s;
-            padding: 2px 4px;
+            transition: all 0.2s;
+            padding: 2px 6px;
             border-radius: 4px;
             background-color: rgba(74, 144, 226, 0.1);
+            color: var(--color-accent);
         }
 
         .qq-link:hover {
             opacity: 0.8;
             text-decoration: underline;
+            background-color: rgba(74, 144, 226, 0.2);
         }
 
         .qq-link:active {
             transform: translateY(1px);
         }
 
+        /* 响应式设计 - 移动端适配 */
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+                --window-height: 60vh;
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-label {
+                flex: 0 0 70px;
+            }
+        }
+
+        /* 大屏幕适配 */
+        @media (min-width: 1200px) {
+            body {
+                --window-height: 75vh;
+            }
+        }
     </style>
 </head>
 <body>
 
+<!-- 页面头部 -->
 <header class="header">
     <h1>支持站点</h1>
     <p>多源解析平台 | 智能聚合站点 | 其他请自行测试!</p>
 </header>
 
-<!-- 原始窗口结构 -->
+<!-- 解析窗口部分 -->
 <div class="responsive-window">
-    <div class="window-title" title="签到口令：大伄戼">
+    <div class="window-title" title="点击复制">
         📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
     </div>
     <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
+    <div class="signin-hint">签到口令：大伄戼</div>
+    <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
 </div>
 
 <div class="responsive-window">
-    <div class="window-title" title="签到口令：diaoyu">
+    <div class="window-title" title="点击复制">
         🔍 钓鱼4K@http://8.129.30.117:8117/diaoyu.php?url=
     </div>
     <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php"></iframe>
+    <div class="signin-hint">签到口令：diaoyu</div>
+    <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
 </div>
 
 <div class="responsive-window">
-    <div class="window-title" title="签到口令：L5mRGjb5">
+    <div class="window-title" title="点击复制">
         📊 牛马解析：暂无
     </div>
     <iframe class="adaptive-iframe" src="https://niiuma.qi-simple.top//algorithm_sign.php"></iframe>
+    <div class="signin-hint">L5mRGjb5</div>
+    <button class="window-jump-btn" data-jump-link="https://niiuma.qi-simple.top/">跳转</button>
 </div>
 
-<!-- 优化后的卡片结构 -->
+<!-- 平台卡片部分 -->
 <main class="platforms-grid">
-    </div>
     <article class="platform-card">
         <div class="card-header">小绵羊</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 官方采集</p>
-                <p data-copy="https://vs.okcdn100.top">网站: https://vs.okcdn100.top</p>
-                <p data-copy="https://vs.okcdn100.top/api.php/provide/vod/?ac=list">采集:
-                    https://vs.okcdn100.top/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label" content="•">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://vs.okcdn100.top">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://vs.okcdn100.top</span>
+                </div>
+                <div class="feature-item" data-copy="https://vs.okcdn100.top/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://vs.okcdn100.top/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="https://vs.okcdn100.top/">跳转</button>
+            <button class="play-btn" data-link="https://vs.okcdn100.top/">访问网站</button>
         </div>
     </article>
 
@@ -252,12 +349,20 @@
         <div class="card-header">金蝉</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 官方采集</p>
-                <p data-copy="http://jczy.jinchan.pro">网站: http://jczy.jinchan.pro</p>
-                <p data-copy="http://jczy.jinchan.pro/api.php/provide/vod/?ac=list">采集:
-                    http://jczy.jinchan.pro/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="http://jczy.jinchan.pro">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">http://jczy.jinchan.pro</span>
+                </div>
+                <div class="feature-item" data-copy="http://jczy.jinchan.pro/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">http://jczy.jinchan.pro/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="http://jczy.jinchan.pro">访问网站</button>
         </div>
     </article>
 
@@ -265,12 +370,20 @@
         <div class="card-header">舒度</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 官方采集</p>
-                <p data-copy="https://www.69mu.cn/">网站: https://www.69mu.cn/</p>
-                <p data-copy="https://www.69mu.cn/api.php/provide/vod/?ac=list">采集:
-                    https://www.69mu.cn/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.69mu.cn/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.69mu.cn/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.69mu.cn/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.69mu.cn/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://www.69mu.cn/">访问网站</button>
         </div>
     </article>
 
@@ -278,12 +391,20 @@
         <div class="card-header">小猫咪</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 官方采集</p>
-                <p data-copy="https://zy.xiaomaomi.cc/">网站: https://zy.xiaomaomi.cc/</p>
-                <p data-copy="https://zy.xiaomaomi.cc/api.php/provide/vod/?ac=list">采集:
-                    https://zy.xiaomaomi.cc/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://zy.xiaomaomi.cc/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://zy.xiaomaomi.cc/</span>
+                </div>
+                <div class="feature-item" data-copy="https://zy.xiaomaomi.cc/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://zy.xiaomaomi.cc/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://zy.xiaomaomi.cc/">访问网站</button>
         </div>
     </article>
 
@@ -291,12 +412,20 @@
         <div class="card-header">听风</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 官方采集</p>
-                <p data-copy="https://gctf.tfdh.top/">网站: https://gctf.tfdh.top/</p>
-                <p data-copy="https://gctf.tfdh.top/api.php/provide/vod/?ac=list">采集:
-                    https://gctf.tfdh.top/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://gctf.tfdh.top/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://gctf.tfdh.top/</span>
+                </div>
+                <div class="feature-item" data-copy="https://gctf.tfdh.top/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://gctf.tfdh.top/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://gctf.tfdh.top/">访问网站</button>
         </div>
     </article>
 
@@ -304,12 +433,20 @@
         <div class="card-header">爱奇艺</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 切片采集</p>
-                <p data-copy="https://iqiyizy.com/">网站: https://iqiyizy.com/</p>
-                <p data-copy="https://iqiyizy.com/api.php/provide/vod/?ac=list">采集:
-                    https://iqiyizy.com/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://iqiyizy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://iqiyizy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://iqiyizy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://iqiyizy.com/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://iqiyizy.com/">访问网站</button>
         </div>
     </article>
 
@@ -317,12 +454,20 @@
         <div class="card-header">豆瓣</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 切片采集</p>
-                <p data-copy="https://dbzy.com/">网站: https://dbzy.com/</p>
-                <p data-copy="https://dbzy.com/api.php/provide/vod/?ac=list">采集:
-                    https://dbzy.com/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://dbzy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://dbzy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://dbzy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://dbzy.com/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://dbzy.com/">访问网站</button>
         </div>
     </article>
 
@@ -330,12 +475,20 @@
         <div class="card-header">木耳</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 切片采集</p>
-                <p data-copy="https://heimuer.tv/">网站: https://heimuer.tv/</p>
-                <p data-copy="https://heimuer.tv/api.php/provide/vod/?ac=list">采集:
-                    https://heimuer.tv/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://heimuer.tv/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://heimuer.tv/</span>
+                </div>
+                <div class="feature-item" data-copy="https://heimuer.tv/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://heimuer.tv/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://heimuer.tv/">访问网站</button>
         </div>
     </article>
 
@@ -343,12 +496,20 @@
         <div class="card-header">华为吧</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 切片采集</p>
-                <p data-copy="https://mycjhw8.live/">网站: https://mycjhw8.live/</p>
-                <p data-copy="https://mycjhw8.live/api.php/provide/vod/?ac=list">采集:
-                    https://mycjhw8.live/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://mycjhw8.live/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://mycjhw8.live/</span>
+                </div>
+                <div class="feature-item" data-copy="https://mycjhw8.live/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://mycjhw8.live/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://mycjhw8.live/">访问网站</button>
         </div>
     </article>
 
@@ -356,12 +517,20 @@
         <div class="card-header">如意</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 切片采集</p>
-                <p data-copy="https://www.ryzy.tv/">网站: https://www.ryzy.tv/</p>
-                <p data-copy="https://www.ryzy.tv/api.php/provide/vod/?ac=list">采集:
-                    https://www.ryzy.tv/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.ryzy.tv/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.ryzy.tv/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.ryzy.tv/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.ryzy.tv/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://www.ryzy.tv/">访问网站</button>
         </div>
     </article>
 
@@ -369,15 +538,22 @@
         <div class="card-header">红牛</div>
         <div class="card-body">
             <div class="feature-list">
-                <p data-copy="官方采集">类型: 切片采集</p>
-                <p data-copy="https://hongniuzy.tv/">网站: https://hongniuzy.tv/</p>
-                <p data-copy="https://hongniuzy.tv/api.php/provide/vod/?ac=list">采集:
-                    https://hongniuzy.tv/api.php/provide/vod/?ac=list</p>
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://hongniuzy.tv/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://hongniuzy.tv/</span>
+                </div>
+                <div class="feature-item" data-copy="https://hongniuzy.tv/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://hongniuzy.tv/api.php/provide/vod/?ac=list</span>
+                </div>
             </div>
-            <button class="play-btn" data-link="http://jczy.jinchan.pro">跳转</button>
+            <button class="play-btn" data-link="https://hongniuzy.tv/">访问网站：</button>
         </div>
     </article>
-
 </main>
 
 <!-- 全局提示 -->
@@ -389,44 +565,87 @@
     <p>🛑 免责声明：本平台资源均来自网络公开数据，仅供技术研究使用，请于24小时内删除！</p>
 </div>
 
+<!-- 复制提示框 -->
 <div id="copy-notification">✓ 已复制到剪贴板</div>
 
 <script>
-    // 复制功能
-    const copyNotification = document.getElementById('copy-notification');
+    // DOM加载完成后执行
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyNotification = document.getElementById('copy-notification');
 
-    // 卡片信息复制
-    document.querySelectorAll('.feature-list p').forEach(item => {
-        item.addEventListener('click', () => {
-            const text = item.dataset.copy;
+        /**
+         * 显示复制通知
+         */
+        function showCopyNotification() {
+            copyNotification.classList.add('show');
+            setTimeout(() => copyNotification.classList.remove('show'), 2000);
+        }
+
+        /**
+         * 复制文本到剪贴板
+         * @param {string} text - 要复制的文本
+         */
+        function copyToClipboard(text) {
             navigator.clipboard.writeText(text)
-                .then(() => {
-                    copyNotification.classList.add('show');
-                    setTimeout(() => copyNotification.classList.remove('show'), 2000);
-                })
+                .then(() => showCopyNotification())
                 .catch(err => console.error('复制失败:', err));
-        });
-    });
+        }
 
-    // 窗口标题复制（原始功能保留）
-    document.querySelectorAll('.window-title').forEach(title => {
-        title.addEventListener('click', function () {
-            const text = this.textContent.replace(/^[^\u4e00-\u9fa5]+\s*/, '').trim();
-            navigator.clipboard.writeText(text)
-                .then(() => {
-                    copyNotification.classList.add('show');
-                    setTimeout(() => copyNotification.classList.remove('show'), 2000);
-                })
-                .catch(err => console.error('复制失败:', err));
+        // 卡片信息复制功能
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const text = item.dataset.copy;
+                copyToClipboard(text);
+            });
         });
-    });
 
-    // 播放按钮
-    document.querySelectorAll('.play-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const link = this.dataset.link;
-            window.open(link, '_blank');
+        // 窗口标题复制功能
+        document.querySelectorAll('.window-title').forEach(title => {
+            title.addEventListener('click', function () {
+                const text = this.textContent.replace(/^[^\u4e00-\u9fa5]+\s*/, '').trim();
+                copyToClipboard(text);
+            });
         });
+
+        // 播放按钮跳转功能
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const link = this.dataset.link;
+                window.open(link, '_blank');
+            });
+        });
+
+        // 窗口跳转按钮功能
+        document.querySelectorAll('.window-jump-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation(); // 防止事件冒泡
+                const link = this.dataset.jumpLink;
+                window.open(link, '_blank');
+            });
+        });
+
+        // 响应式调整窗口高度
+        function adjustWindowHeight() {
+            const windows = document.querySelectorAll('.responsive-window');
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const isLargeScreen = window.matchMedia('(min-width: 1200px)').matches;
+
+            windows.forEach(window => {
+                if (isMobile) {
+                    window.style.height = '60vh';
+                } else if (isLargeScreen) {
+                    window.style.height = '75vh';
+                } else {
+                    window.style.height = '72vh';
+                }
+            });
+        }
+
+        // 初始调整窗口高度
+        adjustWindowHeight();
+
+        // 窗口大小改变时调整高度
+        window.addEventListener('resize', adjustWindowHeight);
     });
 </script>
 </body>
