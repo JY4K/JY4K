@@ -149,7 +149,7 @@
         }
 
         .card-header {
-            padding: 1.5rem;
+            padding: 0.5rem;
             background: var(--color-primary);
             font-size: 1.1rem;
             font-weight: 600;
@@ -161,6 +161,21 @@
             padding: 1.5rem;
         }
 
+        /* 卡片标签样式 */
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(74, 144, 226, 0.1);
+            color: var(--color-accent);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         /* 特性列表样式 */
         .feature-list {
             margin-bottom: 1rem;
@@ -169,8 +184,18 @@
 
         .feature-item {
             display: flex;
-            align-items: baseline; /* 确保标签和值基线对齐 */
-            margin: 0.3rem 0;
+            margin: 0.8rem 0;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .feature-item::before {
+            content: '>>';
+            color: var(--color-accent);
+            margin-right: 0.5rem;
+            font-weight: bold;
         }
 
         .feature-label {
@@ -325,6 +350,7 @@
 <!-- 平台卡片部分 -->
 <main class="platforms-grid">
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">小绵羊</div>
         <div class="card-body">
             <div class="feature-list">
@@ -346,6 +372,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">金蝉</div>
         <div class="card-body">
             <div class="feature-list">
@@ -367,6 +394,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">舒度</div>
         <div class="card-body">
             <div class="feature-list">
@@ -388,6 +416,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">小猫咪</div>
         <div class="card-body">
             <div class="feature-list">
@@ -409,6 +438,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">听风</div>
         <div class="card-body">
             <div class="feature-list">
@@ -430,6 +460,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">爱奇艺</div>
         <div class="card-body">
             <div class="feature-list">
@@ -451,6 +482,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">豆瓣</div>
         <div class="card-body">
             <div class="feature-list">
@@ -472,6 +504,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">木耳</div>
         <div class="card-body">
             <div class="feature-list">
@@ -493,6 +526,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">华为吧</div>
         <div class="card-body">
             <div class="feature-list">
@@ -514,6 +548,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">如意</div>
         <div class="card-body">
             <div class="feature-list">
@@ -535,6 +570,7 @@
     </article>
 
     <article class="platform-card">
+        <div class="card-tag">推荐</div>
         <div class="card-header">红牛</div>
         <div class="card-body">
             <div class="feature-list">
