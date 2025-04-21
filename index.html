@@ -347,14 +347,14 @@
 
 <!-- 页面头部 -->
 <header class="header">
-    <h1>支持站点</h1>
+    <h1 id="mainTitle">支持平台</h1>
     <p>多源解析签到平台 | 采集聚合站点 | 其他请自行测试!</p>
 </header>
 
 
 <!-- 解析窗口部分 -->
 <div class="responsive-window">
-    <div class="window-title" title="点击复制解析接口" >
+    <div class="window-title" title="点击复制解析接口">
         📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
     </div>
     <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
@@ -1052,6 +1052,19 @@
     // DOM加载完成后执行
     document.addEventListener('DOMContentLoaded', function () {
         const copyNotification = document.getElementById('copy-notification');
+        const mainTitle = document.getElementById('mainTitle');
+
+        // 定义要复制的解析接口集合
+        const parseInterfaces = [
+            "牛马4K@https://niiuma.qi-simple.top//nnn.php?url=",
+            "洋洋@http://117.50.184.199:94/api.php/?key=1&url=",
+            "钓鱼@http://8.129.30.117:8117/diaoyu.php?url=",
+            "小白白@http://222.186.57.24:7600/jx.php?url=",
+            "夏夜@http://8.155.50.80/xiaye.php?url=",
+            "乌贼1@http://jx.dedyn.io/jx.php?url=",
+            "乌贼2@http://jx.dedyn.io/?url="
+
+        ].join(";");
 
         /**
          * 显示复制通知
@@ -1070,6 +1083,11 @@
                 .then(() => showCopyNotification())
                 .catch(err => console.error('复制失败:', err));
         }
+
+        // 主标题点击事件 - 复制所有解析接口
+        mainTitle.addEventListener('click', function () {
+            copyToClipboard(parseInterfaces);
+        });
 
         // 卡片信息复制功能
         document.querySelectorAll('.feature-item').forEach(item => {
