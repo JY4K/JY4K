@@ -1066,6 +1066,16 @@
 
         ].join(";");
 
+        // 签到口令点击复制功能 - 新增部分
+        document.querySelectorAll('.signin-hint').forEach(hint => {
+            hint.addEventListener('click', function (e) {
+                e.stopPropagation(); // 防止事件冒泡
+                // 提取"签到口令："后面的内容
+                const text = this.textContent.replace('签到口令：', '').trim();
+                copyToClipboard(text);
+            });
+        });
+
         /**
          * 显示复制通知
          */
