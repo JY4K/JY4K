@@ -291,6 +291,32 @@
             transform: translateY(1px);
         }
 
+        .section-title {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 2rem 0 1rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--color-accent);
+            border-radius: 3px;
+        }
+
         /* 响应式设计 - 移动端适配 */
         @media (max-width: 768px) {
             body {
@@ -300,7 +326,7 @@
             }
 
             .platforms-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 0.2fr;
             }
 
             .feature-label {
@@ -330,8 +356,7 @@
     <div class="window-title" title="点击复制">
         📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
     </div>
-    <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"
-            sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
     <div class="signin-hint">签到口令：大伄戼</div>
     <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
 </div>
@@ -354,10 +379,17 @@
     <button class="window-jump-btn" data-jump-link="https://niiuma.qi-simple.top/">跳转</button>
 </div>
 
+
 <!-- 平台卡片部分 -->
 <main class="platforms-grid">
+
+    <!-- 官方采集站点部分 -->
+    <div class="section-title">
+        <h2>官方采集站点</h2>
+    </div>
+
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">小猫咪</div>
         <div class="card-body">
             <div class="feature-list">
@@ -379,7 +411,7 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">小绵羊</div>
         <div class="card-body">
             <div class="feature-list">
@@ -401,7 +433,7 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">金蝉</div>
         <div class="card-body">
             <div class="feature-list">
@@ -423,7 +455,7 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">虾米</div>
         <div class="card-body">
             <div class="feature-list">
@@ -445,7 +477,7 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">官采</div>
         <div class="card-body">
             <div class="feature-list">
@@ -467,7 +499,7 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">舒渡</div>
         <div class="card-body">
             <div class="feature-list">
@@ -489,7 +521,7 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">官采</div>
+        <div class="card-tag">免费</div>
         <div class="card-header">听风</div>
         <div class="card-body">
             <div class="feature-list">
@@ -507,6 +539,77 @@
                 </div>
             </div>
             <button class="jump-btn" data-link="https://gctf.tfdh.top/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">付费</div>
+        <div class="card-header">麒麟</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.qilinzyz.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.qilinzyz.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.qilinzyz.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.qilinzyz.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.qilinzyz.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">付费</div>
+        <div class="card-header">火花</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="官方采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">官方采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://cj.huohua.live/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://cj.huohua.live/</span>
+                </div>
+                <div class="feature-item" data-copy="https://cj.huohua.live/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://cj.huohua.live/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://cj.huohua.live/">访问网站</button>
+        </div>
+    </article>
+
+    <!-- 官方采集站点部分 -->
+    <div class="section-title">
+        <h2>切片采集站点</h2>
+    </div>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">豆瓣</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://dbzy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://dbzy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://dbzy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://dbzy.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://dbzy.com/">访问网站</button>
         </div>
     </article>
 
@@ -532,27 +635,6 @@
         </div>
     </article>
 
-    <article class="platform-card">
-        <div class="card-tag">切片</div>
-        <div class="card-header">豆瓣</div>
-        <div class="card-body">
-            <div class="feature-list">
-                <div class="feature-item" data-copy="切片采集">
-                    <span class="feature-label">类型：</span>
-                    <span class="feature-value">切片采集</span>
-                </div>
-                <div class="feature-item" data-copy="https://dbzy.com/">
-                    <span class="feature-label">网站：</span>
-                    <span class="feature-value">https://dbzy.com/</span>
-                </div>
-                <div class="feature-item" data-copy="https://dbzy.com/api.php/provide/vod/?ac=list">
-                    <span class="feature-label">采集：</span>
-                    <span class="feature-value">https://dbzy.com/api.php/provide/vod/?ac=list</span>
-                </div>
-            </div>
-            <button class="jump-btn" data-link="https://dbzy.com/">访问网站</button>
-        </div>
-    </article>
 
     <article class="platform-card">
         <div class="card-tag">切片</div>
@@ -639,6 +721,336 @@
                 </div>
             </div>
             <button class="jump-btn" data-link="https://hongniuzy.tv/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">新浪</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.xinlangzy.net/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.xinlangzy.net/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.xinlangzy.net/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.xinlangzy.net/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.xinlangzy.net/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">速播</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.suboziyuan.net/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.suboziyuan.net/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.suboziyuan.net/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.suboziyuan.net/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.suboziyuan.net/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">豪华</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://haohuazy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://haohuazy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://haohuazy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://haohuazy.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://haohuazy.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">U酷</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://gg5.ukuzy0.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://gg5.ukuzy0.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://gg5.ukuzy0.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://gg5.ukuzy0.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://gg5.ukuzy0.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">极速</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.jisuzy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.jisuzy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.jisuzy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.jisuzy.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.jisuzy.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">淘片</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.taopianzy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.taopianzy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.taopianzy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.taopianzy.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.taopianzy.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">量子</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="http://lzizy1.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">http://lzizy1.com/</span>
+                </div>
+                <div class="feature-item" data-copy="http://lzizy1.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">http://lzizy1.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="http://lzizy1.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">虎牙</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://huyazy.net/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://huyazy.net/</span>
+                </div>
+                <div class="feature-item" data-copy="https://huyazy.net/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://huyazy.net/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://huyazy.net/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">光速</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://guangsuzy.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://guangsuzy.com/</span>
+                </div>
+                <div class="feature-item" data-copy="https://guangsuzy.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://guangsuzy.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://guangsuzy.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">电影天堂</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="http://dyttzyw.com/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">http://dyttzyw.com/</span>
+                </div>
+                <div class="feature-item" data-copy="http://dyttzyw.com/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">http://dyttzyw.com/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="http://dyttzyw.com/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">优质</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.yzzy.tv/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.yzzy.tv/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.yzzy.tv/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.yzzy.tv/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.yzzy.tv/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">无尽</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.wujinzy.net/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://www.wujinzy.net/</span>
+                </div>
+                <div class="feature-item" data-copy="https://www.wujinzy.net/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://www.wujinzy.net/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://www.wujinzy.net/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">OK</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://okzyw.me/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://okzyw.me/</span>
+                </div>
+                <div class="feature-item" data-copy="https://okzyw.me/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://okzyw.me/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://okzyw.me/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">快车</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://kuaichezy.vip/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://kuaichezy.vip/</span>
+                </div>
+                <div class="feature-item" data-copy="https://kuaichezy.vip/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://kuaichezy.vip/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://kuaichezy.vip/">访问网站</button>
+        </div>
+    </article>
+
+    <article class="platform-card">
+        <div class="card-tag">切片</div>
+        <div class="card-header">快车</div>
+        <div class="card-body">
+            <div class="feature-list">
+                <div class="feature-item" data-copy="切片采集">
+                    <span class="feature-label">类型：</span>
+                    <span class="feature-value">切片采集</span>
+                </div>
+                <div class="feature-item" data-copy="https://kuaichezy.vip/">
+                    <span class="feature-label">网站：</span>
+                    <span class="feature-value">https://kuaichezy.vip/</span>
+                </div>
+                <div class="feature-item" data-copy="https://kuaichezy.vip/api.php/provide/vod/?ac=list">
+                    <span class="feature-label">采集：</span>
+                    <span class="feature-value">https://kuaichezy.vip/api.php/provide/vod/?ac=list</span>
+                </div>
+            </div>
+            <button class="jump-btn" data-link="https://kuaichezy.vip/">访问网站</button>
         </div>
     </article>
 </main>
