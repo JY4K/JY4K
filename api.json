@@ -32,14 +32,6 @@
             "searchable": 0
         },
         {
-            "key": "豆瓣",
-            "name": "📅 热剧┃预告",
-            "type": 3,
-            "api": "csp_YGP",
-            "playerType": 2,
-            "searchable": 0
-        },
-        {
             "key": "配置中心",
             "name": "⚙ 配置┃中心",
             "type": 3,
@@ -134,66 +126,6 @@
             "ext": "./data/js/BiliBili.js"
         },
         {
-            "key": "玩偶哥哥",
-            "name": "🇨🇳 玩偶┃4K",
-            "type": 3,
-            "api": "csp_PanWebShare",
-            "hasPoster": 1,
-            "hasMeaningfulTitle": 1,
-            "hasTags": 1,
-            "checkAlipan": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "changeable": 1,
-            "ext": "http://222.186.57.24:7600/json/wogg.json?"
-        },
-        {
-            "key": "闪电",
-            "name": "🇨🇳 闪电┃4K",
-            "type": 3,
-            "api": "csp_PanWebShare",
-            "hasPoster": 1,
-            "hasMeaningfulTitle": 1,
-            "hasTags": 1,
-            "checkAlipan": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "changeable": 1,
-            "ext": "http://222.186.57.24:7600/json/sd.json?"
-        },
-        {
-            "key": "至臻",
-            "name": "🇨🇳 至臻┃4K",
-            "type": 3,
-            "api": "csp_PanWebShare",
-            "hasPoster": 1,
-            "hasMeaningfulTitle": 1,
-            "hasTags": 1,
-            "checkAlipan": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "changeable": 1,
-            "ext": "http://222.186.57.24:7600/json/zz.json?"
-        },
-        {
-            "key": "大玩",
-            "name": "🇨🇳 大玩┃4K",
-            "type": 3,
-            "api": "csp_PanWebShare",
-            "hasPoster": 1,
-            "hasMeaningfulTitle": 1,
-            "hasTags": 1,
-            "checkAlipan": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "changeable": 1,
-            "ext": "http://222.186.57.24:7600/json/dawo.json?"
-        },
-        {
             "key": "追剧",
             "name": "⛄️ 追剧┃1080",
             "type": 3,
@@ -224,20 +156,6 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/js/低端影视.js"
-        },
-        {
-            "key": "影探",
-            "name": "⛄️ 影探┃(测试)",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "hasPoster": 1,
-            "hasMeaningfulTitle": 1,
-            "hasTags": 1,
-            "checkAlipan": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "http://csyt.lyyytv.cn/api.php/app/"
         },
         {
             "key": "麻花",
