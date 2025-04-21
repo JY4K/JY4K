@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/proxy/*"
+  to = "http://8.155.50.80/:splat"
+  status = 200
+  force = true  # 强制覆盖现有路径
