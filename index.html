@@ -73,7 +73,6 @@
         }
 
 
-
         .window-title:hover {
             background: #f1f5f9;
         }
@@ -325,12 +324,14 @@
     <p>多源解析签到平台 | 采集聚合站点 | 其他请自行测试!</p>
 </header>
 
+
 <!-- 解析窗口部分 -->
 <div class="responsive-window">
     <div class="window-title" title="点击复制">
         📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
     </div>
-    <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
+    <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"
+            sandbox="allow-scripts allow-same-origin"></iframe>
     <div class="signin-hint">签到口令：大伄戼</div>
     <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
 </div>
