@@ -1,13 +1,13 @@
 /*
     JY尘声明：
         以下网络资源如有冒犯请联系（qq邮箱：2661136929@qq.com）删除，[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买];
-        ⛔资源来源：【小白白】：http://222.186.57.24:7600/api.json  ⛔
+        ⛔资源来源：【牛马】：http://nn.qi-simple.top/api.json  ⛔
         ⛔【沐辰】：https://json.doube.eu.org/t4.php ⛔
         ⛔【钓鱼】：http://8.129.30.117:8117/钓鱼4K.json  ⛔
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "http://222.186.57.24:7600/spider.jar",
+    "spider": "http://nn.qi-simple.top/spider.jar",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -25,10 +25,14 @@
     ],
     "sites": [
         {
-            "key": "drpy_js_豆瓣",
+            "key": "豆瓣",
             "name": "📝 豆瓣┃热播",
             "type": 3,
             "api": "csp_Douban",
+            "style": {
+                "type": "rect",
+                "ratio": 0.65
+            },
             "searchable": 0
         },
         {
@@ -40,7 +44,7 @@
             "changeable": 0,
             "indexs": 0,
             "style": {
-                "type": "rect",
+                "type": "list",
                 "ratio": 1.597
             }
         },
@@ -375,6 +379,27 @@
                     "GZYS",
                     "weggz",
                     "Ace"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
+            "name": "牛马4K",
+            "type": 1,
+            "url": "http://niiuma.qi-simple.top//nnn.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
                 ],
                 "header": {
                     "User-Agent": "okhttp/4.9.1"
