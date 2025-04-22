@@ -338,7 +338,68 @@
         /* 大屏幕适配 */
         @media (min-width: 1200px) {
             body {
-                --window-height: 75vh;
+                --window-height: 30vh;
+            }
+        }
+
+        /* 滚动通知栏样式 */
+        .marquee-container {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-label {
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .marquee-wrapper {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+            padding-right: 20px; /* 添加右边距 */
+        }
+
+        .marquee-content span {
+            margin-right: 40px;
+            display: inline-block;
+            color: var(--text-dark);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+            /* 只移动50%宽度 */
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .marquee-content {
+                animation-duration: 15s;
+            }
+
+            .marquee-content span {
+                margin-right: 20px;
             }
         }
     </style>
@@ -351,6 +412,17 @@
     <p>多源解析签到平台 | 采集聚合站点 | 其他请自行测试!</p>
 </header>
 
+<!-- 新增的滚动通知栏 -->
+<div class="marquee-container">
+    <div class="marquee-label">📢 公告：</div>
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口） ⚠️ 不推荐付费购买接口及解析</span>
+            <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口） ⚠️ 不推荐付费购买接口及解析</span>
+        </div>
+
+    </div>
+</div>
 
 <!-- 解析窗口部分 -->
 <div class="responsive-window">
