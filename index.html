@@ -72,7 +72,6 @@
             transition: background 0.2s;
         }
 
-
         .window-title:hover {
             background: #f1f5f9;
         }
@@ -135,7 +134,6 @@
             padding: 1rem;
         }
 
-
         /* 平台卡片样式 */
         .platform-card {
             background: white;
@@ -148,6 +146,93 @@
         .platform-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 弹幕站点特殊样式 - 圆形设计 */
+        .danmu-card {
+            border-radius: 50%;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #ffffff 0%, #e3f2fd 100%);
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .danmu-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                    transparent,
+                    transparent,
+                    transparent,
+                    var(--color-accent)
+            );
+            animation: rotate 4s linear infinite;
+            z-index: 1;
+        }
+
+        .danmu-card::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            background: white;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .danmu-card .card-header {
+            position: relative;
+            z-index: 3;
+            background: transparent;
+            border-bottom: none;
+            font-size: 1.4rem;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .danmu-card .card-body {
+            position: relative;
+            z-index: 3;
+            padding: 0 1.5rem 1.5rem;
+            align-items: center;
+        }
+
+        .danmu-card .feature-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            width: 90%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .danmu-card .jump-btn {
+            width: 80%;
+            margin-top: 1rem;
+            border-radius: 20px;
+            background: var(--color-accent);
+            color: white;
+            z-index: 3;
+        }
+
+        .danmu-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .card-header {
@@ -215,7 +300,6 @@
             word-break: break-all;
             text-align: left;
         }
-
 
         /* 跳转按钮样式 */
         .jump-btn {
@@ -333,6 +417,20 @@
             .feature-label {
                 flex: 0 0 70px;
             }
+
+            /* 移动端弹幕卡片调整 */
+            .danmu-card {
+                width: 200px;
+                height: 200px;
+            }
+
+            .danmu-card .card-header {
+                font-size: 1.1rem;
+            }
+
+            .danmu-card .feature-item {
+                font-size: 0.8rem;
+            }
         }
 
         /* 大屏幕适配 */
@@ -388,7 +486,7 @@
         <h2>免费弹幕站点</h2>
     </div>
 
-    <article class="platform-card">
+    <article class="platform-card danmu-card">
         <div class="card-tag">免费</div>
         <div class="card-header">晨曦</div>
         <div class="card-body">
@@ -400,7 +498,7 @@
         </div>
     </article>
 
-    <article class="platform-card">
+    <article class="platform-card danmu-card">
         <div class="card-tag">免费</div>
         <div class="card-header">君离</div>
         <div class="card-body">
@@ -412,7 +510,7 @@
         </div>
     </article>
 
-    <article class="platform-card">
+    <article class="platform-card danmu-card">
         <div class="card-tag">免费</div>
         <div class="card-header">墨白</div>
         <div class="card-body">
@@ -424,7 +522,7 @@
         </div>
     </article>
 
-    <article class="platform-card">
+    <article class="platform-card danmu-card">
         <div class="card-tag">免费</div>
         <div class="card-header">Boy</div>
         <div class="card-body">
@@ -435,7 +533,6 @@
             <button class="jump-btn" data-link="https://dm.vidz.asia/">访问网站</button>
         </div>
     </article>
-
 
     <!-- 官方采集站点部分 -->
     <div class="section-title">
@@ -1087,6 +1184,9 @@
         </div>
     </article>
 
+
+    <!-- 其他卡片保持不变... -->
+
 </main>
 
 <!-- 全局提示 -->
@@ -1117,7 +1217,6 @@
             "夏夜@http://8.155.50.80/xiaye.php?url=",
             "乌贼1@http://jx.dedyn.io/jx.php?url=",
             "乌贼2@http://jx.dedyn.io/?url="
-
         ].join(";");
 
         // 签到口令点击复制功能 - 新增部分
