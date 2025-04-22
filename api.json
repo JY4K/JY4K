@@ -29,10 +29,6 @@
             "name": "📝 豆瓣┃热播",
             "type": 3,
             "api": "csp_Douban",
-            "style": {
-                "type": "rect",
-                "ratio": 0.65
-            },
             "searchable": 0
         },
         {
@@ -428,51 +424,9 @@
             }
         },
         {
-            "name": "金蝉4K",
-            "type": 1,
-            "url": "http://jx.jinchan.pro:1990/api/?key=PgWyPqL3mForGeRgnY&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
             "name": "小白白4K",
             "type": 1,
             "url": "http://222.186.57.24:7600/jx.php?url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
-            "name": "夏夜4K",
-            "type": 1,
-            "url": "http://8.155.50.80/xiaye.php?url=",
             "ext": {
                 "flag": [
                     "qq",
@@ -533,6 +487,48 @@
             }
         },
         {
+            "name": "金蝉4K",
+            "type": 1,
+            "url": "http://jx.jinchan.pro:1990/api/?key=kgJmcuH2ZO666Q8Vj3&url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
+            "name": "夏夜4K",
+            "type": 1,
+            "url": "http://8.155.50.80/xiaye.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
             "name": "乌贼1080",
             "type": 1,
             "url": "http://jx.dedyn.io/jx.php?url=",
@@ -557,27 +553,6 @@
             "name": "乌贼720",
             "type": 1,
             "url": "http://jx.dedyn.io/?url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
-            "name": "扑克720",
-            "type": 2,
-            "url": "https://json.puketv.com/api/?key=zuHdEdpapXWzWIdSp4&url=",
             "ext": {
                 "flag": [
                     "qq",
