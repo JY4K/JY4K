@@ -13,9 +13,10 @@
             --color-primary: #f8f9fa;
             --color-accent: #4a90e2;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --window-height: 72vh;
+            --window-height: 600px;
             --text-dark: #2d3748;
             --text-light: #718096;
+            --window-gap: 20px; /* 新增窗口间距变量 */
         }
 
         /* 基础样式 */
@@ -24,7 +25,7 @@
             padding: 3rem;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: grid;
-            grid-template-columns: repeat(3, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             font-family: 'Segoe UI', system-ui, sans-serif;
             gap: var(--gap-size);
             min-height: 100vh;
@@ -47,6 +48,26 @@
             color: transparent;
         }
 
+        /* 大窗口容器样式 */
+        .windows-container {
+            grid-column: 1 / -1;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            background: transparent;
+            padding: 0; /* 添加上下内边距 */
+        }
+
+        /* 窗口滑动区域 */
+        .windows-slider {
+            display: flex;
+            transition: transform 0.3s ease;
+            width: 100%;
+            padding: 0 var(--window-gap); /* 添加左右内边距 */
+        }
+
         /* 响应式窗口样式 */
         .responsive-window {
             box-shadow: var(--shadow);
@@ -58,6 +79,49 @@
             background: white;
             overflow: hidden;
             position: relative;
+            flex: 0 0 calc(33.333% - var(--window-gap)); /* 减去间距 */
+            min-width: calc(33.333% - var(--window-gap)); /* 减去间距 */
+            margin-right: var(--window-gap); /* 添加右边距 */
+        }
+
+        /* 最后一个窗口不需要右边距 */
+        .responsive-window:last-child {
+            margin-right: 1px;
+        }
+
+        /* 导航箭头 */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .slider-nav:hover {
+            opacity: 1;
+        }
+
+        .slider-nav.prev {
+            left: 10px;
+        }
+
+        .slider-nav.next {
+            right: 10px;
+        }
+
+        .slider-nav.hidden {
+            display: none;
         }
 
         /* 窗口标题样式 */
@@ -71,7 +135,6 @@
             align-items: center;
             transition: background 0.2s;
         }
-
 
         .window-title:hover {
             background: #f1f5f9;
@@ -135,7 +198,6 @@
             padding: 1rem;
         }
 
-
         /* 平台卡片样式 */
         .platform-card {
             background: white;
@@ -144,6 +206,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
         }
+
 
         .platform-card:hover {
             transform: translateY(-5px);
@@ -155,7 +218,7 @@
             background: var(--color-primary);
             font-size: 1.1rem;
             font-weight: 600;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 4px solid #e2e8f0;
             text-align: center;
         }
 
@@ -215,7 +278,6 @@
             word-break: break-all;
             text-align: left;
         }
-
 
         /* 跳转按钮样式 */
         .jump-btn {
@@ -318,30 +380,6 @@
             border-radius: 3px;
         }
 
-        /* 响应式设计 - 移动端适配 */
-        @media (max-width: 768px) {
-            body {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-                --window-height: 60vh;
-            }
-
-            .platforms-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-label {
-                flex: 0 0 70px;
-            }
-        }
-
-        /* 大屏幕适配 */
-        @media (min-width: 1200px) {
-            body {
-                --window-height: 30vh;
-            }
-        }
-
         /* 滚动通知栏样式 */
         .marquee-container {
             grid-column: 1 / -1;
@@ -392,6 +430,36 @@
             /* 只移动50%宽度 */
         }
 
+        /* 响应式设计 - 移动端适配 */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+                --window-height: 600px;
+                --window-gap: 20px; /* 移动端间距小一些 */
+            }
+
+            .responsive-window {
+                flex: 0 0 calc(100% - var(--window-gap));
+                min-width: calc(100% - var(--window-gap));
+                margin-right: var(--window-gap);
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-label {
+                flex: 0 0 70px;
+            }
+        }
+
+        /* 大屏幕适配 */
+        @media (min-width: 1200px) {
+            body {
+                --window-height: 570px;
+            }
+        }
+
         /* 响应式调整 */
         @media (max-width: 768px) {
             .marquee-content {
@@ -418,40 +486,45 @@
     <div class="marquee-wrapper">
         <div class="marquee-content">
             <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口） ⚠️ 不推荐付费购买接口及解析</span>
-            <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口） ⚠️ 不推荐付费购买接口及解析</span>
+            <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口) ⚠️ 不推荐付费购买接口及解析</span>
+        </div>
+    </div>
+</div>
+
+<!-- 大窗口容器 -->
+<div class="windows-container">
+    <div class="slider-nav prev hidden">❮</div>
+    <div class="windows-slider">
+        <!-- 解析窗口部分 -->
+        <div class="responsive-window">
+            <div class="window-title" title="点击复制解析接口">
+                📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
+            </div>
+            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
+            <div class="signin-hint">签到口令：懒如夏夜 公众号获取</div>
+            <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
         </div>
 
-    </div>
-</div>
+        <div class="responsive-window">
+            <div class="window-title" title="点击复制解析接口">
+                📊 牛马4K@http://niiuma.qi-simple.top//nn.php?url=
+            </div>
+            <iframe class="adaptive-iframe" src="./data/icon/牛马.jpg"></iframe>
+            <div class="signin-hint">签到口令：微信小程序签到</div>
+            <button class="window-jump-btn" data-jump-link="./data/icon/牛马.jpg">跳转</button>
+        </div>
 
-<!-- 解析窗口部分 -->
-<div class="responsive-window">
-    <div class="window-title" title="点击复制解析接口">
-        📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
+        <div class="responsive-window">
+            <div class="window-title" title="点击复制解析接口">
+                🔍 钓鱼4K@http://8.129.30.117:8117/diaoyu.php?url=
+            </div>
+            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php"></iframe>
+            <div class="signin-hint">签到口令：diaoyu</div>
+            <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
+        </div>
     </div>
-    <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
-    <div class="signin-hint">签到口令：懒如夏夜 公众号获取</div>
-    <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
+    <div class="slider-nav next">❯</div>
 </div>
-
-<div class="responsive-window">
-    <div class="window-title" title="点击复制解析接口">
-        🔍 钓鱼4K@http://8.129.30.117:8117/diaoyu.php?url=
-    </div>
-    <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php"></iframe>
-    <div class="signin-hint">签到口令：diaoyu</div>
-    <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
-</div>
-
-<div class="responsive-window">
-    <div class="window-title" title="点击复制解析接口">
-        📊 牛马4K@http://niiuma.qi-simple.top//nn.php?url=
-    </div>
-    <iframe class="adaptive-iframe" src="./data/icon/牛马.jpg"></iframe>
-    <div class="signin-hint">签到口令：微信小程序签到</div>
-    <button class="window-jump-btn" data-jump-link="./data/icon/牛马.jpg">跳转</button>
-</div>
-
 
 <!-- 平台卡片部分 -->
 <main class="platforms-grid">
@@ -507,7 +580,6 @@
             <button class="jump-btn" data-link="https://dm.vidz.asia/">访问网站</button>
         </div>
     </article>
-
 
     <!-- 官方采集站点部分 -->
     <div class="section-title">
@@ -1168,7 +1240,7 @@
         <a href="https://t.me/uzVideoApp" class="TG-link">TG群</a>
         进行反馈！如有侵权，联系删除
     </p>
-    <p>免责声明：本平台资源均来自网络公开数据，仅供技术研究使用，请于24小时内删除，以免上当受骗！</p>
+    <p>免责声明：本平台资源均来自网络公开数据，仅供技术研究使用,请于24小时内删除，以免上当受骗！</p>
 </div>
 
 <!-- 复制提示框 -->
@@ -1179,6 +1251,12 @@
     document.addEventListener('DOMContentLoaded', function () {
         const copyNotification = document.getElementById('copy-notification');
         const mainTitle = document.getElementById('mainTitle');
+        const slider = document.querySelector('.windows-slider');
+        const prevBtn = document.querySelector('.slider-nav.prev');
+        const nextBtn = document.querySelector('.slider-nav.next');
+        const windows = document.querySelectorAll('.responsive-window');
+        const windowWidth = windows[0].offsetWidth + parseInt(getComputedStyle(windows[0]).marginRight);
+        let currentIndex = 0;
 
         // 定义要复制的解析接口集合
         const parseInterfaces = [
@@ -1189,10 +1267,53 @@
             "夏夜@http://8.155.50.80/xiaye.php?url=",
             "乌贼1@http://jx.dedyn.io/jx.php?url=",
             "乌贼2@http://jx.dedyn.io/?url="
-
         ].join(";");
 
-        // 签到口令点击复制功能 - 新增部分
+        // 更新导航按钮状态
+        function updateNavButtons() {
+            prevBtn.classList.toggle('hidden', currentIndex === 0);
+            nextBtn.classList.toggle('hidden', currentIndex >= windows.length - (window.innerWidth <= 768 ? 1 : 3));
+        }
+
+        // 滑动到指定索引
+        function slideTo(index) {
+            currentIndex = Math.max(0, Math.min(index, windows.length - 1));
+            const offset = -currentIndex * windowWidth;
+            slider.style.transform = `translateX(${offset}px)`;
+            updateNavButtons();
+        }
+
+        // 上一页
+        prevBtn.addEventListener('click', () => {
+            slideTo(currentIndex - 1);
+        });
+
+        // 下一页
+        nextBtn.addEventListener('click', () => {
+            slideTo(currentIndex + 1);
+        });
+
+        // 初始化导航按钮状态
+        updateNavButtons();
+
+        // 响应式调整
+        function handleResize() {
+            const isMobile = window.innerWidth <= 768;
+            const windowGap = isMobile ? 10 : 20;
+
+            windows.forEach(window => {
+                const baseWidth = isMobile ? 100 : 33.333;
+                window.style.flexBasis = `calc(${baseWidth}% - ${windowGap}px)`;
+                window.style.minWidth = `calc(${baseWidth}% - ${windowGap}px)`;
+            });
+            slideTo(0); // 重置到第一页
+        }
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', handleResize);
+        handleResize(); // 初始调用
+
+        // 签到口令点击复制功能
         document.querySelectorAll('.signin-hint').forEach(hint => {
             hint.addEventListener('click', function (e) {
                 e.stopPropagation(); // 防止事件冒泡
@@ -1257,29 +1378,6 @@
                 window.open(link, '_blank');
             });
         });
-
-        // 响应式调整窗口高度
-        function adjustWindowHeight() {
-            const windows = document.querySelectorAll('.responsive-window');
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-            const isLargeScreen = window.matchMedia('(min-width: 1200px)').matches;
-
-            windows.forEach(window => {
-                if (isMobile) {
-                    window.style.height = '60vh';
-                } else if (isLargeScreen) {
-                    window.style.height = '75vh';
-                } else {
-                    window.style.height = '72vh';
-                }
-            });
-        }
-
-        // 初始调整窗口高度
-        adjustWindowHeight();
-
-        // 窗口大小改变时调整高度
-        window.addEventListener('resize', adjustWindowHeight);
     });
 </script>
 </body>
