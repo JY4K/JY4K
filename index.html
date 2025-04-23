@@ -13,7 +13,7 @@
             --color-primary: #f8f9fa;
             --color-accent: #4a90e2;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --window-height: 600px;
+            --window-height: 700px;
             --text-dark: #2d3748;
             --text-light: #718096;
             --window-gap: 20px; /* 新增窗口间距变量 */
@@ -86,7 +86,7 @@
 
         /* 最后一个窗口不需要右边距 */
         .responsive-window:last-child {
-            margin-right: 1px;
+            margin-right: 0;
         }
 
         /* 导航箭头 */
@@ -435,7 +435,7 @@
             body {
                 padding: 1rem;
                 --window-height: 600px;
-                --window-gap: 20px; /* 移动端间距小一些 */
+                --window-gap: 10px; /* 移动端间距小一些 */
             }
 
             .responsive-window {
