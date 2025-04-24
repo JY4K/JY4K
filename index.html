@@ -91,14 +91,14 @@
             transform: translateY(-50%);
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 545, 255, 2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 10;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 5);
             opacity: 0.7;
             transition: opacity 0.2s;
         }
@@ -108,11 +108,11 @@
         }
 
         .slider-nav.prev {
-            left: 10px;
+            left: 20px;
         }
 
         .slider-nav.next {
-            right: 10px;
+            right: 20px;
         }
 
         .slider-nav.hidden {
@@ -334,14 +334,12 @@
             transition: all 0.2s;
             padding: 2px 6px;
             border-radius: 4px;
-            background-color: rgba(74, 144, 226, 0.1);
+            background-color: transparent;
             color: var(--color-accent);
         }
 
         .TG-link:hover {
             opacity: 0.8;
-            text-decoration: underline;
-            background-color: rgba(74, 144, 226, 0.2);
         }
 
         .TG-link:active {
@@ -479,30 +477,33 @@
 
 <!-- 大窗口容器 -->
 <div class="windows-container">
-    <div class="slider-nav prev hidden">❮</div>
+    <div class="slider-nav prev hidden marquee-label">❮</div>
     <div class="windows-slider">
         <!-- 解析窗口部分 -->
         <div class="responsive-window">
             <div class="window-title" title="点击复制解析接口">
-                📊 摸鱼4K@登录后自行获取
+                <div class="marquee-label">📊 摸鱼4K</div>
+                @跳转登录后自行获取
             </div>
             <iframe class="adaptive-iframe" src="https://zhuimi.xn--v4q818bf34b.com/user/login"></iframe>
-            <div class="signin-hint">签到口令：自行登录签到</div>
+            <div class="signin-hint">签到口令：自行跳转登录签到</div>
             <button class="window-jump-btn" data-jump-link="https://zhuimi.xn--v4q818bf34b.com/user/login">跳转</button>
         </div>
 
         <div class="responsive-window">
             <div class="window-title" title="点击复制解析接口">
-                📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
+                <div class="marquee-label">📊 钓鱼4K</div>
+                @http://8.129.30.117:8117/diaoyu.php?url=
             </div>
-            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
-            <div class="signin-hint">签到口令：懒如夏夜 公众号获取</div>
-            <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
+            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php"></iframe>
+            <div class="signin-hint">签到口令：diaoyu</div>
+            <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
         </div>
 
         <div class="responsive-window">
             <div class="window-title" title="点击复制解析接口">
-                📊 牛马4K@http://niiuma.qi-simple.top//nn.php?url=
+                <div class="marquee-label">📊 牛马4K</div>
+                @http://niiuma.qi-simple.top//nn.php?url=
             </div>
             <iframe class="adaptive-iframe" src="./data/icon/牛马.jpg"></iframe>
             <div class="signin-hint">签到口令：微信小程序签到</div>
@@ -511,14 +512,16 @@
 
         <div class="responsive-window">
             <div class="window-title" title="点击复制解析接口">
-                🔍 钓鱼4K@http://8.129.30.117:8117/diaoyu.php?url=
+                <div class="marquee-label">📊 夏夜4K</div>
+                @http://8.155.50.80/xiaye.php?url=
             </div>
-            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php"></iframe>
-            <div class="signin-hint">签到口令：diaoyu</div>
-            <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
+            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php"></iframe>
+            <div class="signin-hint">签到口令：内置可耻</div>
+            <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
         </div>
+
     </div>
-    <div class="slider-nav next">❯</div>
+    <div class="slider-nav next marquee-label">❯</div>
 </div>
 
 <!-- 平台卡片部分 -->
