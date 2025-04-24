@@ -64,7 +64,7 @@
             display: flex;
             transition: transform 0.3s ease;
             width: 100%;
-            padding: 10px 0; /* 上下留白 */
+            padding: 0; /* 上下留白 */
         }
 
         /* 响应式窗口样式 - 修改部分 */
@@ -380,11 +380,11 @@
             grid-column: 1 / -1;
             display: flex;
             align-items: center;
-            background: white;
+            background: transparent;
             padding: 12px 20px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             overflow: hidden;
             position: relative;
         }
@@ -436,15 +436,7 @@
             .responsive-window {
                 flex: 0 0 calc(100% - var(--window-gap));
                 min-width: calc(100% - var(--window-gap));
-                margin: 0 calc(var(--window-gap) / 2);
-            }
-
-            .platforms-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-label {
-                flex: 0 0 70px;
+                margin: 0 calc(var(--window-gap) / 3);
             }
         }
 
@@ -480,8 +472,8 @@
     <div class="marquee-label">📢 公告：</div>
     <div class="marquee-wrapper">
         <div class="marquee-content">
-            <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口） ⚠️ 不推荐付费购买接口及解析</span>
-            <span>🔔 点击支持平台，即可复制UZ采集解析地址 🎉 夏夜和牛马解析需用ok进行播放才能激活（使用夏夜TVBox接口) ⚠️ 不推荐付费购买接口及解析</span>
+            <span>🔔 点击支持平台，即可复制( UZ采集解析 )地址 🎉 夏夜和牛马解析解除限制，摸鱼复活 ⚠️ 不推荐付费购买接口及解析</span>
+            <span>🔔 点击支持平台，即可复制( UZ采集解析 )地址 🎉 夏夜和牛马解析解除限制，摸鱼复活 ⚠️ 不推荐付费购买接口及解析</span>
         </div>
     </div>
 </div>
@@ -1240,8 +1232,8 @@
 <!-- 全局提示 -->
 <div class="global-notice">
     <h3>⚠️ 温馨提示：不推荐付费购买接口及解析</h3>
-    <p>⛔️ 如果有新采集站及解析站，请添加
-        <a href="https://t.me/uzVideoApp" class="TG-link">TG群</a>
+    <p>⛔️ 如果有新采集站及解析站，请直接进入
+        <a href="https://support.qq.com/products/716997" class="TG-link">兔小巢</a>
         进行反馈！如有侵权，联系删除
     </p>
     <p>免责声明：本平台资源均来自网络公开数据，仅供技术研究使用,请于24小时内删除，以免上当受骗！</p>
@@ -1257,6 +1249,7 @@
         const prevBtn = document.querySelector('.slider-nav.prev');
         const nextBtn = document.querySelector('.slider-nav.next');
         const windows = document.querySelectorAll('.responsive-window');
+        const copyNotification = document.getElementById('copy-notification');
         let currentIndex = 0;
         let windowWidth = windows[0].offsetWidth + parseInt(getComputedStyle(windows[0]).marginRight) * 2;
 
