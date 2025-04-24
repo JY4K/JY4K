@@ -48,27 +48,26 @@
             color: transparent;
         }
 
-        /* 大窗口容器样式 */
+        /* 大窗口容器样式 - 修改部分 */
         .windows-container {
             grid-column: 1 / -1;
             position: relative;
             width: 100%;
             overflow: hidden;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
             background: transparent;
-            padding: 0; /* 添加上下内边距 */
+            padding: 0;
+            margin: 1rem 0;
         }
 
-        /* 窗口滑动区域 */
+        /* 窗口滑动区域 - 修改部分 */
         .windows-slider {
             display: flex;
             transition: transform 0.3s ease;
             width: 100%;
-            padding: 0 var(--window-gap); /* 添加左右内边距 */
+            padding: 10px 0; /* 上下留白 */
         }
 
-        /* 响应式窗口样式 */
+        /* 响应式窗口样式 - 修改部分 */
         .responsive-window {
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -79,15 +78,11 @@
             background: white;
             overflow: hidden;
             position: relative;
-            flex: 0 0 calc(33.333% - var(--window-gap)); /* 减去间距 */
-            min-width: calc(33.333% - var(--window-gap)); /* 减去间距 */
-            margin-right: var(--window-gap); /* 添加右边距 */
+            flex: 0 0 calc(33.333% - var(--window-gap));
+            margin: 0 calc(var(--window-gap) / 2); /* 左右间距相等 */
+            min-width: calc(33.333% - var(--window-gap));
         }
 
-        /* 最后一个窗口不需要右边距 */
-        .responsive-window:last-child {
-            margin-right: 0;
-        }
 
         /* 导航箭头 */
         .slider-nav {
@@ -441,7 +436,7 @@
             .responsive-window {
                 flex: 0 0 calc(100% - var(--window-gap));
                 min-width: calc(100% - var(--window-gap));
-                margin-right: var(--window-gap);
+                margin: 0 calc(var(--window-gap) / 2);
             }
 
             .platforms-grid {
@@ -496,6 +491,15 @@
     <div class="slider-nav prev hidden">❮</div>
     <div class="windows-slider">
         <!-- 解析窗口部分 -->
+        <div class="responsive-window">
+            <div class="window-title" title="点击复制解析接口">
+                📊 摸鱼4K@登录后自行获取
+            </div>
+            <iframe class="adaptive-iframe" src="https://zhuimi.xn--v4q818bf34b.com/user/login"></iframe>
+            <div class="signin-hint">签到口令：自行登录签到</div>
+            <button class="window-jump-btn" data-jump-link="https://zhuimi.xn--v4q818bf34b.com/user/login">跳转</button>
+        </div>
+
         <div class="responsive-window">
             <div class="window-title" title="点击复制解析接口">
                 📊 夏夜4K@http://8.155.50.80/xiaye.php?url=
@@ -1249,14 +1253,12 @@
 <script>
     // DOM加载完成后执行
     document.addEventListener('DOMContentLoaded', function () {
-        const copyNotification = document.getElementById('copy-notification');
-        const mainTitle = document.getElementById('mainTitle');
         const slider = document.querySelector('.windows-slider');
         const prevBtn = document.querySelector('.slider-nav.prev');
         const nextBtn = document.querySelector('.slider-nav.next');
         const windows = document.querySelectorAll('.responsive-window');
-        const windowWidth = windows[0].offsetWidth + parseInt(getComputedStyle(windows[0]).marginRight);
         let currentIndex = 0;
+        let windowWidth = windows[0].offsetWidth + parseInt(getComputedStyle(windows[0]).marginRight) * 2;
 
         // 定义要复制的解析接口集合
         const parseInterfaces = [
