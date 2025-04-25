@@ -14,13 +14,10 @@
         {
             "name": "🇨🇳 IPV6",
             "type": 0,
-            "url": "https://tv.iill.top/m3u/Gather",
+            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1745115533242/mgqn.txt",
             "playerType": 2,
-            "ua": "okhttp/4.9.1",
-            "epg": "https://epg.zbds.top/index.php?ch={name}&date={date}",
-            "logo": "https://live.zbds.top/logo/{name}.png",
             "timeout": 10
-        }
+        },
     ],
     "sites": [
         {
@@ -47,7 +44,7 @@
             "key": "奇珍艺兽", //  站点唯一标识
             "name": "🔥 爱奇艺┃解析", //  站点名称
             "type": 3, //  站点类型，0：xml 1：json 3：Spider
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js", //站点 API 地址
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js", //站点 API 地址
             //  以下四项设置仅在 ShellTV 中使用有效
             "hasTags": 1, //  是否提供影片原数据 (包括影片类型，国家等)
             "hasPoster": 1, //  是否提供海报
@@ -64,7 +61,7 @@
             "key": "腾云驾雾",
             "name": "🔥 腾讯┃解析",
             "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 1,
@@ -80,7 +77,7 @@
             "key": "百芒无果",
             "name": "🔥 芒果┃解析",
             "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 1,
@@ -96,7 +93,7 @@
             "key": "优哉游哉",
             "name": "🔥 优酷┃解析",
             "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 1,
@@ -112,7 +109,7 @@
             "key": "BiliBili",
             "name": "🔥 B站┃解析",
             "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 1,
@@ -125,10 +122,24 @@
             "ext": "./data/js/BiliBili.js"
         },
         {
+            "key": "影探4K",
+            "name": "⛄️ 影探｜4K",
+            "type": 3,
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 1,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "api": "./PY/yt4k.py",
+            "ext": "http://csjt.lyyytv.cn"
+        },
+        {
             "key": "追剧",
             "name": "⛄️ 追剧┃1080",
             "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 1,
@@ -144,7 +155,7 @@
             "key": "低端影视",
             "name": "⛄️ 低端┃1080",
             "type": 3,
-            "api": "http://222.186.57.24:7600/JS/drpy2.min.js",
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 1,
