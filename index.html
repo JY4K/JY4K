@@ -13,10 +13,10 @@
             --color-primary: #f8f9fa;
             --color-accent: #4a90e2;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --window-height: 700px;
+            --window-height: 500px;
             --text-dark: #2d3748;
             --text-light: #718096;
-            --window-gap: 20px; /* 新增窗口间距变量 */
+            --window-gap: 20px;
         }
 
         /* 基础样式 */
@@ -48,7 +48,7 @@
             color: transparent;
         }
 
-        /* 大窗口容器样式 - 修改部分 */
+        /* 大窗口容器样式 */
         .windows-container {
             grid-column: 1 / -1;
             position: relative;
@@ -59,15 +59,15 @@
             margin: 1rem 0;
         }
 
-        /* 窗口滑动区域 - 修改部分 */
+        /* 窗口滑动区域 */
         .windows-slider {
             display: flex;
             transition: transform 0.3s ease;
             width: 100%;
-            padding: 0; /* 上下留白 */
+            padding: 0;
         }
 
-        /* 响应式窗口样式 - 修改部分 */
+        /* 响应式窗口样式 */
         .responsive-window {
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -79,10 +79,32 @@
             overflow: hidden;
             position: relative;
             flex: 0 0 calc(33.333% - var(--window-gap));
-            margin: 0 calc(var(--window-gap) / 2); /* 左右间距相等 */
+            margin: 0 calc(var(--window-gap) / 2);
             min-width: calc(33.333% - var(--window-gap));
         }
 
+        /* 图片和iframe容器样式 */
+        .media-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .media-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* 自适应iframe样式 */
+        .adaptive-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* 导航箭头 */
         .slider-nav {
@@ -91,14 +113,14 @@
             transform: translateY(-50%);
             width: 40px;
             height: 40px;
-            background: rgba(255, 545, 255, 2);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 10;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             opacity: 0.7;
             transition: opacity 0.2s;
         }
@@ -154,13 +176,6 @@
 
         .responsive-window:hover .signin-hint {
             opacity: 1;
-        }
-
-        /* 自适应iframe样式 */
-        .adaptive-iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
         }
 
         /* 窗口跳转按钮样式 */
@@ -220,7 +235,7 @@
         .card-body {
             padding: 1.5rem;
             position: relative;
-            height: 100%; /* 使body填满剩余空间 */
+            height: 100%;
             display: flex;
             flex-direction: column;
         }
@@ -262,7 +277,7 @@
         }
 
         .feature-label {
-            flex: 0 0 4em; /* 固定标签宽度 */
+            flex: 0 0 4em;
             text-align: right;
             padding-right: 0.5em;
         }
@@ -403,7 +418,7 @@
             display: inline-block;
             white-space: nowrap;
             animation: marquee 20s linear infinite;
-            padding-right: 20px; /* 添加右边距 */
+            padding-right: 20px;
         }
 
         .marquee-content span {
@@ -419,7 +434,6 @@
             100% {
                 transform: translateX(-50%);
             }
-            /* 只移动50%宽度 */
         }
 
         /* 响应式设计 - 移动端适配 */
@@ -427,7 +441,7 @@
             body {
                 padding: 1rem;
                 --window-height: 600px;
-                --window-gap: 10px; /* 移动端间距小一些 */
+                --window-gap: 10px;
             }
 
             .responsive-window {
@@ -435,23 +449,20 @@
                 min-width: calc(100% - var(--window-gap));
                 margin: 0 calc(var(--window-gap) / 3);
             }
-        }
 
-        /* 大屏幕适配 */
-        @media (min-width: 1200px) {
-            body {
-                --window-height: 600px;
-            }
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
             .marquee-content {
                 animation-duration: 15s;
             }
 
             .marquee-content span {
                 margin-right: 20px;
+            }
+        }
+
+        /* 大屏幕适配 */
+        @media (min-width: 1200px) {
+            body {
+                --window-height: 600px;
             }
         }
     </style>
@@ -485,7 +496,9 @@
                 <div class="marquee-label">📊 摸鱼4K</div>
                 @跳转登录后自行获取
             </div>
-            <iframe class="adaptive-iframe" src="./data/icon/摸鱼.jpg"></iframe>
+            <div class="media-container">
+                <img src="./data/icon/摸鱼.jpg" alt="摸鱼4K">
+            </div>
             <div class="signin-hint">签到口令：自行跳转登录签到</div>
             <button class="window-jump-btn" data-jump-link="https://zhuimi.xn--v4q818bf34b.com/user/login">跳转</button>
         </div>
@@ -505,7 +518,9 @@
                 <div class="marquee-label">📊 牛马4K</div>
                 @http://niiuma.qi-simple.top//nn.php?url=
             </div>
-            <iframe class="adaptive-iframe" src="./data/icon/牛马.jpg"></iframe>
+            <div class="media-container">
+                <img src="./data/icon/牛马.jpg" alt="牛马4K">
+            </div>
             <div class="signin-hint">签到口令：微信小程序签到</div>
             <button class="window-jump-btn" data-jump-link="./data/icon/牛马.jpg">跳转</button>
         </div>
@@ -1338,7 +1353,6 @@
             <button class="jump-btn" data-link="https://www.wwzy.tv/">访问网站</button>
         </div>
     </article>
-
 </main>
 
 <!-- 全局提示 -->
@@ -1424,8 +1438,7 @@
         // 签到口令点击复制功能
         document.querySelectorAll('.signin-hint').forEach(hint => {
             hint.addEventListener('click', function (e) {
-                e.stopPropagation(); // 防止事件冒泡
-                // 提取"签到口令："后面的内容
+                e.stopPropagation();
                 const text = this.textContent.replace('签到口令：', '').trim();
                 copyToClipboard(text);
             });
@@ -1481,7 +1494,7 @@
         // 窗口跳转按钮功能
         document.querySelectorAll('.window-jump-btn').forEach(btn => {
             btn.addEventListener('click', function (e) {
-                e.stopPropagation(); // 防止事件冒泡
+                e.stopPropagation();
                 const link = this.dataset.jumpLink;
                 window.open(link, '_blank');
             });
