@@ -378,6 +378,27 @@
             }
         },
         {
+            "name": "乐云4K",
+            "type": 1,
+            "url": "http://chaoqianys.top:98/api/?key=DHZNz2KxkQ6szAWfJo&url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
             "name": "牛马4K",
             "type": 1,
             "url": "http://niiuma.qi-simple.top//nn.php?url=",
@@ -420,7 +441,7 @@
             }
         },
         {
-            "name": "小白白4K",
+            "name": "小白4K",
             "type": 1,
             "url": "http://222.186.57.24:7600/jx.php?url=",
             "ext": {
