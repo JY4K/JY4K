@@ -52,7 +52,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./JS/影探.js"
+            "ext": "./data/js/影探.js"
         },
         {
             "key": "奇珍艺兽", //  站点唯一标识
