@@ -41,8 +41,22 @@
             }
         },
         {
+            "key": "影探4K",
+            "name": "影探┃4K",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 1,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./JS/影探.js"
+        },
+        {
             "key": "奇珍艺兽", //  站点唯一标识
-            "name": "🔥 爱奇艺┃解析", //  站点名称
+            "name": "🇨🇳  爱奇艺┃解析", //  站点名称
             "type": 3, //  站点类型，0：xml 1：json 3：Spider
             "api": "http://110.42.36.65:5223/js/drpy2.min.js", //站点 API 地址
             //  以下四项设置仅在 ShellTV 中使用有效
@@ -59,7 +73,7 @@
         },
         {
             "key": "腾云驾雾",
-            "name": "🔥 腾讯┃解析",
+            "name": "🇨🇳  腾讯┃解析",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -75,7 +89,7 @@
         },
         {
             "key": "百芒无果",
-            "name": "🔥 芒果┃解析",
+            "name": "🇨🇳  芒果┃解析",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -91,7 +105,7 @@
         },
         {
             "key": "优哉游哉",
-            "name": "🔥 优酷┃解析",
+            "name": "🇨🇳  优酷┃解析",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -107,7 +121,7 @@
         },
         {
             "key": "BiliBili",
-            "name": "🔥 B站┃解析",
+            "name": "🇨🇳 B站┃解析",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -122,22 +136,8 @@
             "ext": "./data/js/BiliBili.js"
         },
         {
-            "key": "影探4K",
-            "name": "⛄️ 影探｜4K",
-            "type": 3,
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 1,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "api": "./PY/yt4k.py",
-            "ext": "http://csjt.lyyytv.cn"
-        },
-        {
             "key": "追剧",
-            "name": "⛄️ 追剧┃1080",
+            "name": "🔥 追剧┃1080",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -153,7 +153,7 @@
         },
         {
             "key": "低端影视",
-            "name": "⛄️ 低端┃1080",
+            "name": "🔥 低端┃1080",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -169,7 +169,7 @@
         },
         {
             "key": "麻花",
-            "name": "⛄️ 麻花┃1080",
+            "name": "🔥 麻花┃1080",
             "type": 4,
             "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
             "hasTags": 1,
@@ -183,7 +183,7 @@
         },
         {
             "key": "py_BaHaoTV",
-            "name": "⛄️ 八号┃1080",
+            "name": "🔥 八号┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=BaHaoTV",
             "hasTags": 1,
@@ -197,7 +197,7 @@
         },
         {
             "key": "py_UpFuHn",
-            "name": "⛄️ HI剧┃1080",
+            "name": "🔥 HI剧┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=UpFuHn",
             "hasTags": 1,
@@ -211,7 +211,7 @@
         },
         {
             "key": "py_OleVod",
-            "name": "⛄️ 欧乐┃1080",
+            "name": "🔥 欧乐┃1080",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=OleVod",
             "hasTags": 1,
@@ -373,7 +373,7 @@
                     "Ace"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -394,7 +394,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -415,7 +415,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -436,7 +436,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -457,7 +457,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -478,7 +478,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -499,7 +499,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -520,7 +520,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -541,7 +541,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -562,7 +562,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -583,7 +583,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -604,7 +604,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         },
@@ -625,7 +625,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "User-Agent": "okhttp/4.12.0"
                 }
             }
         }
