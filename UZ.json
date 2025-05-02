@@ -1,0 +1,26 @@
+[
+    {
+        "name": "清影 | 4K",
+        "api": "./data/js/清影.js",
+        "webSite": "https://revohd.com",
+        "remark": "加载不出来一般是网站空资源，没有获取到有效资源链接",
+        "version": "3",
+        "type": 101
+    },
+    {
+        "name": "[豆·测]不太通用网盘",
+        "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/vod/js/bttywp.js",
+        "webSite": "https://mo.91muou.icu",
+        "remark": "修改域名自动获取分类",
+        "version": "666",
+        "type": 101
+    },
+    {
+        "name": "[测]清影|看备注！！！",
+        "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/vod/js/revohd.js",
+        "webSite": "https://revohd.com",
+        "remark": "软件v1.6.57|网盘拓展v19以上可用，加载不出来一般是网站空资源，没有获取到有效资源链接",
+        "version": "1",
+        "type": 101
+    }
+]
