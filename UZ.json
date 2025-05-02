@@ -1,7 +1,7 @@
 [
     {
         "name": "清影 | 4K",
-        "api": "./data/js/清影.js",
+        "api": "https://jy4k.netlify.app/data/js/清影.js",
         "webSite": "https://revohd.com",
         "remark": "加载不出来一般是网站空资源，没有获取到有效资源链接",
         "version": "3",
