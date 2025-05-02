@@ -1,21 +1,25 @@
 const appConfig = {
-    _webSite: 'https://revohd.com/', /**
+    _webSite: 'https://revohd.com/',
+    /**
      * 网站主页，uz 调用每个函数前都会进行赋值操作
      * 如果不想被改变 请自定义一个变量
      */
     get webSite() {
         return this._webSite
-    }, set webSite(value) {
+    },
+    set webSite(value) {
         this._webSite = value
     },
 
-    _uzTag: '', /**
+    _uzTag: '',
+    /**
      * 扩展标识，初次加载时，uz 会自动赋值，请勿修改
      * 用于读取环境变量
      */
     get uzTag() {
         return this._uzTag
-    }, set uzTag(value) {
+    },
+    set uzTag(value) {
         this._uzTag = value
     },
 }
@@ -27,15 +31,28 @@ const appConfig = {
  */
 async function getClassList(args) {
     var backData = new RepVideoClassList()
-    backData.data = [{
-        type_id: '1', type_name: '电影', hasSubclass: false,
-    }, {
-        type_id: '2', type_name: '剧集', hasSubclass: false,
-    }, {
-        type_id: '5', type_name: '动漫', hasSubclass: false,
-    }, {
-        type_id: '3', type_name: '综艺', hasSubclass: false,
-    },]
+    backData.data = [
+        {
+            type_id: '1',
+            type_name: '电影',
+            hasSubclass: false,
+        },
+        {
+            type_id: '2',
+            type_name: '剧集',
+            hasSubclass: false,
+        },
+        {
+            type_id: '5',
+            type_name: '动漫',
+            hasSubclass: false,
+        },
+        {
+            type_id: '3',
+            type_name: '娱乐',
+            hasSubclass: false,
+        },
+    ]
     return JSON.stringify(backData)
 }
 
@@ -56,7 +73,9 @@ async function getSubclassVideoList(args) {
  */
 async function getVideoList(args) {
     var backData = new RepVideoList()
-    let url = UZUtils.removeTrailingSlash(appConfig.webSite) + `/vod/show/id/${args.url}/page/${args.page}.html`
+    let url =
+        UZUtils.removeTrailingSlash(appConfig.webSite) +
+        `/vod/show/id/${args.url}/page/${args.page}.html`
     try {
         const pro = await req(url)
         backData.error = pro.error
@@ -74,8 +93,10 @@ async function getVideoList(args) {
                     .find('.module-item-pic img')
                     .attr('data-src')
                 videoDet.vod_remarks = $(e).find('.module-item-text').text()
-                videoDet.vod_year = $(e)
-                    .find('.module-item-caption').text()
+                videoDet.vod_year = UZUtils.removeTrailingSlash(appConfig.webSite) + $(e)
+                    .find('.module-item-caption span')
+                    .first()
+                    .text()
                 videos.push(videoDet)
             })
         }
@@ -103,7 +124,9 @@ async function getVideoDetail(args) {
             let vodDetail = new VideoDetail()
             vodDetail.vod_id = args.url
             vodDetail.vod_name = $('.page-title')[0].children[0].data
-            vodDetail.vod_pic = UZUtils.removeTrailingSlash(appConfig.webSite) + $($('.mobile-play')).find('.lazyload')[0].attribs['data-src']
+            vodDetail.vod_pic = UZUtils.removeTrailingSlash(appConfig.webSite) + $($('.mobile-play')).find(
+                '.lazyload'
+            )[0].attribs['data-src']
 
             let video_items = $('.video-info-itemtitle')
 
@@ -169,7 +192,9 @@ async function getVideoPlayUrl(args) {
 async function searchVideo(args) {
     var backData = new RepVideoList()
     try {
-        let searchUrl = `${UZUtils.removeTrailingSlash(appConfig.webSite)}/vodsearch/${args.searchWord}----------${args.page}---.html`
+        let searchUrl = `${UZUtils.removeTrailingSlash(
+            appConfig.webSite
+        )}/vodsearch/${args.searchWord}----------${args.page}---.html`
         let repData = await req(searchUrl)
         const $ = cheerio.load(repData.data)
         let items = $('.module-search-item')
@@ -178,9 +203,10 @@ async function searchVideo(args) {
             let video = new VideoDetail()
             video.vod_id = $(item).find('.module-item-pic a').attr('href')
             video.vod_name = $(item).find('.module-item-pic img').attr('alt')
-            video.vod_pic = UZUtils.removeTrailingSlash(appConfig.webSite) + $(item).find('.module-item-pic img').attr('data-src')
+            video.vod_pic = UZUtils.removeTrailingSlash(appConfig.webSite) + $(item).find('.module-item-pic > img')[0].attribs[
+                'data-src'
+                ]
             video.vod_remarks = $(item).find('.module-item-text').text()
-            video.vod_year = $(item).find('.module-item-caption').text()
             backData.data.push(video)
         }
     } catch (error) {
