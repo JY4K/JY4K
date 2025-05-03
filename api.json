@@ -11,15 +11,6 @@
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
-    "lives": [
-        {
-            "name": "🇨🇳 IPV6",
-            "type": 0,
-            "url": "",
-            "playerType": 2,
-            "timeout": 10
-        }
-    ],
     "sites": [
         {
             "key": "豆瓣",
