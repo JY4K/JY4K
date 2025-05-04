@@ -4,6 +4,7 @@
 //@remark:格式 频道名称1@频道id1&频道名称2@频道id2
 
 
+
 //MARK: 注意
 // 直接复制该文件进行扩展开发
 // 请保持以下 变量 及 函数 名称不变
@@ -75,7 +76,6 @@ async function getSubclassList(args) {
 
 
 const _videoListPageMap = {}
-
 /**
  * 获取分类视频列表
  * @param {UZArgs} args
@@ -85,11 +85,11 @@ async function getVideoList(args) {
     var backData = new RepVideoList()
     try {
         let endUrl = appConfig.tgs + args.url
-        if (args.page == 1) {
+        if(args.page == 1) {
             _videoListPageMap[args.url] = ""
-        } else {
+        }else {
             const nextPage = _videoListPageMap[args.url] ?? ""
-            if (nextPage.length == 0 || nextPage == "0") {
+            if(nextPage.length == 0 || nextPage == "0") {
                 return JSON.stringify(backData)
             }
             endUrl += nextPage
@@ -104,13 +104,13 @@ async function getVideoList(args) {
 }
 
 
-async function getTGList(url) {
+async function getTGList(url){
     let videoList = []
     let nextPage = ""
     try {
         const res = await req(url)
         const $ = cheerio.load(res.data)
-        nextPage = $('link[rel="prev"]').attr('href')?.split('?')?.[1]
+          nextPage = $('link[rel="prev"]').attr('href')?.split('?')?.[1]
 
         const messageList = $('.tgme_widget_message_bubble')
         for (let i = 0; i < messageList.length; i++) {
@@ -168,9 +168,9 @@ async function getTGList(url) {
 
     }
     videoList.reverse()
-    if (nextPage?.length > 0) {
-        nextPage = `?${nextPage}`
-    } else {
+    if(nextPage?.length > 0) {
+     nextPage = `?${nextPage}`
+    }else{
         nextPage = "0"
     }
     return {videoList, nextPage}
@@ -257,7 +257,6 @@ async function getVideoPlayUrl(args) {
 }
 
 const _searchListPageMap = {}
-
 /**
  * 搜索视频
  * @param {UZArgs} args
@@ -272,18 +271,18 @@ async function searchVideo(args) {
         for (let index = 0; index < channels.length; index++) {
             const element = channels[index];
             let endUrl = appConfig.tgs + element + "?q=" + args.searchWord
-            if (args.page == 1) {
-                _searchListPageMap[args.element] = ""
-            } else {
-                const nextPage = _searchListPageMap[element] ?? ""
-                if (nextPage.length == 0 || nextPage == "0") {
-                    return JSON.stringify(backData)
-                }
-                endUrl += nextPage
+        if(args.page == 1) {
+            _searchListPageMap[args.element] = ""
+        }else {
+            const nextPage = _searchListPageMap[element] ?? ""
+            if(nextPage.length == 0 || nextPage == "0") {
+                return JSON.stringify(backData)
             }
-            const res = await getTGList(endUrl)
-            backData.data.push(...res.videoList)
-            _searchListPageMap[element] = res.nextPage
+            endUrl += nextPage
+        }
+        const res = await getTGList(endUrl)
+        backData.data.push(...res.videoList)
+        _searchListPageMap[element] = res.nextPage
         }
 
 
