@@ -1,34 +1,64 @@
-[
-    {
-        "name": "TG夸克",
-        "version": 1,
-        "api": "https://jy4k.netlify.app/data/js/TG夸克.js",
-        "remark": "格式: name1@频道id1&name2@频道id2",
-        "webSite": "首页@Quark_Movies&电影@alyp_4K_Movies&电视剧@alyp_TV&动漫@alyp_Animation&纪录片@alyp_JLP",
-        "type": 101
-    },
-    {
-        "name": "清影 | 4K",
-        "version": 3,
-        "api": "https://jy4k.netlify.app/data/js/清影.js",
-        "remark": "加载不出来一般是网站空资源，没有获取到有效资源链接",
-        "webSite": "https://revohd.com",
-        "type": 101
-    },
-    {
-        "name": "[豆·测]不太通用网盘",
-        "version": 666,
-        "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/vod/js/bttywp.js",
-        "remark": "修改域名自动获取分类",
-        "webSite": "https://mo.91muou.icu",
-        "type": 101
-    },
-    {
-        "name": "[测]清影|看备注！！！",
-        "version": 1,
-        "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/vod/js/revohd.js",
-        "remark": "软件v1.6.57|网盘拓展v19以上可用，加载不出来一般是网站空资源，没有获取到有效资源链接",
-        "webSite": "https://revohd.com",
-        "type": 101
-    }
-]
+{
+    "panTools": [
+        {
+            "name": "网盘解析工具",
+            "version": 19,
+            "remark": "UZ网盘解析",
+            "env": "UCCookie##用于播放UC网盘视频&&UC_UT##播放视频自动获取，不可用时点击删除重新获取 cookie ，再重启app&&夸克Cookie##用于播放Quark网盘视频&&阿里Token##用于播放阿里网盘视频&&转存文件夹名称##在各网盘转存文件时使用的文件夹名称&&123网盘账号##用于播放123网盘视频&&123网盘密码##用于播放123网盘视频&&天翼网盘账号##用于播放天翼网盘视频&&天翼网盘密码##用于播放天翼网盘视频&&采集解析地址##内置两个，失效不要反馈。格式：名称1@地址1;名称2@地址2",
+            "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/YYDS678/uzVideo-extensions/main/panTools/js/panTools2.js",
+            "type": 300
+        }
+    ],
+    "danMu": [
+        {
+            "name": "弹幕",
+            "url": "https://gitee.com/qihaoyyds/UZ/raw/master/js/弹幕.txt",
+            "codeID": "HyplMQ00pLZipW1jy1e9qTsjZbznKjq2",
+            "remark": "搜不到就算了",
+            "version": 10,
+            "type": 400
+        }
+    ],
+    "vod": [
+        {
+            "name": "TG夸克",
+            "version": 1,
+            "api": "https://jy4k.netlify.app/data/js/TG夸克.js",
+            "remark": "格式: name1@频道id1&name2@频道id2",
+            "webSite": "电影@alyp_4K_Movies&电视剧@alyp_TV&动漫@alyp_Animation&纪录片@alyp_JLP",
+            "type": 101
+        },
+        {
+            "name": "清影 | 4K",
+            "version": 3,
+            "api": "https://jy4k.netlify.app/data/js/清影.js",
+            "remark": "加载不出来一般是网站空资源，没有获取到有效资源链接",
+            "webSite": "https://revohd.com",
+            "type": 101
+        },
+        {
+            "name": "[豆·测]不太通用网盘",
+            "version": 666,
+            "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/vod/js/bttywp.js",
+            "remark": "修改域名自动获取分类",
+            "webSite": "https://mo.91muou.icu",
+            "type": 101
+        },
+        {
+            "name": "[豆·测]TG搜",
+            "version": 1,
+            "remark": "格式: 频道名称1@频道id1&频道名称2@频道id2",
+            "webSite": "123资源@zyfb123&天翼日更@tianyirigeng&木偶UC@ucpanpan&夸克电影@alyp_4K_Movies&夸克剧集@alyp_TV&夸克动漫@alyp_Animation",
+            "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/YYDS678/uzVideo-extensions/main/vod/js/tgs.js",
+            "type": 101
+        },
+        {
+            "name": "[豆·测]清影|看备注！！！",
+            "version": 1,
+            "api": "https://gh.llkk.cc/https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/vod/js/revohd.js",
+            "remark": "软件v1.6.57|网盘拓展v19以上可用，加载不出来一般是网站空资源，没有获取到有效资源链接",
+            "webSite": "https://revohd.com",
+            "type": 101
+        }
+    ]
+}
