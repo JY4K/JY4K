@@ -10,7 +10,7 @@
 // 请勿删减，可以新增
 
 const appConfig = {
-    _webSite: '首页@Quark_Movies&电影@alyp_4K_Movies&电视剧@alyp_TV&纪录片@alyp_JLP&动漫@alyp_Animation&音乐@Lossless_Yinyue',
+    _webSite: '首页@Quark_Movies&电影@alyp_4K_Movies&电视剧@alyp_TV&动漫@alyp_Animation&纪录片@alyp_JLP',
     /**
      * 网站主页，uz 调用每个函数前都会进行赋值操作
      * 如果不想被改变 请自定义一个变量

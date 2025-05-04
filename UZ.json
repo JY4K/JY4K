@@ -4,7 +4,7 @@
         "version": 1,
         "api": "https://jy4k.netlify.app/data/js/TG夸克.js",
         "remark": "格式: name1@频道id1&name2@频道id2",
-        "webSite": "首页@Quark_Movies&电影@alyp_4K_Movies&电视剧@alyp_TV&纪录片@alyp_JLP&动漫@alyp_Animation&音乐@Lossless_Yinyue",
+        "webSite": "首页@Quark_Movies&电影@alyp_4K_Movies&电视剧@alyp_TV&动漫@alyp_Animation&纪录片@alyp_JLP",
         "type": 101
     },
     {
