@@ -160,6 +160,23 @@
             "ext": "./data/js/低端影视.js"
         },
         {
+            "key": "金牌影视",
+            "name": "🔥 金牌┃1080",
+            "type": 3,
+            "api": "./data/py/金牌影视.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 1,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "https://www.hkybqufgh.com,https://www.sizhengxt.com,https://0996zp.com,https://9zhoukj.com/,https://www.sizhengxt.com,https://www.jiabaide.cn"
+            }
+        },
+        {
             "key": "麻花",
             "name": "🔥 麻花┃1080",
             "type": 4,
