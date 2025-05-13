@@ -14,7 +14,7 @@
     "sites": [
         {
             "key": "豆瓣",
-            "name": "🇨🇳 豆瓣",
+            "name": "📝 豆瓣┃热播",
             "type": 3,
             "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
