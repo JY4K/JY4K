@@ -7,7 +7,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "http://nn.qi-simple.top/spider.jar",
+    "spider": "",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -20,10 +20,25 @@
             "searchable": 0
         },
         {
+            "key": "豆瓣4K",
+            "name": "🇨🇳 豆瓣┃4K",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 1,
+            "hasMeaningfulTitle": 1,
+            "searchable": 0,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./data/js/豆瓣.js"
+        },
+        {
             "key": "配置中心",
             "name": "⚙ 配置┃中心",
             "type": 3,
             "api": "csp_Config",
+            "jar":"http://nn.qi-simple.top/spider.jar",
             "searchable": 0,
             "changeable": 0,
             "indexs": 0,
@@ -160,6 +175,22 @@
             "ext": "./data/js/低端影视.js"
         },
         {
+            "key": "荐片",
+            "name": "🔥 荐片┃1080",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 1,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/荐片.js"
+        },
+        {
             "key": "金牌影视",
             "name": "🔥 金牌┃1080",
             "type": 3,
@@ -175,6 +206,21 @@
             "ext": {
                 "site": "https://m.ivdy.com,https://www.hkybqufgh.com,https://www.sizhengxt.com,https://0996zp.com,https://9zhoukj.com/,https://www.sizhengxt.com,https://www.jiabaide.cn"
             }
+        },
+        {
+            "key": "乐享影视",
+            "name": "🔥 乐享┃1080",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 1,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": "http://114.66.55.28:8818/api.php/app/"
         },
         {
             "key": "麻花",
@@ -317,18 +363,6 @@
             "ext": "7lj763gg402i7942463j9j9jg3498k93lhggih54828g332i1j"
         },
         {
-            "key": "荐片",
-            "name": "🧸 荐片┃App",
-            "type": 3,
-            "api": "csp_Jianpian",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 1,
-            "hasMeaningfulTitle": 1,
-            "playerType": "2",
-            "ext": "http://api2.rinhome.com"
-        },
-        {
             "key": "苹果",
             "name": "🧸 苹果┃App",
             "type": 3,
@@ -369,7 +403,7 @@
         {
             "name": "巧技4K",
             "type": 1,
-            "url": "https://zy.qiaoji8.com/xiafan.php?url=",
+            "url": "🔥 https://zy.qiaoji8.com/xiafan.php?url=",
             "ext": {
                 "flag": [
                     "QD4K",
@@ -387,30 +421,9 @@
             }
         },
         {
-            "name": "乐云4K",
-            "type": 1,
-            "url": "http://chaoqianys.top:98/api/?key=DHZNz2KxkQ6szAWfJo&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.12.0"
-                }
-            }
-        },
-        {
             "name": "牛马4K",
             "type": 1,
-            "url": "http://niiuma.qi-simple.top//nn.php?url=",
+            "url": "🔥 http://niiuma.qi-simple.top//nn.php?url=",
             "ext": {
                 "flag": [
                     "qq",
@@ -429,9 +442,9 @@
             }
         },
         {
-            "name": "岁岁4K",
+            "name": "🔥 小白4K",
             "type": 1,
-            "url": "http://8.129.30.117:8117/suisui.php?key=suisui&url=",
+            "url": "http://120.46.190.255/小白白.php?url=",
             "ext": {
                 "flag": [
                     "qq",
@@ -450,28 +463,7 @@
             }
         },
         {
-            "name": "小白4K",
-            "type": 1,
-            "url": "http://222.186.57.24:7600/jx.php?url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.12.0"
-                }
-            }
-        },
-        {
-            "name": "羊羊4K",
+            "name": "🔥 羊羊4K",
             "type": 1,
             "url": "http://117.50.184.199:94/api.php/?key=1&url=",
             "ext": {
@@ -492,7 +484,7 @@
             }
         },
         {
-            "name": "钓鱼4K",
+            "name": "🔥 钓鱼4K",
             "type": 1,
             "url": "http://8.129.30.117:8117/diaoyu.php?url=",
             "ext": {
@@ -513,28 +505,7 @@
             }
         },
         {
-            "name": "金蝉4K",
-            "type": 1,
-            "url": "http://jx.jinchan.pro:1990/api/?key=kgJmcuH2ZO666Q8Vj3&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.12.0"
-                }
-            }
-        },
-        {
-            "name": "夏夜4K",
+            "name": "🔥 夏夜4K",
             "type": 1,
             "url": "http://8.155.50.80/xiaye.php?url=",
             "ext": {
@@ -555,7 +526,7 @@
             }
         },
         {
-            "name": "乌贼1080",
+            "name": "🔥 乌贼1080",
             "type": 1,
             "url": "http://jx.dedyn.io/jx.php?url=",
             "ext": {
@@ -576,7 +547,7 @@
             }
         },
         {
-            "name": "乌贼720",
+            "name": "🔥 乌贼720",
             "type": 1,
             "url": "http://jx.dedyn.io/?url=",
             "ext": {
@@ -597,7 +568,7 @@
             }
         },
         {
-            "name": "火花720",
+            "name": "🔥 火花720",
             "type": 1,
             "url": "https://api.huohua.live/api/?key=U1u6H8QZgCqD4h7Ljp&url=",
             "ext": {
@@ -618,7 +589,7 @@
             }
         },
         {
-            "name": "巧记720",
+            "name": "🔥 巧记720",
             "type": 1,
             "url": "https://zy.qiaoji8.com/neibu.php?url=",
             "ext": {
