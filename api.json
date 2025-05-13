@@ -7,8 +7,8 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "",
-    "wallpaper": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1747143206034/0513-1.txt;md5;bcb27d2740df8d21bfc49c507432663a",
+    "spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1747143206034/0513-1.txt;md5;bcb27d2740df8d21bfc49c507432663a",
+    "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
     "sites": [
