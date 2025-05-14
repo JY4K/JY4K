@@ -34,20 +34,6 @@
             "searchable": 0
         },
         {
-            "key": "影探4K",
-            "name": "🇨🇳 影探┃4K",
-            "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./data/js/影探.js"
-        },
-        {
             "key": "奇珍艺兽", //  站点唯一标识
             "name": "🇨🇳  爱奇艺┃解析", //  站点名称
             "type": 3, //  站点类型，0：xml 1：json 3：Spider
@@ -127,6 +113,20 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/js/BiliBili.js"
+        },
+        {
+            "key": "影探",
+            "name": "🔥 影探┃1080",
+            "type": 3,
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./data/js/影探.js"
         },
         {
             "key": "追剧",

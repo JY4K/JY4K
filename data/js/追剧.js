@@ -1,6 +1,6 @@
 globalThis.h_ost = 'http://v.lkuys.cn/';
 
-globalThis.vodlist = function($t, $pg) {
+globalThis.vodlist = function ($t, $pg) {
     const currentTimestamp = parseInt(Date.now() / 1000, 10);
     const url = h_ost + '/v2/home/type_search';
     const hx = CryptoJS.MD5('kj5649ertj84ks89r4jh8s45hf84hjfds04k' + currentTimestamp).toString();
@@ -19,7 +19,7 @@ globalThis.vodlist = function($t, $pg) {
     return JSON.parse(html).data.list;
 }
 
-globalThis.seach = function(wd) {
+globalThis.seach = function (wd) {
     const currentTimestamp = parseInt(Date.now() / 1000, 10);
     const url = h_ost + '/v2/home/search';
     const hx = CryptoJS.MD5('kj5649ertj84ks89r4jh8s45hf84hjfds04k' + currentTimestamp).toString();
@@ -37,7 +37,7 @@ globalThis.seach = function(wd) {
     }, true);
     return JSON.parse(html).data.list;
 }
-globalThis.vodids = function(ids) {
+globalThis.vodids = function (ids) {
     const currentTimestamp = parseInt(Date.now() / 1000, 10);
     const url = h_ost + '/v2/home/vod_details';
     const hx = CryptoJS.MD5('kj5649ertj84ks89r4jh8s45hf84hjfds04k' + currentTimestamp).toString();
@@ -81,7 +81,7 @@ globalThis.vodids = function(ids) {
     };
     return regeshi;
 }
-globalThis.jxx = function(input) {
+globalThis.jxx = function (input) {
     if ("741852963" !== '741852963') {
         return 'https://s0.mall.tcl.com/group1/M00/00/89/CvoGBGdcOPaAAUxvADwZniVV2bc476.mp4';
     }

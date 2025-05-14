@@ -736,14 +736,14 @@ var rule = {
                     jx: 0,
                     danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
                 };
-            }else if (bata.url.includes("qq")) {
+            } else if (bata.url.includes("qq")) {
                 input = {
                     parse: 0,
                     url: bata.url,
                     jx: 1,
                     danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
                 };
-            }else {
+            } else {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
@@ -790,7 +790,7 @@ var rule = {
         let delta = 50;
         let vod_play = {};
         let sites = data.playlink_sites;
-        sites.forEach(function(site) {
+        sites.forEach(function (site) {
             let playList = "";
             let vodItems = [];
             print(data)
@@ -809,12 +809,12 @@ var rule = {
                     if (vod_data != null) {
                         if (vod_data.allepidetail) {
                             vod_data = vod_data.allepidetail[site];
-                            vod_data.forEach(function(item, index) {
+                            vod_data.forEach(function (item, index) {
                                 vodItems.push((item.playlink_num || "") + "$" + urlDeal(item.url || ""))
                             })
                         } else {
                             vod_data = vod_data.defaultepisode;
-                            vod_data.forEach(function(item, index) {
+                            vod_data.forEach(function (item, index) {
                                 vodItems.push((item.period || "") + (item.name || "") + "$" + urlDeal(item.url) || "")
                             })
                         }

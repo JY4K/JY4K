@@ -670,30 +670,29 @@ var rule = {
                     parse: 0,
                     url: bata.url,
                     jx: 0,
-                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "http://1.94.221.189:5613/?url=" + input.split("?")[0]
                 };
-            }else if (bata.url.includes("qq")){
-                input = {
-                    parse: 0,
-                    url: bata.url,
-                    jx: 1,
-                    danmaku: "http://222.186.57.24:7600/dm/dm.php?url=" + input.split("?")[0]
-                };
-            }else {
+            } else if (bata.url.includes("qq")) {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
                     jx: 1,
-                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
+                };
+            } else {
+                input = {
+                    parse: 0,
+                    url: input.split("?")[0],
+                    jx: 1,
+                    danmaku: "https://dmku.itcxo.cn/?ac=dm&url=" + input.split("?")[0]
                 };
             }
-        }
-        catch {
+        } catch {
             input = {
                 parse: 0,
                 url: input.split("?")[0],
                 jx: 1,
-                danmaku: "http://222.186.57.24:7600/dm/dm.php?url=" + input.split("?")[0]
+                danmaku: "http://1.94.221.189:5613/?url=" + input.split("?")[0]
             };
         }
     }),
@@ -731,11 +730,11 @@ var rule = {
         if (/get_playsource/.test(input)) {
             eval(html);
             let indexList = QZOutputJson.PlaylistItem.indexList;
-            indexList.forEach(function(it) {
+            indexList.forEach(function (it) {
                 let dataUrl = "https://s.video.qq.com/get_playsource?id=" + sourceId + "&plat=2&type=4&data_type=3&range=" + it + "&video_type=10&plname=qq&otype=json";
                 eval(fetch(dataUrl, fetch_params));
                 let vdata = QZOutputJson.PlaylistItem.videoPlayList;
-                vdata.forEach(function(item) {
+                vdata.forEach(function (item) {
                     d.push({
                         title: item.title,
                         pic_url: item.pic,
@@ -760,11 +759,11 @@ var rule = {
                 for (let i = 0; i < video_lists.length; i += 30) {
                     video_list.push(video_lists.slice(i, i + 30))
                 }
-                video_list.forEach(function(it, idex) {
+                video_list.forEach(function (it, idex) {
                     let o_url = "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=1804&appid=20001238&appkey=6c03bbe9658448a4&union_platform=1&idlist=" + it.join(",");
                     let o_html = fetch(o_url, fetch_params);
                     eval(o_html);
-                    QZOutputJson.results.forEach(function(it1) {
+                    QZOutputJson.results.forEach(function (it1) {
                         it1 = it1.fields;
                         let url = "https://v.qq.com/x/cover/" + cid + "/" + it1.vid + ".html";
                         d.push({
@@ -778,17 +777,17 @@ var rule = {
                 })
             }
         }
-        let yg = d.filter(function(it) {
+        let yg = d.filter(function (it) {
             return it.type && it.type !== "正片"
         });
-        let zp = d.filter(function(it) {
+        let zp = d.filter(function (it) {
             return !(it.type && it.type !== "正片")
         });
         VOD.vod_play_from = yg.length < 1 ? "qq" : "qq$$$qq 预告及花絮";
-        VOD.vod_play_url = yg.length < 1 ? d.map(function(it) {
+        VOD.vod_play_url = yg.length < 1 ? d.map(function (it) {
             return it.title + "$" + it.url
-        }).join("#") : [zp, yg].map(function(it) {
-            return it.map(function(its) {
+        }).join("#") : [zp, yg].map(function (it) {
+            return it.map(function (its) {
                 return its.title + "$" + its.url
             }).join("#")
         }).join("$$$");
@@ -801,7 +800,7 @@ var rule = {
         let html = request(input);
         let baseList = pdfa(html, "body&&.result_item_v");
         log(baseList.length);
-        baseList.forEach(function(it) {
+        baseList.forEach(function (it) {
             let longText = pdfh(it, ".result_title&&a&&Text");
             let shortText = pdfh(it, ".type&&Text");
             let fromTag = pdfh(it, ".result_source&&Text");
