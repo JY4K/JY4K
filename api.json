@@ -9,7 +9,7 @@
 */
 {
     "spider": "http://nn.qi-simple.top/spider.jar;md5;97B3E428EC0157E1E86284F0D1202267",
-    "wallpaper": "./data/icon/封面.png",
+    "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
     "sites": [
