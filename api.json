@@ -2,7 +2,7 @@
     JY尘声明：
         以下网络资源如有冒犯请进入 QQ邮箱（2661136929@qq.com）反馈删除
         注：[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买]
-        ⛔资源来源：【牛马】：http://nn.qi-simple.top/api.json  ⛔
+        ⛔资源来源：【牛马】：http://nn.qi-simple.top/common.json  ⛔
         ⛔【沐辰】：https://json.doube.eu.org/t4.php ⛔
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
@@ -11,6 +11,14 @@
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
+    "lives": [
+        {
+            "name": "🇨🇳  IPV6",
+            "type": 0,
+            "url": "https://scrm-community.oss-cn-shenzhen.aliyuncs.com/miniso-vendor/20250425-868403-298462cec53c48439a5765ceaca3c67f.m3u",
+            "playerType": 2
+        }
+    ],
     "sites": [
         {
             "key": "豆瓣",
@@ -27,11 +35,29 @@
             "ext": "./data/js/豆瓣.js"
         },
         {
-            "key": "config",
+            "key": "配置中心",
             "name": "⚙ 配置┃中心",
             "type": 3,
             "api": "csp_Config",
-            "searchable": 0
+            "searchable": 0,
+            "changeable": 0,
+            "indexs": 0,
+            "style": {
+                "type": "list",
+                "ratio": 1.597
+            }
+        },
+        {
+            "key": "巧技",
+            "name": "🇨🇳  巧技┃解析",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "playerType": 2,
+            "ext": "7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
         },
         {
             "key": "奇珍艺兽", //  站点唯一标识
@@ -265,24 +291,10 @@
             "changeable": 0
         },
         {
-            "key": "巧技",
-            "name": "🧸 巧技┃App",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "playerType": 2,
-            "ext": "7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
-        },
-        {
             "key": "时常",
             "name": "🧸 时常┃App",
             "type": 3,
             "api": "csp_Xdai",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -295,7 +307,6 @@
             "name": "🧸 剧评┃App",
             "type": 3,
             "api": "csp_Jpys",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -308,7 +319,6 @@
             "name": "🧸 柠檬┃App",
             "type": 3,
             "api": "csp_Nmvod",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -321,7 +331,6 @@
             "name": "🧸 在线┃App",
             "type": 3,
             "api": "csp_Zxzj",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -337,7 +346,6 @@
             "name": "🧸 布布┃App",
             "type": 3,
             "api": "csp_Czsapp",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -407,6 +415,69 @@
             }
         },
         {
+            "name": "🔥 虎斑4K",
+            "type": 1,
+            "url": "http://103.45.162.207:13131/小虎斑.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.12.0"
+                }
+            }
+        },
+        {
+            "name": "🔥 钓鱼4K",
+            "type": 1,
+            "url": "http://8.129.30.117:8117/diaoyu.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.12.0"
+                }
+            }
+        },
+        {
+            "name": "🔥 夏夜4K",
+            "type": 1,
+            "url": "http://8.155.50.80/xiaye.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.12.0"
+                }
+            }
+        },
+        {
             "name": "🔥 牛马4K",
             "type": 1,
             "url": "http://niiuma.qi-simple.top//nn.php?url=",
@@ -452,48 +523,6 @@
             "name": "🔥 羊羊4K",
             "type": 1,
             "url": "http://117.50.184.199:94/api.php/?key=1&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.12.0"
-                }
-            }
-        },
-        {
-            "name": "🔥 钓鱼4K",
-            "type": 1,
-            "url": "http://8.129.30.117:8117/diaoyu.php?url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.12.0"
-                }
-            }
-        },
-        {
-            "name": "🔥 夏夜4K",
-            "type": 1,
-            "url": "http://8.155.50.80/xiaye.php?url=",
             "ext": {
                 "flag": [
                     "qq",
