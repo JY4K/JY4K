@@ -5,10 +5,11 @@
         ⛔资源来源：【牛马】：http://nn.qi-simple.top/common.json  ⛔
         ⛔【沐辰】：https://json.doube.eu.org/t4.php ⛔
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
+           img：https://api.imlcd.cn/bg/mc.php
 */
 {
     "spider": "http://nn.qi-simple.top/spider.jar;md5;97B3E428EC0157E1E86284F0D1202267",
-    "wallpaper": "https://api.imlcd.cn/bg/mc.php",
+    "wallpaper": "./data/icon/封面.png",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
     "sites": [
