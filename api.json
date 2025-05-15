@@ -40,6 +40,21 @@
             }
         },
         {
+            "key": "乐享影视",
+            "name": "🇨🇳  乐享┃(测试)",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": "http://114.66.55.28:8818/api.php/app/"
+        },
+        {
             "key": "奇珍艺兽", //  站点唯一标识
             "name": "🇨🇳  爱奇艺┃解析", //  站点名称
             "type": 3, //  站点类型，0：xml 1：json 3：Spider
@@ -199,21 +214,6 @@
             }
         },
         {
-            "key": "乐享影视",
-            "name": "🔥 乐享┃1080",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": "http://114.66.55.28:8818/api.php/app/"
-        },
-        {
             "key": "麻花",
             "name": "🔥 麻花┃1080",
             "type": 4,
@@ -268,6 +268,32 @@
             "quickSearch": 0,
             "filterable": 0,
             "changeable": 0
+        },
+        {
+            "key": "苹果",
+            "name": "🔥 苹果┃App",
+            "type": 3,
+            "api": "csp_LiteApple",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1
+        },
+        {
+            "key": "瓜子影视",
+            "name": "🔥 瓜子┃App",
+            "type": 3,
+            "api": "csp_Gz360",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1
         },
         {
             "key": "时常",
@@ -339,32 +365,6 @@
             "quickSearch": 1,
             "filterable": 0,
             "ext": "7lj763gg402i7942463j9j9jg3498k93lhggih54828g332i1j"
-        },
-        {
-            "key": "苹果",
-            "name": "🧸 苹果┃App",
-            "type": 3,
-            "api": "csp_LiteApple",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1
-        },
-        {
-            "key": "瓜子影视",
-            "name": "🧸 瓜子┃App",
-            "type": 3,
-            "api": "csp_Gz360",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1
         }
     ],
     "parses": [
