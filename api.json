@@ -16,7 +16,7 @@
             "key": "豆瓣",
             "name": "📝 豆瓣┃热播",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -58,7 +58,7 @@
             "key": "奇珍艺兽", //  站点唯一标识
             "name": "🇨🇳  爱奇艺┃解析", //  站点名称
             "type": 3, //  站点类型，0：xml 1：json 3：Spider
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js", //站点 API 地址
+            "api": "https://weixine.net/js/lib/drpy2.min.js", //站点 API 地址
             //  以下四项设置仅在 ShellTV 中使用有效
             "hasTags": 1, //  是否提供影片原数据 (包括影片类型，国家等)
             "hasPoster": 1, //  是否提供海报
@@ -75,7 +75,7 @@
             "key": "优哉游哉",
             "name": "🇨🇳  优酷┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -91,7 +91,7 @@
             "key": "腾云驾雾",
             "name": "🇨🇳  腾讯┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -107,7 +107,7 @@
             "key": "百芒无果",
             "name": "🇨🇳  芒果┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -123,7 +123,7 @@
             "key": "BiliBili",
             "name": "🇨🇳 B站┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -133,26 +133,13 @@
             "filterable": 1,
             "order_num": 0,
             "changeable": 0,
-            "ext": "./data/js/BiliBili.js"
-        },
-        {
-            "key": "巧技",
-            "name": "🇨🇳  巧技┃解析",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "playerType": 2,
-            "ext": "7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
+            "ext": "http://nn.qi-simple.top/JS/哔哩视频.js"
         },
         {
             "key": "低端影视",
             "name": "🔥 低端┃1080",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -168,7 +155,7 @@
             "key": "追剧",
             "name": "🔥 追剧┃1080",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -184,7 +171,7 @@
             "key": "荐片",
             "name": "🔥 荐片┃1080",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -294,6 +281,19 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
+        },
+        {
+            "key": "巧记",
+            "name": "🧸 巧记┃App",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "jar": "http://cdn.qiaoji8.com/fix250410.jar;md5;bb362e424047eec85220dc5aa1066896",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "playerType": 2,
+            "ext": "7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
         },
         {
             "key": "时常",
