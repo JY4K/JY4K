@@ -95,7 +95,7 @@ var rule = {
             let ids = input.split("_");
             let result = {};
             let url = "https://api.bilibili.com/pgc/player/web/playurl?qn=116&ep_id=" + ids[0] + "&cid=" + ids[1];
-            let dan = 'https://dm.vidz.asia/?ac=dm&url='+ url;
+            // let dan = 'https://dm.vidz.asia/?ac=dm&url='+ url;
             let html = request(url);
             let jRoot = JSON.parse(html);
             if (jRoot["message"] !== "success") {
@@ -127,7 +127,7 @@ var rule = {
                     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
                 };
                 result["contentType"] = "video/x-flv";
-                result["danmaku"] = dan;
+                result["danmaku"] = "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0];
                 input = result
             }
         }
