@@ -16,8 +16,8 @@ var rule = {
     },
     tab_order: ['bilibili', 'B站'],//线路顺序,按里面的顺序优先，没写的依次排后面
     timeout: 5000,
-    class_name: '番剧&国创&电影&电视剧&纪录片&综艺&时间表',
-    class_url: '1&4&2&5&3&7&时间表',
+    class_name: '番剧&国创&电影&电视剧&纪录片&综艺&全部&追番&追剧&时间表',
+    class_url: '1&4&2&5&3&7&全部&追番&追剧&时间表',
     filter: {
         "全部": [{
             "key": "tid",
@@ -93,19 +93,7 @@ var rule = {
             }
         } else {
             let ids = input.split("_");
-            // let dan = 'https://api.bilibili.com/x/v1/dm/list.so?oid=' + ids[1];
-            let bata = JSON.parse(response);
-            let api = "" + input.split("?")[0];
-            console.log(api);
-          
-            if (bata.url.includes("bilibili")) {
-                    let dan = "http://1.94.221.189:5613/?url=" + input.split("?")[0]
-            } else if (bata.url.includes("bilibili")) {
-                    let dan = "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
-            } else {
-                    let dan = "https://dmku.itcxo.cn/?ac=dm&url=" + input.split("?")[0]
-            }
-            
+            let dan = 'https://dm.vidz.asia/?ac=dm&url='+ input.split("?")[0];
             let result = {};
             let url = "https://api.bilibili.com/pgc/player/web/playurl?qn=116&ep_id=" + ids[0] + "&cid=" + ids[1];
             let html = request(url);
