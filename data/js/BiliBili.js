@@ -153,16 +153,16 @@ var rule = {
             if (bata.url.includes("bilibili")) {
                 input = {
                     parse: 0,
-                    url: bata.url,
+                    url: input,
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + bata.url
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
                 };
             } else {
                 input = {
                     parse: 0,
-                    url: bata.url,
+                    url: input,
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + bata.url
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
                 };
             }
         } catch {
@@ -170,7 +170,7 @@ var rule = {
                 parse: 0,
                 url: input,
                 jx: 1,
-                danmaku: "https://api.danmu.icu/?ac=dm&url=" + bata.url
+                danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
             };
         }
     }),
