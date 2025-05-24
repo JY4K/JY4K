@@ -154,15 +154,15 @@ var rule = {
                 input = {
                     parse: 0,
                     url: bata.url,
-                    jx: 1,
-                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                    jx: 0,
+                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input
                 };
             } else {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
                     jx: 1,
-                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input
                 };
             }
         } catch {
@@ -170,7 +170,7 @@ var rule = {
                 parse: 0,
                 url: input.split("?")[0],
                 jx: 1,
-                danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input
             };
         }
     }),
