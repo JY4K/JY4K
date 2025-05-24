@@ -48,22 +48,40 @@ var rule = {
     play_parse: true,
     pagecount: {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "7": 1, "时间表": 1},
     lazy: $js.toString(() => {
-        let d = [];
-        let response = JSON.parse(request("" + input));
-        let keys = Object.keys(response);
-        let urlKey = keys.find(key => key.startsWith('url'));
-        let url = urlKey ? response[urlKey] : null;
-
-        if (url) {
+        try {
+            let api = "" + input.split("?")[0];
+            console.log(api);
+            let response = fetch(api, {
+                method: 'get',
+                headers: {
+                    'User-Agent': 'okhttp/3.14.9',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+            let bata = JSON.parse(response);
+            if (bata.url.includes("bilibili")) {
+                input = {
+                    parse: 0,
+                    url: bata.url,
+                    jx: 0,
+                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                };
+            } else {
+                input = {
+                    parse: 0,
+                    url: input.split("?")[0],
+                    jx: 1,
+                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                };
+            }
+        } catch {
             input = {
-                url: url,
                 parse: 0,
-                header: rule.headers
+                url: input.split("?")[0],
+                jx: 1,
+                danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
             };
-        } else {
-            console.error("没有找到以 'url' 开头的字段");
         }
-        setResult(d);
     }),
     limit: 5,
     推荐: 'js:let d=[];function get_result(url){let videos=[];let html=request(url);let jo=JSON.parse(html);if(jo["code"]===0){let vodList=jo.result?jo.result.list:jo.data.list;vodList.forEach(function(vod){let aid=(vod["season_id"]+"").trim();let title=vod["title"].trim();let img=vod["cover"].trim();let remark=vod.new_ep?vod["new_ep"]["index_show"]:vod["index_show"];if(!title.includes("预告")){videos.push({vod_id:aid,vod_name:title,vod_pic:img,vod_remarks:remark})}})}return videos}function get_rank(tid,pg){return get_result("https://api.bilibili.com/pgc/web/rank/list?season_type="+tid+"&pagesize=20&page="+pg+"&day=3")}function get_rank2(tid,pg){return get_result("https://api.bilibili.com/pgc/season/rank/web/list?season_type="+tid+"&pagesize=20&page="+pg+"&day=3")}function home_video(){let videos=get_rank(1).slice(0,5);[4,2,5,3,7].forEach(function(i){videos=videos.concat(get_rank2(i).slice(0,5))});return videos}VODS=home_video();',
