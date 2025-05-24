@@ -93,9 +93,9 @@ var rule = {
             }
         } else {
             let ids = input.split("_");
-            let dan = 'https://dm.vidz.asia/?ac=dm&url='+ input.split("?")[0];
             let result = {};
             let url = "https://api.bilibili.com/pgc/player/web/playurl?qn=116&ep_id=" + ids[0] + "&cid=" + ids[1];
+            let dan = 'https://dm.vidz.asia/?ac=dm&url='+ url;
             let html = request(url);
             let jRoot = JSON.parse(html);
             if (jRoot["message"] !== "success") {
