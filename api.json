@@ -7,7 +7,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "./data/jar/spider.jar",
+    "spider": "http://nn.qi-simple.top/spider.jar;md5;8b6e5df22d2d8fc84c3d6271deff306a",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -16,7 +16,7 @@
             "key": "豆瓣",
             "name": "📝 豆瓣┃热播",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -58,7 +58,7 @@
             "key": "奇珍艺兽", //  站点唯一标识
             "name": "🇨🇳  爱奇艺┃解析", //  站点名称
             "type": 3, //  站点类型，0：xml 1：json 3：Spider
-            "api": "https://weixine.net/js/lib/drpy2.min.js", //站点 API 地址
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js", //站点 API 地址
             //  以下四项设置仅在 ShellTV 中使用有效
             "hasTags": 1, //  是否提供影片原数据 (包括影片类型，国家等)
             "hasPoster": 1, //  是否提供海报
@@ -75,7 +75,7 @@
             "key": "优哉游哉",
             "name": "🇨🇳  优酷┃解析",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -91,7 +91,7 @@
             "key": "腾云驾雾",
             "name": "🇨🇳  腾讯┃解析",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -107,7 +107,7 @@
             "key": "百芒无果",
             "name": "🇨🇳  芒果┃解析",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -123,7 +123,7 @@
             "key": "BiliBili",
             "name": "🇨🇳 B站┃解析",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -139,7 +139,7 @@
             "key": "低端影视",
             "name": "🔥 低端┃1080",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -155,7 +155,7 @@
             "key": "追剧",
             "name": "🔥 追剧┃1080",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -171,7 +171,7 @@
             "key": "荐片",
             "name": "🔥 荐片┃1080",
             "type": 3,
-            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "api": "http://nn.qi-simple.top/JS/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
