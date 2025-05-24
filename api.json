@@ -133,7 +133,7 @@
             "filterable": 1,
             "order_num": 0,
             "changeable": 0,
-            "ext": "http://nn.qi-simple.top/JS/哔哩视频.js"
+            "ext": "./data/js/BiliBili.js"
         },
         {
             "key": "低端影视",
