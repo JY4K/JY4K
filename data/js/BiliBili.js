@@ -155,22 +155,22 @@ var rule = {
                     parse: 0,
                     url: bata.url,
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + bata.url
                 };
             } else {
                 input = {
                     parse: 0,
-                    url: input.split("?")[0],
+                    url: bata.url,
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + bata.url
                 };
             }
         } catch {
             input = {
                 parse: 0,
-                url: input.split("?")[0],
+                url: input,
                 jx: 1,
-                danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
+                danmaku: "https://api.danmu.icu/?ac=dm&url=" + bata.url
             };
         }
     }),
