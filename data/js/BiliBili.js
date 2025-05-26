@@ -140,7 +140,7 @@ var rule = {
     limit: 5,
     lazy: $js.toString(() => {
         try {
-            let api = "" + input.split("?")[0];
+            let api = "" + input;
             console.log(api);
             let response = fetch(api, {
                 method: 'get',
@@ -155,22 +155,22 @@ var rule = {
                     parse: 0,
                     url: bata.url,
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + api
                 };
             } else {
                 input = {
                     parse: 0,
-                    url: input.split("?")[0],
+                    url: bata.url,
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + api
                 };
             }
         } catch {
             input = {
                 parse: 0,
-                url: input.split("?")[0],
+                url: bata.url,
                 jx: 1,
-                danmaku: "https://api.danmu.icu/?ac=dm&url=" + input
+                danmaku: "https://api.danmu.icu/?ac=dm&url=" + api
             };
         }
     }),
