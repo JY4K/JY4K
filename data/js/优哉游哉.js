@@ -2127,14 +2127,14 @@ var rule = {
                 }
             });
             let bata = JSON.parse(response);
-            if (bata.url.includes("http")) {
+            if (bata.url.includes("youku")) {
                 input = {
                     parse: 0,
                     url: bata.url,
                     jx: 0,
-                    danmaku: "https://dmku.itcxo.cn/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
                 };
-            } else if (bata.url.includes("http")) {
+            } else if (bata.url.includes("youku")) {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
@@ -2146,7 +2146,7 @@ var rule = {
                     parse: 0,
                     url: input.split("?")[0],
                     jx: 1,
-                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://dm.jlzj.xyz/dmku/?ac=dm&url=" + input.split("?")[0]
                 };
             }
         } catch {
@@ -2154,7 +2154,7 @@ var rule = {
                 parse: 0,
                 url: input.split("?")[0],
                 jx: 1,
-                danmaku: "https://dmku.itcxo.cn/?ac=dm&url=" + input.split("?")[0]
+                danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
             };
         }
     }),

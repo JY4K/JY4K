@@ -1,24 +1,33 @@
-const sameOption = [{
-    "key": "order", "name": "排序", "value": [{
-        "n": "更新时间", "v": "0"
-    }, {
-        "n": "追番人数", "v": "3"
-    }, {
-        "n": "最高评分", "v": "4"
-    }, {
-        "n": "播放数量", "v": "2"
-    }, {
-        "n": "开播时间", "v": "5"
+const sameOption = [
+    {
+        "key": "order",
+        "name": "排序",
+        "value": [{
+            "n": "更新时间",
+            "v": "0"
+        }, {
+            "n": "追番人数",
+            "v": "3"
+        }, {
+            "n": "最高评分",
+            "v": "4"
+        }, {
+            "n": "播放数量",
+            "v": "2"
+        }, {
+            "n": "开播时间",
+            "v": "5"
+        }
+            //, {
+            //	"n": "上映时间",
+            //	"v": "6"
+            //}, {
+            //	"n": "弹幕数量",
+            //	"v": "1"
+            //}
+        ]
     }
-        //, {
-        //	"n": "上映时间",
-        //	"v": "6"
-        //}, {
-        //	"n": "弹幕数量",
-        //	"v": "1"
-        //}
-    ]
-}]
+]
 
 var rule = {
     title: '哔哩影视[官]',
@@ -38,34 +47,57 @@ var rule = {
     },
     tab_order: ['bilibili', 'B站'], //线路顺序,按里面的顺序优先，没写的依次排后面
     timeout: 5000,
+    //class_name: '番剧&国创&电影&电视剧&纪录片&综艺&全部&追番&追剧&时间表',
+    //class_url: '1&4&2&5&3&7&全部&追番&追剧&时间表',
     class_name: '国创&番剧&电影&电视剧&综艺&纪录片',
     class_url: '4&1&2&5&7&3',
     filter: {
-        "1": sameOption, "2": sameOption, "3": sameOption, "4": sameOption, "5": sameOption, "7": sameOption, "全部": [{
-            "key": "tid", "name": "分类", "value": [{
-                "n": "国创", "v": "4"
+        "1": sameOption,
+        "2": sameOption,
+        "3": sameOption,
+        "4": sameOption,
+        "5": sameOption,
+        "7": sameOption,
+        "全部": [{
+            "key": "tid",
+            "name": "分类",
+            "value": [{
+                "n": "国创",
+                "v": "4"
             }, {
-                "n": "番剧", "v": "1"
+                "n": "番剧",
+                "v": "1"
             }, {
-                "n": "电影", "v": "2"
+                "n": "电影",
+                "v": "2"
             }, {
-                "n": "电视剧", "v": "5"
+                "n": "电视剧",
+                "v": "5"
             }, {
-                "n": "记录片", "v": "3"
+                "n": "记录片",
+                "v": "3"
             }, {
-                "n": "综艺", "v": "7"
+                "n": "综艺",
+                "v": "7"
             }]
         }, {
-            "key": "order", "name": "排序", "value": [{
-                "n": "更新时间", "v": "0"
+            "key": "order",
+            "name": "排序",
+            "value": [{
+                "n": "更新时间",
+                "v": "0"
             }, {
-                "n": "追番人数", "v": "3"
+                "n": "追番人数",
+                "v": "3"
             }, {
-                "n": "最高评分", "v": "4"
+                "n": "最高评分",
+                "v": "4"
             }, {
-                "n": "播放数量", "v": "2"
+                "n": "播放数量",
+                "v": "2"
             }, {
-                "n": "开播时间", "v": "5"
+                "n": "开播时间",
+                "v": "5"
             }
                 //, {
                 //	"n": "上映时间",
@@ -76,20 +108,31 @@ var rule = {
                 //}
             ]
         }, {
-            "key": "season_status", "name": "付费", "value": [{
-                "n": "全部", "v": "-1"
+            "key": "season_status",
+            "name": "付费",
+            "value": [{
+                "n": "全部",
+                "v": "-1"
             }, {
-                "n": "免费", "v": "1"
+                "n": "免费",
+                "v": "1"
             }, {
-                "n": "付费", "v": "2%2C6"
+                "n": "付费",
+                "v": "2%2C6"
             }, {
-                "n": "大会员", "v": "4%2C6"
+                "n": "大会员",
+                "v": "4%2C6"
             }]
-        }], "时间表": [{
-            "key": "tid", "name": "分类", "value": [{
-                "n": "番剧", "v": "1"
+        }],
+        "时间表": [{
+            "key": "tid",
+            "name": "分类",
+            "value": [{
+                "n": "番剧",
+                "v": "1"
             }, {
-                "n": "国创", "v": "4"
+                "n": "国创",
+                "v": "4"
             }]
         }]
     },
@@ -100,22 +143,40 @@ var rule = {
             let api = "" + input.split("?")[0];
             console.log(api);
             let response = fetch(api, {
-                method: 'get', headers: {
-                    'User-Agent': 'okhttp/3.14.9', 'Content-Type': 'application/x-www-form-urlencoded'
+                method: 'get',
+                headers: {
+                    'User-Agent': 'okhttp/3.14.9',
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 }
             });
             let bata = JSON.parse(response);
             if (bata.url.includes("bilibili")) {
                 input = {
-                    parse: 0, url: bata.url, jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + url
+                    parse: 0,
+                    url: bata.url,
+                    jx: 0,
+                    danmaku: "http://1.94.221.189:5613/?url=" + input.split("?")[0]
+                };
+            } else if (bata.url.includes("bilibili")) {
+                input = {
+                    parse: 0,
+                    url: input.split("?")[0],
+                    jx: 1,
+                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
+                };
+            } else if (bata.url.includes("bilibili")) {
+                input = {
+                    parse: 0,
+                    url: input.split("?")[0],
+                    jx: 1,
+                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
                 };
             } else {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
                     jx: 1,
-                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://dm.jlzj.xyz/dmku/?ac=dm&url=" + input.split("?")[0]
                 };
             }
         } catch {
@@ -123,10 +184,11 @@ var rule = {
                 parse: 0,
                 url: input.split("?")[0],
                 jx: 1,
-                danmaku: "https://api.danmu.icu/?ac=dm&url=" + input.split("?")[0]
+                danmaku: "http://1.94.221.189:5613/?url=" + input.split("?")[0]
             };
         }
-    }), //推荐: '',
+    }),
+    //推荐: '',
     推荐: 'js:let d=[];function get_result(url){let videos=[];let html=request(url);let jo=JSON.parse(html);if(jo["code"]===0){let vodList=jo.result?jo.result.list:jo.data.list;vodList.forEach(function(vod){let aid=(vod["season_id"]+"").trim();let title=vod["title"].trim();let img=vod["cover"].trim();let remark=vod.new_ep?vod["new_ep"]["index_show"]:vod["index_show"];videos.push({vod_id:aid,vod_name:title,vod_pic:img,vod_remarks:remark})})}return videos}function get_rank(tid,pg){return get_result("https://api.bilibili.com/pgc/web/rank/list?season_type="+tid+"&pagesize=20&page="+pg+"&day=3")}function get_rank2(tid,pg){return get_result("https://api.bilibili.com/pgc/season/rank/web/list?season_type="+tid+"&pagesize=20&page="+pg+"&day=3")}function home_video(){let videos=get_rank(1).slice(0,5);[4,2,5,3,7].forEach(function(i){videos=videos.concat(get_rank2(i).slice(0,5))});return videos}VODS=home_video();',
     一级: '',
     一级: $js.toString(() => {
@@ -145,7 +207,10 @@ var rule = {
                     let img = vod["cover"].trim();
                     let remark = vod.new_ep ? vod["new_ep"]["index_show"] : vod["index_show"];
                     videos.push({
-                        vod_id: aid, vod_name: title, vod_pic: img, vod_remarks: remark
+                        vod_id: aid,
+                        vod_name: title,
+                        vod_pic: img,
+                        vod_remarks: remark
                     })
                 })
             }
@@ -184,7 +249,10 @@ var rule = {
                     let img = vod["cover"].trim();
                     let remark = vod["pub_index"] + "　" + vod["follows"].replace("系列", "");
                     videos1.push({
-                        vod_id: aid, vod_name: title, vod_pic: img, vod_remarks: remark
+                        vod_id: aid,
+                        vod_name: title,
+                        vod_pic: img,
+                        vod_remarks: remark
                     })
                 });
                 let videos2 = [];
@@ -198,7 +266,10 @@ var rule = {
                             let date = vod["pub_ts"];
                             let remark = date + "   " + vod["pub_index"];
                             videos2.push({
-                                vod_id: aid, vod_name: title, vod_pic: img, vod_remarks: remark
+                                vod_id: aid,
+                                vod_name: title,
+                                vod_pic: img,
+                                vod_remarks: remark
                             })
                         }
                     })
