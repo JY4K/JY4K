@@ -7,7 +7,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "http://nn.qi-simple.top/spider.jar;md5;8b6e5df22d2d8fc84c3d6271deff306a",
+    "spider": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -25,34 +25,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./data/js/豆瓣.js"
-        },
-        {
-            "key": "配置中心",
-            "name": "⚙ 配置┃中心",
-            "type": 3,
-            "api": "csp_Config",
-            "searchable": 0,
-            "changeable": 0,
-            "indexs": 0,
-            "style": {
-                "type": "list",
-                "ratio": 1.597
-            }
-        },
-        {
-            "key": "乐享影视",
-            "name": "🇨🇳  乐享┃(测试)",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": "http://114.66.55.28:8818/api.php/app/"
         },
         {
             "key": "奇珍艺兽", //  站点唯一标识
@@ -215,6 +187,20 @@
             "ext": ""
         },
         {
+            "key": "py_OleVod",
+            "name": "🔥 欧乐┃1080",
+            "type": 4,
+            "api": "https://py.doube.eu.org/spider?site=OleVod",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "changeable": 0
+        },
+        {
             "key": "py_BaHaoTV",
             "name": "🔥 八号┃1080",
             "type": 4,
@@ -243,22 +229,8 @@
             "changeable": 0
         },
         {
-            "key": "py_OleVod",
-            "name": "🔥 欧乐┃1080",
-            "type": 4,
-            "api": "https://py.doube.eu.org/spider?site=OleVod",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0,
-            "changeable": 0
-        },
-        {
             "key": "苹果",
-            "name": "🔥 苹果┃App",
+            "name": "🧸 苹果┃App",
             "type": 3,
             "api": "csp_LiteApple",
             "hasTags": 1,
@@ -271,7 +243,7 @@
         },
         {
             "key": "瓜子影视",
-            "name": "🔥 瓜子┃App",
+            "name": "🧸 瓜子┃App",
             "type": 3,
             "api": "csp_Gz360",
             "hasTags": 1,
@@ -287,7 +259,6 @@
             "name": "🧸 巧记┃App",
             "type": 3,
             "api": "csp_AppYsV2",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -300,7 +271,6 @@
             "name": "🧸 剧评┃App",
             "type": 3,
             "api": "csp_Jpys",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -313,7 +283,6 @@
             "name": "🧸 柠檬┃App",
             "type": 3,
             "api": "csp_Nmvod",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -323,10 +292,9 @@
         },
         {
             "key": "csp_CZSPP",
-            "name": "🧸 厂长┃直连",
+            "name": "🐼 厂长┃直连",
             "type": 3,
             "api": "csp_Czsapp",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -342,7 +310,6 @@
             "name": "🐼 在线┃直连",
             "type": 3,
             "api": "csp_Zxzj",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -358,7 +325,6 @@
             "name": "🐼 布布┃直连",
             "type": 3,
             "api": "csp_Czsapp",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -374,7 +340,6 @@
             "name": "🐼 LibVio┃直连",
             "type": 3,
             "api": "csp_Lib",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -390,7 +355,6 @@
             "name": "🐼 时常┃无搜索",
             "type": 3,
             "api": "csp_Xdai",
-            "jar": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
