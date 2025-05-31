@@ -13,32 +13,62 @@
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
     "sites": [
         {
-            "key": "豆瓣",
-            "name": "📝 豆瓣┃热播",
+            "key": "豆瓣", //    站点唯一标识
+            "name": "📝 豆瓣┃热播", //    站点名称
+            "type": 3, //    站点类型，0：xml 1：json 3：Spider
+            "api": "https://weixine.net/js/lib/drpy2.min.js", //    站点 API 地址
+            //  以下前四项设置仅在 ShellTV 中使用有效
+            "hasTags": 1, //    是否提供影片原数据 (包括影片类型，国家等)
+            "hasPoster": 1, //    是否提供海报
+            "checkAlipan": 0, //    检查站点阿里资源是否有效
+            "hasMeaningfulTitle": 1, //    是否提供准确标题
+            "searchable": 0, //    是否支持搜索
+            "quickSearch": 1, //    是否支持快速搜索
+            "filterable": 1, //    是否支持筛选
+            "ext": "./data/js/豆瓣.js" //    扩展内容
+        },
+        {
+            "key": "乐享影视",
+            "name": "🇨🇳  乐享┃(测试)",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "csp_AppYsV2",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
-            "searchable": 0,
+            "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./data/js/豆瓣.js"
+            "playerType": 2,
+            "ext": "http://114.66.55.28:8818/api.php/app/"
         },
         {
-            "key": "奇珍艺兽", //  站点唯一标识
-            "name": "🇨🇳  爱奇艺┃解析", //  站点名称
-            "type": 3, //  站点类型，0：xml 1：json 3：Spider
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js", //站点 API 地址
-            //  以下四项设置仅在 ShellTV 中使用有效
-            "hasTags": 1, //  是否提供影片原数据 (包括影片类型，国家等)
-            "hasPoster": 1, //  是否提供海报
-            "checkAlipan": 0, //  检查站点阿里资源是否有效
-            "hasMeaningfulTitle": 1, //  是否提供准确标题
-            "searchable": 1, //  是否支持搜索
-            "quickSearch": 1, //  是否支持快速搜索
-            "filterable": 1, //是否支持筛选
+            "key": "csp_臻彩",
+            "name": "🇨🇳  臻彩┃4K",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": "http://cms.lygdyy.cn/api.php/app/"
+        },
+        {
+            "key": "奇珍艺兽",
+            "name": "🇨🇳  爱奇艺┃解析",
+            "type": 3,
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/js/奇珍艺兽.js"
@@ -47,7 +77,7 @@
             "key": "优哉游哉",
             "name": "🇨🇳  优酷┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -63,7 +93,7 @@
             "key": "腾云驾雾",
             "name": "🇨🇳  腾讯┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -79,7 +109,7 @@
             "key": "百芒无果",
             "name": "🇨🇳  芒果┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -95,7 +125,7 @@
             "key": "BiliBili",
             "name": "🇨🇳 B站┃解析",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -111,7 +141,7 @@
             "key": "低端影视",
             "name": "🔥 低端┃1080",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -127,7 +157,7 @@
             "key": "追剧",
             "name": "🔥 追剧┃1080",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -143,7 +173,7 @@
             "key": "荐片",
             "name": "🔥 荐片┃1080",
             "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -392,7 +422,7 @@
                     "Ace"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         },
@@ -413,7 +443,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         },
@@ -434,7 +464,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         },
@@ -455,7 +485,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         },
@@ -476,7 +506,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         },
@@ -497,7 +527,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         },
@@ -518,7 +548,7 @@
                     "bilibili"
                 ],
                 "header": {
-                    "User-Agent": "okhttp/4.12.0"
+                    "User-Agent": "okhttp/4.9.1"
                 }
             }
         }
