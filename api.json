@@ -60,8 +60,8 @@
             "ext": "http://cms.lygdyy.cn/api.php/app/"
         },
         {
-            "key": "影探",
-            "name": "🇨🇳  影探┃(测试)",
+            "key": "三六零",
+            "name": "🇨🇳  三六零┃解析",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -73,7 +73,7 @@
             "filterable": 1,
             "order_num": 0,
             "changeable": 0,
-            "ext": "./data/js/影探.js"
+            "ext": "./data/js/三六零.js"
         },
         {
             "key": "奇珍艺兽",
