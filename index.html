@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: http: https:;">
     <title>API签到平台</title>
     <style>
         /* 全局CSS变量定义 */
         :root {
+            /* 布局相关 */
             --gap-size: 1.5rem;
+            --window-height: 500px;
+            --window-gap: 20px;
+            
+            /* 视觉相关 */
             --radius: 20px;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --backdrop-blur: blur(5px);
+            --title-gradient: linear-gradient(20deg, var(--color-accent) 0%, #2c5282 100%);
+            
+            /* 颜色系统 */
             --color-primary: #f8f9fa;
             --color-accent: #4a90e2;
             --color-text: #2d3748;
             --color-text-light: #718096;
             --color-border: #e2e8f0;
+            
+            /* 动画相关 */
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --window-height: 500px;
-            --window-gap: 20px;
-            --backdrop-blur: blur(5px);
-            --title-gradient: linear-gradient(20deg, var(--color-accent) 0%, #2c5282 100%);
         }
 
-        /* 隐藏滚动条的全局样式 */
+        /* 隐藏滚动条 */
         ::-webkit-scrollbar {
             display: none;
         }
 
         * {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         /* 基础样式 */
@@ -43,6 +51,19 @@
             gap: var(--gap-size);
             min-height: 100vh;
             color: var(--color-text);
+        }
+
+        /* 响应式设计 */
+        @media (min-width: 1200px) {
+            :root {
+                --window-height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
         }
 
         /* 头部样式 */
@@ -524,13 +545,6 @@
                 margin-right: 20px;
             }
         }
-
-        /* 大屏幕适配 */
-        @media (min-width: 1200px) {
-            body {
-                --window-height: 600px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -600,7 +614,7 @@
                 <span class="marquee-label">📊 钓鱼4K</span>
                 @http://8.129.30.117:8117/diaoyu.php?url=
             </header>
-            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php" scrolling="no" allow="http" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php" scrolling="no" allow="http https" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
             <div class="signin-hint">签到口令：diaoyu</div>
             <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
         </article>
@@ -610,7 +624,7 @@
                 <span class="marquee-label">📊 夏夜4K</span>
                 @自行去找
             </header>
-            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php" scrolling="no" allow="http" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php" scrolling="no" allow="http https" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
             <div class="signin-hint">签到口令：公众号被狗举报了</div>
             <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
         </article>
@@ -620,7 +634,7 @@
                 <span class="marquee-label">📊 小白白4K</span>
                 @http://120.46.190.255/小白白.php?url=
             </header>
-            <iframe class="adaptive-iframe" src="http://120.46.190.255/xiaobaibai_sign.php" scrolling="no" allow="http" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+            <iframe class="adaptive-iframe" src="http://120.46.190.255/xiaobaibai_sign.php" scrolling="no" allow="http https" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
             <div class="signin-hint">签到口令：Km3lS36Q</div>
             <button class="window-jump-btn" data-jump-link="http://120.46.190.255/xiaobaibai_sign.php">跳转</button>
         </article>
@@ -1417,14 +1431,26 @@
 <script>
     // 使用立即执行函数避免全局变量污染
     (function() {
-        // 缓存DOM元素
+        // 配置对象
+        const config = {
+            parseInterfaces: [
+                "🔥 牛马@http://niiuma.qi-simple.top//nn.php?url=",
+                "🔥 钓鱼@http://8.129.30.117:8117/diaoyu.php?url=",
+                "🔥 小白白@http://120.46.190.255/小白白.php?url=",
+                "🔥 乌贼1@http://jx.dedyn.io/jx.php?url=",
+                "🔥 乌贼2@http://jx.dedyn.io/?url="
+            ].join(";")
+        };
+
+        // DOM元素缓存
         const elements = {
             mainTitle: document.getElementById('mainTitle'),
             slider: document.querySelector('.windows-slider'),
             prevBtn: document.querySelector('.slider-nav.prev'),
             nextBtn: document.querySelector('.slider-nav.next'),
             windows: document.querySelectorAll('.responsive-window'),
-            copyNotification: document.getElementById('copy-notification')
+            copyNotification: document.getElementById('copy-notification'),
+            marquee: document.querySelector('.marquee-content')
         };
 
         // 状态管理
@@ -1436,18 +1462,7 @@
             currentTranslate: 0,
             prevTranslate: 0,
             isMobile: window.innerWidth <= 768,
-            moved: false // 新增，判断是否滑动
-        };
-
-        // 解析接口配置
-        const config = {
-            parseInterfaces: [
-                "🔥 牛马@http://niiuma.qi-simple.top//nn.php?url=",
-                "🔥 钓鱼@http://8.129.30.117:8117/diaoyu.php?url=",
-                "🔥 小白白@http://120.46.190.255/小白白.php?url=",
-                "🔥 乌贼1@http://jx.dedyn.io/jx.php?url=",
-                "🔥 乌贼2@http://jx.dedyn.io/?url="
-            ].join(";")
+            moved: false
         };
 
         // 工具函数
@@ -1460,7 +1475,7 @@
             async copyToClipboard(text) {
                 try {
                     await navigator.clipboard.writeText(text);
-                    utils.showCopyNotification();
+                    this.showCopyNotification();
                 } catch (err) {
                     console.error('复制失败:', err);
                 }
@@ -1478,14 +1493,13 @@
                 elements.slider.style.transform = `translateX(${offset}px)`;
                 state.currentTranslate = offset;
                 state.prevTranslate = offset;
-                utils.updateNavButtons();
+                this.updateNavButtons();
             },
 
             handleResize() {
                 state.isMobile = window.innerWidth <= 768;
                 const windowGap = state.isMobile ? 10 : 20;
 
-                // 更新窗口宽度
                 state.windowWidth = state.isMobile ? 
                     elements.windows[0].offsetWidth : 
                     (elements.windows[0].offsetWidth + windowGap);
@@ -1502,11 +1516,10 @@
                     }
                 });
                 
-                // 保持当前索引位置
-                utils.slideTo(state.currentIndex);
+                this.slideTo(state.currentIndex);
             },
 
-            // 触摸事件处理函数
+            // 触摸事件处理
             touchStart(event) {
                 state.isDragging = true;
                 state.startPos = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
@@ -1519,9 +1532,8 @@
                 if (!state.isDragging) return;
                 const currentPosition = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
                 const diff = currentPosition - state.startPos;
-                if (Math.abs(diff) > 10) state.moved = true; // 超过10px才算滑动
+                if (Math.abs(diff) > 10) state.moved = true;
                 const newTranslate = state.prevTranslate + diff;
-                // 限制滑动范围
                 const maxTranslate = 0;
                 const minTranslate = -(elements.windows.length - (state.isMobile ? 1 : 3)) * state.windowWidth;
                 if (newTranslate > maxTranslate || newTranslate < minTranslate) return;
@@ -1535,15 +1547,14 @@
                 if (!state.isDragging) return;
                 state.isDragging = false;
                 const movedBy = state.currentTranslate - state.prevTranslate;
-                // 只有滑动距离大于10px才切换，否则回到原位置
                 if (state.moved && Math.abs(movedBy) > state.windowWidth / 4) {
                     if (movedBy < 0) {
-                        utils.slideTo(state.currentIndex + 1);
+                        this.slideTo(state.currentIndex + 1);
                     } else {
-                        utils.slideTo(state.currentIndex - 1);
+                        this.slideTo(state.currentIndex - 1);
                     }
                 } else {
-                    utils.slideTo(state.currentIndex);
+                    this.slideTo(state.currentIndex);
                 }
             }
         };
@@ -1556,23 +1567,19 @@
                 elements.nextBtn.addEventListener('click', () => utils.slideTo(state.currentIndex + 1));
 
                 // 窗口大小变化事件
-                window.addEventListener('resize', utils.handleResize);
+                window.addEventListener('resize', () => utils.handleResize());
 
                 // 触摸事件
-                elements.slider.addEventListener('mousedown', utils.touchStart);
-                elements.slider.addEventListener('touchstart', utils.touchStart);
-                
-                elements.slider.addEventListener('mousemove', utils.touchMove);
-                elements.slider.addEventListener('touchmove', utils.touchMove);
-                
-                elements.slider.addEventListener('mouseup', utils.touchEnd);
-                elements.slider.addEventListener('touchend', utils.touchEnd);
-                elements.slider.addEventListener('mouseleave', utils.touchEnd);
+                elements.slider.addEventListener('mousedown', utils.touchStart.bind(utils));
+                elements.slider.addEventListener('touchstart', utils.touchStart.bind(utils));
+                elements.slider.addEventListener('mousemove', utils.touchMove.bind(utils));
+                elements.slider.addEventListener('touchmove', utils.touchMove.bind(utils));
+                elements.slider.addEventListener('mouseup', utils.touchEnd.bind(utils));
+                elements.slider.addEventListener('touchend', utils.touchEnd.bind(utils));
+                elements.slider.addEventListener('mouseleave', utils.touchEnd.bind(utils));
+                elements.slider.addEventListener('dragstart', e => e.preventDefault());
 
-                // 防止拖动时选中文本
-                elements.slider.addEventListener('dragstart', (e) => e.preventDefault());
-
-                // 签到口令点击事件
+                // 复制相关事件
                 document.querySelectorAll('.signin-hint').forEach(hint => {
                     hint.addEventListener('click', e => {
                         e.stopPropagation();
@@ -1581,15 +1588,12 @@
                     });
                 });
 
-                // 主标题点击事件
                 elements.mainTitle.addEventListener('click', () => utils.copyToClipboard(config.parseInterfaces));
 
-                // 卡片信息复制事件
                 document.querySelectorAll('.feature-item').forEach(item => {
                     item.addEventListener('click', () => utils.copyToClipboard(item.dataset.copy));
                 });
 
-                // 窗口标题复制事件
                 document.querySelectorAll('.window-title').forEach(title => {
                     title.addEventListener('click', () => {
                         const text = title.textContent.replace(/^[^\u4e00-\u9fa5]+\s*/, '').trim();
@@ -1602,7 +1606,6 @@
                     btn.addEventListener('click', () => window.open(btn.dataset.link, '_blank'));
                 });
 
-                // 窗口跳转按钮事件
                 document.querySelectorAll('.window-jump-btn').forEach(btn => {
                     btn.addEventListener('click', e => {
                         e.stopPropagation();
@@ -1616,36 +1619,32 @@
             }
         };
 
-        // 公告栏丝滑滚动优化
-        function smoothMarquee() {
-            const marquee = document.querySelector('.marquee-content');
-            if (!marquee) return;
+        // 公告栏滚动
+        function initMarquee() {
+            if (!elements.marquee) return;
 
-            // 克隆内容用于无缝滚动
-            const originalContent = marquee.innerHTML;
-            marquee.innerHTML = originalContent + originalContent;
+            const originalContent = elements.marquee.innerHTML;
+            elements.marquee.innerHTML = originalContent + originalContent;
 
-            // 计算滚动参数
-            const contentWidth = marquee.scrollWidth / 2;
+            const contentWidth = elements.marquee.scrollWidth / 2;
             let pos = 0;
-            let speed = 0.5; // 基础滚动速度
+            let speed = 0.5;
             let lastTime = performance.now();
             let isHovered = false;
 
-            // 添加鼠标悬停事件
-            marquee.addEventListener('mouseenter', () => isHovered = true);
-            marquee.addEventListener('mouseleave', () => isHovered = false);
+            elements.marquee.addEventListener('mouseenter', () => isHovered = true);
+            elements.marquee.addEventListener('mouseleave', () => isHovered = false);
 
             function step(currentTime) {
                 if (!isHovered) {
                     const deltaTime = currentTime - lastTime;
-                    pos -= speed * (deltaTime / 16); // 基于时间的平滑滚动
+                    pos -= speed * (deltaTime / 16);
 
                     if (Math.abs(pos) >= contentWidth) {
                         pos = 0;
                     }
 
-                    marquee.style.transform = `translateX(${pos}px)`;
+                    elements.marquee.style.transform = `translateX(${pos}px)`;
                 }
                 lastTime = currentTime;
                 requestAnimationFrame(step);
@@ -1656,8 +1655,7 @@
 
         // 启动应用
         handlers.init();
-        // 启动公告栏滚动
-        smoothMarquee();
+        initMarquee();
     })();
 </script>
 </body>
