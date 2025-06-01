@@ -389,6 +389,21 @@
             "ext": "7lj763gg402i7942503g839jg74h8h88highi40799jh6i6k454419l0l5184k0g548458hh994hjj94330jk296k4l045"
         },
         {
+            "key": "csp_CZSPP",
+            "name": "🐼 厂长┃直连",
+            "type": 3,
+            "api": "csp_Czsapp",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": "7lj763gg402i7942463j9j9jh346968hg5ll845ki38473"
+        },
+        {
             "key": "ZXZJ",
             "name": "🐼 在线┃直连",
             "type": 3,

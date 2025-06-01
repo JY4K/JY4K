@@ -36,7 +36,7 @@ var rule = {
         "img": "img&&src",
         "desc": ".moviedteail_list&&li&&Text",
         "content": ".yp_context&&Text",
-        tabs: 'js:TABS = ["清风分享"]',
+        // tabs: 'js:TABS = ["清风分享"]',
         "lists": ".paly_list_btn&&a",
     },
     搜索: '.bt_img.mi_ne_kd.search_list&&li;img&&alt;img&&data-original;.nostag&&Text;a&&href',
