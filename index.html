@@ -19,9 +19,7 @@
             --window-height: 500px;
             --window-gap: 20px;
             --backdrop-blur: blur(5px);
-            --title-gradient: linear-gradient(20deg, #4a90e2 0%, #2c5282 100%);
-            --title-color: #2c5282;
-            --title-hover: #4a90e2;
+            --title-gradient: linear-gradient(20deg, var(--color-accent) 0%, #2c5282 100%);
         }
 
         /* 隐藏滚动条的全局样式 */
@@ -57,13 +55,11 @@
         .header h1 {
             font-size: 2rem;
             margin: 0.5em 0;
-            color: var(--title-color);
+            background-image: var(--title-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .header h1:hover {
-            color: var(--title-hover);
         }
 
         .header p {
@@ -122,6 +118,52 @@
                 flex: 0 0 calc(33.333% - var(--window-gap));
                 min-width: calc(33.333% - var(--window-gap));
                 margin: 0 calc(var(--window-gap) / 2);
+            }
+        }
+
+        /* 添加移动端优化样式 */
+        @media (max-width: 767px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .responsive-window {
+                flex: 0 0 92%;
+                min-width: 92%;
+                margin: 0 4%;
+            }
+            
+            .windows-container {
+                margin: 0.5rem 0;
+            }
+            
+            .slider-nav {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            .slider-nav.prev {
+                left: 10px;
+            }
+            
+            .slider-nav.next {
+                right: 10px;
+            }
+            
+            .window-title {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+            
+            .signin-hint {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+            
+            .window-jump-btn {
+                padding: 4px 10px;
+                font-size: 11px;
             }
         }
 
@@ -202,24 +244,18 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            transition: var(--transition);
-            color: var(--title-color);
+            transition: background 0.2s;
+            color: var(--color-text);
         }
 
         .window-title:hover {
             background: rgba(74, 144, 226, 0.05);
-            color: var(--title-hover);
         }
 
         .window-title .marquee-label {
-            color: var(--title-color);
+            color: var(--color-accent);
             font-weight: 700;
             margin-right: 8px;
-            transition: var(--transition);
-        }
-
-        .window-title:hover .marquee-label {
-            color: var(--title-hover);
         }
 
         /* 签到口令提示 */
@@ -286,6 +322,22 @@
         .platform-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            padding: 0.5rem;
+            background: var(--color-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 4px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .platform-card:hover .card-header {
+            background: rgba(74, 144, 226, 0.05);
+            color: var(--color-accent);
         }
 
         /* 修改卡片内容区域 */
@@ -402,14 +454,9 @@
         }
 
         .global-notice h3 {
-            color: var(--title-color);
+            color: var(--color-accent);
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        .global-notice h3:hover {
-            color: var(--title-hover);
         }
 
         /* TG链接样式 */
@@ -431,19 +478,19 @@
             transform: translateY(1px);
         }
 
-        /* 章节标题样式 */
+        .section-title {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 2rem 0 1rem;
+        }
+
         .section-title h2 {
             font-size: 1.75rem;
-            color: var(--title-color);
+            color: var(--color-text);
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
             font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .section-title h2:hover {
-            color: var(--title-hover);
         }
 
         .section-title h2::after {
@@ -598,7 +645,7 @@
                 <span class="marquee-label">📊 钓鱼4K</span>
                 @http://8.129.30.117:8117/diaoyu.php?url=
             </header>
-            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php" scrolling="no"></iframe>
+            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php?ua=Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1" scrolling="no"></iframe>
             <div class="signin-hint">签到口令：diaoyu</div>
             <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
         </article>
@@ -608,7 +655,7 @@
                 <span class="marquee-label">📊 夏夜4K</span>
                 @自行去找
             </header>
-            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php" scrolling="no"></iframe>
+            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php?ua=Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1" scrolling="no"></iframe>
             <div class="signin-hint">签到口令：公众号被狗举报了</div>
             <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
         </article>
@@ -618,7 +665,7 @@
                 <span class="marquee-label">📊 小白白4K</span>
                 @http://120.46.190.255/小白白.php?url=
             </header>
-            <iframe class="adaptive-iframe" src="http://120.46.190.255/xiaobaibai_sign.php" scrolling="no"></iframe>
+            <iframe class="adaptive-iframe" src="http://120.46.190.255/xiaobaibai_sign.php?ua=Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1" scrolling="no"></iframe>
             <div class="signin-hint">签到口令：Km3lS36Q</div>
             <button class="window-jump-btn" data-jump-link="http://120.46.190.255/xiaobaibai_sign.php">跳转</button>
         </article>
