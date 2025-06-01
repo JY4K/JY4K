@@ -68,14 +68,6 @@ var rule = {
         tab_text: 'body&&Text',
         list_text: 'body&&Text',
         list_url: 'a&&href',
-        // 添加过滤规则
-        list_filter: {
-            "天堂资源": "no",  // 过滤掉包含"天堂资源"的播放源
-            "非凡资源": "no",
-            "悠悠资源": "no",
-            "天堂资源": "no",
-            "量子资源": "no"
-        }
     },
     预处理: $js.toString(() => {
         let html = request(rule.host);
@@ -91,12 +83,4 @@ var rule = {
         }
     }),
     搜索: '.public-list-box;.thumb-txt.cor4.hide&&Text;img:eq(-1)&&data-src;a&&Text;a&&href',
-    // 搜索结果的过滤
-    search_filter: {
-        "天堂资源": "no",  // 过滤掉包含"天堂资源"的播放源
-        "非凡资源": "no",
-        "悠悠资源": "no",
-        "天堂资源": "no",
-        "量子资源": "no"
-    }
 }
