@@ -15,10 +15,10 @@ var rule = {
     play_parse: 0,
     lazy: `js:
         if (/m3u8|mp4/.test(input)) {
-            input = { jx: 0, parse: 0, url: input }
+            input = {url: input }
         } else {
             let kurl = request(input).match(/<source src="(.*?)"/)[1];
-            input = { jx: 0, parse: 0, url: kurl }
+            input = {url: kurl }
         }
         `,
     limit: 6,
