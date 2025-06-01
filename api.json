@@ -60,22 +60,6 @@
             "ext": "http://cms.lygdyy.cn/api.php/app/"
         },
         {
-            "key": "三六零",
-            "name": "🇨🇳  三六零┃解析",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/三六零.js"
-        },
-        {
             "key": "奇珍艺兽",
             "name": "🇨🇳  爱奇艺┃解析",
             "type": 3,
