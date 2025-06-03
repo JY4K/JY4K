@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: http: https:;">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: http: https:;">
     <title>API签到平台</title>
     <style>
         /* 全局CSS变量定义 */
@@ -12,20 +13,20 @@
             --gap-size: 1.5rem;
             --window-height: 500px;
             --window-gap: 20px;
-            
+
             /* 视觉相关 */
             --radius: 20px;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --backdrop-blur: blur(5px);
             --title-gradient: linear-gradient(20deg, var(--color-accent) 0%, #2c5282 100%);
-            
+
             /* 颜色系统 */
             --color-primary: #f8f9fa;
             --color-accent: #4a90e2;
             --color-text: #2d3748;
             --color-text-light: #718096;
             --color-border: #e2e8f0;
-            
+
             /* 动画相关 */
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -167,6 +168,7 @@
             scrollbar-width: none !important; /* Firefox */
             allow: "http" "https"; /* 允许HTTP和HTTPS内容 */
         }
+
         .adaptive-iframe::-webkit-scrollbar {
             display: none !important; /* Chrome/Safari */
         }
@@ -587,7 +589,8 @@
             <div class="media-container">
                 <img src="./data/icon/UZ影视.jpg" alt="UZ影视">
             </div>
-            <button class="window-jump-btn" data-jump-link="https://uz-video-five.vercel.app/store/index.html">跳转</button>
+            <button class="window-jump-btn" data-jump-link="https://uz-video-five.vercel.app/store/index.html">跳转
+            </button>
         </article>
 
         <article class="responsive-window">
@@ -619,7 +622,9 @@
                 <span class="marquee-label">📊 钓鱼4K</span>
                 @http://8.129.30.117:8117/diaoyu.php?url=
             </header>
-            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php" scrolling="no" allow="http https" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+            <iframe class="adaptive-iframe" src="http://8.129.30.117:8117/algorithm_sign.php" scrolling="no"
+                    allow="http https"
+                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
             <div class="signin-hint">签到口令：diaoyu</div>
             <button class="window-jump-btn" data-jump-link="http://8.129.30.117:8117/algorithm_sign.php">跳转</button>
         </article>
@@ -629,7 +634,9 @@
                 <span class="marquee-label">📊 夏夜4K</span>
                 @自行去找
             </header>
-            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php" scrolling="no" allow="http https" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+            <iframe class="adaptive-iframe" src="http://8.155.50.80/algorithm_sign.php" scrolling="no"
+                    allow="http https"
+                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
             <div class="signin-hint">签到口令：公众号被狗举报了</div>
             <button class="window-jump-btn" data-jump-link="http://8.155.50.80/algorithm_sign.php">跳转</button>
         </article>
@@ -639,7 +646,9 @@
                 <span class="marquee-label">📊 小白白4K</span>
                 @http://120.46.190.255/小白白.php?url=
             </header>
-            <iframe class="adaptive-iframe" src="http://120.46.190.255/xiaobaibai_sign.php" scrolling="no" allow="http https" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+            <iframe class="adaptive-iframe" src="http://120.46.190.255/xiaobaibai_sign.php" scrolling="no"
+                    allow="http https"
+                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
             <div class="signin-hint">签到口令：Km3lS36Q</div>
             <button class="window-jump-btn" data-jump-link="http://120.46.190.255/xiaobaibai_sign.php">跳转</button>
         </article>
@@ -1471,7 +1480,7 @@
 
 <script>
     // 使用立即执行函数避免全局变量污染
-    (function() {
+    (function () {
         // 配置对象
         const config = {
             parseInterfaces: [
@@ -1525,7 +1534,7 @@
 
             updateNavButtons() {
                 elements.prevBtn.classList.toggle('hidden', state.currentIndex === 0);
-                elements.nextBtn.classList.toggle('hidden', 
+                elements.nextBtn.classList.toggle('hidden',
                     state.currentIndex >= elements.windows.length - (state.isMobile ? 1 : 3));
             },
 
@@ -1542,8 +1551,8 @@
                 state.isMobile = window.innerWidth <= 768;
                 const windowGap = state.isMobile ? 10 : 20;
 
-                state.windowWidth = state.isMobile ? 
-                    elements.windows[0].offsetWidth : 
+                state.windowWidth = state.isMobile ?
+                    elements.windows[0].offsetWidth :
                     (elements.windows[0].offsetWidth + windowGap);
 
                 elements.windows.forEach(window => {
@@ -1557,7 +1566,7 @@
                         window.style.margin = `0 ${windowGap / 2}px`;
                     }
                 });
-                
+
                 this.slideTo(state.currentIndex);
             },
 
