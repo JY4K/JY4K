@@ -293,6 +293,9 @@
             transition: var(--transition);
             overflow: hidden;
             box-shadow: var(--shadow);
+            display: flex; /* Add flex display */
+            flex-direction: column; /* Stack children vertically */
+            height: 100%; /* Make sure card takes full height in the grid */
         }
 
         .platform-card:hover {
@@ -320,9 +323,10 @@
         .card-body {
             padding: 1.5rem;
             position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            /* height: 100%; Remove fixed height */
+            flex-grow: 1; /* Allow card body to grow and take available space */
+            display: flex; /* Add flex display */
+            flex-direction: column; /* Stack children vertically */
         }
 
         /* 卡片标签样式 */
@@ -343,6 +347,7 @@
         /* 特性列表样式 */
         .feature-list {
             margin-bottom: 1rem;
+            flex-grow: 1; /* Allow feature list to grow within card body */
         }
 
         .feature-item {
@@ -378,7 +383,7 @@
         .jump-btn {
             display: block;
             width: 100%;
-            margin-top: 1rem;
+            margin-top: auto; /* Keep auto margin to push to the bottom */
             padding: 12px;
             background: var(--color-accent);
             color: white;
