@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              VIP 视频解析
-// @version           3.2.9
+// @version           3.3.0
 // @description       支持腾讯视频、爱奇艺、优酷、土豆、芒果TV、搜狐视频、乐视视频、PPTV、风行、华数TV、哔哩哔哩等，支持多个解析接口切换，支持视频自由选集，自动解析视频，支持自定义拖拽位置，支持视频广告跳过，支持页内页外解析，支持 Tampermonkey、Violentmonkey、Greasemonkey
 // @author            sign
 // @icon              data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFHGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTA3LTIxVDEwOjUwOjE4KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wNy0yMVQxMDo1OToyNiswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wNy0yMVQxMDo1OToyNiswODowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2M2YyZWUxZC0xZDdi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
@@ -48,21 +48,21 @@
         {title:"火花",type:"1",url:"https://api.huohua.live/bfq/?key=U1u6H8QZgCqD4h7Ljp&url="},
         {title:"JY",type:"1",url:"https://jx.playerjy.com/?url="},
         {title:"咸鱼",type:"1",url:"https://jx.xymp4.cc/?url="},
-        {title:"虾米|FLV",type:"1",url:"https://jx.xmflv.com/?url="},
-        {title:"M3U8|虾米",type:"1",url:"https://jx.m3u8.tv/jiexi/?url="},
-        {title:"夜幕|虾米",type:"1",url:"https://www.yemu.xyz/?url="},
+        {title:"虾米",type:"1",url:"https://jx.xmflv.com/?url="},
+        {title:"M3U8",type:"1",url:"https://jx.m3u8.tv/jiexi/?url="},
+        {title:"夜幕",type:"1",url:"https://www.yemu.xyz/?url="},
         // 页外播放解析
         {title:"小红",type:"0",url:"https://www.xiaohys.com/static/player/artplayer.html?url="},
     ];
 
-    // 优化后的log函数
+    // 优化后的日志函数
     function mylog(message, data = '') {
         const timestamp = new Date().toISOString();
         const logPrefix = `[VIP-${timestamp}]`;
         console.log(logPrefix, message, data);
     }
 
-    //内嵌页内播放
+    // 内嵌页内播放
     function innerParse(url) {
         const iframe = document.getElementById('iframe-player');
         if (!iframe) {
@@ -78,7 +78,7 @@
         }
     }
 
-    //视频播放控制
+    // 视频播放控制
     function removeVideo() {
         const videoElements = document.getElementsByTagName('video');
         const removeInterval = setInterval(() => {
@@ -100,7 +100,7 @@
         }, 1500);
     }
 
-    //实时监听网址变化
+    // 实时监听网址变化
     function urlChangeReload(){
         var oldURL = window.location.href;
         setInterval(() => {
@@ -111,7 +111,7 @@
         }, 500);
     }
 
-    //优化后的兼容性函数
+    // 优化后的兼容性函数
     const GM = {
         openInTab: (url, openInBackground) => {
             return typeof GM_openInTab === 'function'
@@ -144,7 +144,7 @@
         }
     };
 
-    //播放节点预处理
+    // 播放节点预处理
     var node = "";
     var player_Containers = [
         {
@@ -238,7 +238,7 @@
         },
     ];
 
-    //播放容器处理与弹出界面处理
+    // 播放容器处理与弹出界面处理
     function handlePlayerNodes() {
         const currentHost = location.host;
         const playerConfig = player_Containers.find(item => item.host === currentHost);
@@ -298,7 +298,7 @@
 
     parseInterfaceList = innerList.concat(outerList);
 
-    //图片按钮定位
+    // 图片按钮定位
     var left = 0;
     var top = 100;
     var Position = GM.getValue("Position_" + host);
@@ -310,89 +310,89 @@
                 #vip_movie_box {cursor:pointer; position:fixed; top:` + top + `px; right:0px; width:45px; z-index:99999; font-size:14px; text-align:center; transition: all 0.3s ease;}
 
                 #vip_movie_box .item_text, #vip_movie_box .selected_text, #vip_movie_box .img_text {
-                    width: 45px; /* Adjusted width */
-                    padding: 8px 0px; /* Increased padding */
+                    width: 45px; /* 调整宽度 */
+                    padding: 8px 0px; /* 增加内边距 */
                     text-align: center;
-                    background-color: rgba(93, 173, 226, 0.9); /* Light blue */
+                    background-color: rgba(93, 173, 226, 0.9); /* 浅蓝色 */
                     margin: 2px 0px;
-                    border-radius: 8px 0 0 8px; /* More rounded corners */
-                    box-shadow: -3px 3px 6px rgba(0,0,0,0.2); /* Adjusted shadow */
-                    transition: background-color 0.3s ease, transform 0.1s ease; /* Added transform for hover effect */
+                    border-radius: 8px 0 0 8px; /* 更圆润的边角 */
+                    box-shadow: -3px 3px 6px rgba(0,0,0,0.2); /* 调整阴影 */
+                    transition: background-color 0.3s ease, transform 0.1s ease; /* 添加悬停效果 */
                 }
                 #vip_movie_box .item_text:hover, #vip_movie_box .selected_text:hover, #vip_movie_box .img_text:hover {
-                    background-color: rgba(93, 173, 226, 1); /* Solid light blue on hover */
-                    transform: translateX(-3px); /* Subtle hover effect */
+                    background-color: rgba(93, 173, 226, 1); /* 悬停时变为实心浅蓝色 */
+                    transform: translateX(-3px); /* 悬停效果 */
                 }
 		        #vip_movie_box .item_text img, #vip_movie_box .selected_text img {width:26px; height:26px; display:inline-block; vertical-align:middle;}
 
                 #vip_movie_box .vip_mod_box_selected {
-                    width: 360px; /* Adjusted width to better fit 4 items */
-                    max-height: 450px; /* Adjusted max height */
+                    width: 360px; /* 调整宽度以适应4个项目 */
+                    max-height: 450px; /* 调整最大高度 */
                     display: none;
                     position: absolute;
-                    right: 50px; /* Position next to wider button */
+                    right: 50px; /* 定位在按钮旁边 */
                     top: 0;
                     text-align: center;
-                    backdrop-filter: saturate(1.8) blur(12px); /* Adjusted blur */
-                    background: rgba(44, 62, 80, 0.6); /* Darker, muted background */
-                    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-                    border-radius: 8px; /* Consistent rounded corners */
+                    backdrop-filter: saturate(1.8) blur(12px); /* 调整模糊效果 */
+                    background: rgba(44, 62, 80, 0.6); /* 深色背景 */
+                    border: 1px solid rgba(255, 255, 255, 0.1); /* 细微边框 */
+                    border-radius: 8px; /* 圆角 */
                     overflow-y: auto;
-                    box-shadow: -3px 3px 12px rgba(0,0,0,0.4); /* Deeper shadow */
-                    padding: 15px; /* Added padding inside menu */
+                    box-shadow: -3px 3px 12px rgba(0,0,0,0.4); /* 阴影效果 */
+                    padding: 15px; /* 内边距 */
                 }
                 #vip_movie_box .vip_mod_box_selected ul{
                     list-style: none;
-                    margin: 0; /* Remove default margin */
+                    margin: 0; /* 移除默认边距 */
                     padding: 0;
-                    display: flex; /* Use flexbox for layout */
-                    flex-wrap: wrap; /* Allow items to wrap */
-                    gap: 10px; /* Increased space between items */
+                    display: flex; /* 使用弹性布局 */
+                    flex-wrap: wrap; /* 允许项目换行 */
+                    gap: 10px; /* 项目间距 */
                 }
                 #vip_movie_box .vip_mod_box_selected li{
-                    font-size: 14px; /* Slightly larger font */
-                    color: #E0E0E0; /* Lighter text color for contrast */
+                    font-size: 14px; /* 字体大小 */
+                    color: #E0E0E0; /* 文字颜色 */
                     text-align: center;
-                    flex-basis: calc(25% - 8px); /* Adjusted for 4 items with gap */
-                    line-height: normal; /* Reset line height */
-                    padding: 12px 8px; /* Increased padding */
-                    margin: 0; /* Ensure no margin */
-                    background: rgba(52, 73, 94, 0.7); /* Slightly lighter item background */
-                    border-radius: 5px; /* Rounded corners for items */
+                    flex-basis: calc(25% - 8px); /* 调整4个项目布局 */
+                    line-height: normal; /* 重置行高 */
+                    padding: 12px 8px; /* 内边距 */
+                    margin: 0; /* 确保无外边距 */
+                    background: rgba(52, 73, 94, 0.7); /* 项目背景色 */
+                    border-radius: 5px; /* 圆角 */
                     box-sizing: border-box;
                     transition: background-color 0.2s ease, color 0.2s ease;
-                    cursor: pointer; /* Indicate clickable */
-                    overflow: hidden; /* Hide overflow text */
-                    text-overflow: ellipsis; /* Add ellipsis for overflow text */
-                    white-space: nowrap; /* Prevent text wrapping */
+                    cursor: pointer; /* 鼠标指针 */
+                    overflow: hidden; /* 隐藏溢出文本 */
+                    text-overflow: ellipsis; /* 添加省略号 */
+                    white-space: nowrap; /* 防止文本换行 */
                 }
                 #vip_movie_box .vip_mod_box_selected li:hover{
                     color:#FFFFFF;
-                    background-color: rgba(93, 173, 226, 0.8); /* Light blue hover background */
+                    background-color: rgba(93, 173, 226, 0.8); /* 悬停背景色 */
                 }
-                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar{width:8px; height:1px;} /* Wider scrollbar */
-                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-thumb{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#888;} /* Darker scrollbar thumb */
-                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#F1F1F1;} /* Light scrollbar track */
+                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar{width:8px; height:1px;} /* 滚动条宽度 */
+                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-thumb{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#888;} /* 滚动条滑块 */
+                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#F1F1F1;} /* 滚动条轨道 */
                 #vip_movie_box .vip_mod_box_selected .selected{
                     color:#FFFFFF;
-                    background-color:#5DADE2; /* Solid light blue for selected */
+                    background-color:#5DADE2; /* 选中项背景色 */
                 }
 
                 #vip_movie_box .img_text {width:45px; text-align:center; padding:3px 0px; background-color: rgba(93, 173, 226, 0.9); margin:1px 0px; border-radius: 8px 0 0 8px; box-shadow: -3px 3px 6px rgba(0,0,0,0.2); transition: background-color 0.3s ease, transform 0.1s ease;}
                 #vip_movie_box .img_text:hover{background-color: rgba(93, 173, 226, 1); transform: translateX(-3px);}
                 #vip_movie_box .vip_auto {color:#FFFFFF; font-size:22px; font-weight:bold; line-height:normal;}
 
-                /* Style for the section titles within the menu */
+                /* 菜单内标题样式 */
                 #vip_movie_box .vip_mod_box_selected > div > div {
-                    font-size: 15px; /* Slightly smaller title font */
+                    font-size: 15px; /* 标题字体大小 */
                     font-weight: bold;
                     text-align: center;
-                    color: #BBDEFB; /* Lighter blue for titles */
+                    color: #BBDEFB; /* 标题颜色 */
                     line-height: normal;
-                    margin-top: 15px; /* Increased top margin */
-                    margin-bottom: 8px; /* Added bottom margin */
-                    padding-bottom: 5px; /* Add padding at bottom */
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line */
+                    margin-top: 15px; /* 上边距 */
+                    margin-bottom: 8px; /* 下边距 */
+                    padding-bottom: 5px; /* 底部内边距 */
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 分隔线 */
                 }
 
                  `);
@@ -427,149 +427,54 @@
 
     $("body").append(html);
 
-    //快速解析事件处理
+    // 快速解析事件处理
     $(".item_text").on("click", () => {
-        GM.openInTab("http://vip.wandhi.com/?v=" + location.href, false);
+        // 获取当前选中的解析接口索引
+        var currentIndex = GM.getValue("autoPlayerValue_" + host, 0);
+        // 获取当前选中的解析接口
+        var currentInterface = parseInterfaceList[currentIndex];
+        // 使用当前接口进行页外解析
+        GM.openInTab(currentInterface.url + location.href, false);
     });
 
-    //视频解析事件处理
-    // Modified to show/hide menu based on whether the mouse is within the selected_text button area
-    const movieBox = $("#vip_movie_box"); // Keep for drag functionality if needed elsewhere
-    const selectedTextButton = $(".selected_text"); // The video parsing button
-    const selectedMenu = $(".vip_mod_box_selected"); // The menu
+    // 视频解析事件处理
+    const movieBox = $("#vip_movie_box");
+    const selectedTextButton = $(".selected_text");
+    const selectedMenu = $(".vip_mod_box_selected");
 
     let menuHideTimeout;
 
     const showMenu = () => {
-        // Only show if not dragging
-        if (!isDragging) {
-            clearTimeout(menuHideTimeout);
-            selectedMenu.show();
-        }
+        clearTimeout(menuHideTimeout);
+        selectedMenu.show();
     };
 
     const hideMenu = () => {
-        // Hide menu after a slight delay
         menuHideTimeout = setTimeout(() => {
             selectedMenu.hide();
-        }, 100); // Reduced delay slightly for responsiveness
+        }, 100);
     };
 
-    // Use mouseenter and mouseleave on the selectedTextButton to control menu visibility
     selectedTextButton.on("mouseenter", showMenu);
     selectedTextButton.on("mouseleave", hideMenu);
 
-    // Prevent menu from hiding immediately when moving from button to menu
-    // Keep the timeout clearing on menu mouseenter
     selectedMenu.on("mouseenter", () => { clearTimeout(menuHideTimeout); });
     selectedMenu.on("mouseleave", hideMenu);
 
-    // Optimize menu item styles for a cleaner look
-    GM.addStyle(`
-        #vip_movie_box {cursor:pointer; position:fixed; top:` + top + `px; right:0px; width:45px; z-index:99999; font-size:14px; text-align:center; transition: all 0.3s ease;}
-
-        #vip_movie_box .item_text, #vip_movie_box .selected_text, #vip_movie_box .img_text {
-            width: 45px; /* Adjusted width */
-            padding: 8px 0px; /* Increased padding */
-            text-align: center;
-            background-color: rgba(93, 173, 226, 0.9); /* Light blue */
-            margin: 2px 0px;
-            border-radius: 8px 0 0 8px; /* More rounded corners */
-            box-shadow: -3px 3px 6px rgba(0,0,0,0.2); /* Adjusted shadow */
-            transition: background-color 0.3s ease, transform 0.1s ease; /* Added transform for hover effect */
-        }
-        #vip_movie_box .item_text:hover, #vip_movie_box .selected_text:hover, #vip_movie_box .img_text:hover {
-            background-color: rgba(93, 173, 226, 1); /* Solid light blue on hover */
-            transform: translateX(-3px); /* Subtle hover effect */
-        }
-		        #vip_movie_box .item_text img, #vip_movie_box .selected_text img {width:26px; height:26px; display:inline-block; vertical-align:middle;}
-
-        #vip_movie_box .vip_mod_box_selected {
-            width: 360px; /* Adjusted width to better fit 4 items */
-            max-height: 450px; /* Adjusted max height */
-            display: none;
-            position: absolute;
-            right: 50px; /* Position next to wider button */
-            top: 0;
-            text-align: center;
-            backdrop-filter: saturate(1.8) blur(12px); /* Adjusted blur */
-            background: rgba(44, 62, 80, 0.6); /* Darker, muted background */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-            border-radius: 8px; /* Consistent rounded corners */
-            overflow-y: auto;
-            box-shadow: -3px 3px 12px rgba(0,0,0,0.4); /* Deeper shadow */
-            padding: 15px; /* Added padding inside menu */
-        }
-        #vip_movie_box .vip_mod_box_selected ul{
-            list-style: none;
-            margin: 0; /* Remove default margin */
-            padding: 0;
-            display: flex; /* Use flexbox for layout */
-            flex-wrap: wrap; /* Allow items to wrap */
-            gap: 10px; /* Increased space between items */
-        }
-        #vip_movie_box .vip_mod_box_selected li{
-            font-size: 14px; /* Slightly larger font */
-            color: #E0E0E0; /* Lighter text color for contrast */
-            text-align: center;
-            flex-basis: calc(25% - 8px); /* Adjusted for 4 items with gap */
-            line-height: normal; /* Reset line height */
-            padding: 12px 8px; /* Increased padding */
-            margin: 0; /* Ensure no margin */
-            background: rgba(52, 73, 94, 0.7); /* Slightly lighter item background */
-            border-radius: 5px; /* Rounded corners for items */
-            box-sizing: border-box;
-            transition: background-color 0.2s ease, color 0.2s ease;
-            cursor: pointer; /* Indicate clickable */
-            overflow: hidden; /* Hide overflow text */
-            text-overflow: ellipsis; /* Add ellipsis for overflow text */
-            white-space: nowrap; /* Prevent text wrapping */
-        }
-        #vip_movie_box .vip_mod_box_selected li:hover{
-            color:#FFFFFF;
-            background-color: rgba(93, 173, 226, 0.8); /* Light blue hover background */
-        }
-        #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar{width:8px; height:1px;} /* Wider scrollbar */
-        #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-thumb{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#888;} /* Darker scrollbar thumb */
-        #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#F1F1F1;} /* Light scrollbar track */
-        #vip_movie_box .vip_mod_box_selected .selected{
-            color:#FFFFFF;
-            background-color:#5DADE2; /* Solid light blue for selected */
-        }
-
-        #vip_movie_box .img_text {width:45px; text-align:center; padding:3px 0px; background-color: rgba(93, 173, 226, 0.9); margin:1px 0px; border-radius: 8px 0 0 8px; box-shadow: -3px 3px 6px rgba(0,0,0,0.2); transition: background-color 0.3s ease, transform 0.1s ease;}
-        #vip_movie_box .img_text:hover{background-color: rgba(93, 173, 226, 1); transform: translateX(-3px);}
-        #vip_movie_box .vip_auto {color:#FFFFFF; font-size:22px; font-weight:bold; line-height:normal;}
-
-        /* Style for the section titles within the menu */
-        #vip_movie_box .vip_mod_box_selected > div > div {
-            font-size: 15px; /* Slightly smaller title font */
-            font-weight: bold;
-            text-align: center;
-            color: #BBDEFB; /* Lighter blue for titles */
-            line-height: normal;
-            margin-top: 15px; /* Increased top margin */
-            margin-bottom: 8px; /* Added bottom margin */
-            padding-bottom: 5px; /* Add padding at bottom */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line */
-        }
-
-         `);
-
     $(".vip_mod_box_selected li").each((index, item) => {
         item.addEventListener("click", function(){
-            // Remove "selected" class from ALL list items in the menu
+            // 移除所有列表项的"selected"类
             $(".vip_mod_box_selected li").removeClass("selected");
 
             const selectedInterface = parseInterfaceList[index];
             const targetUrl = selectedInterface.url + location.href;
 
             if (selectedInterface.type == "1") {
-                // Handle internal parsing
-                $(this).addClass("selected"); // Add "selected" class to the clicked item
+                // 处理页内解析
+                $(this).addClass("selected"); // 为点击项添加"selected"类
                 GM.setValue("autoPlayerValue_" + host, index);
 
-                // Prepare the player iframe
+                // 准备播放器iframe
                 const iframe = document.getElementById('iframe-player');
                 if (document.getElementById("iframe-player") == null) {
                     var player = $(node);
@@ -579,11 +484,8 @@
                 }
 
                 if (selectedInterface.title === "小红解析") {
-                    // Special handling for 小红解析 using GM_xmlhttpRequest
+                    // 小红解析特殊处理
                     mylog('尝试使用 GM_xmlhttpRequest 获取小红解析内容:', targetUrl);
-
-                    // Show a loading indicator (optional, requires adding a loading element in HTML or CSS)
-                    // For now, just log the attempt
 
                     GM.xmlhttpRequest({
                         method: "GET",
@@ -595,20 +497,20 @@
                                 const iframe = document.getElementById('iframe-player');
                                 if (iframe) {
                                     try {
-                                        // Using Blob URL to load content
+                                        // 使用 Blob URL 加载内容
                                         const blob = new Blob([response.responseText], { type: 'text/html' });
                                         iframe.src = URL.createObjectURL(blob);
                                         mylog('成功将小红解析内容加载到 iframe (Blob URL)', targetUrl);
 
-                                        // Optional: Add a load listener to the iframe to detect success/failure after loading
+                                        // 可选：添加加载监听器
                                         iframe.onload = () => mylog('iframe 加载完成', targetUrl);
                                         iframe.onerror = () => mylog('iframe 加载错误', targetUrl);
 
                                     } catch (e) {
                                         mylog('加载内容到 iframe 失败:', e);
-                                        // Fallback if Blob URL fails
+                                        // 如果 Blob URL 失败，使用备用方案
                                         GM.openInTab(targetUrl, false);
-                                        // Show user a message
+                                        // 显示用户消息
                                         alert('无法在页内播放小红解析，请尝试页外播放或其他解析接口。');
                                     }
 
@@ -618,29 +520,29 @@
                                 }
                             } else {
                                 mylog('获取小红解析内容失败', { url: targetUrl, status: response.status, statusText: response.statusText });
-                                // Fallback to external parsing
+                                // 使用备用方案
                                 GM.openInTab(targetUrl, false);
-                                // Show user a message
+                                // 显示用户消息
                                 alert(`获取小红解析内容失败（状态码: ${response.status}），请尝试页外播放或其他解析接口。`);
                             }
                         },
                         onerror: function(error) {
                             mylog('GM_xmlhttpRequest 发生错误:', error);
-                            // Fallback to external parsing
+                            // 使用备用方案
                             GM.openInTab(targetUrl, false);
-                            // Show user a message
+                            // 显示用户消息
                             alert('请求小红解析时发生网络错误，请尝试页外播放或其他解析接口。');
                         }
                     });
                 } else {
-                    // Default internal parsing for other interfaces
+                    // 其他接口的页内解析
                     if (isMobile) {
                         iframeDivCss = "width:100%;height:220px;z-index:999999;";
                     }
                     if (isMobile && window.location.href.indexOf("iqiyi.com") !== -1) {
                         iframeDivCss = "width:100%;height:220px;z-index:999999;margin-top:-56.25%;";
                     }
-                    // Ensure iframe exists before setting src
+                    // 确保iframe存在后再设置src
                      const iframe = document.getElementById('iframe-player');
                      if (iframe) {
                          iframe.src = targetUrl;
@@ -651,19 +553,20 @@
                      }
                 }
             } else {
-                // Handle external parsing
+                // 处理页外解析
                 GM.openInTab(targetUrl, false);
             }
         });
     });
 
-    //自动解析视频事件处理
+    // 自动解析视频事件处理
     $(".vip_auto").on("click", function () {
         if (!!GM.getValue("autoPlayerKey_" + host, null)) {
             GM.setValue("autoPlayerKey_" + host, null);
             $(this).html("关");
         } else {
             GM.setValue("autoPlayerKey_" + host, "true");
+            GM.setValue("autoPlayerValue_" + host, 0); // 设置为第一个解析接口
             $(this).html("开");
         }
         setTimeout(function () {
@@ -671,10 +574,10 @@
         }, 200);
     });
 
-    //检测自动播放是否开启
+    // 检测自动播放是否开启
     function autoPlayer() {
         if (!!GM.getValue("autoPlayerKey_" + host, null)) {
-            var index = GM.getValue("autoPlayerValue_" + host, 0); // Change default index from 2 to 0
+            var index = GM.getValue("autoPlayerValue_" + host, 0); // 默认使用第一个解析接口
             $(".vip_mod_box_selected li").eq(index).addClass("selected");
             $(".vip_auto").attr("title", `当前解析源：${parseInterfaceList[index].title}`);
             setTimeout(function () {
@@ -686,118 +589,22 @@
                 }
                 innerParse(parseInterfaceList[index].url + location.href);
             }, 2500);
-            urlChangeReload(); //实时监听网址变化
+            urlChangeReload(); // 实时监听网址变化
         }
     };
-
-    // 右键拖拽功能 - 防止与其他脚本干扰
-    var movie_box = $("#vip_movie_box")[0]; // Get the native DOM element
-
-    let isDragging = false;
-    let dragOffsetX, dragOffsetY;
-    let animationFrameId = null;
-    let maxX, maxY, minX = 0, minY = 0;
-
-    const moveHandler = function(e) {
-        if (!isDragging) return;
-
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-        }
-
-        animationFrameId = requestAnimationFrame(() => {
-            let x = e.clientX - dragOffsetX;
-            let y = e.clientY - dragOffsetY;
-
-            // Apply boundaries
-            x = Math.max(minX, Math.min(x, maxX));
-            y = Math.max(minY, Math.min(y, maxY));
-
-            // Update style using native style property
-            movie_box.style.left = x + 'px';
-            movie_box.style.top = y + 'px';
-        });
-    };
-
-    const stopDragging = function() {
-        isDragging = false;
-        document.removeEventListener('mousemove', moveHandler);
-        document.removeEventListener('mouseup', stopDragging);
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-        }
-        movie_box.style.cursor = 'pointer'; // 还原样式
-
-        // Save final position
-        const finalPosition = movie_box.getBoundingClientRect();
-        GM.setValue("Position_" + host,{"top":finalPosition.top + window.scrollY, "left":finalPosition.left + window.scrollX});
-    };
-
-    movie_box.addEventListener('mousedown', function(e) {
-        // 1 = 鼠标左键
-        if (e.button === 0) { // Use e.button for native events
-            e.preventDefault(); // 阻止默认行为
-
-            isDragging = true;
-            movie_box.style.cursor = 'grabbing'; // 设置样式为拖动中
-
-            const rect = movie_box.getBoundingClientRect();
-            dragOffsetX = e.clientX - rect.left;
-            dragOffsetY = e.clientY - rect.top;
-
-            // Calculate boundaries once on mousedown
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-            const elementWidth = rect.width;
-            const elementHeight = rect.height;
-
-            // Keep it on the right side of the screen (adjust minX based on window width)
-            minX = 0; // Allow dragging from the left edge
-            maxX = windowWidth - elementWidth; // Allow dragging to the right edge
-
-            // Vertical boundaries
-            minY = 0;
-            maxY = windowHeight - elementHeight;
-
-
-            document.addEventListener('mousemove', moveHandler);
-            document.addEventListener('mouseup', stopDragging);
-        }
-    });
-
-    // Prevent context menu on right-click
-    movie_box.addEventListener("contextmenu", function(e){
-        e.preventDefault();
-    });
 
     window.onload = function () {
         handlePlayerNodes();
         autoPlayer();
-        // Apply saved position on load
-        var savedPosition = GM.getValue("Position_" + host);
-        if (savedPosition) {
-             // Use style.left and style.top with 'px'
-             movie_box.style.top = savedPosition.top + 'px';
-             // If left position was not saved, keep it on the right side
-             if (savedPosition.left !== undefined && savedPosition.left !== null) {
-                 movie_box.style.left = savedPosition.left + 'px';
-             } else {
-                 // If no left position saved, place it on the right edge initially
-                 movie_box.style.left = (window.innerWidth - movie_box.getBoundingClientRect().width) + 'px';
-             }
-        } else {
-             // If no position saved, place it on the right side by default
-             movie_box.style.left = (window.innerWidth - movie_box.getBoundingClientRect().width) + 'px';
-        }
     }
 
-    // Hide movie box when video is in fullscreen
+    // 全屏时隐藏电影盒子
     document.addEventListener('fullscreenchange', () => {
         const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
         if (fullscreenElement) {
-            movieBox.hide(); // Hide the movie box using jQuery hide
+            movieBox.hide();
         } else {
-            movieBox.show(); // Show the movie box using jQuery show
+            movieBox.show();
         }
     });
 
