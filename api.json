@@ -60,6 +60,22 @@
             "ext": "http://cms.lygdyy.cn/api.php/app/"
         },
         {
+            "key": "西瓜",
+            "name": "老剧｜4K",
+            "type": 1,
+            "api": "http://niiuma.qi-simple.top/vod/xigua.php/provide/vod/",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "playUrl": "json:http://niiuma.qi-simple.top//nn.php?url="
+        },
+        {
             "key": "奇珍艺兽",
             "name": "🇨🇳  爱奇艺┃解析",
             "type": 3,
