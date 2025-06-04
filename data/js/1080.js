@@ -44,6 +44,7 @@
     var selectedInterfaceList = [];
     var originalInterfaceList = [
         // 页内播放解析
+         {title:"樱花",type:"1",url:"https://bfq.lggys.com/?url="},
         {title:"火花",type:"1",url:"https://api.huohua.live/bfq/?key=U1u6H8QZgCqD4h7Ljp&url="},
         {title:"JY",type:"1",url:"https://jx.playerjy.com/?url="},
         {title:"咸鱼",type:"1",url:"https://jx.xymp4.cc/?url="},
