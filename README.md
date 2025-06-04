@@ -5,15 +5,15 @@
 ---
 
 ## 🛠️配置（必看）：
-  - Gitee: [https://raw.githubusercontent.com/JY4K/Jack/refs/heads/main/api.json](https://raw.githubusercontent.com/JY4K/Jack/refs/heads/main/api.json)
+  - Gitee: [https://jy4k.netlify.app/api.json](https://jy4k.netlify.app/api.json)
   -- 注：接口需配合软件食用 ！！！
 
 ## 📱联系
-- QQ群: []()
+- QQ: [2661136929](2661136929)
 
 ## 📖说明
 - 项目所有接口来源于网络，不存在影视数据生产及保存，所有的法律责任与后果应由使用者自行承担。
 
 ## 📔更新
-- 2025.4.12
+- 2025.6.4
   - 对api接口内容进行更改，去除无用的影视接口；
