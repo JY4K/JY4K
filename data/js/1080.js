@@ -461,6 +461,17 @@
     selectedMenu.on("mouseenter", () => { clearTimeout(menuHideTimeout); });
     selectedMenu.on("mouseleave", hideMenu);
 
+    // 页外解析处理函数
+    function handleOuterParse(url) {
+        try {
+            GM.openInTab(url, false);
+            mylog('页外解析已打开', url);
+        } catch (error) {
+            mylog('页外解析打开失败', error);
+            alert('页外解析打开失败，请重试');
+        }
+    }
+
     $(".vip_mod_box_selected li").each((index, item) => {
         item.addEventListener("click", function(){
             // 移除所有列表项的"selected"类
@@ -475,86 +486,33 @@
                 GM.setValue("autoPlayerValue_" + host, index);
 
                 // 准备播放器iframe
-                const iframe = document.getElementById('iframe-player');
-                if (document.getElementById("iframe-player") == null) {
+                let iframe = document.getElementById('iframe-player');
+                if (!iframe) {
                     var player = $(node);
                     removeVideo();
                     player.empty();
                     player.append($(`<div id='iframe-div' style='`+ iframeDivCss + `'><iframe id='iframe-player' frameborder='0' allowfullscreen='true' width='100%' height='100%'></iframe></div>`));
+                    iframe = document.getElementById('iframe-player');
                 }
 
-                if (selectedInterface.title === "小红解析") {
-                    // 小红解析特殊处理
-                    mylog('尝试使用 GM_xmlhttpRequest 获取小红解析内容:', targetUrl);
-
-                    GM.xmlhttpRequest({
-                        method: "GET",
-                        url: targetUrl,
-                        onload: function(response) {
-                            mylog('GM_xmlhttpRequest onload 状态码:', response.status);
-                            if (response.status >= 200 && response.status < 300) {
-                                mylog('成功获取小红解析内容', { url: targetUrl, responseUrl: response.finalUrl });
-                                const iframe = document.getElementById('iframe-player');
-                                if (iframe) {
-                                    try {
-                                        // 使用 Blob URL 加载内容
-                                        const blob = new Blob([response.responseText], { type: 'text/html' });
-                                        iframe.src = URL.createObjectURL(blob);
-                                        mylog('成功将小红解析内容加载到 iframe (Blob URL)', targetUrl);
-
-                                        // 可选：添加加载监听器
-                                        iframe.onload = () => mylog('iframe 加载完成', targetUrl);
-                                        iframe.onerror = () => mylog('iframe 加载错误', targetUrl);
-
-                                    } catch (e) {
-                                        mylog('加载内容到 iframe 失败:', e);
-                                        // 如果 Blob URL 失败，使用备用方案
-                                        GM.openInTab(targetUrl, false);
-                                        // 显示用户消息
-                                        alert('无法在页内播放小红解析，请尝试页外播放或其他解析接口。');
-                                    }
-
-                                } else {
-                                    mylog('播放器iframe不存在');
-                                    alert('播放器容器未找到，无法加载视频。');
-                                }
-                            } else {
-                                mylog('获取小红解析内容失败', { url: targetUrl, status: response.status, statusText: response.statusText });
-                                // 使用备用方案
-                                GM.openInTab(targetUrl, false);
-                                // 显示用户消息
-                                alert(`获取小红解析内容失败（状态码: ${response.status}），请尝试页外播放或其他解析接口。`);
-                            }
-                        },
-                        onerror: function(error) {
-                            mylog('GM_xmlhttpRequest 发生错误:', error);
-                            // 使用备用方案
-                            GM.openInTab(targetUrl, false);
-                            // 显示用户消息
-                            alert('请求小红解析时发生网络错误，请尝试页外播放或其他解析接口。');
-                        }
-                    });
+                // 其他接口的页内解析
+                if (isMobile) {
+                    iframeDivCss = "width:100%;height:220px;z-index:999999;";
+                }
+                if (isMobile && window.location.href.indexOf("iqiyi.com") !== -1) {
+                    iframeDivCss = "width:100%;height:220px;z-index:999999;margin-top:-56.25%;";
+                }
+                // 确保iframe存在后再设置src
+                if (iframe) {
+                    iframe.src = targetUrl;
+                    mylog('成功加载播放器', targetUrl);
                 } else {
-                    // 其他接口的页内解析
-                    if (isMobile) {
-                        iframeDivCss = "width:100%;height:220px;z-index:999999;";
-                    }
-                    if (isMobile && window.location.href.indexOf("iqiyi.com") !== -1) {
-                        iframeDivCss = "width:100%;height:220px;z-index:999999;margin-top:-56.25%;";
-                    }
-                    // 确保iframe存在后再设置src
-                     const iframe = document.getElementById('iframe-player');
-                     if (iframe) {
-                         iframe.src = targetUrl;
-                         mylog('成功加载播放器', targetUrl);
-                     } else {
-                         mylog('播放器iframe不存在');
-                         alert('播放器容器未找到，无法加载视频。');
-                     }
+                    mylog('播放器iframe不存在');
+                    alert('播放器容器未找到，无法加载视频。');
                 }
             } else {
                 // 处理页外解析
-                GM.openInTab(targetUrl, false);
+                handleOuterParse(targetUrl);
             }
         });
     });
@@ -568,6 +526,36 @@
             GM.setValue("autoPlayerKey_" + host, "true");
             GM.setValue("autoPlayerValue_" + host, 0); // 设置为第一个解析接口
             $(this).html("开");
+            // 立即触发解析
+            const selectedInterface = parseInterfaceList[0];
+            const targetUrl = selectedInterface.url + location.href;
+            
+            if (selectedInterface.type == "1") {
+                // 处理页内解析
+                $(".vip_mod_box_selected li").eq(0).addClass("selected");
+                
+                // 准备播放器iframe
+                let iframe = document.getElementById('iframe-player');
+                if (!iframe) {
+                    var player = $(node);
+                    removeVideo();
+                    player.empty();
+                    player.append($(`<div id='iframe-div' style='`+ iframeDivCss + `'><iframe id='iframe-player' frameborder='0' allowfullscreen='true' width='100%' height='100%'></iframe></div>`));
+                    iframe = document.getElementById('iframe-player');
+                }
+
+                // 确保iframe存在后再设置src
+                if (iframe) {
+                    iframe.src = targetUrl;
+                    mylog('成功加载播放器', targetUrl);
+                } else {
+                    mylog('播放器iframe不存在');
+                    alert('播放器容器未找到，无法加载视频。');
+                }
+            } else {
+                // 处理页外解析
+                handleOuterParse(targetUrl);
+            }
         }
         setTimeout(function () {
             window.location.reload();
