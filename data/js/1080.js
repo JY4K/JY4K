@@ -44,9 +44,9 @@
     var selectedInterfaceList = [];
     var originalInterfaceList = [
         // 页内播放解析
-         {title:"樱花",type:"1",url:"https://bfq.lggys.com/?url="},
-        {title:"火花",type:"1",url:"https://api.huohua.live/bfq/?key=U1u6H8QZgCqD4h7Ljp&url="},
         {title:"JY",type:"1",url:"https://jx.playerjy.com/?url="},
+        {title:"樱花",type:"1",url:"https://bfq.lggys.com/?url="},
+        {title:"火花",type:"1",url:"https://api.huohua.live/bfq/?key=U1u6H8QZgCqD4h7Ljp&url="},
         {title:"咸鱼",type:"1",url:"https://jx.xymp4.cc/?url="},
         {title:"虾米",type:"1",url:"https://jx.xmflv.com/?url="},
         {title:"M3U8",type:"1",url:"https://jx.m3u8.tv/jiexi/?url="},
