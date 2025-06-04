@@ -63,13 +63,13 @@
 		
 		.links {
 			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 0.8rem;
+			grid-template-columns: repeat(4, minmax(0, 200px));
+			gap: 1rem;
 			margin-bottom: 1rem;
 			flex: 1;
 			overflow: hidden;
 			padding: 0.5rem;
-			justify-items: center;
+			justify-content: center;
 			align-items: stretch;
 		}
 		
@@ -78,11 +78,12 @@
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
-			padding: 1.5rem;
+			padding: 1.2rem;
 			border: 2px solid transparent;
 			border-radius: 16px;
 			background-color: var(--card-background);
-			height: 200px;
+			height: 180px;
+			width: 100%;
 			cursor: pointer;
 			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 			text-decoration: none;
@@ -98,9 +99,9 @@
 		
 		.icon {
 			width: 100%;
-			height: 120px;
+			height: 100px;
 			object-fit: contain;
-			margin-bottom: 1.2rem;
+			margin-bottom: 0.8rem;
 			transition: transform 0.3s ease;
 		}
 		
@@ -173,24 +174,24 @@
 			}
 			
 			.links {
-				grid-template-columns: repeat(3, 1fr);
-				gap: 0.6rem;
+				grid-template-columns: repeat(3, minmax(0, 200px));
+				gap: 1rem;
 				overflow-y: auto;
 				padding-bottom: 1rem;
 			}
 
 			.link-item {
-				height: 150px;
-				padding: 0.8rem;
+				height: 180px;
+				padding: 1.2rem;
 			}
 
 			.icon {
-				height: 80px;
-				margin-bottom: 0.6rem;
+				height: 100px;
+				margin-bottom: 0.8rem;
 			}
 
 			.link-item span {
-				font-size: 0.85rem;
+				font-size: 0.9rem;
 			}
 
 			.custom-link {
@@ -216,21 +217,22 @@
 			}
 			
 			.links {
-				gap: 0.5rem;
+				grid-template-columns: repeat(3, minmax(0, 200px));
+				gap: 0.8rem;
 			}
 
 			.link-item {
-				height: 130px;
-				padding: 0.6rem;
+				height: 180px;
+				padding: 1.2rem;
 			}
 			
 			.icon {
-				height: 70px;
-				margin-bottom: 0.5rem;
+				height: 100px;
+				margin-bottom: 0.8rem;
 			}
 
 			.link-item span {
-				font-size: 0.8rem;
+				font-size: 0.9rem;
 			}
 			
 			input[type='text'], button {
