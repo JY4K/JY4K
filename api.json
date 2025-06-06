@@ -330,7 +330,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "21l88j9k90894hijh4k995l32hji11i7h6396hi2g2i62ll21475i84gg52k5jk22g1g5l702g0ig7"
+            "ext": "http://172.83.156.150:1010/api.php/app/"
         },
         {
             "key": "柠檬",
@@ -342,7 +342,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "21l88j9kj99i4hj3k2ghj2k56l854788gk7434ijg7ik2kkj52208548h92806l66j18157j3h05g6lgh603367j779ikk"
+            "ext": "https://api.wwgz.cn:520/webcloud/relay.php?url="
         },
         {
             "key": "csp_CZSPP",
@@ -357,7 +357,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "21l88j9kj99i4hj3l4giiik57h885g8hkj782i9kl7j27jgj486g"
+            "ext": "https://www.czzymovie.com/"
         },
         {
             "key": "ZXZJ",
@@ -372,7 +372,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "21l88j9kj99i4hj3l4giiik5628g5g98l9647494lj9131"
+            "ext": "https://www.zxzjys.com/"
         },
         {
             "key": "Lib",
@@ -387,7 +387,7 @@
             "playerType": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "21l88j9kj99i4hj3l4giiik5749h4284k9787494l1j36jh644318k48lg2j00hj320611683l0kkhk5h015606l2h9gg0"
+            "ext": "https://www.libvio.cc/static/js/playerconfig.js"
         }
     ],
     "parses": [
