@@ -28,22 +28,6 @@
             "ext": "./data/js/豆瓣.js" //    扩展内容
         },
         {
-            "key": "乐享影视",
-            "name": "🇨🇳  乐享┃(测试)",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "jar": "21l88j9kj99i4hj3k5g896g275jl4h97k66274i0ll9371h00823941glh241ill6j06093k6k18hgk9kj15393828i7h7i9h117hg2ih55845j44j326715702k601354i420l74g3k865k632l1442171kg32424i39997l454473586hl5hihl230g23843ii5gi16j0g8315180lji0ihl0j6k79ik3il3j384733167603i58i8518ihj40ig3ij6kg",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": "http://114.66.55.28:8818/api.php/app/"
-        },
-        {
             "key": "csp_臻彩",
             "name": "🇨🇳  臻彩┃4K",
             "type": 3,
@@ -57,7 +41,7 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2,
-            "ext": "http://cms.lygdyy.cn/api.php/app/"
+            "ext": "http://cmszcsj.lfytv.cn/api.php/app/"
         },
         {
             "key": "西瓜",
