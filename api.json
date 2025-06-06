@@ -63,7 +63,7 @@
             "key": "西瓜",
             "name": "🇨🇳  老剧｜4K",
             "type": 1,
-            "api": "http://niiuma.qi-simple.top/vod/xigua.php/provide/vod/",
+            "api": "http://niiuma.qi-simple.top/vod/sr.php/provide/vod",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -346,19 +346,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "7lj763gg0939795i0678i48hk312jji7g4k69h089ij36j71031154l2k91k151k138612h68842ji"
-        },
-        {
-            "key": "剧评",
-            "name": "🧸 剧评┃App",
-            "type": 3,
-            "api": "csp_Jpys",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "playerType": 1,
-            "ext": "7lj763gg402i7942463j9j9jh84l8798l8gli652828g332i"
+            "ext": "21l88j9k90894hijh4k995l32hji11i7h6396hi2g2i62ll21475i84gg52k5jk22g1g5l702g0ig7"
         },
         {
             "key": "柠檬",
@@ -370,11 +358,11 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "7lj763gg402i7942503g839jg74h8h88highi40799jh6i6k454419l0l5184k0g548458hh994hjj94330jk296k4l045"
+            "ext": "21l88j9kj99i4hj3k2ghj2k56l854788gk7434ijg7ik2kkj52208548h92806l66j18157j3h05g6lgh603367j779ikk"
         },
         {
             "key": "csp_CZSPP",
-            "name": "🐼 厂长┃直连",
+            "name": "🧸 厂长┃直连",
             "type": 3,
             "api": "csp_Czsapp",
             "hasTags": 1,
@@ -385,11 +373,11 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "7lj763gg402i7942463j9j9jh346968hg5ll845ki38473"
+            "ext": "21l88j9kj99i4hj3l4giiik57h885g8hkj782i9kl7j27jgj486g"
         },
         {
             "key": "ZXZJ",
-            "name": "🐼 在线┃直连",
+            "name": "🧸 在线┃直连",
             "type": 3,
             "api": "csp_Zxzj",
             "hasTags": 1,
@@ -400,26 +388,11 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "7lj763gg402i7942463j9j9jgg449698khhh845ki38473"
-        },
-        {
-            "key": "csp_sbb",
-            "name": "🐼 布布┃直连",
-            "type": 3,
-            "api": "csp_Czsapp",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "playerType": 1,
-            "quickSearch": 1,
-            "filterable": 0,
-            "ext": "7lj763gg402i7942463j9j9jg3498k93lhggih54828g332i1j"
+            "ext": "21l88j9kj99i4hj3l4giiik5628g5g98l9647494lj9131"
         },
         {
             "key": "Lib",
-            "name": "🐼 LibVio┃直连",
+            "name": "🧸 LibVio┃直连",
             "type": 3,
             "api": "csp_Lib",
             "hasTags": 1,
@@ -430,19 +403,7 @@
             "playerType": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "7lj763gg402i7942463j9j9jhi558k84lhg7845kili62l35535512l0h61j48410h9g5igk9j40908h351hh484h8l60h"
-        },
-        {
-            "key": "时常",
-            "name": "🐼 时常┃无搜索",
-            "type": 3,
-            "api": "csp_Xdai",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "playerType": 2,
-            "ext": "7lj763gg0939795i007hi482k80ii2i3ghl084099ij36j70031107l2kg105816139i56g38h03i1j06k4gkk9ll7kl1lk4k8687k55l0g19ggk72j06gg073li1j11"
+            "ext": "21l88j9kj99i4hj3l4giiik5749h4284k9787494l1j36jh644318k48lg2j00hj320611683l0kkhk5h015606l2h9gg0"
         }
     ],
     "parses": [
