@@ -7,7 +7,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "http://cdn.qiaoji8.com/fix250524.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
+    "spider": "./data/jar/qj.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -32,7 +32,7 @@
             "name": "🇨🇳  臻彩┃4K",
             "type": 3,
             "api": "csp_AppYsV2",
-            "jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1749178719932/0606.jpg;md5;030aedcefa484689d551195c939cd052",
+            "jar": "./data/jar/spider.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -330,7 +330,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "http://172.83.156.150:1010/api.php/app/"
+            "ext": "7lj763gg09397907492i87j2g8128687kgg1ih5hij8772225j4i54l2k91k151k138612h68842ji"
         },
         {
             "key": "柠檬",
@@ -342,7 +342,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "https://api.wwgz.cn:520/webcloud/relay.php?url="
+            "ext": "7lj763gg402i7942503g839jg74h8h88highi40799jh6i6k454419l0l5184k0g548458hh994hjj94330jk296k4l045"
         },
         {
             "key": "csp_CZSPP",
@@ -357,7 +357,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "https://www.czzymovie.com/"
+            "ext": "7lj763gg402i7942463j9j9jh346968hg5ll845ki38473"
         },
         {
             "key": "ZXZJ",
@@ -372,7 +372,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "https://www.zxzjys.com/"
+            "ext": "7lj763gg402i7942463j9j9jgg449698khhh845ki38473"
         },
         {
             "key": "Lib",
@@ -387,7 +387,7 @@
             "playerType": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://www.libvio.cc/static/js/playerconfig.js"
+            "ext": "7lj763gg402i7942463j9j9jhi558k84lhg7845kili62l35535512l0h61j48410h9g5igk9j40908h351hh484h8l60h"
         }
     ],
     "parses": [
