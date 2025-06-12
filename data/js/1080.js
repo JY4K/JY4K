@@ -37,563 +37,634 @@
 
 (function () {
     'use strict';
-    var $ = $ || window.$;
-    var log_count = 1;
-    var host = location.host;
-    var parseInterfaceList = [];
-    var selectedInterfaceList = [];
-    var originalInterfaceList = [
+    
+    // 常量定义
+    const $ = window.$;
+    const host = location.host;
+    const isMobile = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(navigator.userAgent);
+    const isEdge = /Edg/i.test(navigator.userAgent);
+    
+    // 解析接口配置
+    const parseInterfaces = [
         // 页内播放解析
-        {title:"JY",type:"1",url:"https://jx.playerjy.com/?url="},
-        {title:"樱花",type:"1",url:"https://bfq.lggys.com/?url="},
-        {title:"火花",type:"1",url:"https://api.huohua.live/bfq/?key=U1u6H8QZgCqD4h7Ljp&url="},
-        {title:"咸鱼",type:"1",url:"https://jx.xymp4.cc/?url="},
-        {title:"虾米",type:"1",url:"https://jx.xmflv.com/?url="},
-        {title:"M3U8",type:"1",url:"https://jx.m3u8.tv/jiexi/?url="},
-        {title:"夜幕",type:"1",url:"https://www.yemu.xyz/?url="},
+        {title: "JY", type: "1", url: "https://jx.playerjy.com/?url="},
+        {title: "影趣", type: "1", url: "https://yingqu.icu/dpplay/?url="},
+        {title: "樱花", type: "1", url: "https://bfq.lggys.com/?url="},
+        {title: "火花", type: "1", url: "https://api.huohua.live/bfq/?key=U1u6H8QZgCqD4h7Ljp&url="},
+        {title: "咸鱼", type: "1", url: "https://jx.xymp4.cc/?url="},
+        {title: "虾米", type: "1", url: "https://jx.xmflv.com/?url="},
+        {title: "M3U8", type: "1", url: "https://jx.m3u8.tv/jiexi/?url="},
+        {title: "夜幕", type: "1", url: "https://www.yemu.xyz/?url="},
         // 页外播放解析
-        {title:"小红",type:"0",url:"https://www.xiaohys.com/static/player/artplayer.html?url="},
+        {title: "小红", type: "0", url: "https://www.xiaohys.com/static/player/artplayer.html?url="},
+        {title: "光影", type: "0", url: "https://play.okcdn100.top/analysis/player/?key=eijlmtwxAENQTVY179&url="}
     ];
 
-    // 优化后的日志函数
-    function mylog(message, data = '') {
-        const timestamp = new Date().toISOString();
-        const logPrefix = `[VIP-${timestamp}]`;
-        console.log(logPrefix, message, data);
-    }
+    // 播放器配置
+    const playerConfigs = {
+        "v.qq.com": {
+            container: "#mod_player,#player-container,.container-player",
+            displayNodes: ["#mask_layer", ".mod_vip_popup", ".panel-tip-pay"]
+        },
+        "m.v.qq.com": {
+            container: ".mod_player,#player",
+            displayNodes: [".mod_vip_popup", "[class^=app_],[class^=app-],[class*=_app_],[class*=-app-],[class$=_app],[class$=-app]", "div[dt-eid=open_app_bottom]", "div.video_function.video_function_new", "a[open-app]", "section.mod_source", "section.mod_box.mod_sideslip_h.mod_multi_figures_h,section.mod_sideslip_privileges,section.mod_game_rec", ".at-app-banner"]
+        },
+        "w.mgtv.com": {
+            container: "#mgtv-player-wrap",
+            displayNodes: []
+        },
+        "www.mgtv.com": {
+            container: "#mgtv-player-wrap",
+            displayNodes: []
+        },
+        "m.mgtv.com": {
+            container: ".video-area",
+            displayNodes: ["div[class^=mg-app]", ".video-area-bar", ".open-app-popup"]
+        },
+        "www.bilibili.com": {
+            container: "#player_module,#bilibiliPlayer,#bilibili-player",
+            displayNodes: ["[class^=playerPop_wrap]"]
+        },
+        "m.bilibili.com": {
+            container: ".player-wrapper,.player-container,.mplayer",
+            displayNodes: []
+        },
+        "www.iqiyi.com": {
+            container: ".iqp-player-videolayer-inner",
+            displayNodes: ["#playerPopup", "div[class^=qy-header-login-pop]", "section[class^=modal-cover_]", ".toast"]
+        },
+        "m.iqiyi.com": {
+            container: ".iqp-player-videolayer-inner",
+            displayNodes: ["div.m-iqyGuide-layer", "a[down-app-android-url]", "[name=m-extendBar]", "[class*=ChannelHomeBanner]", "section.m-hotWords-bottom"]
+        },
+        "www.iq.com": {
+            container: ".intl-video-wrap",
+            displayNodes: []
+        },
+        "v.youku.com": {
+            container: "#ykPlayer,#youku-dashboard",
+            displayNodes: ["#iframaWrapper", "#checkout_counter_mask", "#checkout_counter_popup"]
+        },
+        "m.youku.com": {
+            container: "#ykplayer,#player,.h5-detail-player",
+            displayNodes: [".callEnd_box", ".h5-detail-guide", ".h5-detail-vip-guide"]
+        },
+        "tv.sohu.com": {
+            container: "#player",
+            displayNodes: []
+        },
+        "film.sohu.com": {
+            container: "#playerWrap",
+            displayNodes: []
+        },
+        "www.le.com": {
+            container: "#le_playbox",
+            displayNodes: []
+        },
+        "video.tudou.com": {
+            container: ".td-playbox",
+            displayNodes: []
+        },
+        "v.pptv.com": {
+            container: "#pptv_playpage_box",
+            displayNodes: []
+        },
+        "vip.pptv.com": {
+            container: ".w-video",
+            displayNodes: []
+        },
+        "www.wasu.cn": {
+            container: "#flashContent",
+            displayNodes: []
+        },
+        "www.acfun.cn": {
+            container: "#player",
+            displayNodes: []
+        },
+        "vip.1905.com": {
+            container: "#player,#vodPlayer",
+            displayNodes: []
+        },
+        "www.1905.com": {
+            container: "#player,#vodPlayer",
+            displayNodes: []
+        }
+    };
 
-    // 内嵌页内播放
-    function innerParse(url) {
-        const iframe = document.getElementById('iframe-player');
-        if (!iframe) {
-            mylog('播放器iframe不存在');
-            return;
+    // 工具函数
+    const utils = {
+        log: (message, data = '') => {
+            const timestamp = new Date().toISOString();
+            console.log(`[VIP-${timestamp}]`, message, data);
+        },
+
+        GM: {
+            openInTab: (url, openInBackground) => {
+                if (isEdge) {
+                    return typeof GM_openInTab === 'function' 
+                        ? GM_openInTab(url, openInBackground)
+                        : window.open(url, '_blank');
+                }
+                return typeof GM_openInTab === 'function' 
+                    ? GM_openInTab(url, openInBackground)
+                    : GM.openInTab(url, openInBackground);
+            },
+            getValue: (name, defaultValue) => {
+                if (isEdge) {
+                    return typeof GM_getValue === 'function'
+                        ? GM_getValue(name, defaultValue)
+                        : localStorage.getItem(name) || defaultValue;
+                }
+                return typeof GM_getValue === 'function'
+                    ? GM_getValue(name, defaultValue)
+                    : GM.getValue(name, defaultValue);
+            },
+            setValue: (name, value) => {
+                if (isEdge) {
+                    if (typeof GM_setValue === 'function') {
+                        GM_setValue(name, value);
+                    } else {
+                        localStorage.setItem(name, value);
+                    }
+                    return;
+                }
+                return typeof GM_setValue === 'function'
+                    ? GM_setValue(name, value)
+                    : GM.setValue(name, value);
+            },
+            addStyle: (css) => {
+                const style = document.createElement('style');
+                style.textContent = css;
+                document.head.appendChild(style);
+            }
+        },
+
+        // 性能优化：防抖函数
+        debounce: (func, wait) => {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        },
+
+        // 性能优化：节流函数
+        throttle: (func, limit) => {
+            let inThrottle;
+            return function executedFunction(...args) {
+                if (!inThrottle) {
+                    func(...args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            };
+        },
+
+        // 性能优化：DOM操作缓存
+        cache: new Map(),
+
+        // 性能优化：获取DOM元素
+        getElement: (selector) => {
+            if (!utils.cache.has(selector)) {
+                utils.cache.set(selector, document.querySelector(selector));
+            }
+            return utils.cache.get(selector);
+        },
+
+        // 性能优化：批量DOM操作
+        batchDOM: (operations) => {
+            requestAnimationFrame(() => {
+                operations.forEach(op => op());
+            });
+        }
+    };
+
+    // 视频处理类
+    class VideoHandler {
+        constructor() {
+            this.iframeDivCss = "width:100%;height:100%;z-index:999999;";
+            this.currentPlayer = null;
+            this.movieBox = null;
+            this.selectedTextButton = null;
+            this.selectedMenu = null;
+            this.menuHideTimeout = null;
+            this.init();
         }
 
-        try {
-            iframe.src = url;
-            mylog('成功加载播放器', url);
-        } catch (error) {
-            mylog('播放器加载失败', error);
+        init() {
+            this.setupPlayerNodes();
+            this.setupUI();
+            this.bindEvents();
+            this.checkAutoPlay();
         }
-    }
 
-    // 视频播放控制
-    function removeVideo() {
-        const videoElements = document.getElementsByTagName('video');
-        const removeInterval = setInterval(() => {
-            if (videoElements.length === 0) {
-                clearInterval(removeInterval);
+        setupPlayerNodes() {
+            const config = playerConfigs[host];
+            if (!config) {
+                utils.log('未找到当前网站的播放器配置');
                 return;
             }
 
-            Array.from(videoElements).forEach(video => {
-                try {
-                    video.src = '';
-                    video.muted = true;
-                    video.load();
-                    video.pause();
-                } catch (error) {
-                    mylog('视频移除失败', error);
+            this.currentPlayer = config.container;
+            this.hideElements(config.displayNodes);
+        }
+
+        hideElements(selectors) {
+            const hideInterval = setInterval(() => {
+                utils.batchDOM(selectors.map(selector => () => {
+                    document.querySelectorAll(selector).forEach(el => {
+                        el.style.display = 'none';
+                    });
+                }));
+            }, 500);
+            setTimeout(() => clearInterval(hideInterval), 10000);
+        }
+
+        removeVideo() {
+            const videoElements = document.getElementsByTagName('video');
+            const removeInterval = setInterval(() => {
+                if (videoElements.length === 0) {
+                    clearInterval(removeInterval);
+                    return;
                 }
-            });
-        }, 1500);
-    }
-
-    // 实时监听网址变化
-    function urlChangeReload(){
-        var oldURL = window.location.href;
-        setInterval(() => {
-            var currentURL = window.location.href;
-            if (oldURL !== currentURL) {
-                window.location.reload();
-            }
-        }, 500);
-    }
-
-    // 优化后的兼容性函数
-    const GM = {
-        openInTab: (url, openInBackground) => {
-            return typeof GM_openInTab === 'function'
-                ? GM_openInTab(url, openInBackground)
-                : GM.openInTab(url, openInBackground);
-        },
-
-        getValue: (name, defaultValue) => {
-            return typeof GM_getValue === 'function'
-                ? GM_getValue(name, defaultValue)
-                : GM.getValue(name, defaultValue);
-        },
-
-        setValue: (name, value) => {
-            return typeof GM_setValue === 'function'
-                ? GM_setValue(name, value)
-                : GM.setValue(name, value);
-        },
-
-        xmlhttpRequest: (options) => {
-            return typeof GM_xmlhttpRequest === 'function'
-                ? GM_xmlhttpRequest(options)
-                : GM.xmlHttpRequest(options);
-        },
-
-        addStyle: (css) => {
-            const style = document.createElement('style');
-            style.textContent = css;
-            document.head.appendChild(style);
-        }
-    };
-
-    // 播放节点预处理
-    var node = "";
-    var player_Containers = [
-        {
-            host: "v.qq.com",
-            container: "#mod_player,#player-container,.container-player",
-            displayNodes: ["#mask_layer", ".mod_vip_popup", ".panel-tip-pay"]
-        }, {
-            host: "m.v.qq.com",
-            container: ".mod_player,#player",
-            displayNodes: [".mod_vip_popup", "[class^=app_],[class^=app-],[class*=_app_],[class*=-app-],[class$=_app],[class$=-app]", "div[dt-eid=open_app_bottom]", "div.video_function.video_function_new", "a[open-app]", "section.mod_source", "section.mod_box.mod_sideslip_h.mod_multi_figures_h,section.mod_sideslip_privileges,section.mod_game_rec", ".at-app-banner"]
-        }, {
-            host: "w.mgtv.com",
-            container: "#mgtv-player-wrap",
-            displayNodes: []
-        }, {
-            host: "www.mgtv.com",
-            container: "#mgtv-player-wrap",
-            displayNodes: []
-        }, {
-            host: "m.mgtv.com",
-            container: ".video-area",
-            displayNodes: ["div[class^=mg-app]", ".video-area-bar", ".open-app-popup"]
-        }, {
-            host: "www.bilibili.com",
-            container: "#player_module,#bilibiliPlayer,#bilibili-player",
-            displayNodes: ["[class^=playerPop_wrap]"]
-        }, {
-            host: "m.bilibili.com",
-            container: ".player-wrapper,.player-container,.mplayer",
-            displayNodes: []
-        }, {
-            host: "www.iqiyi.com",
-            container: ".iqp-player-videolayer-inner",
-            displayNodes: ["#playerPopup", "div[class^=qy-header-login-pop]", "section[class^=modal-cover_]", ".toast"]
-        }, {
-            host: "m.iqiyi.com",
-            container: ".iqp-player-videolayer-inner",
-            displayNodes: ["div.m-iqyGuide-layer", "a[down-app-android-url]", "[name=m-extendBar]", "[class*=ChannelHomeBanner]", "section.m-hotWords-bottom"]
-        }, {
-            host: "www.iq.com",
-            container: ".intl-video-wrap",
-            displayNodes: []
-        }, {
-            host: "v.youku.com",
-            container: "#ykPlayer,#youku-dashboard",
-            displayNodes: ["#iframaWrapper", "#checkout_counter_mask", "#checkout_counter_popup"]
-        }, {
-            host: "m.youku.com",
-            container: "#ykplayer,#player,.h5-detail-player",
-            displayNodes: [".callEnd_box", ".h5-detail-guide", ".h5-detail-vip-guide"]
-        }, {
-            host: "tv.sohu.com",
-            container: "#player",
-            displayNodes: []
-        }, {
-            host: "film.sohu.com",
-            container: "#playerWrap",
-            displayNodes: []
-        }, {
-            host: "www.le.com",
-            container: "#le_playbox",
-            displayNodes: []
-        }, {
-            host: "video.tudou.com",
-            container: ".td-playbox",
-            displayNodes: []
-        }, {
-            host: "v.pptv.com",
-            container: "#pptv_playpage_box",
-            displayNodes: []
-        }, {
-            host: "vip.pptv.com",
-            container: ".w-video",
-            displayNodes: []
-        }, {
-            host: "www.wasu.cn",
-            container: "#flashContent",
-            displayNodes: []
-        }, {
-            host: "www.acfun.cn",
-            container: "#player",
-            displayNodes: []
-        }, {
-            host: "vip.1905.com",
-            container: "#player,#vodPlayer",
-            displayNodes: []
-        }, {
-            host: "www.1905.com",
-            container: "#player,#vodPlayer",
-            displayNodes: []
-        },
-    ];
-
-    // 播放容器处理与弹出界面处理
-    function handlePlayerNodes() {
-        const currentHost = location.host;
-        const playerConfig = player_Containers.find(item => item.host === currentHost);
-
-        if (!playerConfig) {
-            mylog('未找到当前网站的播放器配置');
-            return;
+                utils.batchDOM([() => {
+                    Array.from(videoElements).forEach(video => {
+                        try {
+                            video.src = '';
+                            video.muted = true;
+                            video.load();
+                            video.pause();
+                        } catch (error) {
+                            utils.log('视频移除失败', error);
+                        }
+                    });
+                }]);
+            }, 1500);
         }
 
-        // 设置播放器节点
-        node = playerConfig.container;
+        setupUI() {
+            const autoPlay = !!utils.GM.getValue("autoPlayerKey_" + host, null) ? "开" : "关";
+            const top = utils.GM.getValue("Position_" + host, {top: 100}).top;
 
-        // 处理需要隐藏的元素
-        const hideInterval = setInterval(() => {
-            playerConfig.displayNodes.forEach(selector => {
-                const elements = document.querySelectorAll(selector);
-                elements.forEach(element => {
-                    element.style.display = 'none';
-                });
-            });
-        }, 500);
+            // 添加样式
+            utils.GM.addStyle(this.getStyles(top, isMobile));
 
-        // 清理定时器
-        setTimeout(() => clearInterval(hideInterval), 10000);
-    }
+            // 创建UI元素
+            const html = this.createUIElements(autoPlay);
+            $("body").append(html);
 
-    var autoPlay = !!GM.getValue("autoPlayerKey_" + host, null) ? "开" : "关";
-    var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
-
-    var iframeDivCss = "width:100%;height:100%;z-index:999999;";
-    var videoPlayer = $(`<div id='iframe-div' style='`+ iframeDivCss + `'><iframe id='iframe-player' frameborder='0' allowfullscreen='true' width='100%' height='100%'></iframe></div>`);
-
-    var ImgBase64 =`
-        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABB0lEQVR42r2VCw7CIAxAWzQuelsv4ml12XSAhZQFl0L3cWvSwFjhtRQKeu9bALgiCbDQmOfuQHqGuow2whpPpLajTlMAWNKTAhhthDU6zBbbRY
-        4D7LRFfQ3geXJIoCM1PIYTQC3JrRZBfooGIRqcA4gThZ/R6zCegI7EmBBIjAY4ogSSAFZNcppEZg9q7jz84WgMKFIDvEkvuVcCKG0bqoBCknEKKICgsIZ6TKEE0GwPBYSzbpYCFm9RMUn/SnJmnO7Az+URPLaZfQI47ttx/pwcCFHm3w7KtU
-        gFlB6c/AbXSsVqQC6bAGl/pSoKE5t1tWirHAJ4UXvb6UWLgJ5/NgJgmbfCg/MFf/07iXwnzokAAAAASUVORK5CYII=`;
-
-    var sImgBase64=`
-        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAgUlEQVR42t3UQQqAIBAF0EahE3S1buFtPEY3jGr8QgxEm5D5Cc7GlfP8jigTsVR1ESZQaxxAcF+Xa2ORgEUtAQB1BsQSpJRCzvmkAffqmsAgRt
-        M+AHXIYwCsGgj4c8j1y4iNfW1vl2e6OgPbA2DVC0CS2ALjxMcnwD0BTjxD31lAAVVYNypdDsbLAAAAAElFTkSuQmCC`;
-
-    // 视频解析预处理
-    var innerList = [];
-    var outerList = [];
-    var innerli = "";
-    var outerli = "";
-    var num = "";
-    originalInterfaceList.forEach((item, index) => {
-        if (item.type == "1") {
-            innerList.push(item);
-            innerli += "<li title='请勿相信视频中广告'>" + item.title + "</li>";
-        }else{
-            outerList.push(item);
-            outerli += "<li title='请勿相信视频中广告'>" + item.title + "</li>";
+            // 初始化UI引用
+            this.movieBox = $("#vip_movie_box");
+            this.selectedTextButton = $(".selected_text");
+            this.selectedMenu = $(".vip_mod_box_selected");
         }
-    })
 
-    parseInterfaceList = innerList.concat(outerList);
-
-    // 图片按钮定位
-    var left = 0;
-    var top = 100;
-    var Position = GM.getValue("Position_" + host);
-    if(!!Position){
-        top = Position.top;
-    }
-
-    GM.addStyle(`
-                #vip_movie_box {cursor:pointer; position:fixed; top:` + top + `px; right:0px; width:45px; z-index:99999; font-size:14px; text-align:center; transition: all 0.3s ease;}
-
-                #vip_movie_box .item_text, #vip_movie_box .selected_text, #vip_movie_box .img_text {
-                    width: 45px; /* 调整宽度 */
-                    padding: 8px 0px; /* 增加内边距 */
+        getStyles(top, isMobile) {
+            return `
+                #vip_movie_box {
+                    cursor: pointer;
+                    position: fixed;
+                    top: ${isMobile ? '300px' : top + 'px'};
+                    right: 0px;
+                    width: 45px;
+                    z-index: 99999;
+                    font-size: 14px;
                     text-align: center;
-                    background-color: rgba(93, 173, 226, 0.9); /* 浅蓝色 */
+                    transition: all 0.3s ease;
+                    will-change: transform;
+                }
+
+                #vip_movie_box .item_text,
+                #vip_movie_box .selected_text,
+                #vip_movie_box .img_text {
+                    width: 45px;
+                    padding: 8px 0px;
+                    text-align: center;
+                    background-color: rgba(93, 173, 226, 0.9);
                     margin: 2px 0px;
-                    border-radius: 8px 0 0 8px; /* 更圆润的边角 */
-                    box-shadow: -3px 3px 6px rgba(0,0,0,0.2); /* 调整阴影 */
-                    transition: background-color 0.3s ease, transform 0.1s ease; /* 添加悬停效果 */
+                    border-radius: 8px 0 0 8px;
+                    box-shadow: -3px 3px 6px rgba(0,0,0,0.2);
+                    transition: background-color 0.3s ease, transform 0.1s ease;
+                    will-change: transform;
                 }
-                #vip_movie_box .item_text:hover, #vip_movie_box .selected_text:hover, #vip_movie_box .img_text:hover {
-                    background-color: rgba(93, 173, 226, 1); /* 悬停时变为实心浅蓝色 */
-                    transform: translateX(-3px); /* 悬停效果 */
+
+                #vip_movie_box .item_text:hover,
+                #vip_movie_box .selected_text:hover,
+                #vip_movie_box .img_text:hover {
+                    background-color: rgba(93, 173, 226, 1);
+                    transform: translateX(-3px);
                 }
-		        #vip_movie_box .item_text img, #vip_movie_box .selected_text img {width:26px; height:26px; display:inline-block; vertical-align:middle;}
+
+                #vip_movie_box .item_text img,
+                #vip_movie_box .selected_text img {
+                    width: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
 
                 #vip_movie_box .vip_mod_box_selected {
-                    width: 360px; /* 调整宽度以适应4个项目 */
-                    max-height: 450px; /* 调整最大高度 */
+                    width: 360px;
+                    max-height: 450px;
                     display: none;
                     position: absolute;
-                    right: 50px; /* 定位在按钮旁边 */
+                    right: 50px;
                     top: 0;
                     text-align: center;
-                    backdrop-filter: saturate(1.8) blur(12px); /* 调整模糊效果 */
-                    background: rgba(44, 62, 80, 0.6); /* 深色背景 */
-                    border: 1px solid rgba(255, 255, 255, 0.1); /* 细微边框 */
-                    border-radius: 8px; /* 圆角 */
+                    backdrop-filter: saturate(1.8) blur(12px);
+                    background: rgba(44, 62, 80, 0.6);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 8px;
                     overflow-y: auto;
-                    box-shadow: -3px 3px 12px rgba(0,0,0,0.4); /* 阴影效果 */
-                    padding: 15px; /* 内边距 */
+                    box-shadow: -3px 3px 12px rgba(0,0,0,0.4);
+                    padding: 15px;
+                    will-change: transform;
                 }
-                #vip_movie_box .vip_mod_box_selected ul{
+
+                #vip_movie_box .vip_mod_box_selected ul {
                     list-style: none;
-                    margin: 0; /* 移除默认边距 */
+                    margin: 0;
                     padding: 0;
-                    display: flex; /* 使用弹性布局 */
-                    flex-wrap: wrap; /* 允许项目换行 */
-                    gap: 10px; /* 项目间距 */
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
                 }
-                #vip_movie_box .vip_mod_box_selected li{
-                    font-size: 14px; /* 字体大小 */
-                    color: #E0E0E0; /* 文字颜色 */
+
+                #vip_movie_box .vip_mod_box_selected li {
+                    font-size: 14px;
+                    color: #E0E0E0;
                     text-align: center;
-                    flex-basis: calc(25% - 8px); /* 调整4个项目布局 */
-                    line-height: normal; /* 重置行高 */
-                    padding: 12px 8px; /* 内边距 */
-                    margin: 0; /* 确保无外边距 */
-                    background: rgba(52, 73, 94, 0.7); /* 项目背景色 */
-                    border-radius: 5px; /* 圆角 */
+                    flex-basis: calc(25% - 8px);
+                    line-height: normal;
+                    padding: 12px 8px;
+                    margin: 0;
+                    background: rgba(52, 73, 94, 0.7);
+                    border-radius: 5px;
                     box-sizing: border-box;
                     transition: background-color 0.2s ease, color 0.2s ease;
-                    cursor: pointer; /* 鼠标指针 */
-                    overflow: hidden; /* 隐藏溢出文本 */
-                    text-overflow: ellipsis; /* 添加省略号 */
-                    white-space: nowrap; /* 防止文本换行 */
-                }
-                #vip_movie_box .vip_mod_box_selected li:hover{
-                    color:#FFFFFF;
-                    background-color: rgba(93, 173, 226, 0.8); /* 悬停背景色 */
-                }
-                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar{width:8px; height:1px;} /* 滚动条宽度 */
-                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-thumb{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#888;} /* 滚动条滑块 */
-                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#F1F1F1;} /* 滚动条轨道 */
-                #vip_movie_box .vip_mod_box_selected .selected{
-                    color:#FFFFFF;
-                    background-color:#5DADE2; /* 选中项背景色 */
+                    cursor: pointer;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
 
-                #vip_movie_box .img_text {width:45px; text-align:center; padding:3px 0px; background-color: rgba(93, 173, 226, 0.9); margin:1px 0px; border-radius: 8px 0 0 8px; box-shadow: -3px 3px 6px rgba(0,0,0,0.2); transition: background-color 0.3s ease, transform 0.1s ease;}
-                #vip_movie_box .img_text:hover{background-color: rgba(93, 173, 226, 1); transform: translateX(-3px);}
-                #vip_movie_box .vip_auto {color:#FFFFFF; font-size:22px; font-weight:bold; line-height:normal;}
+                #vip_movie_box .vip_mod_box_selected li:hover {
+                    color: #FFFFFF;
+                    background-color: rgba(93, 173, 226, 0.8);
+                }
 
-                /* 菜单内标题样式 */
+                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar {
+                    width: 8px;
+                    height: 1px;
+                }
+
+                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-thumb {
+                    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+                    background: #888;
+                }
+
+                #vip_movie_box .vip_mod_box_selected::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+                    background: #F1F1F1;
+                }
+
+                #vip_movie_box .vip_mod_box_selected .selected {
+                    color: #FFFFFF;
+                    background-color: #5DADE2;
+                }
+
+                #vip_movie_box .img_text {
+                    width: 45px;
+                    text-align: center;
+                    padding: 3px 0px;
+                    background-color: rgba(93, 173, 226, 0.9);
+                    margin: 1px 0px;
+                    border-radius: 8px 0 0 8px;
+                    box-shadow: -3px 3px 6px rgba(0,0,0,0.2);
+                    transition: background-color 0.3s ease, transform 0.1s ease;
+                }
+
+                #vip_movie_box .img_text:hover {
+                    background-color: rgba(93, 173, 226, 1);
+                    transform: translateX(-3px);
+                }
+
+                #vip_movie_box .vip_auto {
+                    color: #FFFFFF;
+                    font-size: 22px;
+                    font-weight: bold;
+                    line-height: normal;
+                }
+
                 #vip_movie_box .vip_mod_box_selected > div > div {
-                    font-size: 15px; /* 标题字体大小 */
+                    font-size: 15px;
                     font-weight: bold;
                     text-align: center;
-                    color: #BBDEFB; /* 标题颜色 */
+                    color: #BBDEFB;
                     line-height: normal;
-                    margin-top: 15px; /* 上边距 */
-                    margin-bottom: 8px; /* 下边距 */
-                    padding-bottom: 5px; /* 底部内边距 */
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 分隔线 */
+                    margin-top: 15px;
+                    margin-bottom: 8px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
-                 `);
-
-    if (isMobile) {
-        GM.addStyle(`#vip_movie_box {top:300px;}`);
-    }
-
-    var html = $(`<div id='vip_movie_box'>
-                    <div class='item_text'><img src='`+ ImgBase64 +`' title='快速解析'/></div>
-                    <div class='selected_text' >
-                       <img src='`+ sImgBase64 +`' title='视频解析'/>
-                       <div class='vip_mod_box_selected' >
-                           <div>
-                             <div style='font-size:16px; font-weight:bold; text-align:center; color:#FF4500;  line-height:21px; margin-top:10px;'>页内解析</div>
-                             <ul>
-                               ` + innerli + `
-                               <div style='clear:both;'></div>
-                             </ul>
-                           </div>
-                           <div>
-                             <div style='font-size:16px; font-weight:bold; text-align:center; color:#FF4500;  line-height:21px; margin-top:10px;'>页外解析</div>
-                             <ul>
-                               ` + outerli + `
-                               <div style='clear:both;'></div>
-                             </ul>
-                           </div>
-                       </div>
-                    </div>
-                    <div class="img_text"><div class="vip_auto" style="color:white; font-size:20px; font-weight:bold; line-height:23px; " title="自动解析开关">${autoPlay}</div></div>
-                 </div>`);
-
-    $("body").append(html);
-
-    // 快速解析事件处理
-    $(".item_text").on("click", () => {
-        // 获取当前选中的解析接口索引
-        var currentIndex = GM.getValue("autoPlayerValue_" + host, 0);
-        // 获取当前选中的解析接口
-        var currentInterface = parseInterfaceList[currentIndex];
-        // 使用当前接口进行页外解析
-        GM.openInTab(currentInterface.url + location.href, false);
-    });
-
-    // 视频解析事件处理
-    const movieBox = $("#vip_movie_box");
-    const selectedTextButton = $(".selected_text");
-    const selectedMenu = $(".vip_mod_box_selected");
-
-    let menuHideTimeout;
-
-    const showMenu = () => {
-        clearTimeout(menuHideTimeout);
-        selectedMenu.show();
-    };
-
-    const hideMenu = () => {
-        menuHideTimeout = setTimeout(() => {
-            selectedMenu.hide();
-        }, 100);
-    };
-
-    selectedTextButton.on("mouseenter", showMenu);
-    selectedTextButton.on("mouseleave", hideMenu);
-
-    selectedMenu.on("mouseenter", () => { clearTimeout(menuHideTimeout); });
-    selectedMenu.on("mouseleave", hideMenu);
-
-    // 页外解析处理函数
-    function handleOuterParse(url) {
-        try {
-            GM.openInTab(url, false);
-            mylog('页外解析已打开', url);
-        } catch (error) {
-            mylog('页外解析打开失败', error);
-            alert('页外解析打开失败，请重试');
+                @media (prefers-reduced-motion: reduce) {
+                    #vip_movie_box,
+                    #vip_movie_box .item_text,
+                    #vip_movie_box .selected_text,
+                    #vip_movie_box .img_text {
+                        transition: none;
+                    }
+                }
+            `;
         }
-    }
 
-    $(".vip_mod_box_selected li").each((index, item) => {
-        item.addEventListener("click", function(){
-            // 移除所有列表项的"selected"类
-            $(".vip_mod_box_selected li").removeClass("selected");
-
-            const selectedInterface = parseInterfaceList[index];
-            const targetUrl = selectedInterface.url + location.href;
-
-            if (selectedInterface.type == "1") {
-                // 处理页内解析
-                $(this).addClass("selected"); // 为点击项添加"selected"类
-                GM.setValue("autoPlayerValue_" + host, index);
-
-                // 准备播放器iframe
-                let iframe = document.getElementById('iframe-player');
-                if (!iframe) {
-                    var player = $(node);
-                    removeVideo();
-                    player.empty();
-                    player.append($(`<div id='iframe-div' style='`+ iframeDivCss + `'><iframe id='iframe-player' frameborder='0' allowfullscreen='true' width='100%' height='100%'></iframe></div>`));
-                    iframe = document.getElementById('iframe-player');
-                }
-
-                // 其他接口的页内解析
-                if (isMobile) {
-                    iframeDivCss = "width:100%;height:220px;z-index:999999;";
-                }
-                if (isMobile && window.location.href.indexOf("iqiyi.com") !== -1) {
-                    iframeDivCss = "width:100%;height:220px;z-index:999999;margin-top:-56.25%;";
-                }
-                // 确保iframe存在后再设置src
-                if (iframe) {
-                    iframe.src = targetUrl;
-                    mylog('成功加载播放器', targetUrl);
-                } else {
-                    mylog('播放器iframe不存在');
-                    alert('播放器容器未找到，无法加载视频。');
-                }
-            } else {
-                // 处理页外解析
-                handleOuterParse(targetUrl);
-            }
-        });
-    });
-
-    // 自动解析视频事件处理
-    $(".vip_auto").on("click", function () {
-        if (!!GM.getValue("autoPlayerKey_" + host, null)) {
-            GM.setValue("autoPlayerKey_" + host, null);
-            $(this).html("关");
-        } else {
-            GM.setValue("autoPlayerKey_" + host, "true");
-            GM.setValue("autoPlayerValue_" + host, 0); // 设置为第一个解析接口
-            $(this).html("开");
-            // 立即触发解析
-            const selectedInterface = parseInterfaceList[0];
-            const targetUrl = selectedInterface.url + location.href;
+        createUIElements(autoPlay) {
+            const innerList = parseInterfaces.filter(item => item.type === "1");
+            const outerList = parseInterfaces.filter(item => item.type === "0");
             
-            if (selectedInterface.type == "1") {
-                // 处理页内解析
-                $(".vip_mod_box_selected li").eq(0).addClass("selected");
-                
-                // 准备播放器iframe
-                let iframe = document.getElementById('iframe-player');
-                if (!iframe) {
-                    var player = $(node);
-                    removeVideo();
-                    player.empty();
-                    player.append($(`<div id='iframe-div' style='`+ iframeDivCss + `'><iframe id='iframe-player' frameborder='0' allowfullscreen='true' width='100%' height='100%'></iframe></div>`));
-                    iframe = document.getElementById('iframe-player');
-                }
+            const innerli = innerList.map(item => 
+                `<li title='请勿相信视频中广告'>${item.title}</li>`
+            ).join('');
+            
+            const outerli = outerList.map(item => 
+                `<li title='请勿相信视频中广告'>${item.title}</li>`
+            ).join('');
 
-                // 确保iframe存在后再设置src
-                if (iframe) {
-                    iframe.src = targetUrl;
-                    mylog('成功加载播放器', targetUrl);
+            return $(`
+                <div id='vip_movie_box'>
+                    <div class='item_text'>
+                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABB0lEQVR42r2VCw7CIAxAWzQuelsv4ml12XSAhZQFl0L3cWvSwFjhtRQKeu9bALgiCbDQmOfuQHqGuow2whpPpLajTlMAWNKTAhhthDU6zBbbRY4D7LRFfQ3geXJIoCM1PIYTQC3JrRZBfooGIRqcA4gThZ/R6zCegI7EmBBIjAY4ogSSAFZNcppEZg9q7jz84WgMKFIDvEkvuVcCKG0bqoBCknEKKICgsIZ6TKEE0GwPBYSzbpYCFm9RMUn/SnJmnO7Az+URPLaZfQI47ttx/pwcCFHm3w7KtUgFlB6c/AbXSsVqQC6bAGl/pSoKE5t1tWirHAJ4UXvb6UWLgJ5/NgJgmbfCg/MFf/07iXwnzokAAAAASUVORK5CYII=' title='快速解析'/>
+                    </div>
+                    <div class='selected_text'>
+                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAgUlEQVR42t3UQQqAIBAF0EahE3S1buFtPEY3jGr8QgxEm5D5Cc7GlfP8jigTsVR1ESZQaxxAcF+Xa2ORgEUtAQB1BsQSpJRCzvmkAffqmsAgRtM+AHXIYwCsGgj4c8j1y4iNfW1vl2e6OgPbA2DVC0CS2ALjxMcnwD0BTjxD31lAAVVYNypdDsbLAAAAAElFTkSuQmCC' title='视频解析'/>
+                        <div class='vip_mod_box_selected'>
+                            <div>
+                                <div style='font-size:16px; font-weight:bold; text-align:center; color:#FF4500; line-height:21px; margin-top:10px;'>页内解析</div>
+                                <ul>${innerli}</ul>
+                            </div>
+                            <div>
+                                <div style='font-size:16px; font-weight:bold; text-align:center; color:#FF4500; line-height:21px; margin-top:10px;'>页外解析</div>
+                                <ul>${outerli}</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img_text">
+                        <div class="vip_auto" style="color:white; font-size:20px; font-weight:bold; line-height:23px;" title="自动解析开关">${autoPlay}</div>
+                    </div>
+                </div>
+            `);
+        }
+
+        bindEvents() {
+            // 快速解析事件
+            $(".item_text").on("click", () => {
+                const currentIndex = utils.GM.getValue("autoPlayerValue_" + host, 0);
+                const currentInterface = parseInterfaces[currentIndex];
+                utils.GM.openInTab(currentInterface.url + location.href, false);
+            });
+
+            // 菜单显示/隐藏事件
+            const showMenu = utils.throttle(() => {
+                clearTimeout(this.menuHideTimeout);
+                this.selectedMenu.show();
+            }, 100);
+
+            const hideMenu = utils.debounce(() => {
+                this.menuHideTimeout = setTimeout(() => {
+                    this.selectedMenu.hide();
+                }, 100);
+            }, 100);
+
+            this.selectedTextButton.on("mouseenter", showMenu);
+            this.selectedTextButton.on("mouseleave", hideMenu);
+
+            this.selectedMenu.on("mouseenter", () => {
+                clearTimeout(this.menuHideTimeout);
+            });
+
+            this.selectedMenu.on("mouseleave", hideMenu);
+
+            // 解析接口点击事件
+            $(".vip_mod_box_selected li").each((index, item) => {
+                item.addEventListener("click", () => {
+                    $(".vip_mod_box_selected li").removeClass("selected");
+                    const selectedInterface = parseInterfaces[index];
+                    const targetUrl = selectedInterface.url + location.href;
+
+                    if (selectedInterface.type === "1") {
+                        this.handleInnerParse(index, targetUrl);
+                    } else {
+                        this.handleOuterParse(targetUrl);
+                    }
+                });
+            });
+
+            // 自动解析开关事件
+            $(".vip_auto").on("click", () => {
+                if (utils.GM.getValue("autoPlayerKey_" + host, null)) {
+                    utils.GM.setValue("autoPlayerKey_" + host, null);
+                    $(".vip_auto").html("关");
                 } else {
-                    mylog('播放器iframe不存在');
-                    alert('播放器容器未找到，无法加载视频。');
+                    utils.GM.setValue("autoPlayerKey_" + host, "true");
+                    utils.GM.setValue("autoPlayerValue_" + host, 0);
+                    $(".vip_auto").html("开");
+                    this.handleInnerParse(0, parseInterfaces[0].url + location.href);
                 }
+                setTimeout(() => window.location.reload(), 200);
+            });
+
+            // 全屏事件
+            document.addEventListener('fullscreenchange', () => {
+                const fullscreenElement = document.fullscreenElement || 
+                    document.webkitFullscreenElement || 
+                    document.mozFullScreenElement || 
+                    document.msFullscreenElement;
+                this.movieBox[fullscreenElement ? 'hide' : 'show']();
+            });
+        }
+
+        handleInnerParse(index, targetUrl) {
+            $(".vip_mod_box_selected li").eq(index).addClass("selected");
+            utils.GM.setValue("autoPlayerValue_" + host, index);
+
+            let iframe = document.getElementById('iframe-player');
+            if (!iframe) {
+                const player = $(this.currentPlayer);
+                this.removeVideo();
+                player.empty();
+                player.append(this.createVideoPlayer());
+                iframe = document.getElementById('iframe-player');
+            }
+
+            if (isMobile) {
+                this.iframeDivCss = "width:100%;height:220px;z-index:999999;";
+                if (window.location.href.indexOf("iqiyi.com") !== -1) {
+                    this.iframeDivCss += "margin-top:-56.25%;";
+                }
+            }
+
+            if (iframe) {
+                iframe.src = targetUrl;
+                utils.log('成功加载播放器', targetUrl);
             } else {
-                // 处理页外解析
-                handleOuterParse(targetUrl);
+                utils.log('播放器iframe不存在');
+                alert('播放器容器未找到，无法加载视频。');
             }
         }
-        setTimeout(function () {
-            window.location.reload();
-        }, 200);
-    });
 
-    // 检测自动播放是否开启
-    function autoPlayer() {
-        if (!!GM.getValue("autoPlayerKey_" + host, null)) {
-            var index = GM.getValue("autoPlayerValue_" + host, 0); // 默认使用第一个解析接口
-            $(".vip_mod_box_selected li").eq(index).addClass("selected");
-            $(".vip_auto").attr("title", `当前解析源：${parseInterfaceList[index].title}`);
-            setTimeout(function () {
-                if (document.getElementById("iframe-player") == null) {
-                    var player = $(node);
-                    removeVideo();
-                    player.empty();
-                    player.append(videoPlayer);
-                }
-                innerParse(parseInterfaceList[index].url + location.href);
-            }, 2500);
-            urlChangeReload(); // 实时监听网址变化
+        handleOuterParse(url) {
+            try {
+                utils.GM.openInTab(url, false);
+                utils.log('页外解析已打开', url);
+            } catch (error) {
+                utils.log('页外解析打开失败', error);
+                alert('页外解析打开失败，请重试');
+            }
         }
-    };
 
-    window.onload = function () {
-        handlePlayerNodes();
-        autoPlayer();
+        createVideoPlayer() {
+            return $(`<div id='iframe-div' style='${this.iframeDivCss}'><iframe id='iframe-player' frameborder='0' allowfullscreen='true' width='100%' height='100%'></iframe></div>`);
+        }
+
+        checkAutoPlay() {
+            if (utils.GM.getValue("autoPlayerKey_" + host, null)) {
+                const index = utils.GM.getValue("autoPlayerValue_" + host, 0);
+                $(".vip_mod_box_selected li").eq(index).addClass("selected");
+                $(".vip_auto").attr("title", `当前解析源：${parseInterfaces[index].title}`);
+                
+                setTimeout(() => {
+                    if (!document.getElementById("iframe-player")) {
+                        const player = $(this.currentPlayer);
+                        this.removeVideo();
+                        player.empty();
+                        player.append(this.createVideoPlayer());
+                    }
+                    this.handleInnerParse(index, parseInterfaces[index].url + location.href);
+                }, 2500);
+                
+                this.watchUrlChanges();
+            }
+        }
+
+        watchUrlChanges() {
+            let oldURL = window.location.href;
+            setInterval(() => {
+                if (oldURL !== window.location.href) {
+                    window.location.reload();
+                }
+            }, 500);
+        }
     }
 
-    // 全屏时隐藏电影盒子
-    document.addEventListener('fullscreenchange', () => {
-        const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-        if (fullscreenElement) {
-            movieBox.hide();
-        } else {
-            movieBox.show();
-        }
-    });
+    // 初始化
+    window.onload = () => {
+        new VideoHandler();
+    };
 
 })();

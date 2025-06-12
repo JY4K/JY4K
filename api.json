@@ -220,6 +220,20 @@
             "ext": "./data/js/荐片.js"
         },
         {
+            "key": "晴天影视",
+            "name": "🔥 晴天┃1080",
+            "type": 3,
+            "api": "./data/py/晴天.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
+        {
             "key": "金牌影视",
             "name": "🔥 金牌┃1080",
             "type": 3,
