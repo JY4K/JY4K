@@ -1354,28 +1354,14 @@ var rule = {
                     parse: 0,
                     url: bata.url,
                     jx: 0,
-                    danmaku: "http://1.94.221.189:5613/?url=" + input.split("?")[0]
-                };
-            } else if (bata.url.includes("qiyi")) {
-                input = {
-                    parse: 0,
-                    url: input.split("?")[0],
-                    jx: 1,
-                    danmaku: "http://124.223.12.23:5566/dmku/?ac=dm&url=" + input.split("?")[0]
-                };
-            } else if (bata.url.includes("qiyi")) {
-                input = {
-                    parse: 0,
-                    url: input.split("?")[0],
-                    jx: 1,
-                    danmaku: "https://dm.vidz.asia/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://dm.wuyanzu.xyz/?ac=dm&url=" + input.split("?")[0]
                 };
             } else {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
                     jx: 1,
-                    danmaku: "https://dm.jlzj.xyz/dmku/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://dm.wuyanzu.xyz/?ac=dm&url=" + input.split("?")[0]
                 };
             }
         } catch {
@@ -1383,7 +1369,7 @@ var rule = {
                 parse: 0,
                 url: input.split("?")[0],
                 jx: 1,
-                danmaku: "http://1.94.221.189:5613/?url=" + input.split("?")[0]
+                danmaku: "https://dm.wuyanzu.xyz/?ac=dm&url=" + input.split("?")[0]
             };
         }
     }),
