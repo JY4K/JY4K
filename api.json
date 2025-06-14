@@ -28,6 +28,20 @@
             "ext": "./data/js/豆瓣.js" //    扩展内容
         },
         {
+            "key": "t4-cntv",
+            "name": "🇨🇳  央视频┃1080",
+            "type": 4,
+            "api": "https://catbox.n13.club/t9/cntv.php",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "changeable": 0
+        },
+        {
             "key": "csp_臻彩",
             "name": "🇨🇳  臻彩┃4K",
             "type": 3,
