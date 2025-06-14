@@ -734,14 +734,14 @@ var rule = {
                     parse: 0,
                     url: bata.url,
                     jx: 0,
-                    danmaku: "https://dm.wuyanzu.xyz/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input.split("?")[0]
                 };
             } else {
                 input = {
                     parse: 0,
                     url: input.split("?")[0],
                     jx: 1,
-                    danmaku: "https://dm.wuyanzu.xyz/?ac=dm&url=" + input.split("?")[0]
+                    danmaku: "https://api.danmu.icu/?ac=dm&url=" + input.split("?")[0]
                 };
             }
         } catch {
@@ -749,7 +749,7 @@ var rule = {
                 parse: 0,
                 url: input.split("?")[0],
                 jx: 1,
-                danmaku: "https://dm.wuyanzu.xyz/?ac=dm&url=" + input.split("?")[0]
+                danmaku: "https://api.danmu.icu/?ac=dm&url=" + input.split("?")[0]
             };
         }
     }),
