@@ -234,7 +234,7 @@
         },
         {
             "key": "麻花视频",
-            "name": "🔥 麻花┃t4",
+            "name": "🔥 麻花┃T4",
             "type": 4,
             "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
             "hasTags": 1,
@@ -248,7 +248,7 @@
         },
         {
             "key": "py_OleVod",
-            "name": "🔥 欧乐┃t4",
+            "name": "🔥 欧乐┃T4",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=OleVod",
             "hasTags": 1,
@@ -262,7 +262,7 @@
         },
         {
             "key": "苹果",
-            "name": "🔥 苹果┃jar",
+            "name": "🔥 苹果┃Jar",
             "type": 3,
             "api": "csp_LiteApple",
             "jar": "./data/jar/spider.jar",
@@ -276,7 +276,7 @@
         },
         {
             "key": "瓜子影视",
-            "name": "🔥 瓜子┃jar",
+            "name": "🔥 瓜子┃Jar",
             "type": 3,
             "api": "csp_Gz360",
             "jar": "./data/jar/spider.jar",
