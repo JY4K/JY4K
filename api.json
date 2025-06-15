@@ -188,6 +188,20 @@
             "ext": "./data/js/荐片.js"
         },
         {
+            "key": "咖啡",
+            "name": "🔥 咖啡┃1080",
+            "type": 3,
+            "api": "./data/py/咖啡.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
+        {
             "key": "晴天影视",
             "name": "🔥 晴天┃1080",
             "type": 3,
@@ -219,7 +233,7 @@
             }
         },
         {
-            "key": "麻花",
+            "key": "麻花视频",
             "name": "🔥 麻花┃1080",
             "type": 4,
             "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
