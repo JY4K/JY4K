@@ -188,17 +188,20 @@
             "ext": "./data/js/荐片.js"
         },
         {
-            "key": "coffee4k",
-            "name": "🔥 咖啡┃4K",
+            "key": "金牌影视",
+            "name": "🔥 金牌┃1080",
             "type": 3,
+            "api": "./data/py/金牌影视.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
             "quickSearch": 1,
-            "api": "csp_AppGet2",
+            "filterable": 1,
+            "playerType": 2,
             "ext": {
-                "url": "http://160.202.244.9:6999",
-                "dataKey": "qwertyuiopqwertt",
-                "dataIv": "qwertyuiopqwertt",
-                "deviceId": "",
-                "version": "50000"
+                "site": "https://m.ivdy.com,https://www.hkybqufgh.com,https://www.sizhengxt.com,https://0996zp.com,https://9zhoukj.com/,https://www.sizhengxt.com,https://www.jiabaide.cn"
             }
         },
         {
@@ -228,23 +231,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2
-        },
-        {
-            "key": "金牌影视",
-            "name": "🔥 金牌┃1080",
-            "type": 3,
-            "api": "./data/py/金牌影视.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "site": "https://m.ivdy.com,https://www.hkybqufgh.com,https://www.sizhengxt.com,https://0996zp.com,https://9zhoukj.com/,https://www.sizhengxt.com,https://www.jiabaide.cn"
-            }
         },
         {
             "key": "麻花视频",
