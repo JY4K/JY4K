@@ -480,7 +480,7 @@
             }
         },
         {
-            "name": "🔥 火花720",
+            "name": "🔥 火花",
             "type": 1,
             "url": "https://api.huohua.live/api/?key=U1u6H8QZgCqD4h7Ljp&url=",
             "ext": {
@@ -541,7 +541,6 @@
                     "User-Agent": "okhttp/4.9.1"
                 }
             }
-        },
-
+        }
     ]
 }
