@@ -188,8 +188,22 @@
             "ext": "./data/js/荐片.js"
         },
         {
+            "key": "coffee4k",
+            "name": "🔥 咖啡┃4K",
+            "type": 3,
+            "quickSearch": 1,
+            "api": "csp_AppGet2",
+            "ext": {
+                "url": "http://160.202.244.9:6999",
+                "dataKey": "qwertyuiopqwertt",
+                "dataIv": "qwertyuiopqwertt",
+                "deviceId": "",
+                "version": "50000"
+            }
+        },
+        {
             "key": "咖啡",
-            "name": "🔥 咖啡┃1080",
+            "name": "🔥 咖啡┃4K",
             "type": 3,
             "api": "./data/py/咖啡.py",
             "hasTags": 1,
@@ -203,7 +217,7 @@
         },
         {
             "key": "晴天影视",
-            "name": "🔥 晴天┃1080",
+            "name": "🔥 晴天┃4K",
             "type": 3,
             "api": "./data/py/晴天.py",
             "hasTags": 1,
@@ -234,7 +248,7 @@
         },
         {
             "key": "麻花视频",
-            "name": "🔥 麻花┃1080",
+            "name": "🔥 麻花┃t4",
             "type": 4,
             "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
             "hasTags": 1,
@@ -248,7 +262,7 @@
         },
         {
             "key": "py_OleVod",
-            "name": "🔥 欧乐┃1080",
+            "name": "🔥 欧乐┃t4",
             "type": 4,
             "api": "https://py.doube.eu.org/spider?site=OleVod",
             "hasTags": 1,
@@ -262,7 +276,7 @@
         },
         {
             "key": "苹果",
-            "name": "🔥 苹果┃App",
+            "name": "🔥 苹果┃jar",
             "type": 3,
             "api": "csp_LiteApple",
             "jar": "./data/jar/spider.jar",
@@ -276,7 +290,7 @@
         },
         {
             "key": "瓜子影视",
-            "name": "🔥 瓜子┃App",
+            "name": "🔥 瓜子┃jar",
             "type": 3,
             "api": "csp_Gz360",
             "jar": "./data/jar/spider.jar",
@@ -328,21 +342,6 @@
             "ext": "7lj763gg402i7942463j9j9jh346968hg5ll845ki38473"
         },
         {
-            "key": "ZXZJ",
-            "name": "🧸 在线┃直连",
-            "type": 3,
-            "api": "csp_Zxzj",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "filterable": 1,
-            "quickSearch": 1,
-            "searchable": 1,
-            "playerType": 2,
-            "ext": "7lj763gg402i7942463j9j9jgg449698khhh845ki38473"
-        },
-        {
             "key": "Lib",
             "name": "🧸 LibVio┃直连",
             "type": 3,
@@ -383,27 +382,6 @@
                     "GZYS",
                     "weggz",
                     "Ace"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
-            "name": "🔥 JY4K",
-            "type": 1,
-            "url": "https://zhuimi.xn--v4q818bf34b.com/moyu/zhuimi?token=xH8E67nf&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
                 ],
                 "header": {
                     "User-Agent": "okhttp/4.9.1"
