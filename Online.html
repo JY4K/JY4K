@@ -207,6 +207,7 @@
             resize: none;
             transition: all var(--transition-normal);
             color: var(--color-text);
+            spellcheck: false;
         }
 
         .converter-section textarea::placeholder {
@@ -528,14 +529,14 @@
         <div class="converter">
             <div class="converter-section">
                 <h2 id="inputTitle">TXT输入</h2>
-                <textarea id="txtInput" placeholder="请输入TXT格式的内容，每行一个频道地址" title="TXT输入框" aria-label="TXT输入框"></textarea>
+                <textarea id="txtInput" placeholder="请输入TXT格式的内容，每行一个频道地址" title="TXT输入框" aria-label="TXT输入框" spellcheck="false"></textarea>
             </div>
             
             <button class="toggle-button" id="toggleDirectionButton" aria-label="切换转换方向" title="切换转换方向">🔃</button>
             
             <div class="converter-section">
                 <h2 id="outputTitle">转换结果</h2>
-                <textarea id="m3uOutput" readonly title="转换结果输出框" aria-label="转换结果输出框"></textarea>
+                <textarea id="m3uOutput" readonly title="转换结果输出框" aria-label="转换结果输出框" spellcheck="false"></textarea>
             </div>
         </div>
 
