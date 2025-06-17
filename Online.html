@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线直播源转换工具</title>
+    <style>
+        /* 基础变量 */
+        :root {
+            /* 颜色系统 */
+            --color-primary: #4a90e2;
+            --color-primary-dark: #3a7bd2;
+            --color-primary-light: rgba(74, 144, 226, 0.1);
+            --color-text: #3c4550;
+            --color-text-light: #8e96a0;
+            --color-border: #d0d5db;
+            --color-border-focus: var(--color-primary);
+            --color-bg: transparent;
+            --color-white: #ffffff;
+            
+            /* 间距系统 */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            
+            /* 圆角 */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            /* 阴影 */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            
+            /* 动画 */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            
+            /* 字体 */
+            --font-sans: 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Consolas', monospace;
+            
+            /* 布局 */
+            --header-height: 4rem;
+            --footer-height: 3rem;
+            --max-width: 1400px;
+        }
+
+        /* 重置样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-2);
+            transition: background-color var(--transition-normal);
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: var(--max-width);
+            width: 100%;
+            margin: 0 auto;
+            padding: var(--space-2);
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            gap: var(--space-4);
+            height: 100%;
+        }
+
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            padding: var(--space-2) 0;
+            position: relative;
+        }
+
+        .title {
+            color: var(--color-primary);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--space-1);
+            letter-spacing: -0.025em;
+            transition: color var(--transition-normal);
+        }
+
+        .subtitle {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-bottom: var(--space-2);
+        }
+
+        /* URL设置区域 */
+        .url-settings {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: var(--space-6);
+            padding: var(--space-4);
+            width: 100%;
+        }
+
+        .url-center-spacer {
+            width: 48px;
+            height: 1px;
+            margin: auto 0;
+        }
+
+        .url-input-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: var(--space-2);
+            width: 100%;
+        }
+
+        .url-input-group label {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            transition: color var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            width: 80px;
+            flex-shrink: 0;
+        }
+
+        .url-input-group input {
+            flex-grow: 1;
+            padding: var(--space-3) var(--space-4);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            color: var(--color-text);
+        }
+
+        .url-input-group input::placeholder {
+            color: var(--color-text-light);
+            opacity: 1;
+        }
+
+        .url-input-group input:focus {
+            outline: none;
+            border-color: var(--color-border-focus);
+        }
+
+        /* 转换区域 */
+        .converter {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: var(--space-6);
+            align-items: start;
+            transition: all var(--transition-normal);
+            height: 100%;
+            min-height: 0;
+            width: 100%;
+        }
+
+        .converter-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            height: 100%;
+            width: 100%;
+        }
+
+        .converter-section h2 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            text-align: center;
+            font-weight: 600;
+            transition: color var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+        }
+
+        .converter-section textarea {
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: none;
+            transition: all var(--transition-normal);
+            color: var(--color-text);
+        }
+
+        .converter-section textarea::placeholder {
+            color: var(--color-text-light);
+            opacity: 1;
+        }
+
+        .converter-section textarea:focus {
+            outline: none;
+            border-color: var(--color-border-focus);
+        }
+
+        /* 转换按钮 */
+        .toggle-button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toggle-button:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+            transform: scale(1.05);
+        }
+
+        .toggle-button:active {
+            transform: scale(0.95);
+        }
+
+        .toggle-button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .toggle-button:hover::after {
+            opacity: 1;
+        }
+
+        /* 操作按钮组 */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+            justify-content: center;
+            padding: var(--space-3);
+        }
+
+        .button {
+            padding: var(--space-2) var(--space-4);
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            min-width: 120px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            font-size: 0.95rem;
+        }
+
+        .button::before {
+            font-size: 1.2rem;
+        }
+
+        .button[onclick="convertFormat()"]::before {
+            content: '🔄';
+        }
+
+        .button[onclick="clearScreen()"]::before {
+            content: '🗑️';
+        }
+
+        .button[onclick="copyContent()"]::before {
+            content: '📋';
+        }
+
+        .button[onclick="saveAsFile()"]::before {
+            content: '💾';
+        }
+
+        .button:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .button:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* 通知 */
+        .notification {
+            position: fixed;
+            bottom: var(--space-6);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(31, 41, 55, 0.9);
+            color: var(--color-white);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+        }
+
+        .notification.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            color: var(--color-text-light);
+            font-size: 0.8rem;
+            padding: var(--space-2) 0;
+            border-top: 1px solid var(--color-border);
+            transition: color var(--transition-normal);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .container {
+                padding: var(--space-4);
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .converter {
+                gap: var(--space-4);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-3);
+            }
+
+            .title {
+                font-size: 1.25rem;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+            }
+
+            .converter {
+                grid-template-columns: 1fr;
+                padding: var(--space-4);
+            }
+
+            .toggle-button {
+                margin: var(--space-4) auto;
+            }
+
+            .button {
+                width: 100%;
+                padding: var(--space-3) var(--space-4);
+            }
+
+            .url-settings {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+
+            .url-center-spacer {
+                display: none;
+            }
+
+            .converter-section {
+                padding: var(--space-3);
+            }
+
+            .button-group {
+                padding: var(--space-3);
+                gap: var(--space-3);
+            }
+
+            .converter-section h2 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: var(--space-2);
+            }
+
+            .container {
+                padding: var(--space-3);
+                gap: var(--space-4);
+            }
+
+            .title {
+                font-size: 1.1rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .url-settings {
+                padding: var(--space-3);
+                gap: var(--space-3);
+            }
+
+            .converter-section textarea {
+                padding: var(--space-3);
+            }
+
+            .button {
+                padding: var(--space-2) var(--space-3);
+                font-size: 0.9rem;
+            }
+
+            .converter-section h2 {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* 暗色模式支持 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text: #f3f4f6;
+                --color-text-light: #9ca3af;
+                --color-border: #4b5563;
+                --color-border-focus: var(--color-primary);
+            }
+
+            .url-input-group input::placeholder,
+            .converter-section textarea::placeholder {
+                color: var(--color-text-light);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">在线直播源转换工具</h1>
+            <p class="subtitle">简单、快速、高效</p>
+        </div>
+        
+        <div class="url-settings">
+            <div class="url-input-group">
+                <label for="xTvgUrlInput">节目单：</label>
+                <input type="text" id="xTvgUrlInput" placeholder="https://fy.188766.xyz/e.xml">
+            </div>
+            <div class="url-center-spacer"></div>
+            <div class="url-input-group">
+                <label for="tvgLogoUrlInput">Logo：</label>
+                <input type="text" id="tvgLogoUrlInput" placeholder="https://fy.188766.xyz/logo/fanmingming/live/tv/">
+            </div>
+        </div>
+
+        <div class="converter">
+            <div class="converter-section">
+                <h2 id="inputTitle">TXT输入</h2>
+                <textarea id="txtInput" placeholder="请输入TXT格式的内容，每行一个频道地址" title="TXT输入框" aria-label="TXT输入框"></textarea>
+            </div>
+            
+            <button class="toggle-button" id="toggleDirectionButton" aria-label="切换转换方向" title="切换转换方向">🔃</button>
+            
+            <div class="converter-section">
+                <h2 id="outputTitle">转换结果</h2>
+                <textarea id="m3uOutput" readonly title="转换结果输出框" aria-label="转换结果输出框"></textarea>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button" onclick="convertFormat()">转换格式</button>
+            <button class="button" onclick="clearScreen()">清除内容</button>
+            <button class="button" onclick="copyContent()">复制结果</button>
+            <button class="button" onclick="saveAsFile()" id="saveButton">保存文件</button>
+        </div>
+
+        <div class="footer">
+            © 2025 直播源转换工具 All Rights Reserved.
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script>
+    // 状态管理
+    const state = {
+        isTxtToM3U: true,
+        defaultUrls: {
+            xTvgUrl: 'https://fy.188766.xyz/e.xml',
+            tvgLogoUrl: 'https://fy.188766.xyz/logo/fanmingming/live/tv/'
+        },
+        lastSavedContent: '',
+        isProcessing: false
+    };
+
+    // DOM元素
+    const elements = {
+        toggleButton: document.getElementById('toggleDirectionButton'),
+        inputTitle: document.getElementById('inputTitle'),
+        outputTitle: document.getElementById('outputTitle'),
+        saveButton: document.getElementById('saveButton'),
+        txtInput: document.getElementById('txtInput'),
+        m3uOutput: document.getElementById('m3uOutput'),
+        xTvgUrlInput: document.getElementById('xTvgUrlInput'),
+        tvgLogoUrlInput: document.getElementById('tvgLogoUrlInput'),
+        notification: document.getElementById('notification')
+    };
+
+    // 初始化
+    function initialize() {
+        updateUI();
+        bindEvents();
+        loadFromLocalStorage();
+        setupAutoSave();
+    }
+
+    // 更新UI
+    function updateUI() {
+        const { isTxtToM3U } = state;
+        elements.toggleButton.textContent = '🔃';
+        elements.inputTitle.textContent = isTxtToM3U ? 'TXT输入' : 'M3U输入';
+        elements.outputTitle.textContent = isTxtToM3U ? 'M3U格式转换结果' : 'TXT格式转换结果';
+        elements.saveButton.textContent = isTxtToM3U ? '保存m3u' : '保存txt';
+        elements.txtInput.placeholder = isTxtToM3U 
+            ? '请输入TXT格式的内容：'
+            : '请输入M3U格式的内容：';
+        elements.m3uOutput.value = '';
+    }
+
+    // 绑定事件
+    function bindEvents() {
+        elements.toggleButton.addEventListener('click', toggleDirection);
+        elements.xTvgUrlInput.addEventListener('input', validateUrl);
+        elements.tvgLogoUrlInput.addEventListener('input', validateUrl);
+        elements.txtInput.addEventListener('input', autoSave);
+        window.addEventListener('beforeunload', handleBeforeUnload);
+    }
+
+    // 切换转换方向
+    function toggleDirection() {
+        if (state.isProcessing) return;
+        
+        state.isTxtToM3U = !state.isTxtToM3U;
+        updateUI();
+        showNotification('转换方向已切换！');
+    }
+
+    // 验证URL
+    function validateUrl(event) {
+        const url = event.target.value.trim();
+        if (url && !isValidUrl(url)) {
+            showNotification('请输入有效的URL地址');
+            event.target.value = '';
+        }
+    }
+
+    // URL验证辅助函数
+    function isValidUrl(string) {
+        try {
+            new URL(string);
+            return true;
+        } catch (_) {
+            return false;
+        }
+    }
+
+    // 转换格式
+    async function convertFormat() {
+        if (state.isProcessing) return;
+        
+        try {
+            state.isProcessing = true;
+            elements.saveButton.disabled = true;
+            
+            if (state.isTxtToM3U) {
+                await convertToM3U();
+            } else {
+                await convertToTxt();
+            }
+            
+            showNotification('格式转换成功！');
+        } catch (error) {
+            showNotification('转换失败：' + error.message);
+        } finally {
+            state.isProcessing = false;
+            elements.saveButton.disabled = false;
+        }
+    }
+
+    // TXT转M3U
+    async function convertToM3U() {
+        const txtInput = elements.txtInput.value.trim();
+        if (!txtInput) {
+            throw new Error('请输入TXT内容');
+        }
+
+        const lines = txtInput.split('\n');
+        const xTvgUrl = elements.xTvgUrlInput.value.trim() || state.defaultUrls.xTvgUrl;
+        const tvgLogoBaseUrl = elements.tvgLogoUrlInput.value.trim() || state.defaultUrls.tvgLogoUrl;
+
+        let m3uOutput = `#EXTM3U x-tvg-url="${xTvgUrl}"\n`;
+        let currentGroup = null;
+        let channelCount = 0;
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            if (!trimmedLine) continue;
+
+            if (trimmedLine.includes('#genre#')) {
+                currentGroup = trimmedLine.replace(/,#genre#/, '').trim();
+            } else {
+                const [originalChannelName, channelLink] = trimmedLine.split(',').map(item => item.trim());
+                if (!originalChannelName || !channelLink) {
+                    throw new Error('频道格式错误：需要频道名称和链接');
+                }
+
+                const processedChannelName = originalChannelName.replace(/(CCTV|CETV)-(\d+).*/, '$1$2');
+                m3uOutput += `#EXTINF:-1 tvg-name="${processedChannelName}" tvg-logo="${tvgLogoBaseUrl}${processedChannelName}.png"`;
+                
+                if (currentGroup) {
+                    m3uOutput += ` group-title="${currentGroup}"`;
+                }
+                
+                m3uOutput += `,${originalChannelName}\n${channelLink}\n`;
+                channelCount++;
+            }
+        }
+
+        if (channelCount === 0) {
+            throw new Error('未找到有效的频道信息');
+        }
+
+        elements.m3uOutput.value = m3uOutput;
+        state.lastSavedContent = m3uOutput;
+    }
+
+    // M3U转TXT
+    async function convertToTxt() {
+        const m3uInput = elements.txtInput.value.trim();
+        if (!m3uInput) {
+            throw new Error('请输入M3U内容');
+        }
+
+        const lines = m3uInput.split('\n');
+        let txtOutput = '';
+        let currentGroup = '';
+        let channelCount = 0;
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (line.startsWith('#EXTINF:-1')) {
+                const channelName = line.split(',').pop().trim();
+                const groupMatch = line.match(/group-title="([^"]+)"/);
+                
+                if (groupMatch && groupMatch[1] !== currentGroup) {
+                    currentGroup = groupMatch[1];
+                    txtOutput += `${currentGroup},#genre#\n`;
+                }
+
+                if (i + 1 < lines.length) {
+                    const url = lines[i + 1].trim();
+                    if (url && !url.startsWith('#')) {
+                        txtOutput += `${channelName},${url}\n`;
+                        channelCount++;
+                    }
+                }
+            }
+        }
+
+        if (channelCount === 0) {
+            throw new Error('未找到有效的频道信息');
+        }
+
+        elements.m3uOutput.value = txtOutput;
+        state.lastSavedContent = txtOutput;
+    }
+
+    // 清除内容
+    function clearScreen() {
+        if (state.isProcessing) return;
+        
+        elements.txtInput.value = '';
+        elements.m3uOutput.value = '';
+        state.lastSavedContent = '';
+        showNotification('内容已清空！');
+        localStorage.removeItem('savedContent');
+    }
+
+    // 复制内容
+    async function copyContent() {
+        if (state.isProcessing) return;
+        
+        const content = elements.m3uOutput.value;
+        if (!content) {
+            showNotification('没有可复制内容！');
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(content);
+            showNotification('已复制！');
+        } catch (err) {
+            // 降级方案
+            elements.m3uOutput.select();
+            document.execCommand('copy');
+            showNotification('已复制！');
+        }
+    }
+
+    // 保存文件
+    function saveAsFile() {
+        if (state.isProcessing) return;
+        
+        const content = elements.m3uOutput.value;
+        if (!content) {
+            showNotification('没有可保存的内容！');
+            return;
+        }
+
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = state.isTxtToM3U ? 'playlist.m3u' : 'playlist.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showNotification('文件已保存！');
+    }
+
+    // 显示通知
+    function showNotification(message) {
+        elements.notification.textContent = message;
+        elements.notification.classList.add('show');
+        
+        setTimeout(() => {
+            elements.notification.classList.remove('show');
+        }, 2000);
+    }
+
+    // 自动保存
+    function autoSave() {
+        const content = elements.txtInput.value;
+        if (content) {
+            localStorage.setItem('savedContent', content);
+        }
+    }
+
+    // 从本地存储加载
+    function loadFromLocalStorage() {
+        const savedContent = localStorage.getItem('savedContent');
+        if (savedContent) {
+            elements.txtInput.value = savedContent;
+        }
+    }
+
+    // 设置自动保存
+    function setupAutoSave() {
+        window.addEventListener('beforeunload', () => {
+            autoSave();
+        });
+    }
+
+    // 处理页面关闭
+    function handleBeforeUnload(e) {
+        if (elements.txtInput.value && !elements.txtInput.value === state.lastSavedContent) {
+            e.preventDefault();
+            e.returnValue = '';
+        }
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
