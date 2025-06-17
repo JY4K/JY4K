@@ -684,7 +684,7 @@
             } else {
                 const [originalChannelName, channelLink] = trimmedLine.split(',').map(item => item.trim());
                 if (!originalChannelName || !channelLink) {
-                    throw new Error('频道格式错误：需要频道名称和链接');
+                    throw new Error('直播源格式错误');
                 }
 
                 const processedChannelName = originalChannelName.replace(/(CCTV|CETV)-(\d+).*/, '$1$2');
