@@ -674,13 +674,22 @@
         let m3uOutput = `#EXTM3U x-tvg-url="${xTvgUrl}"\n`;
         let currentGroup = null;
         let channelCount = 0;
+        let isFirstGroup = true;
 
         for (const line of lines) {
             const trimmedLine = line.trim();
             if (!trimmedLine) continue;
 
             if (trimmedLine.includes('#genre#')) {
-                currentGroup = trimmedLine.replace(/,#genre#/, '').trim();
+                const newGroup = trimmedLine.replace(/,#genre#/, '').trim();
+                
+                // 如果组名不同且不是第一个组，添加空行分隔
+                if (currentGroup !== null && currentGroup !== newGroup && !isFirstGroup) {
+                    m3uOutput += '\n\n';
+                }
+                
+                currentGroup = newGroup;
+                isFirstGroup = false;
             } else {
                 const [originalChannelName, channelLink] = trimmedLine.split(',').map(item => item.trim());
                 if (!originalChannelName || !channelLink) {
@@ -718,6 +727,7 @@
         let txtOutput = '';
         let currentGroup = '';
         let channelCount = 0;
+        let isFirstGroup = true;
 
         for (let i = 0; i < lines.length; i++) {
             const line = lines[i].trim();
@@ -726,8 +736,16 @@
                 const groupMatch = line.match(/group-title="([^"]+)"/);
                 
                 if (groupMatch && groupMatch[1] !== currentGroup) {
-                    currentGroup = groupMatch[1];
+                    const newGroup = groupMatch[1];
+                    
+                    // 如果组名不同且不是第一个组，添加空行分隔
+                    if (currentGroup !== '' && currentGroup !== newGroup && !isFirstGroup) {
+                        txtOutput += '\n\n';
+                    }
+                    
+                    currentGroup = newGroup;
                     txtOutput += `${currentGroup},#genre#\n`;
+                    isFirstGroup = false;
                 }
 
                 if (i + 1 < lines.length) {
