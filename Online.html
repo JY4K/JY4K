@@ -109,6 +109,29 @@
             margin-bottom: var(--space-2);
         }
 
+        /* 信息栏 */
+        .info-bar {
+            text-align: center;
+            padding: var(--space-2) 0;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--space-2);
+        }
+
+        .update-time {
+            position: fixed;
+            top: var(--space-2);
+            right: var(--space-2);
+            font-size: 0.75rem;
+            opacity: 0.8;
+            color: var(--color-text-light);
+            background: rgba(255, 255, 255, 0.9);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+        }
+
         /* URL设置区域 */
         .url-settings {
             display: grid;
@@ -199,6 +222,7 @@
         .converter-section textarea {
             width: 100%;
             height: 100%;
+            padding: var(--space-4);
             border: 2px solid var(--color-border);
             border-radius: var(--radius-md);
             font-family: var(--font-mono);
@@ -548,11 +572,13 @@
         </div>
 
         <div class="footer">
-            © 2025 直播源转换工具 All Rights Reserved.
+            <div>© 2025 直播源转换工具 All Rights Reserved.</div>
         </div>
     </div>
 
     <div class="notification" id="notification"></div>
+
+    <div class="update-time">更新日期：<span id="updateTime"></span></div>
 
     <script>
     // 状态管理
@@ -576,7 +602,8 @@
         m3uOutput: document.getElementById('m3uOutput'),
         xTvgUrlInput: document.getElementById('xTvgUrlInput'),
         tvgLogoUrlInput: document.getElementById('tvgLogoUrlInput'),
-        notification: document.getElementById('notification')
+        notification: document.getElementById('notification'),
+        updateTime: document.getElementById('updateTime')
     };
 
     // 初始化
@@ -585,6 +612,7 @@
         bindEvents();
         loadFromLocalStorage();
         setupAutoSave();
+        setUpdateTime();
     }
 
     // 更新UI
@@ -859,6 +887,12 @@
             e.preventDefault();
             e.returnValue = '';
         }
+    }
+
+    // 设置更新时间
+    function setUpdateTime() {
+        const updateTime = new Date().toLocaleDateString();
+        elements.updateTime.textContent = updateTime;
     }
 
     // 页面加载完成后初始化
