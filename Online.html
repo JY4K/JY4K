@@ -578,7 +578,7 @@
 
     <div class="notification" id="notification"></div>
 
-    <div class="update-time">更新日期：<span id="updateTime"></span></div>
+    <div class="update-time">更新日期：<span id="updateTime">2025-06-19</span></div>
 
     <script>
     // 状态管理
@@ -612,7 +612,6 @@
         bindEvents();
         loadFromLocalStorage();
         setupAutoSave();
-        setUpdateTime();
     }
 
     // 更新UI
@@ -887,12 +886,6 @@
             e.preventDefault();
             e.returnValue = '';
         }
-    }
-
-    // 设置更新时间
-    function setUpdateTime() {
-        const updateTime = new Date().toLocaleDateString();
-        elements.updateTime.textContent = updateTime;
     }
 
     // 页面加载完成后初始化
