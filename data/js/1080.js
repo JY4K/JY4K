@@ -37,13 +37,13 @@
 
 (function () {
     'use strict';
-    
+
     // 常量定义
     const $ = window.$;
     const host = location.host;
     const isMobile = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(navigator.userAgent);
     const isEdge = /Edg/i.test(navigator.userAgent);
-    
+
     // 解析接口配置
     const parseInterfaces = [
         // 页内播放解析
@@ -162,11 +162,11 @@
         GM: {
             openInTab: (url, openInBackground) => {
                 if (isEdge) {
-                    return typeof GM_openInTab === 'function' 
+                    return typeof GM_openInTab === 'function'
                         ? GM_openInTab(url, openInBackground)
                         : window.open(url, '_blank');
                 }
-                return typeof GM_openInTab === 'function' 
+                return typeof GM_openInTab === 'function'
                     ? GM_openInTab(url, openInBackground)
                     : GM.openInTab(url, openInBackground);
             },
@@ -487,12 +487,12 @@
         createUIElements(autoPlay) {
             const innerList = parseInterfaces.filter(item => item.type === "1");
             const outerList = parseInterfaces.filter(item => item.type === "0");
-            
-            const innerli = innerList.map(item => 
+
+            const innerli = innerList.map(item =>
                 `<li title='请勿相信视频中广告'>${item.title}</li>`
             ).join('');
-            
-            const outerli = outerList.map(item => 
+
+            const outerli = outerList.map(item =>
                 `<li title='请勿相信视频中广告'>${item.title}</li>`
             ).join('');
 
@@ -581,9 +581,9 @@
 
             // 全屏事件
             document.addEventListener('fullscreenchange', () => {
-                const fullscreenElement = document.fullscreenElement || 
-                    document.webkitFullscreenElement || 
-                    document.mozFullScreenElement || 
+                const fullscreenElement = document.fullscreenElement ||
+                    document.webkitFullscreenElement ||
+                    document.mozFullScreenElement ||
                     document.msFullscreenElement;
                 this.movieBox[fullscreenElement ? 'hide' : 'show']();
             });
@@ -637,7 +637,7 @@
                 const index = utils.GM.getValue("autoPlayerValue_" + host, 0);
                 $(".vip_mod_box_selected li").eq(index).addClass("selected");
                 $(".vip_auto").attr("title", `当前解析源：${parseInterfaces[index].title}`);
-                
+
                 setTimeout(() => {
                     if (!document.getElementById("iframe-player")) {
                         const player = $(this.currentPlayer);
@@ -647,7 +647,7 @@
                     }
                     this.handleInnerParse(index, parseInterfaces[index].url + location.href);
                 }, 2500);
-                
+
                 this.watchUrlChanges();
             }
         }

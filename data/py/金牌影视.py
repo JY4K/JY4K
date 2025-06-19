@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # by @嗷呜
+
 import json
 import sys
 import threading
@@ -11,8 +12,6 @@ sys.path.append('..')
 from base.spider import Spider
 import time
 from Crypto.Hash import MD5, SHA1
-
-
 class Spider(Spider):
     '''
     配置示例：

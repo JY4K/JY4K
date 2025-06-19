@@ -31,10 +31,10 @@ headerx = {
     'User-Agent': "okhttp/3.10.0",
     'Connection': "Keep-Alive",
     'Accept-Encoding': "gzip"
-          }
-
+}
 
 pm = ''
+
 
 class Spider(Spider):
     global xurl
@@ -129,7 +129,7 @@ class Spider(Spider):
             'class': "全部"
         }
         url = f'{xurl}/typeFilterVodList'
-        res = requests.post(url=url, headers=headerx,data=payload).text
+        res = requests.post(url=url, headers=headerx, data=payload).text
         # res1 = res.text
         res = json.loads(res)
         encrypted_data = res['data']
@@ -173,25 +173,25 @@ class Spider(Spider):
         # print(kjson)
         kjson1 = json.loads(kjson)
         actor = kjson1['vod']['vod_actor']
-        director = kjson1['vod'].get('vod_director','')
+        director = kjson1['vod'].get('vod_director', '')
         area = kjson1['vod']['vod_area']
         name = kjson1['vod']['vod_name']
         year = kjson1['vod']['vod_year']
         content = kjson1['vod']['vod_content']
         subtitle = kjson1['vod']['vod_remarks']
         desc = kjson1['vod']['vod_lang']
-        remark =  '时间:' +  subtitle + ' 语言:' + desc
+        remark = '时间:' + subtitle + ' 语言:' + desc
         for line in kjson1['vod_play_list']:
             play_form += line['player_info']['show'] + '$$$'
             parse = line['player_info']['parse']
-            player_parse_type =  line['player_info']['player_parse_type']
+            player_parse_type = line['player_info']['player_parse_type']
             kurls = ""
             for vod in line['urls']:
-                if 'm3u8' not in  kurls:
+                if 'm3u8' not in kurls:
                     kurls += str(vod['name']) + '$' + parse + '&&' + vod['url'] + '@' + player_parse_type + '#'
                 else:
-                    if kurls and 'm3u8'  in kurls:
-                       kurls += str(vod['name']) + '$' + vod['url'] + '#'
+                    if kurls and 'm3u8' in kurls:
+                        kurls += str(vod['name']) + '$' + vod['url'] + '#'
             kurls = kurls.rstrip('#')
             play_url += kurls + '$$$'
         play_form = play_form.rstrip('$$$')
@@ -203,7 +203,7 @@ class Spider(Spider):
             "vod_director": director.replace('导演', ''),
             "vod_content": content,
             "vod_remarks": remark,
-            "vod_year": year+'年',
+            "vod_year": year + '年',
             "vod_area": area,
             "vod_play_from": play_form,
             "vod_play_url": play_url
@@ -215,7 +215,7 @@ class Spider(Spider):
 
     def playerContent(self, flag, id, vipFlags):
         url = ''
-        if 'm3u8' in id :
+        if 'm3u8' in id:
             url = id
         else:
             if 'm3u8' not in id:

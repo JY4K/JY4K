@@ -2,293 +2,295 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>网盘站导航</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<style>
-		:root {
-			--primary-color: #2c3e50;
-			--accent-color: #3498db;
-			--background-color: #f8f9fa;
-			--card-background: #ffffff;
-			--text-color: #2c3e50;
-			--shadow-color: rgba(0, 0, 0, 0.08);
-		}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>网盘站导航</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #2c3e50;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+        }
 
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		html, body {
-			height: 100%;
-			overflow: hidden;
-		}
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
 
-		body {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			background-color: var(--background-color);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0;
-			padding: 1rem;
-			color: var(--text-color);
-		}
-		
-		.container {
-			background-color: var(--card-background);
-			padding: 2rem;
-			border-radius: 24px;
-			box-shadow: 0 10px 40px var(--shadow-color);
-			width: 95%;
-			height: 95vh;
-			max-width: 900px;
-			text-align: center;
-			-webkit-backdrop-filter: blur(10px);
-			backdrop-filter: blur(10px);
-			display: flex;
-			flex-direction: column;
-		}
-		
-		h1 {
-			color: var(--primary-color);
-			margin-bottom: 1.5rem;
-			font-size: 2rem;
-			font-weight: 600;
-			letter-spacing: -0.5px;
-		}
-		
-		.links {
-			display: grid;
-			grid-template-columns: repeat(4, minmax(0, 200px));
-			gap: 1rem;
-			margin-bottom: 1rem;
-			flex: 1;
-			overflow: hidden;
-			padding: 0.5rem;
-			justify-content: center;
-			align-items: stretch;
-		}
-		
-		.link-item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			padding: 1.2rem;
-			border: 2px solid transparent;
-			border-radius: 16px;
-			background-color: var(--card-background);
-			height: 180px;
-			width: 100%;
-			cursor: pointer;
-			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			text-decoration: none;
-			box-shadow: 0 8px 18px var(--shadow-color);
-		}
-		
-		.link-item:focus,
-		.link-item:hover {
-			transform: translateY(-6px);
-			box-shadow: 0 8px 20px var(--shadow-color);
-			border-color: var(--accent-color);
-		}
-		
-		.icon {
-			width: 100%;
-			height: 100px;
-			object-fit: contain;
-			margin-bottom: 0.8rem;
-			transition: transform 0.3s ease;
-		}
-		
-		.link-item:hover .icon {
-			transform: scale(1.05);
-		}
-		
-		.link-item span {
-			color: var(--primary-color);
-			font-weight: 500;
-			font-size: 0.9rem;
-			word-break: break-word;
-		}
-		
-		.custom-link {
-			display: flex;
-			flex-direction: column;
-			gap: 0.8rem;
-			width: 100%;
-			margin-top: 1rem;
-			padding: 0 1rem;
-		}
-		
-		input[type='text'] {
-			width: 100%;
-			padding: 0.8rem 1.2rem;
-			border: 2px solid #e0e0e0;
-			border-radius: 12px;
-			font-size: 0.95rem;
-			box-sizing: border-box;
-			transition: all 0.3s ease;
-			background-color: var(--card-background);
-		}
-		
-		input[type='text']:focus {
-			border-color: var(--accent-color);
-			outline: none;
-			box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
-		}
-		
-		button {
-			width: 100%;
-			padding: 0.8rem 1.2rem;
-			background-color: var(--accent-color);
-			color: white;
-			border: none;
-			border-radius: 12px;
-			font-size: 0.95rem;
-			font-weight: 500;
-			cursor: pointer;
-			transition: all 0.3s ease;
-		}
-		
-		button:hover {
-			background-color: #2980b9;
-			transform: translateY(-2px);
-			box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
-		}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 1rem;
+            color: var(--text-color);
+        }
 
-		@media (max-width: 768px) {
-			.container {
-				padding: 1.5rem;
-				height: auto;
-				min-height: 90vh;
-			}
-			
-			h1 {
-				font-size: 1.75rem;
-				margin-bottom: 1rem;
-			}
-			
-			.links {
-				grid-template-columns: repeat(3, minmax(0, 200px));
-				gap: 1rem;
-				overflow-y: auto;
-				padding-bottom: 1rem;
-			}
+        .container {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px var(--shadow-color);
+            width: 95%;
+            height: 95vh;
+            max-width: 900px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
 
-			.link-item {
-				height: 180px;
-				padding: 1.2rem;
-			}
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
 
-			.icon {
-				height: 100px;
-				margin-bottom: 0.8rem;
-			}
+        .links {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 200px));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex: 1;
+            overflow: hidden;
+            padding: 0.5rem;
+            justify-content: center;
+            align-items: stretch;
+        }
 
-			.link-item span {
-				font-size: 0.9rem;
-			}
+        .link-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.2rem;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            background-color: var(--card-background);
+            height: 180px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            box-shadow: 0 8px 18px var(--shadow-color);
+        }
 
-			.custom-link {
-				padding: 0;
-				margin-top: 1.5rem;
-			}
+        .link-item:focus,
+        .link-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+            border-color: var(--accent-color);
+        }
 
-			input[type='text'], button {
-				font-size: 0.9rem;
-				padding: 0.6rem 1rem;
-			}
-		}
-		
-		@media (max-width: 480px) {
-			.container {
-				padding: 1rem;
-				min-height: 85vh;
-			}
-			
-			h1 {
-				font-size: 1.5rem;
-				margin-bottom: 0.8rem;
-			}
-			
-			.links {
-				grid-template-columns: repeat(3, minmax(0, 200px));
-				gap: 0.8rem;
-			}
+        .icon {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s ease;
+        }
 
-			.link-item {
-				height: 180px;
-				padding: 1.2rem;
-			}
-			
-			.icon {
-				height: 100px;
-				margin-bottom: 0.8rem;
-			}
+        .link-item:hover .icon {
+            transform: scale(1.05);
+        }
 
-			.link-item span {
-				font-size: 0.9rem;
-			}
-			
-			input[type='text'], button {
-				font-size: 0.85rem;
-				padding: 0.5rem 0.8rem;
-			}
-		}
-	</style>
+        .link-item span {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            word-break: break-word;
+        }
+
+        .custom-link {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0 1rem;
+        }
+
+        input[type='text'] {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background-color: var(--card-background);
+        }
+
+        input[type='text']:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                height: auto;
+                min-height: 90vh;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .links {
+                grid-template-columns: repeat(3, minmax(0, 200px));
+                gap: 1rem;
+                overflow-y: auto;
+                padding-bottom: 1rem;
+            }
+
+            .link-item {
+                height: 180px;
+                padding: 1.2rem;
+            }
+
+            .icon {
+                height: 100px;
+                margin-bottom: 0.8rem;
+            }
+
+            .link-item span {
+                font-size: 0.9rem;
+            }
+
+            .custom-link {
+                padding: 0;
+                margin-top: 1.5rem;
+            }
+
+            input[type='text'], button {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+                min-height: 85vh;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .links {
+                grid-template-columns: repeat(3, minmax(0, 200px));
+                gap: 0.8rem;
+            }
+
+            .link-item {
+                height: 180px;
+                padding: 1.2rem;
+            }
+
+            .icon {
+                height: 100px;
+                margin-bottom: 0.8rem;
+            }
+
+            .link-item span {
+                font-size: 0.9rem;
+            }
+
+            input[type='text'], button {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-	<div class="container">
-		<h1>网盘导航</h1>
-		<div class="links" tabindex="0">
-			<a href="https://drive.uc.cn/" class="link-item" tabindex="0">
-				<img src="./data/icon/UC.png" alt="UC网盘图标" class="icon">
-				<span>UC 网盘</span>
-			</a>
-			<a href="https://pan.quark.cn" class="link-item" tabindex="0">
-				<img src="./data/icon/Quark.png" alt="夸克网盘图标" class="icon">
-				<span>夸克 网盘</span>
-			</a>
-			<a href="https://al.omii.top" class="link-item" tabindex="0">
-				<img src="./data/icon/ali.png" alt="阿里图标" class="icon">
-				<span>阿里 32 位 token</span>
-			</a>
-			<a href="https://messense-aliyundrive-webdav-backendrefresh-token-ucs0wn.streamlit.app" class="link-item" tabindex="0">
-				<img src="./data/icon/ali.png" alt="阿里280图标" class="icon">
-				<span>阿里 280 位 token</span>
-			</a>
-			<a href="https://login.123pan.com/centerlogin" class="link-item" tabindex="0">
-				<img src="./data/icon/123.png" alt="123图标" class="icon">
-				<span>123 云盘</span>
-			</a>
+<div class="container">
+    <h1>网盘导航</h1>
+    <div class="links" tabindex="0">
+        <a href="https://drive.uc.cn/" class="link-item" tabindex="0">
+            <img src="./data/icon/UC.png" alt="UC网盘图标" class="icon">
+            <span>UC 网盘</span>
+        </a>
+        <a href="https://pan.quark.cn" class="link-item" tabindex="0">
+            <img src="./data/icon/Quark.png" alt="夸克网盘图标" class="icon">
+            <span>夸克 网盘</span>
+        </a>
+        <a href="https://al.omii.top" class="link-item" tabindex="0">
+            <img src="./data/icon/ali.png" alt="阿里图标" class="icon">
+            <span>阿里 32 位 token</span>
+        </a>
+        <a href="https://messense-aliyundrive-webdav-backendrefresh-token-ucs0wn.streamlit.app" class="link-item"
+           tabindex="0">
+            <img src="./data/icon/ali.png" alt="阿里280图标" class="icon">
+            <span>阿里 280 位 token</span>
+        </a>
+        <a href="https://login.123pan.com/centerlogin" class="link-item" tabindex="0">
+            <img src="./data/icon/123.png" alt="123图标" class="icon">
+            <span>123 云盘</span>
+        </a>
 
-			<a href="https://cloud.189.cn/api/portal/loginUrl.action?redirectURL=https%3A%2F%2Fcloud.189.cn%2Fweb%2Fredirect.html" class="link-item"
-				tabindex="0">
-				<img src="./data/icon/189.png" alt="天翼网盘图标" class="icon">
-				<span>天翼 网盘</span>
-				</a>
+        <a href="https://cloud.189.cn/api/portal/loginUrl.action?redirectURL=https%3A%2F%2Fcloud.189.cn%2Fweb%2Fredirect.html"
+           class="link-item"
+           tabindex="0">
+            <img src="./data/icon/189.png" alt="天翼网盘图标" class="icon">
+            <span>天翼 网盘</span>
+        </a>
 
-		</div>
-		<div class="custom-link">
-			<input type="text" id="customUrl" placeholder="输入自定义网址" />
-			<button onclick="goToCustomUrl()">跳转</button>
-		</div>
-	</div>
+    </div>
+    <div class="custom-link">
+        <input type="text" id="customUrl" placeholder="输入自定义网址"/>
+        <button onclick="goToCustomUrl()">跳转</button>
+    </div>
+</div>
 
-	<script>
-		function goToCustomUrl() {
-                const customUrl = document.getElementById('customUrl').value.trim();
-                if (customUrl) {
-                    window.location.href = customUrl.startsWith('http') ? customUrl : 'https://' + customUrl;
-                }
-            }
-	</script>
+<script>
+    function goToCustomUrl() {
+        const customUrl = document.getElementById('customUrl').value.trim();
+        if (customUrl) {
+            window.location.href = customUrl.startsWith('http') ? customUrl : 'https://' + customUrl;
+        }
+    }
+</script>
 </body>
 
 </html>

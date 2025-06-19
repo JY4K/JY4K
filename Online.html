@@ -17,7 +17,7 @@
             --color-border-focus: var(--color-primary);
             --color-bg: transparent;
             --color-white: #ffffff;
-            
+
             /* 间距系统 */
             --space-1: 0.25rem;
             --space-2: 0.5rem;
@@ -26,26 +26,26 @@
             --space-6: 1.5rem;
             --space-8: 2rem;
             --space-12: 3rem;
-            
+
             /* 圆角 */
             --radius-sm: 0.375rem;
             --radius-md: 0.5rem;
             --radius-lg: 0.75rem;
             --radius-xl: 1rem;
-            
+
             /* 阴影 */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            
+
             /* 动画 */
             --transition-fast: 0.2s ease;
             --transition-normal: 0.3s ease;
-            
+
             /* 字体 */
             --font-sans: 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
             --font-mono: 'Consolas', monospace;
-            
+
             /* 布局 */
             --header-height: 4rem;
             --footer-height: 3rem;
@@ -277,7 +277,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
             opacity: 0;
             transition: opacity var(--transition-normal);
         }
@@ -532,55 +532,58 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="title">在线直播源转换工具</h1>
-            <p class="subtitle">简单、快速、高效</p>
-        </div>
-        
-        <div class="url-settings">
-            <div class="url-input-group">
-                <label for="xTvgUrlInput">节目单：</label>
-                <input type="text" id="xTvgUrlInput" placeholder="https://fy.188766.xyz/e.xml">
-            </div>
-            <div class="url-center-spacer"></div>
-            <div class="url-input-group">
-                <label for="tvgLogoUrlInput">Logo：</label>
-                <input type="text" id="tvgLogoUrlInput" placeholder="https://fy.188766.xyz/logo/fanmingming/live/tv/">
-            </div>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1 class="title">在线直播源转换工具</h1>
+        <p class="subtitle">简单、快速、高效</p>
+    </div>
 
-        <div class="converter">
-            <div class="converter-section">
-                <h2 id="inputTitle">TXT输入</h2>
-                <textarea id="txtInput" placeholder="请输入TXT格式的内容，每行一个频道地址" title="TXT输入框" aria-label="TXT输入框" spellcheck="false"></textarea>
-            </div>
-            
-            <button class="toggle-button" id="toggleDirectionButton" aria-label="切换转换方向" title="切换转换方向">🔃</button>
-            
-            <div class="converter-section">
-                <h2 id="outputTitle">转换结果</h2>
-                <textarea id="m3uOutput" readonly title="转换结果输出框" aria-label="转换结果输出框" spellcheck="false"></textarea>
-            </div>
+    <div class="url-settings">
+        <div class="url-input-group">
+            <label for="xTvgUrlInput">节目单：</label>
+            <input type="text" id="xTvgUrlInput" placeholder="https://fy.188766.xyz/e.xml">
         </div>
-
-        <div class="button-group">
-            <button class="button" onclick="convertFormat()">转换格式</button>
-            <button class="button" onclick="clearScreen()">清除内容</button>
-            <button class="button" onclick="copyContent()">复制结果</button>
-            <button class="button" onclick="saveAsFile()" id="saveButton">保存文件</button>
-        </div>
-
-        <div class="footer">
-            <div>© 2025 直播源转换工具 All Rights Reserved.</div>
+        <div class="url-center-spacer"></div>
+        <div class="url-input-group">
+            <label for="tvgLogoUrlInput">Logo：</label>
+            <input type="text" id="tvgLogoUrlInput" placeholder="https://fy.188766.xyz/logo/fanmingming/live/tv/">
         </div>
     </div>
 
-    <div class="notification" id="notification"></div>
+    <div class="converter">
+        <div class="converter-section">
+            <h2 id="inputTitle">TXT输入</h2>
+            <textarea id="txtInput" placeholder="请输入TXT格式的内容，每行一个频道地址" title="TXT输入框"
+                      aria-label="TXT输入框" spellcheck="false"></textarea>
+        </div>
 
-    <div class="update-time">更新日期：<span id="updateTime">2025-06-19</span></div>
+        <button class="toggle-button" id="toggleDirectionButton" aria-label="切换转换方向" title="切换转换方向">🔃
+        </button>
 
-    <script>
+        <div class="converter-section">
+            <h2 id="outputTitle">转换结果</h2>
+            <textarea id="m3uOutput" readonly title="转换结果输出框" aria-label="转换结果输出框"
+                      spellcheck="false"></textarea>
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button class="button" onclick="convertFormat()">转换格式</button>
+        <button class="button" onclick="clearScreen()">清除内容</button>
+        <button class="button" onclick="copyContent()">复制结果</button>
+        <button class="button" onclick="saveAsFile()" id="saveButton">保存文件</button>
+    </div>
+
+    <div class="footer">
+        <div>© 2025 直播源转换工具 All Rights Reserved.</div>
+    </div>
+</div>
+
+<div class="notification" id="notification"></div>
+
+<div class="update-time">更新日期：<span id="updateTime">2025-06-19</span></div>
+
+<script>
     // 状态管理
     const state = {
         isTxtToM3U: true,
@@ -616,12 +619,12 @@
 
     // 更新UI
     function updateUI() {
-        const { isTxtToM3U } = state;
+        const {isTxtToM3U} = state;
         elements.toggleButton.textContent = '🔃';
         elements.inputTitle.textContent = isTxtToM3U ? 'TXT输入' : 'M3U输入';
         elements.outputTitle.textContent = isTxtToM3U ? 'M3U格式转换结果' : 'TXT格式转换结果';
         elements.saveButton.textContent = isTxtToM3U ? '保存m3u' : '保存txt';
-        elements.txtInput.placeholder = isTxtToM3U 
+        elements.txtInput.placeholder = isTxtToM3U
             ? '请输入TXT格式的内容：'
             : '请输入M3U格式的内容：';
         elements.m3uOutput.value = '';
@@ -639,7 +642,7 @@
     // 切换转换方向
     function toggleDirection() {
         if (state.isProcessing) return;
-        
+
         state.isTxtToM3U = !state.isTxtToM3U;
         updateUI();
         showNotification('转换方向已切换！');
@@ -667,17 +670,17 @@
     // 转换格式
     async function convertFormat() {
         if (state.isProcessing) return;
-        
+
         try {
             state.isProcessing = true;
             elements.saveButton.disabled = true;
-            
+
             if (state.isTxtToM3U) {
                 await convertToM3U();
             } else {
                 await convertToTxt();
             }
-            
+
             showNotification('格式转换成功！');
         } catch (error) {
             showNotification('转换失败：' + error.message);
@@ -709,12 +712,12 @@
 
             if (trimmedLine.includes('#genre#')) {
                 const newGroup = trimmedLine.replace(/,#genre#/, '').trim();
-                
+
                 // 如果组名不同且不是第一个组，添加空行分隔
                 if (currentGroup !== null && currentGroup !== newGroup && !isFirstGroup) {
                     m3uOutput += '\n\n';
                 }
-                
+
                 currentGroup = newGroup;
                 isFirstGroup = false;
             } else {
@@ -729,11 +732,11 @@
                     processedChannelName = processedChannelName.split(' ')[0];
                 }
                 m3uOutput += `#EXTINF:-1 tvg-name="${processedChannelName}" tvg-logo="${tvgLogoBaseUrl}${processedChannelName}.png"`;
-                
+
                 if (currentGroup) {
                     m3uOutput += ` group-title="${currentGroup}"`;
                 }
-                
+
                 m3uOutput += `,${originalChannelName}\n${channelLink}\n`;
                 channelCount++;
             }
@@ -765,15 +768,15 @@
             if (line.startsWith('#EXTINF:-1')) {
                 const channelName = line.split(',').pop().trim();
                 const groupMatch = line.match(/group-title="([^"]+)"/);
-                
+
                 if (groupMatch && groupMatch[1] !== currentGroup) {
                     const newGroup = groupMatch[1];
-                    
+
                     // 如果组名不同且不是第一个组，添加空行分隔
                     if (currentGroup !== '' && currentGroup !== newGroup && !isFirstGroup) {
                         txtOutput += '\n\n';
                     }
-                    
+
                     currentGroup = newGroup;
                     txtOutput += `${currentGroup},#genre#\n`;
                     isFirstGroup = false;
@@ -800,7 +803,7 @@
     // 清除内容
     function clearScreen() {
         if (state.isProcessing) return;
-        
+
         elements.txtInput.value = '';
         elements.m3uOutput.value = '';
         state.lastSavedContent = '';
@@ -811,7 +814,7 @@
     // 复制内容
     async function copyContent() {
         if (state.isProcessing) return;
-        
+
         const content = elements.m3uOutput.value;
         if (!content) {
             showNotification('没有可复制内容！');
@@ -832,14 +835,14 @@
     // 保存文件
     function saveAsFile() {
         if (state.isProcessing) return;
-        
+
         const content = elements.m3uOutput.value;
         if (!content) {
             showNotification('没有可保存的内容！');
             return;
         }
 
-        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const blob = new Blob([content], {type: 'text/plain;charset=utf-8'});
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -855,7 +858,7 @@
     function showNotification(message) {
         elements.notification.textContent = message;
         elements.notification.classList.add('show');
-        
+
         setTimeout(() => {
             elements.notification.classList.remove('show');
         }, 2000);
@@ -894,6 +897,6 @@
 
     // 页面加载完成后初始化
     document.addEventListener('DOMContentLoaded', initialize);
-    </script>
+</script>
 </body>
 </html>
