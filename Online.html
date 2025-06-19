@@ -723,7 +723,11 @@
                     throw new Error('直播源格式错误');
                 }
 
-                const processedChannelName = originalChannelName.replace(/(CCTV|CETV)-(\d+).*/, '$1$2');
+                // 优化tvg-name匹配逻辑：有空格时取空格前，无空格时全取
+                let processedChannelName = originalChannelName.trim();
+                if (processedChannelName.includes(' ')) {
+                    processedChannelName = processedChannelName.split(' ')[0];
+                }
                 m3uOutput += `#EXTINF:-1 tvg-name="${processedChannelName}" tvg-logo="${tvgLogoBaseUrl}${processedChannelName}.png"`;
                 
                 if (currentGroup) {
