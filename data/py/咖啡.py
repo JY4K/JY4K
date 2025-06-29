@@ -1,31 +1,20 @@
 # coding = utf-8
 # !/usr/bin/python
 
-from Crypto.Util.Padding import unpad
-from Crypto.Util.Padding import pad
-from urllib.parse import unquote
-from Crypto.Cipher import ARC4
-from urllib.parse import quote
-from base.spider import Spider
-from Crypto.Cipher import AES
-from datetime import datetime
-from bs4 import BeautifulSoup
-from base64 import b64decode
-import urllib.request
-import urllib.parse
-import datetime
-import binascii
-import requests
 import base64
 import json
-import time
-import sys
 import re
-import os
+import sys
+
+import requests
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from Crypto.Util.Padding import unpad
+from base.spider import Spider
 
 sys.path.append('..')
 
-xurl = "http://160.202.244.9:6999/api.php/qijiappapi.index"
+xurl = ""
 
 headerx = {
     'User-Agent': "okhttp/3.10.0",
@@ -46,7 +35,11 @@ class Spider(Spider):
         return "首页"
 
     def init(self, extend):
-        pass
+        js1 = json.loads(extend)
+        host = js1['host'];
+        if re.match(r'^https:\/\/.*\.txt$', host):
+            host = (self.fetch(host, headers=headerx, timeout=10).text).rstrip('/')
+        self.xurl = f'{host}/api.php/qijiappapi.index'
 
     def isVideoFormat(self, url):
         pass
