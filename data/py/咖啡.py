@@ -1,43 +1,27 @@
 # coding = utf-8
 # !/usr/bin/python
-
-from Crypto.Util.Padding import unpad
-from Crypto.Util.Padding import pad
-from urllib.parse import unquote
-from Crypto.Cipher import ARC4
-from urllib.parse import quote
-from base.spider import Spider
-from Crypto.Cipher import AES
-from datetime import datetime
-from bs4 import BeautifulSoup
-from base64 import b64decode
-import urllib.request
-import urllib.parse
-import datetime
-import binascii
-import requests
+# 新时代青年 2025.06.25 getApp第三版
 import base64
 import json
-import time
-import sys
 import re
-import os
+import sys
+
+import requests
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from Crypto.Util.Padding import unpad
+from base.spider import Spider
 
 sys.path.append('..')
 
-xurl = "http://160.202.244.9:7456/api.php/qijiappapi.index"
-
 headerx = {
-    'User-Agent': "okhttp/3.10.0",
-    'Connection': "Keep-Alive",
-    'Accept-Encoding': "gzip"
+    'User-Agent': 'okhttp/3.14.9'
 }
 
 pm = ''
 
 
 class Spider(Spider):
-    global xurl
     global xurl1
     global headerx
     global headers
@@ -46,7 +30,13 @@ class Spider(Spider):
         return "首页"
 
     def init(self, extend):
-        pass
+        js1 = json.loads(extend)
+        host = js1['host'];
+        if re.match(r'^https:\/\/.*\.txt$', host):
+            host = (self.fetch(host, headers=headerx, timeout=10).text).rstrip('/')
+        self.xurl = f"{host}/api.php/qijiappapi.index"
+        self.key = "qwertyuiopqwertt"
+        self.iv = "qwertyuiopqwertt"
 
     def isVideoFormat(self, url):
         pass
@@ -56,20 +46,24 @@ class Spider(Spider):
 
     def homeContent(self, filter):
         result = {}
-        result = {"class": [
-            {"type_id": "4", "type_name": "剧集"},
-            {"type_id": "39", "type_name": "动漫"},
-            {"type_id": "38", "type_name": "综艺"},
-            {"type_id": "40", "type_name": "电影"},
-            {"type_id": "44", "type_name": "短剧"},
-            {"type_id": "35", "type_name": "臻彩视界"}],
-        }
-
+        result["class"] = []
+        res = requests.get(self.xurl + '/initV119', headers=headerx).text
+        res = json.loads(res)
+        encrypted_data = res['data']
+        response = self.decrypt(encrypted_data)
+        kjson = json.loads(response)
+        for i in kjson['type_list']:
+            if i['type_name'] in ['全部', 'QQ'] or '企鹅群' in i['type_name']:
+                continue
+            result["class"].append({
+                "type_id": i['type_id'],
+                "type_name": i['type_name']
+            })
         return result
 
     def decrypt(self, encrypted_data_b64):
-        key_text = "qwertyuiopqwertt"
-        iv_text = "qwertyuiopqwertt"
+        key_text = self.key
+        iv_text = self.iv
         key_bytes = key_text.encode('utf-8')
         iv_bytes = iv_text.encode('utf-8')
         encrypted_data = base64.b64decode(encrypted_data_b64)
@@ -79,8 +73,8 @@ class Spider(Spider):
         return decrypted.decode('utf-8')
 
     def decrypt_wb(self, sencrypted_data):
-        key_text = "qwertyuiopqwertt"
-        iv_text = "qwertyuiopqwertt"
+        key_text = self.key
+        iv_text = self.iv
         key_bytes = key_text.encode('utf-8')
         iv_bytes = iv_text.encode('utf-8')
         data_bytes = sencrypted_data.encode('utf-8')
@@ -93,7 +87,7 @@ class Spider(Spider):
     def homeVideoContent(self):
         result = {}
         videos = []
-        url = f"{xurl}/initV120"
+        url = f"{self.xurl}/initV119"
         res = requests.get(url=url, headers=headerx).text
         res = json.loads(res)
         encrypted_data = res['data']
@@ -128,14 +122,12 @@ class Spider(Spider):
             'lang': "全部",
             'class': "全部"
         }
-        url = f'{xurl}/typeFilterVodList'
+        url = f'{self.xurl}/typeFilterVodList'
         res = requests.post(url=url, headers=headerx, data=payload).text
-        # res1 = res.text
         res = json.loads(res)
         encrypted_data = res['data']
         kjson = self.decrypt(encrypted_data)
         kjson1 = json.loads(kjson)
-        # print(kjson1)
         for i in kjson1['recommend_list']:
             id = i['vod_id']
             name = i['vod_name']
@@ -156,42 +148,37 @@ class Spider(Spider):
         result['total'] = 999999
         return result
 
-    def detailContent(self, ids):
-        did = ids[0]
-        result = {}
+    def detailContent1(self, kdata, did):
         videos = []
         play_form = ''
         play_url = ''
-        payload = {
-            'vod_id': did
-        }
-        url = f'{xurl}/vodDetail2'
-        res = requests.post(url=url, headers=headerx, data=payload).text
-        res = json.loads(res)
-        encrypted_data = res['data']
-        kjson = self.decrypt(encrypted_data)
-        # print(kjson)
-        kjson1 = json.loads(kjson)
-        actor = kjson1['vod']['vod_actor']
-        director = kjson1['vod'].get('vod_director', '')
-        area = kjson1['vod']['vod_area']
-        name = kjson1['vod']['vod_name']
-        year = kjson1['vod']['vod_year']
-        content = kjson1['vod']['vod_content']
-        subtitle = kjson1['vod']['vod_remarks']
-        desc = kjson1['vod']['vod_lang']
+        kjson = kdata
+        actor = kjson['vod']['vod_actor']
+        director = kjson['vod'].get('vod_director', '')
+        area = kjson['vod']['vod_area']
+        name = kjson['vod']['vod_name']
+        year = kjson['vod']['vod_year']
+        content = kjson['vod']['vod_content']
+        subtitle = kjson['vod']['vod_remarks']
+        desc = kjson['vod']['vod_lang']
         remark = '时间:' + subtitle + ' 语言:' + desc
-        for line in kjson1['vod_play_list']:
+        for line in kjson['vod_play_list']:
+            keywords = ['防走丢', '群', '防失群', 'Q']
+            if any(keyword in line['player_info']['show'] for keyword in keywords):
+                continue
             play_form += line['player_info']['show'] + '$$$'
             parse = line['player_info']['parse']
             player_parse_type = line['player_info']['player_parse_type']
             kurls = ""
             for vod in line['urls']:
-                if 'm3u8' not in kurls:
-                    kurls += str(vod['name']) + '$' + parse + '&&' + vod['url'] + '@' + player_parse_type + '#'
+                kurl = vod['url']
+                if '.m3u8' in kurl:
+                    kurls += str(vod['name']) + '$' + vod['url'] + '#'
                 else:
-                    if kurls and 'm3u8' in kurls:
-                        kurls += str(vod['name']) + '$' + vod['url'] + '#'
+                    if 'm3u8' not in kurl:
+                        token = 'token+' + vod['token']
+                        kurls += str(vod['name']) + '$' + parse + ',' + vod[
+                            'url'] + ',' + token + ',' + player_parse_type + '#'
             kurls = kurls.rstrip('#')
             play_url += kurls + '$$$'
         play_form = play_form.rstrip('$$$')
@@ -209,37 +196,65 @@ class Spider(Spider):
             "vod_play_url": play_url
         })
 
-        result['list'] = videos
+        return {'list': videos}
 
+    def detailContent(self, ids):
+        did = ids[0]
+        payload = {
+            'vod_id': did,
+        }
+        api_endpoints = ['vodDetail', 'vodDetail2']
+
+        for endpoint in api_endpoints:
+            url = f'{self.xurl}/{endpoint}'
+            response = requests.post(url=url, headers=headerx, data=payload)
+
+            if response.status_code == 200:
+                response_data = response.json()
+                encrypted_data = response_data['data']
+                kjson1 = self.decrypt(encrypted_data)
+                kjson = json.loads(kjson1)
+                break
+        result = self.detailContent1(kjson, did)
         return result
 
     def playerContent(self, flag, id, vipFlags):
         url = ''
         if 'm3u8' in id:
             url = id
+        if 'url=' in id:
+            aid = id.split(',')
+            uid = aid[0]
+            kurl = aid[1]
+            kjson = uid + kurl
+            url2 = f"{kjson}"
+            response = requests.get(url=url2)
+            if response.status_code == 200:
+                kjson1 = response.json()
+                url = kjson1['url']
         else:
-            if 'm3u8' not in id:
-                aid = id.split('@')[0]
-                bid = id.split('@')[-1]
-                uid = aid.split('&&')[0]
-                kurl = aid.split('&&')[-1]
-                id1 = self.decrypt_wb(kurl)
-                payload = {
-                    'parse_api': uid,
-                    'url': id1,
-                    'player_parse_type': bid,
-                    'token': ""
-                }
-                url1 = f"{xurl}/vodParse"
-                response = requests.post(url=url1, headers=headerx, data=payload)
-                if response.status_code == 200:
-                    response_data = response.json()
-                    encrypted_data = response_data['data']
-                    kjson = self.decrypt(encrypted_data)
-                    kjson1 = json.loads(kjson)
-                    kjson2 = kjson1['json']
-                    kjson3 = json.loads(kjson2)
-                    url = kjson3['url']
+            aid = id.split(',')
+            bid = aid[-1]
+            uid = aid[0]
+            kurl = aid[1]
+            token = aid[2].replace('token+', '')
+            id1 = self.decrypt_wb(kurl)
+            payload = {
+                'parse_api': uid,
+                'url': id1,
+                'player_parse_type': bid,
+                'token': token
+            }
+            url1 = f"{self.xurl}/vodParse"
+            response = requests.post(url=url1, headers=headerx, data=payload)
+            if response.status_code == 200:
+                response_data = response.json()
+                encrypted_data = response_data['data']
+                kjson = self.decrypt(encrypted_data)
+                kjson1 = json.loads(kjson)
+                kjson2 = kjson1['json']
+                kjson3 = json.loads(kjson2)
+                url = kjson3['url']
         result = {}
         result["parse"] = 0
         result["playUrl"] = ''
@@ -255,7 +270,7 @@ class Spider(Spider):
             'type_id': "0",
             'page': str(pg)
         }
-        url = f'{xurl}/searchList'
+        url = f'{self.xurl}/searchList'
         response = requests.post(url=url, data=payload, headers=headerx).text
         res = json.loads(response)
         encrypted_data = res['data']
