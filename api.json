@@ -220,6 +220,23 @@
             }
         },
         {
+            "key": "桃子",
+            "name": "🔥 桃子┃4K",
+            "type": 3,
+            "api": "./data/py/桃子.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "host": "https://appcms.tzys.xyz"
+            }
+        },
+        {
             "key": "咖啡",
             "name": "🔥 咖啡┃4K",
             "type": 3,
