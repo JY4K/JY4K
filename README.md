@@ -6,8 +6,8 @@
 
 ## 🛠️配置（必看）：
 
-- Gitee: [https://jy4k.netlify.app/api.json](https://jy4k.netlify.app/api.json)
-  -- 注：接口需配合软件食用 ！！！
+- 接口: [https://jy4k.netlify.app/api.json](https://jy4k.netlify.app/api.json)
+    - 注：接口需配合软件食用 ！！！
 
 ## 📱联系
 
