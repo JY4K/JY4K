@@ -253,20 +253,6 @@
             }
         },
         {
-            "key": "榴莲",
-            "name": "🔥 榴莲┃4K",
-            "type": 3,
-            "api": "./data/py/榴莲.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2
-        },
-        {
             "key": "晴天影视",
             "name": "🔥 晴天┃4K",
             "type": 3,
