@@ -203,6 +203,22 @@
             "ext": "./data/js/荐片.js"
         },
         {
+            "key": "瓜子",
+            "name": "🔥 瓜子┃1080",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/瓜子.js"
+        },
+        {
             "key": "金牌影视",
             "name": "🔥 金牌┃1080",
             "type": 3,
@@ -234,6 +250,21 @@
             "playerType": 2,
             "ext": {
                 "host": "https://cdn-tupic-duofun-neimenggu.56uxi.com/2.txt"
+            }
+        },
+        {
+            "key": "榴莲",
+            "name": "🔥 榴莲┃4K",
+            "type": 3,
+            "api": "./data/py/榴莲.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
             }
         },
         {
