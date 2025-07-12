@@ -203,8 +203,24 @@
             "ext": "./data/js/荐片.js"
         },
         {
+            "key": "小苹果",
+            "name": "🔥 苹果┃1080",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/小苹果.js"
+        },
+        {
             "key": "瓜子",
-            "name": "🔥 瓜子┃1080",
+            "name": "⚠️ 瓜子┃维修中",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -239,7 +255,7 @@
             "key": "咖啡",
             "name": "🔥 咖啡┃4K",
             "type": 3,
-            "api": "./data/py/咖啡.py",
+            "api": "./data/py/getapp.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -249,14 +265,16 @@
             "filterable": 1,
             "playerType": 2,
             "ext": {
-                "host": "https://cdn-tupic-duofun-neimenggu.56uxi.com/2.txt"
+                "host": "https://cdn-tupic-duofun-neimenggu.56uxi.com/2.txt",
+                "api": "/api.php/qijiappapi",
+                "datakey": "qwertyuiopqwertt"
             }
         },
         {
             "key": "晴天影视",
             "name": "🔥 晴天┃4K",
             "type": 3,
-            "api": "./data/py/晴天.py",
+            "api": "./data/py/getapp.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -264,7 +282,12 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "playerType": 2
+            "playerType": 2,
+            "ext": {
+                "host": "https://qjappcms.sun4k.top",
+                "api": "/api.php/getappapi",
+                "datakey": "sBxqXVF5pAHbGzrH"
+            }
         },
         {
             "key": "麻花视频",
@@ -310,7 +333,7 @@
         },
         {
             "key": "瓜子影视",
-            "name": "🔥 瓜子┃Jar",
+            "name": "⚠️ 瓜子┃维修中",
             "type": 3,
             "api": "csp_Gz360",
             "jar": "./data/jar/spider.jar",
