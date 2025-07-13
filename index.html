@@ -567,10 +567,10 @@
     <span class="marquee-label">📢 公告：</span>
     <div class="marquee-wrapper">
         <div class="marquee-content">
-            <span class="marquee-item">🔔 点击API签到平台标题，即可复制解析地址</span>
-            <span class="marquee-item">⚠️ 不推荐付费购买接口及解析</span>
+            <span class="marquee-item">🔔 点击<b style="color:var(--color-accent);">API签到平台</b>标题，即可复制<b style="color:var(--color-accent);">解析地址</b></span>
+            <span class="marquee-item">🔔 点击<b style="color:var(--color-accent);">免费弹幕站点</b>标题，即可复制<b style="color:var(--color-accent);">弹幕接口</b></span>
+            <span class="marquee-item">⚠️ 解析接口及弹幕接口均适配UZ影视</b></span>
             <span class="marquee-item">💡 如有新采集站及解析站，请进入TG群组反馈</span>
-            <span class="marquee-item">📌 本平台资源仅供技术研究使用，请于24小时内删除</span>
         </div>
     </div>
 </section>
@@ -653,7 +653,7 @@
 <main class="platforms-grid">
     <!-- 免费弹幕站点 -->
     <div class="section-title">
-        <h2>免费弹幕站点</h2>
+        <h2 id="free-danmu-title" style="cursor:pointer;">免费弹幕站点</h2>
     </div>
 
     <article class="platform-card">
@@ -1471,6 +1471,12 @@
                 "🔥 无上@https://mfjk.iwsyy.xyz/?url=",
                 "🔥 乌贼1@http://jx.dedyn.io/jx.php?url=",
                 "🔥 乌贼2@http://jx.dedyn.io/?url="
+            ].join(";"),
+            freeDanmu: [
+                "弹幕库@https://api.danmu.icu/?ac=dm&url=",
+                "虾米@https://dmku.hls.one/?ac=dm&url=",
+                "牛牛@http://dm.apptotv.top/?ac=dm&url=",
+                "DouFun@https://danmu.56uxi.com/?ac=dm&url="
             ].join(";")
         };
 
@@ -1621,6 +1627,12 @@
                 });
 
                 elements.mainTitle.addEventListener('click', () => utils.copyToClipboard(config.parseInterfaces));
+
+                // 新增：免费弹幕站点标题点击复制
+                const freeDanmuTitle = document.getElementById('free-danmu-title');
+                if (freeDanmuTitle) {
+                    freeDanmuTitle.addEventListener('click', () => utils.copyToClipboard(config.freeDanmu));
+                }
 
                 document.querySelectorAll('.feature-item').forEach(item => {
                     item.addEventListener('click', () => utils.copyToClipboard(item.dataset.copy));
