@@ -1,18 +1,19 @@
 # coding = utf-8
 # !/usr/bin/python
-# 新时代青年 2025.06.25 getApp第三版（V3.3.4）
+# 新时代青年 2025.06.25 getApp第三版 （V 3.3.8）
 import base64
 import json
 import re
 import sys
+import urllib3
 import uuid
 
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad
-from Crypto.Util.Padding import unpad
+from Crypto.Util.Padding import pad, unpad
 from base.spider import Spider
 
 sys.path.append('..')
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 headerx = {
     'User-Agent': 'okhttp/3.10.0'  # okhttp/3.14.9
@@ -30,13 +31,12 @@ class Spider(Spider):
     def init(self, extend):
         js1 = json.loads(extend)
         host = js1['host']
-        if re.match(r'^https:\/\/.*\.(txt|json)$', host):
+        if not re.match(r'^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?(\/)?$', host):
             host = self.fetch(host, headers=headerx, timeout=10, verify=False).text.rstrip('/')
         self.xurl = host + js1.get('api', '/api.php/getappapi')
         self.key = js1['datakey']
         self.iv = js1.get('dataiv', self.key)
-
-        res = self.fetch(self.xurl + '.index/initV119', headers=headerx).json()
+        res = self.fetch(self.xurl + '.index/initV119', headers=headerx, verify=False).json()
         encrypted_data = res['data']
         response = self.decrypt(encrypted_data)
         init_data = json.loads(response)
@@ -52,6 +52,7 @@ class Spider(Spider):
                     "type_id": i['type_id'],
                     "type_name": i['type_name']
                 })
+
             name_mapping = {'class': '类型', 'area': '地区', 'lang': '语言', 'year': '年份', 'sort': '排序'}
             filter_items = []
             for filter_type in i.get('filter_type_list', []):
@@ -60,6 +61,7 @@ class Spider(Spider):
 
                 if not values:
                     continue
+
                 value_list = [{"n": value, "v": value} for value in values]
                 display_name = name_mapping.get(filter_name, filter_name)
                 key = 'by' if filter_name == 'sort' else filter_name
@@ -106,7 +108,7 @@ class Spider(Spider):
             'class': ext.get('class', '全部')
         }
         url = f'{self.xurl}.index/typeFilterVodList'
-        res = self.post(url=url, headers=headerx, data=payload).json()
+        res = self.post(url=url, headers=headerx, data=payload, verify=False).json()
         encrypted_data = res['data']
         kjson = self.decrypt(encrypted_data)
         kjson1 = json.loads(kjson)
@@ -133,7 +135,7 @@ class Spider(Spider):
 
         for endpoint in api_endpoints:
             url = f'{self.xurl}.index/{endpoint}'
-            response = self.post(url=url, headers=headerx, data=payload)
+            response = self.post(url=url, headers=headerx, data=payload, verify=False)
 
             if response.status_code == 200:
                 response_data = response.json()
@@ -144,27 +146,23 @@ class Spider(Spider):
         videos = []
         play_form = ''
         play_url = ''
-
-        actor = kjson['vod']['vod_actor']
-        director = kjson['vod'].get('vod_director', '')
-        area = kjson['vod']['vod_area']
-        name = kjson['vod']['vod_name']
-        year = kjson['vod']['vod_year']
-        content = kjson['vod']['vod_content']
-        subtitle = kjson['vod']['vod_remarks']
-        desc = kjson['vod']['vod_lang']
-        remark = '时间:' + subtitle + ' 语言:' + desc
         lineid = 1
+        name_count = {}
         for line in kjson['vod_play_list']:
-            keywords = ['防走丢', '群', '防失群', 'Q', '官网']
-            if any(keyword in line['player_info']['show'] for keyword in keywords):
-                line['player_info']['show'] = f'{lineid}线'
+            keywords = {'防走丢', '群', '防失群', '官网'}
+            player_show = line['player_info']['show']
+            if any(keyword in player_show for keyword in keywords):
+                player_show = f'{lineid}线'
+                line['player_info']['show'] = player_show
+            count = name_count.get(player_show, 0) + 1
+            name_count[player_show] = count
+            if count > 1:
+                line['player_info']['show'] = f"{player_show}{count}"
             play_form += line['player_info']['show'] + '$$$'
             parse = line['player_info']['parse']
             parse_type = line['player_info']['parse_type']
             player_parse_type = line['player_info']['player_parse_type']
             kurls = ""
-
             for vod in line['urls']:
                 token = 'token+' + vod['token']
                 kurls += f"{str(vod['name'])}${parse},{vod['url']},{token},{player_parse_type},{parse_type}#"
@@ -175,13 +173,13 @@ class Spider(Spider):
         play_url = play_url.rstrip('$$$')
         videos.append({
             "vod_id": did,
-            "vod_name": name,
-            "vod_actor": actor.replace('演员', ''),
-            "vod_director": director.replace('导演', ''),
-            "vod_content": content,
-            "vod_remarks": remark,
-            "vod_year": year + '年',
-            "vod_area": area,
+            "vod_name": kjson['vod']['vod_name'],
+            "vod_actor": kjson['vod']['vod_actor'].replace('演员', ''),
+            "vod_director": kjson['vod'].get('vod_director', '').replace('导演', ''),
+            "vod_content": kjson['vod']['vod_content'],
+            "vod_remarks": kjson['vod']['vod_remarks'],
+            "vod_year": kjson['vod']['vod_year'] + '年',
+            "vod_area": kjson['vod']['vod_area'],
             "vod_play_from": play_form,
             "vod_play_url": play_url
         })
@@ -202,13 +200,13 @@ class Spider(Spider):
             res = {"parse": 1, "url": uid + kurl,
                    "header": {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
         elif player_parse_type == '2':
-            response = self.fetch(url=f'{uid}{kurl}')
+            response = self.fetch(url=f'{uid}{kurl}', verify=False)
             if response.status_code == 200:
                 kjson1 = response.json()
                 res = {"parse": 0, "url": kjson1['url'], "header": {
                     'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
         else:
-            id1 = self.decrypt_wb(kurl)
+            id1 = self.encrypt(kurl)
             payload = {
                 'parse_api': uid,
                 'url': id1,
@@ -216,7 +214,7 @@ class Spider(Spider):
                 'token': token
             }
             url1 = f"{self.xurl}.index/vodParse"
-            response = self.post(url=url1, headers=headerx, data=payload)
+            response = self.post(url=url1, headers=headerx, data=payload, verify=False)
             if response.status_code == 200:
                 response_data = response.json()
                 encrypted_data = response_data['data']
@@ -231,38 +229,45 @@ class Spider(Spider):
 
     def searchContent(self, key, quick, pg="1"):
         videos = []
-        payload = {
-            'keywords': key,
-            'type_id': "0",
-            'page': str(pg)
-        }
-        if self.search_verify:
-            verifi = self.verification()
-            if verifi is None:
-                return {'list': []}
-            payload['code'] = verifi['code']
-            payload['key'] = verifi['uuid']
-
-        url = f'{self.xurl}.index/searchList'
-        res = self.post(url=url, data=payload, headers=headerx).json()
-        if not res.get('data'):
-            return {'list': [], 'msg': res.get('msg')}
-        encrypted_data = res['data']
-        kjson = self.decrypt(encrypted_data)
-        kjson1 = json.loads(kjson)
-        for i in kjson1['search_list']:
-            id = i['vod_id']
-            name = i['vod_name']
-            pic = i['vod_pic']
-            remarks = i['vod_year'] + ' ' + i['vod_class']
-
-            video = {
-                "vod_id": id,
-                "vod_name": name,
-                "vod_pic": pic,
-                "vod_remarks": remarks
+        if 'xiaohys.com' in self.xurl:
+            host = self.xurl.split('api.php')[0]
+            data = self.fetch(f'{host}index.php/ajax/suggest?mid=1&wd={key}').json()
+            for i in data['list']:
+                videos.append({
+                    "vod_id": i['id'],
+                    "vod_name": i['name'],
+                    "vod_pic": i.get('pic')
+                })
+        else:
+            payload = {
+                'keywords': key,
+                'type_id': "0",
+                'page': str(pg)
             }
-            videos.append(video)
+            if self.search_verify:
+                verifi = self.verification()
+                if verifi is None:
+                    return {'list': []}
+                payload['code'] = verifi['code']
+                payload['key'] = verifi['uuid']
+            url = f'{self.xurl}.index/searchList'
+            res = self.post(url=url, data=payload, headers=headerx, verify=False).json()
+            if not res.get('data'):
+                return {'list': [], 'msg': res.get('msg')}
+            encrypted_data = res['data']
+            kjson = self.decrypt(encrypted_data)
+            kjson1 = json.loads(kjson)
+            for i in kjson1['search_list']:
+                id = i['vod_id']
+                name = i['vod_name']
+                pic = i['vod_pic']
+                remarks = i['vod_year'] + ' ' + i['vod_class']
+                videos.append({
+                    "vod_id": id,
+                    "vod_name": name,
+                    "vod_pic": pic,
+                    "vod_remarks": remarks
+                })
         return {'list': videos, 'page': pg, 'pagecount': 9999, 'limit': 90, 'total': 999999}
 
     def localProxy(self, params):
@@ -281,21 +286,17 @@ class Spider(Spider):
         pass
 
     def decrypt(self, encrypted_data_b64):
-        key_text = self.key
-        iv_text = self.iv
-        key_bytes = key_text.encode('utf-8')
-        iv_bytes = iv_text.encode('utf-8')
+        key_bytes = self.key.encode('utf-8')
+        iv_bytes = self.iv.encode('utf-8')
         encrypted_data = base64.b64decode(encrypted_data_b64)
         cipher = AES.new(key_bytes, AES.MODE_CBC, iv_bytes)
         decrypted_padded = cipher.decrypt(encrypted_data)
         decrypted = unpad(decrypted_padded, AES.block_size)
         return decrypted.decode('utf-8')
 
-    def decrypt_wb(self, sencrypted_data):
-        key_text = self.key
-        iv_text = self.iv
-        key_bytes = key_text.encode('utf-8')
-        iv_bytes = iv_text.encode('utf-8')
+    def encrypt(self, sencrypted_data):
+        key_bytes = self.key.encode('utf-8')
+        iv_bytes = self.iv.encode('utf-8')
         data_bytes = sencrypted_data.encode('utf-8')
         padded_data = pad(data_bytes, AES.block_size)
         cipher = AES.new(key_bytes, AES.MODE_CBC, iv_bytes)
@@ -303,8 +304,8 @@ class Spider(Spider):
         encrypted_data_b64 = base64.b64encode(encrypted_bytes).decode('utf-8')
         return encrypted_data_b64
 
-    def ocr(self, base64Img):
-        dat2 = self.post("https://api.nn.ci/ocr/b64/text", data=base64Img, headers=headerx).text
+    def ocr(self, base64img):
+        dat2 = self.post("https://api.nn.ci/ocr/b64/text", data=base64img, headers=headerx, verify=False).text
         if dat2:
             return dat2
         else:
@@ -312,23 +313,22 @@ class Spider(Spider):
 
     def verification(self):
         random_uuid = str(uuid.uuid4())
-        dat = self.fetch(f'{self.xurl}.verify/create?key={random_uuid}', headers=headerx).content
+        dat = self.fetch(f'{self.xurl}.verify/create?key={random_uuid}', headers=headerx, verify=False).content
         base64_img = base64.b64encode(dat).decode('utf-8')
         if not dat:
             return None
         code = self.ocr(base64_img)
         if not code:
             return None
-        code = replace_code(code)
+        code = self.replace_code(code)
         if not (len(code) == 4 and code.isdigit()):
             return None
         return {'uuid': random_uuid, 'code': code}
 
-
-def replace_code(text):
-    replacements = {'y': '9', '口': '0', 'q': '0', 'u': '0', 'o': '0', '>': '1', 'd': '0', 'b': '8', '已': '2',
-                    'D': '0', '五': '5', '066': '1666'}
-    if len(text) == 3:
-        text = text.replace('566', '5066')
-        text = text.replace('066', '1666')
-    return ''.join(replacements.get(c, c) for c in text)
+    def replace_code(self, text):
+        replacements = {'y': '9', '口': '0', 'q': '0', 'u': '0', 'o': '0', '>': '1', 'd': '0', 'b': '8', '已': '2',
+                        'D': '0', '五': '5'}
+        if len(text) == 3:
+            text = text.replace('566', '5066')
+            text = text.replace('066', '1666')
+        return ''.join(replacements.get(c, c) for c in text)
