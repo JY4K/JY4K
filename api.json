@@ -286,7 +286,8 @@
             "ext": {
                 "host": "https://qjappcms.ll4k.xyz",
                 "api": "/api.php/getappapi",
-                "datakey": "1yGA85sJ5STtE7uj"
+                "datakey": "1yGA85sJ5STtE7uj",
+                "version": "50000"
             }
         },
         {
@@ -305,7 +306,8 @@
             "ext": {
                 "host": "https://qjappcms.jm4k.top",
                 "api": "/api.php/getappapi",
-                "datakey": "pBVmysmGX8TsgrQN"
+                "datakey": "pBVmysmGX8TsgrQN",
+                "version": "120"
             }
         },
         {
