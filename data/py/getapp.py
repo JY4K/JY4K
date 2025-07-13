@@ -47,7 +47,7 @@ class Spider(Spider):
         kjson = self.init_data
         result = {"class": [], "filters": {}}
         for i in kjson['type_list']:
-            if not (i['type_name'] in ['全部', 'QQ'] or '企鹅群' in i['type_name']):
+            if not (i['type_name'] in ['全部', '官网：juo.one', 'QQ'] or '企鹅群' in i['type_name']):
                 result['class'].append({
                     "type_id": i['type_id'],
                     "type_name": i['type_name']
