@@ -266,7 +266,7 @@
             "filterable": 1,
             "playerType": 2,
             "ext": {
-                "host": "https://qjappcms.ll4k.xyz/api.php/qijiappapi.index",
+                "url": "https://qjappcms.ll4k.xyz/api.php/qijiappapi.index",
                 "datakey": "1yGA85sJ5STtE7uj",
                 "dataiv": "1yGA85sJ5STtE7uj"
             }
