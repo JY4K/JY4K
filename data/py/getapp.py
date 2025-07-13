@@ -1,6 +1,6 @@
 # coding = utf-8
 # !/usr/bin/python
-# 新时代青年 2025.06.25 getApp第三版
+# 新时代青年 2025.06.25 getApp第三版（V3.3.4）
 import base64
 import json
 import re

@@ -26,28 +26,6 @@
             "ext": "./data/js/豆瓣.js"
         },
         {
-            "key": "官方采集",
-            "name": "🇨🇳  官方┃采集",
-            "type": 1,
-            "api": "http://39.105.18.5:5565/api.php/provide/vod",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "categories": [
-                "电影",
-                "剧集",
-                "综艺",
-                "动漫",
-                "番剧国创"
-            ]
-        },
-        {
             "key": "奇珍艺兽",
             "name": "🇨🇳  爱奇艺┃解析",
             "type": 3,
@@ -241,7 +219,7 @@
         },
         {
             "key": "瓜子",
-            "name": "⚠️ 瓜子┃维修中",
+            "name": "⚠️ 瓜子┃1080",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -272,6 +250,46 @@
                 "host": "https://cdn-tupic-duofun-neimenggu.56uxi.com/2.txt",
                 "api": "/api.php/qijiappapi",
                 "datakey": "qwertyuiopqwertt"
+            }
+        },
+        {
+            "key": "榴莲",
+            "name": "🔥 榴莲┃4K",
+            "type": 3,
+            "api": "./data/py/qijiapp.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "host": "https://qjappcms.ll4k.xyz/api.php/qijiappapi.index",
+                "datakey": "1yGA85sJ5STtE7uj",
+                "dataiv": "1yGA85sJ5STtE7uj"
+            }
+        },
+        {
+            "key": "仓鼠",
+            "name": "🔥 仓鼠┃4K",
+            "type": 3,
+            "api": "./data/py/qijiapp.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "url": "https://qjappcms.cs4k.top/api.php/qijiappapi.index",
+                "datakey": "Z98KXaLtO2wC1Pte",
+                "dataiv": "Z98KXaLtO2wC1Pte",
+                "deviceId": "",
+                "version": "120"
             }
         },
         {
