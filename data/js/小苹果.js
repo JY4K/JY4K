@@ -278,7 +278,7 @@ var rule = {
             vod_actor: data.actor,
             vod_director: data.director,
             vod_content: data.content,
-            vod_play_from: '小苹果线路',
+            vod_play_from: 'LiteApple',
             vod_play_url: d.join('#')
         }
     }),

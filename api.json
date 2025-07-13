@@ -271,6 +271,44 @@
             }
         },
         {
+            "key": "榴莲影视",
+            "name": "🔥 榴莲┃4K",
+            "type": 3,
+            "api": "./data/py/getapp.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "host": "https://qjappcms.ll4k.xyz",
+                "api": "/api.php/getappapi",
+                "datakey": "1yGA85sJ5STtE7uj"
+            }
+        },
+        {
+            "key": "橘猫影视",
+            "name": "🔥 橘猫┃4K",
+            "type": 3,
+            "api": "./data/py/getapp.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "host": "https://qjappcms.jm4k.top",
+                "api": "/api.php/getappapi",
+                "datakey": "pBVmysmGX8TsgrQN"
+            }
+        },
+        {
             "key": "晴天影视",
             "name": "🔥 晴天┃4K",
             "type": 3,
