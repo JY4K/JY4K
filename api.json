@@ -6,7 +6,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "https://gitee.com/zj521jj/little-tiger-spot/raw/master/jar/HubanTC.jar",
+    "spider": "./data/jar/qj.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -24,6 +24,13 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./data/js/豆瓣.js"
+        },
+        {
+            "key": "弹幕弹窗",
+            "name": "🐱 弹幕┃小窗",
+            "type": 3,
+            "jar": "https://gitee.com/zj521jj/little-tiger-spot/raw/master/jar/HubanTC.jar",
+            "api": "csp_Huban"
         },
         {
             "key": "奇珍艺兽",
@@ -341,7 +348,6 @@
             "name": "🧸 厂长┃直连",
             "type": 3,
             "api": "csp_Czsapp",
-            "jar": "./data/jar/qj.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -357,7 +363,6 @@
             "name": "🧸 柠檬┃直连",
             "type": 3,
             "api": "csp_Nmvod",
-            "jar": "./data/jar/qj.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -370,7 +375,6 @@
             "name": "🧸 LibVio┃直连",
             "type": 3,
             "api": "csp_Lib",
-            "jar": "./data/jar/qj.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
