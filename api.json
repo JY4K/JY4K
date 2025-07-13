@@ -3,7 +3,6 @@
         以下网络资源如有冒犯请进入 QQ邮箱（2661136929@qq.com）反馈删除
         注：[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买]
         ⛔资源来源：【牛马】：http://nn.qi-simple.top/common.json  ⛔
-        ⛔【沐辰】：https://json.doube.eu.org/t4.php ⛔
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
@@ -108,7 +107,7 @@
         },
         {
             "key": "流光影视",
-            "name": "🔥 流光┃1080",
+            "name": "🔥 流光┃4K",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -139,22 +138,6 @@
             "ext": "./data/js/低端影视.js"
         },
         {
-            "key": "追剧",
-            "name": "🔥 追剧┃1080",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/追剧.js"
-        },
-        {
             "key": "耐看点播",
             "name": "🔥 耐看┃1080",
             "type": 3,
@@ -169,22 +152,6 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/js/耐看点播.js"
-        },
-        {
-            "key": "素白白",
-            "name": "🔥 素白白┃1080",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/素白白.js"
         },
         {
             "key": "荐片",
@@ -219,6 +186,38 @@
             "ext": "./data/js/小苹果.js"
         },
         {
+            "key": "追剧",
+            "name": "🔥 追剧┃1080",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/追剧.js"
+        },
+        {
+            "key": "素白白",
+            "name": "🔥 素白白┃1080",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/素白白.js"
+        },
+        {
             "key": "瓜子",
             "name": "⚠️ 瓜子┃维修中",
             "type": 3,
@@ -233,23 +232,6 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/js/瓜子.js"
-        },
-        {
-            "key": "金牌影视",
-            "name": "🔥 金牌┃1080",
-            "type": 3,
-            "api": "./data/py/金牌影视.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "site": "https://www.kuhh4jo.com/,https://www.hkybqufgh.com/,https://www.sizhengxt.com/"
-            }
         },
         {
             "key": "咖啡",
@@ -271,10 +253,10 @@
             }
         },
         {
-            "key": "榴莲影视",
-            "name": "🔥 榴莲┃4K",
+            "key": "金牌影视",
+            "name": "🔥 金牌┃1080",
             "type": 3,
-            "api": "./data/py/getapp.py",
+            "api": "./data/py/金牌影视.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -284,49 +266,7 @@
             "filterable": 1,
             "playerType": 2,
             "ext": {
-                "host": "https://qjappcms.ll4k.xyz",
-                "api": "/api.php/getappapi",
-                "datakey": "1yGA85sJ5STtE7uj",
-                "version": "50000"
-            }
-        },
-        {
-            "key": "橘猫影视",
-            "name": "🔥 橘猫┃4K",
-            "type": 3,
-            "api": "./data/py/getapp.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "host": "https://qjappcms.jm4k.top",
-                "api": "/api.php/getappapi",
-                "datakey": "pBVmysmGX8TsgrQN",
-                "version": "120"
-            }
-        },
-        {
-            "key": "晴天影视",
-            "name": "🔥 晴天┃4K",
-            "type": 3,
-            "api": "./data/py/getapp.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "host": "https://qjappcms.sun4k.top",
-                "api": "/api.php/getappapi",
-                "datakey": "sBxqXVF5pAHbGzrH"
+                "site": "https://www.kuhh4jo.com/,https://www.hkybqufgh.com/,https://www.sizhengxt.com/"
             }
         },
         {
@@ -357,46 +297,6 @@
             "changeable": 0
         },
         {
-            "key": "苹果",
-            "name": "🔥 苹果┃Jar",
-            "type": 3,
-            "api": "csp_LiteApple",
-            "jar": "./data/jar/spider.jar",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1
-        },
-        {
-            "key": "瓜子影视",
-            "name": "⚠️ 瓜子┃维修中",
-            "type": 3,
-            "api": "csp_Gz360",
-            "jar": "./data/jar/spider.jar",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1
-        },
-        {
-            "key": "柠檬",
-            "name": "🧸 柠檬┃App",
-            "type": 3,
-            "api": "csp_Nmvod",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "playerType": 2,
-            "ext": "7lj763gg402i7942503g839jg74h8h88highi40799jh6i6k454419l0l5184k0g548458hh994hjj94330jk296k4l045"
-        },
-        {
             "key": "csp_CZSPP",
             "name": "🧸 厂长┃直连",
             "type": 3,
@@ -410,6 +310,18 @@
             "searchable": 1,
             "playerType": 2,
             "ext": "7lj763gg402i7942463j9j9jh346968hg5ll845ki38473"
+        },
+        {
+            "key": "柠檬",
+            "name": "🧸 柠檬┃App",
+            "type": 3,
+            "api": "csp_Nmvod",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "playerType": 2,
+            "ext": "7lj763gg402i7942503g839jg74h8h88highi40799jh6i6k454419l0l5184k0g548458hh994hjj94330jk296k4l045"
         },
         {
             "key": "Lib",
@@ -437,6 +349,27 @@
             "name": "Demo",
             "type": 3,
             "url": "Demo"
+        },
+        {
+            "name": "🔥 白嫖4K",
+            "type": 1,
+            "url": "http://8.129.30.117:582/api/?key=新陆游聚合&url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
         },
         {
             "name": "🔥 牛马4K",
@@ -525,49 +458,7 @@
         {
             "name": "🔥 火花",
             "type": 1,
-            "url": "https://api.huohua.live/api/?key=U1u6H8QZgCqD4h7Ljp&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
-            "name": "🔥 小红",
-            "type": 0,
-            "url": "https://www.xiaohys.com/static/player/artplayer.html?url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
-            "name": "🔥 樱花",
-            "type": 0,
-            "url": "https://bfq.lggys.com/?url=",
+            "url": "https://api.huohua.live/api/?key=FJER9kOhK71YTePV3d&url=",
             "ext": {
                 "flag": [
                     "qq",
