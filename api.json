@@ -340,8 +340,7 @@
             "hasMeaningfulTitle": 1,
             "searchable": 1,
             "filterable": 1,
-            "quickSearch": 0,
-            "ext": ""
+            "quickSearch": 0
         },
         {
             "key": "py_OleVod",
