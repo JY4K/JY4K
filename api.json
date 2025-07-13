@@ -13,7 +13,7 @@
     "sites": [
         {
             "key": "huban",
-            "name": "🇨🇳  弹幕|小窗",
+            "name": "😼 弹幕|小窗",
             "type": 3,
             "jar": "https://gitee.com/zj521jj/little-tiger-spot/raw/master/jar/HubanTC.jar",
             "api": "csp_Huban"
