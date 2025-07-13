@@ -28,7 +28,7 @@
         {
             "key": "官方采集",
             "name": "🇨🇳  官方┃采集",
-            "type": 2,
+            "type": 1,
             "api": "http://39.105.18.5:5565/api.php/provide/vod",
             "hasTags": 1,
             "hasPoster": 1,
