@@ -245,7 +245,6 @@
             "name": "🔥 修罗┃1080",
             "type": 3,
             "api": "csp_HBPQ",
-            "jar": "./data/jar/HBPQ.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -256,23 +255,6 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/json/修罗影视.json"
-        },
-        {
-            "key": "橘汁",
-            "name": "🔥 橘汁┃1080",
-            "type": 3,
-            "api": "csp_HBmoou",
-            "jar": "./data/jar/Spider.jar",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "https://ajuzi.top"
         },
         {
             "key": "窈窕",
@@ -296,7 +278,7 @@
             "name": "🔥 淑女┃4K",
             "type": 3,
             "api": "csp_HBT4",
-            "jar": "./data/jar/XBPQ.jar",
+            "jar": "./data/jar/Spider.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -325,25 +307,6 @@
                 "host": "https://cdn-tupic-duofun-neimenggu.56uxi.com/2.txt",
                 "api": "/api.php/qijiappapi",
                 "datakey": "qwertyuiopqwertt"
-            }
-        },
-        {
-            "key": "榴莲",
-            "name": "🔥 榴莲┃4K",
-            "type": 3,
-            "api": "./data/py/qijiapp.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "url": "https://qjappcms.ll4k.xyz/api.php/qijiappapi.index",
-                "datakey": "1yGA85sJ5STtE7uj",
-                "dataiv": "1yGA85sJ5STtE7uj"
             }
         },
         {
