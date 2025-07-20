@@ -245,6 +245,7 @@
             "name": "🔥 修罗┃1080",
             "type": 3,
             "api": "csp_HBPQ",
+            "jar": "./data/jar/HBPQ.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
