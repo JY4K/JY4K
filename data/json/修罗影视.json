@@ -10,6 +10,6 @@
     "播放列表": "<tr&&</tr>",
     "播放标题": "text-muted\">&&</td>[不包含:网盘下载]",
     "跳转播放链接": "href=\"&&\"",
-    "分类url": "https://v.xlys.ltd.ua/s/all/{catePg}?type={cateId};;d0",
+    "分类url": "https://xl01.com.de/s/all/{catePg}?type={cateId};;d0",
     "分类": "电影$0#电视剧$1"
 }
