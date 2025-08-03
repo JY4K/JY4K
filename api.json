@@ -226,7 +226,7 @@
         },
         {
             "key": "瓜子",
-            "name": "🔥 瓜子┃1080",
+            "name": "⚠️   瓜子┃1080",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -278,7 +278,7 @@
             "key": "仓鼠",
             "name": "🔥 仓鼠┃4K",
             "type": 3,
-            "api": "./data/py/qijiapp.py",
+            "api": "./data/py/getapp.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
