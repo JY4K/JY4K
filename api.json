@@ -226,7 +226,7 @@
         },
         {
             "key": "瓜子",
-            "name": "⚠️ 瓜子┃1080",
+            "name": "🔥 瓜子┃1080",
             "type": 3,
             "api": "http://110.42.36.65:5223/js/drpy2.min.js",
             "hasTags": 1,
@@ -245,7 +245,7 @@
             "name": "🔥 修罗┃1080",
             "type": 3,
             "api": "csp_HBPQ",
-            "jar": "./data/jar/HBPQ.jar",
+            "jar": "./data/jar/HBPQ_7.0.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -256,23 +256,6 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/json/修罗影视.json"
-        },
-        {
-            "key": "窈窕",
-            "name": "🔥 窈窕┃4K",
-            "type": 3,
-            "api": "csp_HBT4",
-            "jar": "./data/jar/Spider.jar",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "http://154.219.113.13:12121/test.php?site=wogg###wogg"
         },
         {
             "key": "淑女",
@@ -292,25 +275,6 @@
             "ext": "http://154.219.113.13:12121/test.php?site=mihdr###mihdr"
         },
         {
-            "key": "咖啡",
-            "name": "🔥 咖啡┃4K",
-            "type": 3,
-            "api": "./data/py/getapp.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "host": "https://cdn-tupic-duofun-neimenggu.56uxi.com/2.txt",
-                "api": "/api.php/qijiappapi",
-                "datakey": "qwertyuiopqwertt"
-            }
-        },
-        {
             "key": "仓鼠",
             "name": "🔥 仓鼠┃4K",
             "type": 3,
@@ -324,13 +288,41 @@
             "filterable": 1,
             "playerType": 2,
             "ext": {
-                "url": "https://qjappcms.cs4k.top/api.php/qijiappapi.index",
+                "url": "https://newappcms.cs4k.top",
                 "datakey": "Z98KXaLtO2wC1Pte",
                 "dataiv": "Z98KXaLtO2wC1Pte",
                 "deviceId": "",
                 "version": "120"
             }
         },
+        {
+            "key": "荐片²",
+            "name": "🔥 荐片²┃1080",
+            "type": 3,
+            "api": "./data/py/荐片.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
+        {
+			"key": "DAY",
+			"name": "🔥 DAY┃1080",
+			"type": 3,
+			"api": "https://13826.kstore.space/tt.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+		},
         {
             "key": "金牌影视",
             "name": "🔥 金牌┃1080",
@@ -347,19 +339,6 @@
             "ext": {
                 "site": "https://www.kuhh4jo.com/,https://www.hkybqufgh.com/,https://www.sizhengxt.com/"
             }
-        },
-        {
-            "key": "麻花视频",
-            "name": "🔥 麻花┃T4",
-            "type": 4,
-            "api": "http://8.129.30.117:31657/api/麻花视频(DS)?pwd=drpy202502",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "filterable": 1,
-            "quickSearch": 0
         },
         {
             "key": "py_OleVod",
