@@ -113,22 +113,6 @@
             "ext": "./data/js/BiliBili.js"
         },
         {
-            "key": "流光影视",
-            "name": "🔥 流光┃4K",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/流光影视.js"
-        },
-        {
             "key": "低端影视",
             "name": "🔥 低端┃1080",
             "type": 3,
@@ -245,7 +229,6 @@
             "name": "🔥 修罗┃1080",
             "type": 3,
             "api": "csp_HBPQ",
-            "jar": "./data/jar/HBPQ_7.0.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -275,10 +258,31 @@
             "ext": "http://154.219.113.13:12121/test.php?site=mihdr###mihdr"
         },
         {
+            "key": "仓鼠1",
+            "name": "🔥 仓鼠1┃4K",
+            "type": 3,
+            "api": "./data/py/getapp.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2,
+            "ext": {
+                "url": "https://newappcms.cs4k.top",
+                "datakey": "Z98KXaLtO2wC1Pte",
+                "dataiv": "Z98KXaLtO2wC1Pte",
+                "deviceId": "",
+                "version": "120"
+            }
+        },
+        {
             "key": "仓鼠",
             "name": "🔥 仓鼠┃4K",
             "type": 3,
-            "api": "csp_AppGet2",
+            "api": "./data/py/qijiapp.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -379,7 +383,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "https://api.wwgz.cn:520/webcloud/relay.php?url="
+            "ext": "https://api.wwgz.cn"
         },
         {
             "key": "Lib",
@@ -394,7 +398,7 @@
             "playerType": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://www.libvio.cc/static/js/playerconfig.js"
+            "ext": "https://www.libvio.cc"
         }
     ],
     "parses": [
@@ -407,6 +411,20 @@
             "name": "Demo",
             "type": 3,
             "url": "Demo"
+        },
+        {
+            "name": "🔥 芒果4K",
+            "type": 1,
+            "url": "http://mg.itufm.top/mg.php?url=",
+            "ext": {
+                "flag": [
+                    "mgtv",
+                    "芒果"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
         },
         {
             "name": "🔥 白嫖4K",
@@ -496,6 +514,27 @@
             "name": "🔥 小白4K",
             "type": 1,
             "url": "http://120.46.190.255/小白白.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
+            "name": "🔥 岁岁4K",
+            "type": 1,
+            "url": "http://sspa8.top:82/suisui.php?url=",
             "ext": {
                 "flag": [
                     "qq",

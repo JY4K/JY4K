@@ -31,8 +31,8 @@ class Spider(Spider):
     def init(self, extend):
         js1 = json.loads(extend)
         host = js1['host']
-        if not re.match(r'^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?(\/)?$', host):
-            host = self.fetch(host, headers=headerx, timeout=10, verify=False).text.rstrip('/')
+        # if not re.match(r'^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?(\/)?$', host):
+        #     host = self.fetch(host, headers=headerx, timeout=10, verify=False).text.rstrip('/')
         self.xurl = host + js1.get('api', '/api.php/getappapi')
         self.key = js1['datakey']
         self.iv = js1.get('dataiv', self.key)
