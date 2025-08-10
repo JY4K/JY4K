@@ -6,7 +6,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "https://gitee.com/yuan301/tv/raw/master/A/xs.jar;md5;0ebf254bc81580c2db529f7b26680953",
+    "spider": "./data/jar/Spider.jar",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -242,11 +242,10 @@
             "ext": "./data/json/修罗影视.json"
         },
         {
-            "key": "二三四",
-            "name": "🔥 二三四┃1080",
+            "key": "仓鼠",
+            "name": "🔥 仓鼠┃4K",
             "type": 3,
-            "api": "csp_HBPQ",
-            "jar": "./data/jar/HBPQ（V7.0）.jar",
+            "api": "csp_AppGet2",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -254,16 +253,20 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/json/二三四.json"
+            "playerType": 2,
+            "ext": {
+                "url": "https://newappcms.cs4k.top",
+                "datakey": "Z98KXaLtO2wC1Pte",
+                "dataiv": "Z98KXaLtO2wC1Pte",
+                "deviceId": "",
+                "version": "120"
+            }
         },
         {
-            "key": "魔爪",
-            "name": "🔥 魔爪┃4K",
+            "key": "晴天",
+            "name": "🔥 晴天┃4K",
             "type": 3,
-            "api": "csp_HBcms10",
-            "jar": "./data/jar/HBPQ（V7.0）.jar",
+            "api": "csp_AppGet",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -271,16 +274,21 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "https://mozhuazy.com/api.php/provide/vod/"
+            "playerType": 2,
+            "ext": {
+                "url": "https://qjappcms.sun4k.top",
+                "dataKey": "sBxqXVF5pAHbGzrH",
+                "dataIv": "sBxqXVF5pAHbGzrH",
+                "deviceId": "",
+                "version": "119"
+            }
         },
         {
             "key": "淑女",
             "name": "🔥 淑女┃4K",
             "type": 3,
             "api": "csp_HBT4",
-            "jar": "./data/jar/Spider.jar",
+            "jar": "./data/jar/HBT4.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -351,9 +359,24 @@
             "filterable": 0,
             "changeable": 0
         },
+         {
+            "key": "素白白",
+            "name": "🔥 素白白┃1080",
+            "type": 3,
+            "api": "csp_SuBaiBai",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": "https://www.subaibai.com"
+        },
         {
-            "key": "csp_CZSPP",
-            "name": "🔥 厂长┃直连",
+            "key": "厂长资源",
+            "name": "🔥 厂长┃1080",
             "type": 3,
             "api": "csp_Czsapp",
             "hasTags": 1,
