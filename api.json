@@ -229,6 +229,7 @@
             "name": "🔥 修罗┃1080",
             "type": 3,
             "api": "csp_HBPQ",
+            "jar": "./data/jar/HBPQ（V7.0）.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -239,6 +240,40 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/json/修罗影视.json"
+        },
+        {
+            "key": "二三四",
+            "name": "🔥 二三四┃1080",
+            "type": 3,
+            "api": "csp_HBPQ",
+            "jar": "./data/jar/HBPQ（V7.0）.jar",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/json/二三四.json"
+        },
+        {
+            "key": "魔爪",
+            "name": "🔥 魔爪┃4K",
+            "type": 3,
+            "api": "csp_HBcms10",
+            "jar": "./data/jar/HBPQ（V7.0）.jar",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "https://mozhuazy.com/api.php/provide/vod/"
         },
         {
             "key": "淑女",
@@ -258,48 +293,6 @@
             "ext": "http://154.219.113.13:12121/test.php?site=mihdr###mihdr"
         },
         {
-            "key": "仓鼠1",
-            "name": "🔥 仓鼠1┃4K",
-            "type": 3,
-            "api": "./data/py/getapp.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "url": "https://newappcms.cs4k.top",
-                "datakey": "Z98KXaLtO2wC1Pte",
-                "dataiv": "Z98KXaLtO2wC1Pte",
-                "deviceId": "",
-                "version": "120"
-            }
-        },
-        {
-            "key": "仓鼠",
-            "name": "🔥 仓鼠┃4K",
-            "type": 3,
-            "api": "./data/py/qijiapp.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2,
-            "ext": {
-                "url": "https://newappcms.cs4k.top",
-                "datakey": "Z98KXaLtO2wC1Pte",
-                "dataiv": "Z98KXaLtO2wC1Pte",
-                "deviceId": "",
-                "version": "120"
-            }
-        },
-        {
             "key": "荐片²",
             "name": "🔥 荐片²┃1080",
             "type": 3,
@@ -314,10 +307,10 @@
             "playerType": 2
         },
         {
-			"key": "DAY",
-			"name": "🔥 DAY┃1080",
+			"key": "天天",
+			"name": "🔥 天天┃1080",
 			"type": 3,
-			"api": "https://13826.kstore.space/tt.py",
+			"api": "./data/py/天天影视.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -360,7 +353,7 @@
         },
         {
             "key": "csp_CZSPP",
-            "name": "🧸 厂长┃直连",
+            "name": "🔥 厂长┃直连",
             "type": 3,
             "api": "csp_Czsapp",
             "hasTags": 1,
@@ -372,33 +365,6 @@
             "searchable": 1,
             "playerType": 2,
             "ext": "https://www.czzymovie.com/"
-        },
-        {
-            "key": "柠檬",
-            "name": "🧸 柠檬┃直连",
-            "type": 3,
-            "api": "csp_Nmvod",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "playerType": 2,
-            "ext": "https://api.wwgz.cn"
-        },
-        {
-            "key": "Lib",
-            "name": "🧸 LibVio┃直连",
-            "type": 3,
-            "api": "csp_Lib",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "playerType": 1,
-            "quickSearch": 1,
-            "filterable": 0,
-            "ext": "https://www.libvio.cc"
         }
     ],
     "parses": [
@@ -411,20 +377,6 @@
             "name": "Demo",
             "type": 3,
             "url": "Demo"
-        },
-        {
-            "name": "🔥 芒果4K",
-            "type": 1,
-            "url": "http://mg.itufm.top/mg.php?url=",
-            "ext": {
-                "flag": [
-                    "mgtv",
-                    "芒果"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
         },
         {
             "name": "🔥 白嫖4K",
