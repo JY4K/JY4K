@@ -6,7 +6,7 @@
         ⛔【巧记】：http://cdn.qiaoji8.com/tvbox.json ⛔
 */
 {
-    "spider": "./data/jar/qj.jar;md5;165bf6823d6a4e16f6cbc18f5bb16dce",
+    "spider": "https://gitee.com/yuan301/tv/raw/master/A/xs.jar;md5;0ebf254bc81580c2db529f7b26680953",
     "wallpaper": "https://api.imlcd.cn/bg/mc.php",
     "logo": "./data/icon/logo.gif",
     "warningText": "<JY尘>免费整理维护：资源来自网络，无盈利，纯技术分享，如有冒犯请联系删除。",
@@ -279,7 +279,6 @@
             "name": "🔥 仓鼠┃4K",
             "type": 3,
             "api": "csp_AppGet2",
-            "jar": "https://gitee.com/yuan301/tv/raw/master/A/xs.jar;md5;46761ee087c0f297de2abf92ec088591",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -368,7 +367,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "7lj763gg402i7942463j9j9jh346968hg5ll845ki38473"
+            "ext": "https://www.czzymovie.com/"
         },
         {
             "key": "柠檬",
@@ -380,7 +379,7 @@
             "checkAlipan": 0,
             "hasMeaningfulTitle": 1,
             "playerType": 2,
-            "ext": "7lj763gg402i7942503g839jg74h8h88highi40799jh6i6k454419l0l5184k0g548458hh994hjj94330jk296k4l045"
+            "ext": "https://api.wwgz.cn:520/webcloud/relay.php?url="
         },
         {
             "key": "Lib",
@@ -395,7 +394,7 @@
             "playerType": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "7lj763gg402i7942463j9j9jhi558k84lhg7845kili62l35535512l0h61j48410h9g5igk9j40908h351hh484h8l60h"
+            "ext": "https://www.libvio.cc/static/js/playerconfig.js"
         }
     ],
     "parses": [

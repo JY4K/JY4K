@@ -5,11 +5,11 @@
     "副标题": "start-0 text-red-fg\">&&</span>",
     "链接": "href=\"&&\"",
     "简介": "剧情简介：&&\"",
-    "线路标题": "磁力+>&&<",
+    "线路标题": ">&&<",
     "播放数组": "download-list&&</tbody>",
     "播放列表": "<tr&&</tr>",
     "播放标题": "text-muted\">&&</td>[不包含:网盘下载]",
     "跳转播放链接": "href=\"&&\"",
-    "分类url": "https://xl01.com.de/s/all/{catePg}?type={cateId};;d0",
+    "分类url": "https://v.xlys.ltd.ua/s/all/{catePg}?type={cateId};;d0",
     "分类": "电影$0#电视剧$1"
 }
