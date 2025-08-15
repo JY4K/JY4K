@@ -1,0 +1,12 @@
+{
+    "请求头": "User-Agent$MOBILE_UA",
+    "编码": "UTF-8",
+    "主页url": "https://www.libvio.cc/",
+    "数组": "class=\"stui-vodlist__box\"&&</div>",
+    "图片": "data-original=\"&&\"",
+    "副标题": "text-right=\"&&\"",
+    "链接": "href=\"&&\"",
+    "分类url": "https://www.libvio.cc/show/{cateId}-{area}--{class}-----{catePg}---{year}.html",
+    "分类": "电影$1#电视剧$2#综艺$3#动漫$4#日韩剧$15#欧美剧$16",
+    "简介": "温馨提示：视频中广告勿信，上当受骗自负!"
+}

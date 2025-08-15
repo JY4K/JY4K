@@ -228,7 +228,6 @@
             "name": "🔥 修罗┃1080",
             "type": 3,
             "api": "csp_HBPQ",
-            "jar": "./data/jar/HPBQ（8.1）.jar",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -239,6 +238,22 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/json/修罗影视.json"
+        },
+        {
+            "key": "LIBVIO",
+            "name": "🔥 LibVio┃1080",
+            "type": 3,
+            "api": "csp_HBPQ",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/json/LibVio.json"
         },
         {
             "key": "仓鼠",
