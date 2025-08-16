@@ -2,7 +2,7 @@
 var rule = {
     title: '素白白',
     // host:'https://www.subaibai.com',
-    host: 'https://www.subaibai.com/',
+    host: 'https://www.subaibai.com',
     hostJs: 'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src = jsp.pdfh(html,".go:eq(0)&&a&&href");print(src);HOST=src',//网页域名根动态抓取js代码。通过HOST=赋值
     // url:'/fyclass/page/fypage',
     //url:'/fyclassfyfilter/page/fypage',
