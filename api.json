@@ -2,7 +2,8 @@
     JY尘声明：
         以下网络资源如有冒犯请进入 QQ邮箱（2661136929@qq.com）反馈删除
         注：[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买]
-        ⛔资源来源：【牛马也是马】：http://nn.qi-simple.top/common.json  ⛔
+        ⛔ 资源来源：【牛马也是马】：http://nn.qi-simple.top/common.json  ⛔
+        ⛔ 资源来源：【小虎斑】：https://hb.xyyh.online/tvbox/  ⛔
 */
 {
     "spider": "./data/jar/Spider.jar",
@@ -23,13 +24,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./data/js/豆瓣.js"
-        },
-        {
-            "key": "弹幕弹窗",
-            "name": "🐱 弹幕┃小窗",
-            "type": 3,
-            "jar": "https://gitee.com/zj521jj/little-tiger-spot/raw/master/jar/HubanTC.jar",
-            "api": "csp_Huban"
         },
         {
             "key": "奇珍艺兽",
@@ -192,38 +186,6 @@
             "ext": "./data/js/追剧.js"
         },
         {
-            "key": "素白白",
-            "name": "🔥 素白白┃1080",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/素白白.js"
-        },
-        {
-            "key": "瓜子",
-            "name": "⚠️ 瓜子┃1080",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/瓜子.js"
-        },
-        {
             "key": "修罗影视",
             "name": "🔥 修罗┃1080",
             "type": 3,
@@ -295,6 +257,22 @@
             }
         },
         {
+            "key": "窈窕",
+            "name": "🔥 窈窕┃4K",
+            "type": 3,
+            "api": "csp_HBT4",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "http://154.219.113.13:12121/test.php?site=labi###labi"
+        },
+        {
             "key": "淑女",
             "name": "🔥 淑女┃4K",
             "type": 3,
@@ -325,10 +303,10 @@
             "playerType": 2
         },
         {
-			"key": "天天",
-			"name": "🔥 天天┃1080",
-			"type": 3,
-			"api": "./data/py/天天影视.py",
+            "key": "天天",
+            "name": "🔥 天天┃1080",
+            "type": 3,
+            "api": "./data/py/天天影视.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -384,6 +362,150 @@
             "searchable": 1,
             "playerType": 2,
             "ext": "https://www.czzymovie.com/"
+        },
+        {
+            "key": "小虎斑",
+            "name": "🔥 虎斑┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "http://103.45.162.207:20720/"
+            }
+        },
+        {
+            "key": "小傻样",
+            "name": "🔥 傻样┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "http://xsayang.fun:12512/"
+            }
+        },
+        {
+            "key": "小米",
+            "name": "🔥 小米┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "http://xiaomi666.fun"
+            }
+        },
+        {
+            "key": "至臻",
+            "name": "🔥 至臻┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "https://mihdr.top/"
+            }
+        },
+        {
+            "key": "木偶",
+            "name": "🔥 木偶┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "http://123.666291.xyz/"
+            }
+        },
+        {
+            "key": "多多",
+            "name": "🔥 多多┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "https://tv.yydsys.top/"
+            }
+        },
+        {
+            "key": "讴歌",
+            "name": "🔥 讴歌┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "https://woog.nxog.eu.org/"
+            }
+        },
+        {
+            "key": "二小",
+            "name": "🔥 二小┃4K",
+            "type": 3,
+            "playerType": 2,
+            "api": "csp_Mogg",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "playerType": 2,
+            "ext": {
+                "site": "https://xhww.net"
+            }
         }
     ],
     "parses": [
@@ -396,27 +518,6 @@
             "name": "Demo",
             "type": 3,
             "url": "Demo"
-        },
-        {
-            "name": "🔥 白嫖4K",
-            "type": 1,
-            "url": "http://8.129.30.117:582/api/?key=新陆游聚合&url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "youku",
-                    "优酷",
-                    "mgtv",
-                    "芒果",
-                    "bilibili"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
         },
         {
             "name": "🔥 牛马4K",
