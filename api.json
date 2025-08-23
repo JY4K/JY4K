@@ -186,10 +186,10 @@
             "ext": "./data/js/追剧.js"
         },
         {
-            "key": "人人电影网",
-            "name": "🔥 人人┃4K",
-            "type": 3,
-            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "key": "天翼",
+            "name": "🔥 天翼┃4K",
+            "type": 1,
+            "api": "http://7.qqqtv.top/api.php/provide/vod/",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -198,11 +198,14 @@
             "quickSearch": 1,
             "filterable": 1,
             "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/js/人人电影网.js",
-            "style": {
-                "type": "list"
-            }
+            "changeable": 1,
+            "categories": [
+                "推荐",
+                "电影",
+                "电视剧",
+                "综艺",
+                "动漫"
+            ]
         },
         {
             "key": "人人影视",
@@ -219,6 +222,22 @@
             "order_num": 0,
             "changeable": 1,
             "playUrl": "json:http://niiuma.qi-simple.top/nn.php?url="
+        },
+        {
+            "key": "农民影视",
+            "name": "🔥 农民┃1080",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/json/农民影视.json"
         },
         {
             "key": "修罗影视",
@@ -238,7 +257,7 @@
         },
         {
             "key": "LIBVIO",
-            "name": "🔥 LibVio┃1080",
+            "name": "⚠️ LibVio┃1080",
             "type": 3,
             "api": "csp_HBPQ",
             "hasTags": 1,
@@ -322,20 +341,6 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "http://154.219.113.13:12121/test.php?site=mihdr###mihdr"
-        },
-        {
-            "key": "荐片²",
-            "name": "🔥 荐片²┃1080",
-            "type": 3,
-            "api": "./data/py/荐片.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2
         },
         {
             "key": "天天",
