@@ -106,6 +106,44 @@
             "ext": "./data/js/BiliBili.js"
         },
         {
+            "key": "天翼",
+            "name": "🔥 天翼┃4K",
+            "type": 1,
+            "api": "http://7.qqqtv.top/api.php/provide/vod/",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 1,
+            "categories": [
+                "推荐",
+                "电影",
+                "电视剧",
+                "综艺",
+                "动漫"
+            ]
+        },
+        {
+            "key": "人人影视",
+            "name": "🔥 人人┃4K",
+            "type": 1,
+            "api": "https://niiuma.qi-simple.top/vod/rr.php/provide/vod/",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 1,
+            "playUrl": "json:http://niiuma.qi-simple.top/nn.php?url="
+        },
+        {
             "key": "低端影视",
             "name": "🔥 低端┃1080",
             "type": 3,
@@ -186,60 +224,6 @@
             "ext": "./data/js/追剧.js"
         },
         {
-            "key": "天翼",
-            "name": "🔥 天翼┃4K",
-            "type": 1,
-            "api": "http://7.qqqtv.top/api.php/provide/vod/",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 1,
-            "categories": [
-                "推荐",
-                "电影",
-                "电视剧",
-                "综艺",
-                "动漫"
-            ]
-        },
-        {
-            "key": "人人影视",
-            "name": "🔥 人人┃4K",
-            "type": 1,
-            "api": "https://niiuma.qi-simple.top/vod/rr.php/provide/vod/",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 1,
-            "playUrl": "json:http://niiuma.qi-simple.top/nn.php?url="
-        },
-        {
-            "key": "农民影视",
-            "name": "🔥 农民┃1080",
-            "type": 3,
-            "api": "csp_XYQHiker",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/json/农民影视.json"
-        },
-        {
             "key": "修罗影视",
             "name": "🔥 修罗┃1080",
             "type": 3,
@@ -270,6 +254,22 @@
             "order_num": 0,
             "changeable": 0,
             "ext": "./data/json/LibVio.json"
+        },
+        {
+            "key": "农民影视",
+            "name": "⚠️ 农民┃1080",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/json/农民影视.json"
         },
         {
             "key": "鲸鱼",
@@ -372,21 +372,6 @@
             "ext": {
                 "site": "https://www.kuhh4jo.com/,https://www.hkybqufgh.com/,https://www.sizhengxt.com/"
             }
-        },
-         {
-            "key": "素白白",
-            "name": "🔥 素白白┃1080",
-            "type": 3,
-            "api": "csp_SuBaiBai",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "filterable": 0,
-            "quickSearch": 1,
-            "searchable": 1,
-            "playerType": 2,
-            "ext": "https://www.subaibai.com"
         },
         {
             "key": "厂长资源",
