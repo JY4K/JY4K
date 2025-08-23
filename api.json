@@ -186,6 +186,41 @@
             "ext": "./data/js/追剧.js"
         },
         {
+            "key": "人人电影网",
+            "name": "🔥 人人┃4K",
+            "type": 3,
+            "api": "http://110.42.36.65:5223/js/drpy2.min.js",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 0,
+            "ext": "./data/js/人人电影网.js",
+            "style": {
+                "type": "list"
+            }
+        },
+        {
+            "key": "人人影视",
+            "name": "🔥 人人┃4K",
+            "type": 1,
+            "api": "https://niiuma.qi-simple.top/vod/rr.php/provide/vod/",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "changeable": 1,
+            "playUrl": "json:http://niiuma.qi-simple.top/nn.php?url="
+        },
+        {
             "key": "修罗影视",
             "name": "🔥 修罗┃1080",
             "type": 3,
@@ -361,7 +396,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "playerType": 2,
-            "ext": "https://www.czzymovie.com/"
+            "ext": "https://www.cz4k.com"
         },
         {
             "key": "小虎斑",
