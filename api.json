@@ -343,6 +343,20 @@
             "ext": "http://154.219.113.13:12121/test.php?site=mihdr###mihdr"
         },
         {
+            "key": "农民",
+            "name": "🔥 农民┃1080",
+            "type": 3,
+            "api": "./data/py/农民影视.py",
+            "hasTags": 1,
+            "hasPoster": 1,
+            "checkAlipan": 0,
+            "hasMeaningfulTitle": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+		},
+        {
             "key": "天天",
             "name": "🔥 天天┃1080",
             "type": 3,
