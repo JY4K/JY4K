@@ -256,22 +256,6 @@
             "ext": "./data/json/LibVio.json"
         },
         {
-            "key": "农民影视",
-            "name": "⚠️ 农民┃1080",
-            "type": 3,
-            "api": "csp_XYQHiker",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "changeable": 0,
-            "ext": "./data/json/农民影视.json"
-        },
-        {
             "key": "鲸鱼",
             "name": "🔥 鲸鱼┃APP",
             "type": 3,
@@ -347,20 +331,6 @@
             "name": "🔥 农民┃1080",
             "type": 3,
             "api": "./data/py/农民影视.py",
-            "hasTags": 1,
-            "hasPoster": 1,
-            "checkAlipan": 0,
-            "hasMeaningfulTitle": 1,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "playerType": 2
-		},
-        {
-            "key": "天天",
-            "name": "🔥 天天┃1080",
-            "type": 3,
-            "api": "./data/py/天天影视.py",
             "hasTags": 1,
             "hasPoster": 1,
             "checkAlipan": 0,
@@ -664,7 +634,28 @@
             }
         },
         {
-            "name": "🔥 火花",
+            "name": "🔥 无上1080",
+            "type": 1,
+            "url": "https://www.wuyanzu.xyz/api.php?url=",
+            "ext": {
+                "flag": [
+                    "qq",
+                    "腾讯",
+                    "qiyi",
+                    "爱奇艺",
+                    "youku",
+                    "优酷",
+                    "mgtv",
+                    "芒果",
+                    "bilibili"
+                ],
+                "header": {
+                    "User-Agent": "okhttp/4.9.1"
+                }
+            }
+        },
+        {
+            "name": "🔥 火花1080",
             "type": 1,
             "url": "https://api.huohua.live/api/?key=FJER9kOhK71YTePV3d&url=",
             "ext": {
