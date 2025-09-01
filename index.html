@@ -810,7 +810,7 @@
 
     <!-- 官方采集站点部分 -->
     <div class="section-title">
-        <h2>官方采集站点</h2>
+        <h2 id="official-collection-title" style="cursor:pointer;">官方采集站点</h2>
     </div>
 
     <article class="platform-card">
@@ -1472,7 +1472,13 @@
                 "🔥公益@https://api.danmu.icu/?ac=dm&url=",
                 "🔥虾米@https://dmku.hls.one/?ac=dm&url=",
                 "🔥678@https://se.678.ooo/?ac=dm&url="
-            ].join(";")
+            ].join("|"),
+            officialCollection: [
+                "🔥小猫咪@https://zy.xmm.hk/api.php/provide/vod/",
+                "🔥789@https://www.caiji.cyou/api.php/provide/vod/",
+                "🔥金蝉@https://zy.jinchancaiji.com/api.php/provide/vod/",
+                "🔥听风@https://gctf.tfdh.top/api.php/provide/vod/"
+            ].join("|")
         };
 
         // DOM元素缓存
@@ -1627,6 +1633,12 @@
                 const freeDanmuTitle = document.getElementById('free-danmu-title');
                 if (freeDanmuTitle) {
                     freeDanmuTitle.addEventListener('click', () => utils.copyToClipboard(config.freeDanmu));
+                }
+
+                // 新增：官方采集站点标题点击复制
+                const officialCollectionTitle = document.getElementById('official-collection-title');
+                if (officialCollectionTitle) {
+                    officialCollectionTitle.addEventListener('click', () => utils.copyToClipboard(config.officialCollection));
                 }
 
                 document.querySelectorAll('.feature-item').forEach(item => {
