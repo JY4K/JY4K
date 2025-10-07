@@ -92,50 +92,31 @@ http://ygbh.site/php/bfgd.php?id=135
 #EXTINF:-1 tvg-name="CETV2" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CETV2.png" group-title="🇨🇳 央视频道",CETV2
 http://ygbh.site/php/bfgd.php?id=492
 
-#EXTINF:-1 tvg-name="CGTN" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN.png" group-title="🇨🇳 央视频道",CGTN
+#EXTINF:-1 tvg-name="CGTN 英语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN.png" group-title="🇨🇳 央视频道",CGTN
 http://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8
-#EXTINF:-1 tvg-name="CGTN" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN.png" group-title="🇨🇳 央视频道",CGTN
+#EXTINF:-1 tvg-name="CGTN 英语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN.png" group-title="🇨🇳 央视频道",CGTN
 https://0472.org/hls/cgtn.m3u8
-#EXTINF:-1 tvg-name="CGTN记录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN记录.png" group-title="🇨🇳 央视频道",CGTN记录
+#EXTINF:-1 tvg-name="CGTN 记录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN记录.png" group-title="🇨🇳 央视频道",CGTN记录
 https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
-#EXTINF:-1 tvg-name="CGTN记录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN记录.png" group-title="🇨🇳 央视频道",CGTN记录
+#EXTINF:-1 tvg-name="CGTN 记录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN记录.png" group-title="🇨🇳 央视频道",CGTN记录
 https://0472.org/hls/cgtnd.m3u8
-#EXTINF:-1 tvg-name="CGTN西语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN西语.png" group-title="🇨🇳 央视频道",CGTN西语
+#EXTINF:-1 tvg-name="CGTN 西语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN西语.png" group-title="🇨🇳 央视频道",CGTN西语
 http://espanol-liveali.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd.m3u8
-#EXTINF:-1 tvg-name="CGTN西语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN西语.png" group-title="🇨🇳 央视频道",CGTN西语
+#EXTINF:-1 tvg-name="CGTN 西语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN西语.png" group-title="🇨🇳 央视频道",CGTN西语
 https://0472.org/hls/cgtnx.m3u8
-#EXTINF:-1 tvg-name="CGTN法语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN法语.png" group-title="🇨🇳 央视频道",CGTN法语
+#EXTINF:-1 tvg-name="CGTN 法语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN法语.png" group-title="🇨🇳 央视频道",CGTN法语
 http://francais-livews.cgtn.com/hls/LSvev95OuFZtKLc6CeKEFYXj220802LSTeV6PO0Ut9r71Uq3k5goCA220802cd.m3u8
-#EXTINF:-1 tvg-name="CGTN法语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN法语.png" group-title="🇨🇳 央视频道",CGTN法语
+#EXTINF:-1 tvg-name="CGTN 法语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN法语.png" group-title="🇨🇳 央视频道",CGTN法语
 https://0472.org/hls/cgtnf.m3u8
-#EXTINF:-1 tvg-name="CGTN俄语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN俄语.png" group-title="🇨🇳 央视频道",CGTN俄语
+#EXTINF:-1 tvg-name="CGTN 俄语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN俄语.png" group-title="🇨🇳 央视频道",CGTN俄语
 http://russian-livews.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXMHsb1VosgoT220802cd.m3u8
-#EXTINF:-1 tvg-name="CGTN俄语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN俄语.png" group-title="🇨🇳 央视频道",CGTN俄语
+#EXTINF:-1 tvg-name="CGTN 俄语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN俄语.png" group-title="🇨🇳 央视频道",CGTN俄语
 https://0472.org/hls/cgtne.m3u8
-#EXTINF:-1 tvg-name="CGTN阿语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN阿语.png" group-title="🇨🇳 央视频道",CGTN阿语
+#EXTINF:-1 tvg-name="CGTN 阿语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN阿语.png" group-title="🇨🇳 央视频道",CGTN阿语
 http://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd.m3u8
-#EXTINF:-1 tvg-name="CGTN阿语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN阿语.png" group-title="🇨🇳 央视频道",CGTN阿语
+#EXTINF:-1 tvg-name="CGTN 阿语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN阿语.png" group-title="🇨🇳 央视频道",CGTN阿语
 https://0472.org/hls/cgtna.m3u8
 
-
-#EXTINF:-1 tvg-name="北京卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/北京卫视.png" group-title="🇨🇳 卫视频道",北京卫视4K
-https://www.shqsy.com/zgst.php?id=btv4k
-#EXTINF:-1 tvg-name="东方卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/东方卫视.png" group-title="🇨🇳 卫视频道",东方卫视4K
-https://www.shqsy.com/zgst.php?id=sh4k
-#EXTINF:-1 tvg-name="江苏卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/江苏卫视.png" group-title="🇨🇳 卫视频道",江苏卫视4K
-https://www.shqsy.com/zgst.php?id=js4k
-#EXTINF:-1 tvg-name="浙江卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/浙江卫视.png" group-title="🇨🇳 卫视频道",浙江卫视4K
-https://www.shqsy.com/zgst.php?id=zj4k
-#EXTINF:-1 tvg-name="山东卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/山东卫视.png" group-title="🇨🇳 卫视频道",山东卫视4K
-https://www.shqsy.com/zgst.php?id=sd4k
-#EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/湖南卫视.png" group-title="🇨🇳 卫视频道",湖南卫视4K
-https://www.shqsy.com/zgst.php?id=hn4k
-#EXTINF:-1 tvg-name="广东卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/广东卫视.png" group-title="🇨🇳 卫视频道",广东卫视4K
-https://www.shqsy.com/zgst.php?id=gd4k
-#EXTINF:-1 tvg-name="四川卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/四川卫视.png" group-title="🇨🇳 卫视频道",四川卫视4K
-https://www.shqsy.com/zgst.php?id=sc4k
-#EXTINF:-1 tvg-name="深圳卫视4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/深圳卫视.png" group-title="🇨🇳 卫视频道",深圳卫视4K
-https://www.shqsy.com/zgst.php?id=sz4k
 
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/江苏卫视.png" group-title="🇨🇳 卫视频道",江苏卫视
 http://[2409:8087:1e01:20::3]/PLTV/11/224/3221225720/index.m3u8
