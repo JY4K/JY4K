@@ -298,6 +298,8 @@
             display: flex; /* Add flex display */
             flex-direction: column; /* Stack children vertically */
             height: 100%; /* Make sure card takes full height in the grid */
+            z-index: 1000; /* 添加足够的z-index值以显示在警告信息之上 */
+            position: relative; /* 需要设置position属性才能使z-index生效 */
         }
 
         .platform-card:hover {
@@ -552,6 +554,78 @@
                 margin-right: 20px;
             }
         }
+        
+        /* 全局提示样式 - 与整体UI颜色一致 */
+        .global-notice {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--color-border);
+            z-index: 100; /* 确保提示在卡片下方 */
+            position: relative;
+        }
+        
+        .notice-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .warning-texts {
+            flex: 1;
+        }
+        
+        .notice-title {
+            font-size: 1.3rem;
+            color: var(--color-accent);
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+        
+        .notice-message {
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0 0 0.8rem 0;
+        }
+        
+        .feedback-info {
+            color: var(--color-text);
+            margin: 0 0 0.8rem 0;
+            line-height: 1.5;
+        }
+        
+        .TG-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .TG-link:hover {
+            color: #2c5282; /* 使用标题渐变色的第二个颜色 */
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .notice-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .warning-icon {
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -649,7 +723,6 @@
     </div>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">弹幕库</div>
         <div class="card-body">
             <div class="feature-list">
@@ -672,7 +745,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">FC-LYZ</div>
         <div class="card-body">
             <div class="feature-list">
@@ -695,7 +767,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">晨曦</div>
         <div class="card-body">
             <div class="feature-list">
@@ -718,7 +789,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">虾米</div>
         <div class="card-body">
             <div class="feature-list">
@@ -741,7 +811,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">689</div>
         <div class="card-body">
             <div class="feature-list">
@@ -770,7 +839,6 @@
     </div>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">789</div>
         <div class="card-body">
             <div class="feature-list">
@@ -792,7 +860,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">金蝉</div>
         <div class="card-body">
             <div class="feature-list">
@@ -814,7 +881,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">免费</div>
         <div class="card-header">听风</div>
         <div class="card-body">
             <div class="feature-list">
@@ -842,7 +908,6 @@
     </div>
 
     <article class="platform-card">
-        <div class="card-tag">高清有广</div>
         <div class="card-header">切片合集</div>
         <div class="card-body">
             <div class="feature-list">
@@ -864,7 +929,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">高清无广</div>
         <div class="card-header">人人影视</div>
         <div class="card-body">
             <div class="feature-list">
@@ -886,7 +950,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">高清无广</div>
         <div class="card-header">电影天堂</div>
         <div class="card-body">
             <div class="feature-list">
@@ -908,7 +971,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">高清有广</div>
         <div class="card-header">黑木耳</div>
         <div class="card-body">
             <div class="feature-list">
@@ -930,7 +992,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">高清有广</div>
         <div class="card-header">华为吧</div>
         <div class="card-body">
             <div class="feature-list">
@@ -952,7 +1013,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">高清有广</div>
         <div class="card-header">如意</div>
         <div class="card-body">
             <div class="feature-list">
@@ -974,7 +1034,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">老牌切片</div>
         <div class="card-header">红牛</div>
         <div class="card-body">
             <div class="feature-list">
@@ -996,7 +1055,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">豆瓣</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1018,7 +1076,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">爱奇艺</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1041,7 +1098,6 @@
 
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">新浪</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1063,7 +1119,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">速播</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1085,7 +1140,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">豪华</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1107,7 +1161,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">U酷</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1129,7 +1182,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">极速</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1151,7 +1203,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">淘片</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1173,7 +1224,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">虎牙</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1195,7 +1245,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">光速</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1218,7 +1267,6 @@
 
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">优质</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1240,7 +1288,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">无尽</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1262,7 +1309,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">最大</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1284,7 +1330,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">快车</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1306,7 +1351,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">暴风</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1328,7 +1372,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">一般有广</div>
         <div class="card-header">爱坤</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1350,7 +1393,6 @@
     </article>
 
     <article class="platform-card">
-        <div class="card-tag">短剧有广</div>
         <div class="card-header">旺旺</div>
         <div class="card-body">
             <div class="feature-list">
@@ -1372,14 +1414,19 @@
     </article>
 </main>
 
-<!-- 全局提示 -->
+<!-- 优化后的全局提示 -->
 <div class="global-notice">
-    <h3>⚠️ 温馨提示：不推荐付费购买接口及解析</h3>
-    <p>⛔️ 如果有新采集站及解析站，请直接进入
-        <a href="https://t.me/uzvideoplay" class="TG-link">TG群</a>
-        进行反馈！如有侵权，联系删除
-    </p>
-    <p>免责声明：本平台资源均来自网络公开数据，仅供技术研究使用,请于24小时内删除，以免上当受骗！</p>
+    <div class="notice-content">
+        <div class="warning-texts">
+            <h3 class="notice-title">温馨提示</h3>
+            <p class="notice-message">不推荐付费购买接口及解析</p>
+            <p class="feedback-info">⛔️ 如果有新采集站及解析站，请直接进入
+                <a href="https://t.me/uzvideoplay" class="TG-link">TG群</a>
+                进行反馈！如有侵权，联系删除
+            </p>
+            <p class="disclaimer">免责声明：本平台资源均来自网络公开数据，仅供技术研究使用，请于24小时内删除，以免上当受骗！</p>
+        </div>
+    </div>
 </div>
 
 <!-- 复制提示框 -->
