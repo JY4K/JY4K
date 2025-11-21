@@ -6,12 +6,12 @@
 
 ## 🛠️配置（必看）：
 
-- 接口: [https://jy4k.netlify.app/api.json](https://jy4k.netlify.app/api.json)
+- 接口: [https://jy4k.netlify.app/](https://jy4k.netlify.app/)
     - 注：接口需配合软件食用 ！！！
 
 ## 📱联系
 
-- QQ: [2661136929](2661136929)
+- QQ: []()
 
 ## 📖说明
 
