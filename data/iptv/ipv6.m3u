@@ -191,6 +191,15 @@ https://0472.org/hls/cgtna.m3u8
 http://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd.m3u8
 
 
+#EXTINF:-1 tvg-name="苏州4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/苏州4K.png" group-title="🇨🇳 卫视频道",苏州4K
+https://tylive.kan0512.com/norecord/csztv4k_4k.m3u8
+
+#EXTINF:-1 tvg-name="河北4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/河南4K.png" group-title="🇨🇳 卫视频道",河北4K
+https://event.pull.hebtv.com:443/live/live101.m3u8
+
+#EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/江苏卫视.png" group-title="🇨🇳 卫视频道",江苏卫视
+https://iptv.catvod.com/live.php?id=江苏卫视
+
 #EXTINF:-1 tvg-name="北京卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/北京卫视.png" group-title="🇨🇳 卫视频道",北京卫视
 https://iptv.catvod.com/live.php?id=北京卫视
 
@@ -202,9 +211,6 @@ https://iptv.catvod.com/live.php?id=湖南卫视
 
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/浙江卫视.png" group-title="🇨🇳 卫视频道",浙江卫视
 https://iptv.catvod.com/live.php?id=浙江卫视
-
-#EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/江苏卫视.png" group-title="🇨🇳 卫视频道",江苏卫视
-https://iptv.catvod.com/live.php?id=江苏卫视
 
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/安徽卫视.png" group-title="🇨🇳 卫视频道",安徽卫视
 https://iptv.catvod.com/live.php?id=安徽卫视
