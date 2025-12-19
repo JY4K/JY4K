@@ -1,37 +1,13 @@
 #EXTM3U x-tvg-url="https://fy.188766.xyz/e.xml"
 #EXTINF:-1 tvg-name="CCTV1 综合" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV1.png" group-title="🇨🇳 央视频道",CCTV1 综合
-http://bxtv.3a.ink/migu.php?id=cctv1
-#EXTINF:-1 tvg-name="CCTV1 综合" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV1.png" group-title="🇨🇳 央视频道",CCTV1 综合
-https://iptv.catvod.com/live.php?id=cctv1
-#EXTINF:-1 tvg-name="CCTV1 综合" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV1.png" group-title="🇨🇳 央视频道",CCTV1 综合
-https://iptv.catvod.com/live.php?id=CCTV1
-#EXTINF:-1 tvg-name="CCTV1 综合" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV1.png" group-title="🇨🇳 央视频道",CCTV1 综合
 http://iptv.huuc.edu.cn/hls/cctv1hd.m3u8
 
-#EXTINF:-1 tvg-name="CCTV2 财经" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV2.png" group-title="🇨🇳 央视频道",CCTV2 财经
-http://bxtv.3a.ink/migu.php?id=cctv2
-#EXTINF:-1 tvg-name="CCTV2 财经" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV2.png" group-title="🇨🇳 央视频道",CCTV2 财经
-https://iptv.catvod.com/live.php?id=cctv2
-#EXTINF:-1 tvg-name="CCTV2 财经" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV2.png" group-title="🇨🇳 央视频道",CCTV2 财经
-https://iptv.catvod.com/live.php?id=CCTV2
 #EXTINF:-1 tvg-name="CCTV2 财经" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV2.png" group-title="🇨🇳 央视频道",CCTV2 财经
 http://iptv.huuc.edu.cn/hls/cctv2hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV3 综艺" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV3.png" group-title="🇨🇳 央视频道",CCTV3 综艺
-http://bxtv.3a.ink/migu.php?id=cctv3
-#EXTINF:-1 tvg-name="CCTV3 综艺" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV3.png" group-title="🇨🇳 央视频道",CCTV3 综艺
-https://iptv.catvod.com/live.php?id=cctv3
-#EXTINF:-1 tvg-name="CCTV3 综艺" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV3.png" group-title="🇨🇳 央视频道",CCTV3 综艺
-https://iptv.catvod.com/live.php?id=CCTV3
-#EXTINF:-1 tvg-name="CCTV3 综艺" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV3.png" group-title="🇨🇳 央视频道",CCTV3 综艺
 http://iptv.huuc.edu.cn/hls/cctv3hd.m3u8
 
-#EXTINF:-1 tvg-name="CCTV4 中文国际" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV4.png" group-title="🇨🇳 央视频道",CCTV4 中文国际
-http://bxtv.3a.ink/migu.php?id=cctv4
-#EXTINF:-1 tvg-name="CCTV4 中文国际" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV4.png" group-title="🇨🇳 央视频道",CCTV4 中文国际
-https://iptv.catvod.com/live.php?id=cctv4
-#EXTINF:-1 tvg-name="CCTV4 中文国际" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV4.png" group-title="🇨🇳 央视频道",CCTV4 中文国际
-https://iptv.catvod.com/live.php?id=CCTV4
 #EXTINF:-1 tvg-name="CCTV4 中文国际" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV4.png" group-title="🇨🇳 央视频道",CCTV4 中文国际
 http://iptv.huuc.edu.cn/hls/cctv4hd.m3u8
 
@@ -39,125 +15,49 @@ http://iptv.huuc.edu.cn/hls/cctv4hd.m3u8
 https://iptv.catvod.com/live.php?id=CCTV4K
 
 #EXTINF:-1 tvg-name="CCTV5 体育" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5.png" group-title="🇨🇳 央视频道",CCTV5 体育
-http://bxtv.3a.ink/migu.php?id=cctv5
-#EXTINF:-1 tvg-name="CCTV5 体育" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5.png" group-title="🇨🇳 央视频道",CCTV5 体育
-https://iptv.catvod.com/live.php?id=cctv5
-#EXTINF:-1 tvg-name="CCTV5 体育" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5.png" group-title="🇨🇳 央视频道",CCTV5 体育
-https://iptv.catvod.com/live.php?id=CCTV5
-#EXTINF:-1 tvg-name="CCTV5 体育" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5.png" group-title="🇨🇳 央视频道",CCTV5 体育
 http://iptv.huuc.edu.cn/hls/cctv5hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV5+ 体育赛事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5+.png" group-title="🇨🇳 央视频道",CCTV5+ 体育赛事
 http://bxtv.3a.ink/migu.php?id=cctv5p
-#EXTINF:-1 tvg-name="CCTV5+ 体育赛事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5+.png" group-title="🇨🇳 央视频道",CCTV5+ 体育赛事
-https://iptv.catvod.com/live.php?id=cctv5p
-#EXTINF:-1 tvg-name="CCTV5+ 体育赛事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV5+.png" group-title="🇨🇳 央视频道",CCTV5+ 体育赛事
-https://iptv.catvod.com/live.php?id=CCTV5plus
 
-#EXTINF:-1 tvg-name="CCTV6 电影" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV6.png" group-title="🇨🇳 央视频道",CCTV6 电影
-http://bxtv.3a.ink/migu.php?id=cctv6
-#EXTINF:-1 tvg-name="CCTV6 电影" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV6.png" group-title="🇨🇳 央视频道",CCTV6 电影
-https://iptv.catvod.com/live.php?id=cctv6
-#EXTINF:-1 tvg-name="CCTV6 电影" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV6.png" group-title="🇨🇳 央视频道",CCTV6 电影
-https://iptv.catvod.com/live.php?id=CCTV6
 #EXTINF:-1 tvg-name="CCTV6 电影" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV6.png" group-title="🇨🇳 央视频道",CCTV6 电影
 http://iptv.huuc.edu.cn/hls/cctv6hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV7 国防军事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV7.png" group-title="🇨🇳 央视频道",CCTV7 国防军事
-http://bxtv.3a.ink/migu.php?id=cctv7
-#EXTINF:-1 tvg-name="CCTV7 国防军事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV7.png" group-title="🇨🇳 央视频道",CCTV7 国防军事
-https://iptv.catvod.com/live.php?id=cctv7
-#EXTINF:-1 tvg-name="CCTV7 国防军事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV7.png" group-title="🇨🇳 央视频道",CCTV7 国防军事
-https://iptv.catvod.com/live.php?id=CCTV7
-#EXTINF:-1 tvg-name="CCTV7 国防军事" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV7.png" group-title="🇨🇳 央视频道",CCTV7 国防军事
 http://iptv.huuc.edu.cn/hls/cctv7hd.m3u8
 
-#EXTINF:-1 tvg-name="CCTV8 电视剧" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV8.png" group-title="🇨🇳 央视频道",CCTV8 电视剧
-http://bxtv.3a.ink/migu.php?id=cctv8
-#EXTINF:-1 tvg-name="CCTV8 电视剧" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV8.png" group-title="🇨🇳 央视频道",CCTV8 电视剧
-https://iptv.catvod.com/live.php?id=cctv8
-#EXTINF:-1 tvg-name="CCTV8 电视剧" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV8.png" group-title="🇨🇳 央视频道",CCTV8 电视剧
-https://iptv.catvod.com/live.php?id=CCTV8
 #EXTINF:-1 tvg-name="CCTV8 电视剧" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV8.png" group-title="🇨🇳 央视频道",CCTV8 电视剧
 http://iptv.huuc.edu.cn/hls/cctv8hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV9 纪录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV9.png" group-title="🇨🇳 央视频道",CCTV9 纪录
-http://bxtv.3a.ink/migu.php?id=cctv9
-#EXTINF:-1 tvg-name="CCTV9 纪录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV9.png" group-title="🇨🇳 央视频道",CCTV9 纪录
-https://iptv.catvod.com/live.php?id=cctv9
-#EXTINF:-1 tvg-name="CCTV9 纪录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV9.png" group-title="🇨🇳 央视频道",CCTV9 纪录
-https://iptv.catvod.com/live.php?id=CCTV9
-#EXTINF:-1 tvg-name="CCTV9 纪录" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV9.png" group-title="🇨🇳 央视频道",CCTV9 纪录
 http://iptv.huuc.edu.cn/hls/cctv9hd.m3u8
 
-#EXTINF:-1 tvg-name="CCTV10 科教" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV10.png" group-title="🇨🇳 央视频道",CCTV10 科教
-http://bxtv.3a.ink/migu.php?id=cctv10
-#EXTINF:-1 tvg-name="CCTV10 科教" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV10.png" group-title="🇨🇳 央视频道",CCTV10 科教
-https://iptv.catvod.com/live.php?id=cctv10
-#EXTINF:-1 tvg-name="CCTV10 科教" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV10.png" group-title="🇨🇳 央视频道",CCTV10 科教
-https://iptv.catvod.com/live.php?id=CCTV10
 #EXTINF:-1 tvg-name="CCTV10 科教" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV10.png" group-title="🇨🇳 央视频道",CCTV10 科教
 http://iptv.huuc.edu.cn/hls/cctv10hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV11 戏曲" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV11.png" group-title="🇨🇳 央视频道",CCTV11 戏曲
-http://bxtv.3a.ink/migu.php?id=cctv11
-#EXTINF:-1 tvg-name="CCTV11 戏曲" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV11.png" group-title="🇨🇳 央视频道",CCTV11 戏曲
-https://iptv.catvod.com/live.php?id=cctv11
-#EXTINF:-1 tvg-name="CCTV11 戏曲" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV11.png" group-title="🇨🇳 央视频道",CCTV11 戏曲
-https://iptv.catvod.com/live.php?id=CCTV11
-#EXTINF:-1 tvg-name="CCTV11 戏曲" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV11.png" group-title="🇨🇳 央视频道",CCTV11 戏曲
 http://iptv.huuc.edu.cn/hls/cctv11hd.m3u8
 
-#EXTINF:-1 tvg-name="CCTV12 社会与法" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV12.png" group-title="🇨🇳 央视频道",CCTV12 社会与法
-http://bxtv.3a.ink/migu.php?id=cctv12
-#EXTINF:-1 tvg-name="CCTV12 社会与法" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV12.png" group-title="🇨🇳 央视频道",CCTV12 社会与法
-https://iptv.catvod.com/live.php?id=cctv12
-#EXTINF:-1 tvg-name="CCTV12 社会与法" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV12.png" group-title="🇨🇳 央视频道",CCTV12 社会与法
-https://iptv.catvod.com/live.php?id=CCTV12
 #EXTINF:-1 tvg-name="CCTV12 社会与法" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV12.png" group-title="🇨🇳 央视频道",CCTV12 社会与法
 http://iptv.huuc.edu.cn/hls/cctv12hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV13 新闻" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV13.png" group-title="🇨🇳 央视频道",CCTV13 新闻
-http://bxtv.3a.ink/migu.php?id=cctv13
-#EXTINF:-1 tvg-name="CCTV13 新闻" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV13.png" group-title="🇨🇳 央视频道",CCTV13 新闻
-https://iptv.catvod.com/live.php?id=cctv13
-#EXTINF:-1 tvg-name="CCTV13 新闻" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV13.png" group-title="🇨🇳 央视频道",CCTV13 新闻
-https://iptv.catvod.com/live.php?id=CCTV13
-#EXTINF:-1 tvg-name="CCTV13 新闻" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV13.png" group-title="🇨🇳 央视频道",CCTV13 新闻
 http://iptv.huuc.edu.cn/hls/cctv13hd.m3u8
 
-#EXTINF:-1 tvg-name="CCTV14 少儿" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV14.png" group-title="🇨🇳 央视频道",CCTV14 少儿
-http://bxtv.3a.ink/migu.php?id=cctv14
-#EXTINF:-1 tvg-name="CCTV14 少儿" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV14.png" group-title="🇨🇳 央视频道",CCTV14 少儿
-https://iptv.catvod.com/live.php?id=cctv14
-#EXTINF:-1 tvg-name="CCTV14 少儿" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV14.png" group-title="🇨🇳 央视频道",CCTV14 少儿
-https://iptv.catvod.com/live.php?id=CCTV14
 #EXTINF:-1 tvg-name="CCTV14 少儿" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV14.png" group-title="🇨🇳 央视频道",CCTV14 少儿
 http://iptv.huuc.edu.cn/hls/cctv14hd.m3u8
 
 #EXTINF:-1 tvg-name="CCTV15 音乐" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV15.png" group-title="🇨🇳 央视频道",CCTV15 音乐
 http://bxtv.3a.ink/migu.php?id=cctv15
-#EXTINF:-1 tvg-name="CCTV15 音乐" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV15.png" group-title="🇨🇳 央视频道",CCTV15 音乐
-https://iptv.catvod.com/live.php?id=cctv15
-#EXTINF:-1 tvg-name="CCTV15 音乐" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV15.png" group-title="🇨🇳 央视频道",CCTV15 音乐
-https://iptv.catvod.com/live.php?id=CCTV15
 
 #EXTINF:-1 tvg-name="CCTV16 奥林匹克" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV16.png" group-title="🇨🇳 央视频道",CCTV16 奥林匹克
 http://bxtv.3a.ink/migu.php?id=cctv16
-#EXTINF:-1 tvg-name="CCTV16 奥林匹克" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV16.png" group-title="🇨🇳 央视频道",CCTV16 奥林匹克
-https://iptv.catvod.com/live.php?id=cctv16
-#EXTINF:-1 tvg-name="CCTV16 奥林匹克" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV16.png" group-title="🇨🇳 央视频道",CCTV16 奥林匹克
-https://iptv.catvod.com/live.php?id=CCTV16
 
 #EXTINF:-1 tvg-name="CCTV16(4K) 奥林匹克" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV16.png" group-title="🇨🇳 央视频道",CCTV16(4K) 奥林匹克
 https://iptv.catvod.com/live.php?id=CCTV16-4k
 
 #EXTINF:-1 tvg-name="CCTV17 农业农村" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV17.png" group-title="🇨🇳 央视频道",CCTV17 农业农村
 http://bxtv.3a.ink/migu.php?id=cctv17
-#EXTINF:-1 tvg-name="CCTV17 农业农村" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV17.png" group-title="🇨🇳 央视频道",CCTV17 农业农村
-https://iptv.catvod.com/live.php?id=cctv17
-#EXTINF:-1 tvg-name="CCTV17 农业农村" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CCTV17.png" group-title="🇨🇳 央视频道",CCTV17 农业农村
-https://iptv.catvod.com/live.php?id=CCTV17
 
 
 #EXTINF:-1 tvg-name="CGTN 英语" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/CGTN.png" group-title="🇨🇳 央视频道",CGTN
