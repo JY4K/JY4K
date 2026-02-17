@@ -1,0 +1,34 @@
+{
+    "name": "白猫",
+    "description": "",
+    "icons": [
+        {
+            "name": "豆瓣",
+            "url": "https://www.douban.com/favicon.ico"
+        },
+        {
+            "name": "腾讯视频",
+            "url": "https://v.qq.com/favicon.ico"
+        },
+        {
+            "name": "哔哩哔哩",
+            "url": "https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico"
+        },
+        {
+            "name": "优酷视频",
+            "url": "https://img.alicdn.com/imgextra/i2/O1CN01BeAcgL1ywY0G5nSn8_!!6000000006643-2-tps-195-195.png"
+        },
+        {
+            "name": "爱奇艺",
+            "url": "https://www.iqiyi.com/logo.png"
+        },
+        {
+            "name": "芒果TV",
+            "url": "https://static.hitv.com/icons/icon_144x144.1b7ca7.png"
+        },
+        {
+            "name": "Zaixianzhijia",
+            "url": "https://raw.githubusercontent.com/ginibond/ginibond/main/Icons/Forward/Zaixianzhijia.png"
+        }
+    ]
+}
